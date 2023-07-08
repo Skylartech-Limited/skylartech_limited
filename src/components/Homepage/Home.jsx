@@ -39,6 +39,12 @@ const Home = () => {
               whileTap={{ scale: 0.8 }}
             >
               Let's Talk
+              <span
+                className="ml-2 text-xl"
+                style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+              >
+                &#8594;
+              </span>
             </motion.button>
           </li>
         </ul>
