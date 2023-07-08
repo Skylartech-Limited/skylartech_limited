@@ -27,31 +27,31 @@ const Navbar = () => {
             <div className="hidden sm:flex">
               <Link
                 to="/"
-                className="text-indigo-700 hover:text-indigo-600 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                className="text-amber-500 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Home
               </Link>
               <Link
                 to="/services"
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Services
               </Link>   
               <Link
                 to="/technologies"
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Technologies
               </Link>
               <Link
                 to="/portfolio"
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Portfolio
               </Link>
               <Link
                 to="/contact-us"
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Contact Us
               </Link>
@@ -60,13 +60,13 @@ const Navbar = () => {
               <p className="text-md hidden sm:block">
                 <i
                   className="fa-solid fa-envelope fa-xl"
-                  style={{ color: "#3949AB", paddingRight: '3px', paddingLeft: '4px' }}
+                  style={{ color: "#FFA000", paddingRight: '3px', paddingLeft: '4px' }}
                 ></i>
                 info@skylartech.co.ke
               </p>
               <Link
                 to="/quote"
-                className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-md font-medium ml-2 hidden sm:block"
+                className="bg-gray-800 text-white px-4 py-2 rounded-md text-md font-medium ml-2 hidden sm:block hover:bg-amber-500 transition ease-in-out delay-75 hover:-translate-y-0 hover:-translate-x-1  hover:scale-90 duration-300"
               >
                 Get a Quote
               </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
             <div className="flex sm:hidden">
               <button
                 type="button"
-                className="text-gray-700 hover:text-indigo-600 p-2 rounded-md"
+                className="text-gray-700 hover:text-amber-500 p-2 rounded-md"
                 onClick={toggleMobileMenu}
               >
                 <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,35 +85,35 @@ const Navbar = () => {
                 <div className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2">
                   <Link
                     to="/"
-                    className="block text-indigo-700 hover:text-indigo-600 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    className="block text-indigo-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Home
                   </Link>
                   <Link
                     to="/services"
-                    className="block text-gray-700 hover:text-indigo-600 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Services
                   </Link>
                   <Link
                     to="/technologies"
-                    className="block text-gray-700 hover:text-indigo-600 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Technologies
                   </Link>
                   <Link
                     to="/portfolio"
-                    className="block text-gray-700 hover:text-indigo-600 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Portfolio
                   </Link>
                   <Link
                     to="/contact-us"
-                    className="block text-gray-700 hover:text-indigo-600 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Contact Us
