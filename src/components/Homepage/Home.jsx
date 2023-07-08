@@ -7,7 +7,7 @@ const Home = () => {
     <div className="text-left p-10">
       <>
         <h2 className="text-2xl font-medium text-gray-800 py-2 pt-10">
-          Delivering quality projects {" "}
+          Delivering quality projects{" "}
           <span className="text-amber-500 font-medium">
             <Typewriter
               words={["beyond expectations", "beyond expectations"]}
@@ -35,8 +35,8 @@ const Home = () => {
           <li>
             <motion.button
               className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 0.9 }}
+              whileTap={{ scale: 0.8 }}
             >
               Let's Talk
             </motion.button>
