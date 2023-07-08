@@ -5,6 +5,7 @@ import Home from "./components/Homepage/Home.jsx"
 import Services from './components/Services/Services';
 import Contact from './components/Contact/Contact';
 import Technologies from './components/Technologies/Technologies';
+import Footer from './components/Footer/Footer';
 import Portfolio from './components/Portfolio/Portfolio';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/services' element={<Services/>} />
           <Route exact path='/portfolio' element={<Portfolio/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
