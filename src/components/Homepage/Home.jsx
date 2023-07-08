@@ -11,13 +11,13 @@ const Home = () => {
           <span className="text-amber-500 font-medium">
             <Typewriter
               words={["beyond expectations", "beyond expectations"]}
-              loop={10}
+              loop={50}
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1000}
             />
           </span>
-          <span className="text-gray-400">
+          <span className="text-gray-700">
             <Cursor cursorStyle="~" />
           </span>
         </h2>
