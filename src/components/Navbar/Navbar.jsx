@@ -34,31 +34,31 @@ const Navbar = () => {
             <div className="hidden sm:flex">
               <Link
                 to="/"
-                className="text-amber-500 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition duration-300"
+                className="text-amber-500 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Home
               </Link>
               <Link
                 to="/services"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Services
               </Link>
               <Link
                 to="/technologies"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Technologies
               </Link>
               <Link
                 to="/portfolio"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Portfolio
               </Link>
               <Link
                 to="/contact-us"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition duration-300"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
               >
                 Contact Us
               </Link>
@@ -107,35 +107,35 @@ const Navbar = () => {
                 <div className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2">
                   <Link
                     to="/"
-                    className="block text-indigo-700 hover:text-amber-500 px-4 py-2 font-medium transition duration-300"
+                    className="block text-amber-500 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Home
                   </Link>
                   <Link
                     to="/services"
-                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Services
                   </Link>
                   <Link
                     to="/technologies"
-                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Technologies
                   </Link>
                   <Link
                     to="/portfolio"
-                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Portfolio
                   </Link>
                   <Link
                     to="/contact-us"
-                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition duration-300"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300"
                     onClick={toggleMobileMenu}
                   >
                     Contact Us
