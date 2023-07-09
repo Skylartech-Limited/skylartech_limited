@@ -7,6 +7,7 @@ import Contact from './components/Contact/Contact';
 import Technologies from './components/Technologies/Technologies';
 import Footer from './components/Footer/Footer';
 import Portfolio from './components/Portfolio/Portfolio';
+import Industries from './components/Industries/Industries';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/contact-us' element={<Contact/>} />
           <Route exact path='/services' element={<Services/>} />
           <Route exact path='/portfolio' element={<Portfolio/>} />
+          <Route exact path='/industries' element={<Industries/>} />
       </Routes>
       <Footer/>
     </div>

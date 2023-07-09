@@ -48,7 +48,7 @@ const Footer = () => {
             <ul className="text-gray-300">
               <li className="mb-4">
                 <i className="fas fa-map-marker-alt mr-2"></i>
-                <span className="hover:text-white">Bustani Villas, Palm 2nd Lane #75 - Nairobi</span>
+                <span className="hover:text-white">The Water Front, Karen</span>
               </li>
               <li className="mb-4">
                 <i className="fas fa-phone-alt mr-2"></i>
@@ -61,8 +61,7 @@ const Footer = () => {
             </ul>
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.3437157405365!2d36.9105043384525!3d-1.3642101996557172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f0d07e7b8c09b%3A0x8fb76d56e37a9a8a!2sGateway%20Mall!5e0!3m2!1sen!2ske!4v1688819712737!5m2!1sen!2ske"
-            style={{ width: "100%", height: "20rem", border: "transparent" }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7419717032712!2d36.71209707461479!3d-1.3309057986564705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b40e8700ce9%3A0xf4eb6d3689e5364b!2sThe%20Waterfront%20Karen!5e0!3m2!1sen!2ske!4v1688904954033!5m2!1sen!2ske"            style={{ width: "100%", height: "20rem", border: "transparent" }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
