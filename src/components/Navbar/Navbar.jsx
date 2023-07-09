@@ -110,7 +110,31 @@ const Navbar = () => {
                 </svg>
               </button>
               {isMobileMenuOpen && (
-                <div className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2">
+                <div
+                  className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2"
+                  style={{
+                    "@media (min-width: 640px)": {
+                      top: "8rem",
+                      right: 0,
+                    },
+                    "@media (min-width: 768px)": {
+                      top: "6rem",
+                      right: 0,
+                    },
+                    "@media (min-width: 1024px)": {
+                      top: "5rem",
+                      right: 0,
+                    },
+                    "@media (min-width: 1280px)": {
+                      top: "4rem",
+                      right: "2rem",
+                    },
+                    "@media (min-width: 1536px)": {
+                      top: "4rem",
+                      right: "4rem",
+                    },
+                  }}
+                >
                   <Link
                     to="/"
                     className="block text-amber-500 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
