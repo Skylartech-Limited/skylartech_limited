@@ -25,7 +25,7 @@ const Home = () => {
           Digitize Your Business With Our Modern Development Solutions
         </h1>
         <p className="text-lg max-w-xl py-5 leading-8 text-gray-600">
-          Devinx is a specialized mobile and web app development company with a
+          Skylartech is a specialized mobile and web app development company with a
           focus on smart technologies and customer satisfaction. Born in 2018,
           our company has been delivering high-end quality solutions to global
           businesses with a success rate of 100%. Hire our expertise at
