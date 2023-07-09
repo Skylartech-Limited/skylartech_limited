@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gray-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
@@ -111,7 +111,7 @@ const Navbar = () => {
               </button>
               {isMobileMenuOpen && (
                 <div
-                  className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2"
+                  className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2 z-20"
                   style={{
                     "@media (min-width: 640px)": {
                       top: "8rem",
