@@ -26,7 +26,7 @@ const Home = () => {
         </h1>
         <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
           Skylartech is a specialized mobile and web app development company with a
-          focus on smart technologies and customer satisfaction. Born in 2018,
+          focus on smart technologies and customer satisfaction. Born in 2014,
           our company has been delivering high-end quality solutions to global
           businesses with a success rate of 100%. Hire our expertise at
           affordable prices to have the right tech solutions for your company.
