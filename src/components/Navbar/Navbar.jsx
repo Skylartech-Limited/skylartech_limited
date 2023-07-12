@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
+  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] =
+    useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsServicesDropdownOpen(false);
+    setIsIndustriesDropdownOpen(false);
   };
 
   const toggleServicesDropdown = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
+    setIsIndustriesDropdownOpen(false);
   };
 
   const toggleIndustriesDropdown = () => {
     setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
+    setIsServicesDropdownOpen(false);
   };
 
   return (
@@ -57,13 +63,18 @@ const Navbar = () => {
                   Services <i className="fa-solid fa-angle-down ml-1"></i>
                 </button>
                 {isServicesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                  <motion.div
+                    className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <div
-                      className="py-1"
+                      className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="options-menu"
-                      onMouseLeave={() => setIsServicesDropdownOpen(false)}
                     >
                       <Link
                         to="/services/ui-ux-design"
@@ -108,7 +119,7 @@ const Navbar = () => {
                         Support and Maintenance
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
               </div>
               <Link
@@ -126,13 +137,18 @@ const Navbar = () => {
                   Industries <i className="fa-solid fa-angle-down ml-1"></i>
                 </button>
                 {isIndustriesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                  <motion.div
+                  className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <div
-                      className="py-1"
+                      className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="options-menu"
-                      onMouseLeave={() => setIsIndustriesDropdownOpen(false)}
                     >
                       <Link
                         to="/industries/health-care"
@@ -163,7 +179,7 @@ const Navbar = () => {
                         Telecom
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
               </div>
               <Link
@@ -244,8 +260,7 @@ const Navbar = () => {
                   </Link>
                   <div
                     className="relative inline-block text-left"
-                    onMouseEnter={toggleServicesDropdown}
-                    onMouseLeave={toggleServicesDropdown}
+                    onClick={toggleServicesDropdown}
                   >
                     <button className="text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
                       Services <i className="fa-solid fa-angle-down ml-1"></i>
@@ -253,16 +268,16 @@ const Navbar = () => {
                     {isServicesDropdownOpen && (
                       <div className="absolute top-full left-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
                         <div
-                          className="py-1"
+                          className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
                           role="menu"
                           aria-orientation="vertical"
                           aria-labelledby="options-menu"
-                          onMouseLeave={() => setIsServicesDropdownOpen(false)}
                         >
                           <Link
                             to="/services/ui-ux-design"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             UI & UX Design
                           </Link>
@@ -270,6 +285,7 @@ const Navbar = () => {
                             to="/services/discovery-workshop"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Discovery Workshop
                           </Link>
@@ -277,6 +293,7 @@ const Navbar = () => {
                             to="/services/iot-development"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             IOT Development
                           </Link>
@@ -284,6 +301,7 @@ const Navbar = () => {
                             to="/services/web-and-app-development"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Web and App Development
                           </Link>
@@ -291,6 +309,7 @@ const Navbar = () => {
                             to="/services/custom-software-development"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Custom Software Development
                           </Link>
@@ -298,6 +317,7 @@ const Navbar = () => {
                             to="/services/support-and-maintenance"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Support and Maintenance
                           </Link>
@@ -314,8 +334,7 @@ const Navbar = () => {
                   </Link>
                   <div
                     className="relative inline-block text-left"
-                    onMouseEnter={toggleIndustriesDropdown}
-                    onMouseLeave={toggleIndustriesDropdown}
+                    onClick={toggleIndustriesDropdown}
                   >
                     <button className="text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
                       Industries <i className="fa-solid fa-angle-down ml-1"></i>
@@ -323,18 +342,16 @@ const Navbar = () => {
                     {isIndustriesDropdownOpen && (
                       <div className="absolute top-full left-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
                         <div
-                          className="py-1"
+                          className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
                           role="menu"
                           aria-orientation="vertical"
                           aria-labelledby="options-menu"
-                          onMouseLeave={() =>
-                            setIsIndustriesDropdownOpen(false)
-                          }
                         >
                           <Link
                             to="/industries/health-care"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Health Care
                           </Link>
@@ -342,6 +359,7 @@ const Navbar = () => {
                             to="/industries/fintech"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Fintech
                           </Link>
@@ -349,6 +367,7 @@ const Navbar = () => {
                             to="/industries/insurance"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Insurance
                           </Link>
@@ -356,6 +375,7 @@ const Navbar = () => {
                             to="/industries/telecom"
                             className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                             role="menuitem"
+                            onClick={toggleMobileMenu}
                           >
                             Telecom
                           </Link>
@@ -363,7 +383,6 @@ const Navbar = () => {
                       </div>
                     )}
                   </div>
-
                   <Link
                     to="/portfolio"
                     className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
