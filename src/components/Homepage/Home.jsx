@@ -7,64 +7,64 @@ import Userexp from "../../assets/img.png/SKYLARTECH IMG/desktopwebsky.png";
 import Iot from "../../assets/img.png/SKYLARTECH IMG/iotsky.png";
 import Support from "../../assets/img.png/SKYLARTECH IMG/custcaresky.png";
 import Web from "../../assets/img.png/SKYLARTECH IMG/codesky.png";
-import HomepageImage from "../../assets/HomepageImage.jpg";
+
 const Home = () => {
   return (
     <>
- <div className="flex flex-col lg:flex-row text-left p-10">
-  <div className="lg:w-1/2">
-    <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10">
-      Delivering quality projects{" "}
-      <span className="text-amber-500 font-medium">
-        <Typewriter
-          words={["beyond expectations", "beyond expectations"]}
-          loop={50}
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
-      </span>
-      <span className="text-gray-700">
-        <Cursor cursorStyle="~" />
-      </span>
-    </h2>
-    <h1 className="max-w-xl text-3xl md:text-4xl lg:text-5xl xl:text-4xl py-2 font-semibold text-gray-800">
-      Digitize Your Business With Our Modern Development Solutions
-    </h1>
-    <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
-      Skylartech is a specialized mobile and web app development company with a
-      focus on smart technologies and customer satisfaction. Born in 2014, our
-      company has been delivering high-end quality solutions to global businesses
-      with a success rate of 100%. Hire our expertise at affordable prices to
-      have the right tech solutions for your company.
-    </p>
-    <ul>
-      <li>
-        <motion.button
-          className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
-          whileHover={{ scale: 0.9 }}
-          whileTap={{ scale: 0.8 }}
-        >
-          Let's Talk
-          <span
-            className="ml-2 text-xl"
-            style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-          >
-            &#8594;
-          </span>
-        </motion.button>
-      </li>
-    </ul>
-  </div>
-  <div className="hidden lg:block lg:w-1/2 items-center">
-    <img
-      className="max-w-full mx-auto h-72 w-90 rounded-lg mt-16"
-      src={HomepageImage}
-      alt="home"
-    />
-  </div>
-</div>
-
+      <div className="flex flex-col lg:flex-row text-left p-10">
+        <div className="lg:w-1/2">
+          <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10">
+            Delivering quality projects{" "}
+            <span className="text-amber-500 font-medium">
+              <Typewriter
+                words={["beyond expectations", "beyond expectations"]}
+                loop={50}
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+            <span className="text-gray-700">
+              <Cursor cursorStyle="~" />
+            </span>
+          </h2>
+          <h1 className="max-w-xl text-3xl md:text-4xl lg:text-5xl xl:text-4xl py-2 font-semibold text-gray-800">
+            Digitize Your Business With Our Modern Development Solutions
+          </h1>
+          <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
+            Skylartech is a specialized mobile and web app development company
+            with a focus on smart technologies and customer satisfaction. Born
+            in 2014, our company has been delivering high-end quality solutions
+            to global businesses with a success rate of 100%. Hire our expertise
+            at affordable prices to have the right tech solutions for your
+            company.
+          </p>
+          <ul>
+            <li>
+              <motion.button
+                className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
+                whileHover={{ scale: 0.9 }}
+                whileTap={{ scale: 0.8 }}
+              >
+                Let's Talk
+                <span
+                  className="ml-2 text-xl"
+                  style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+                >
+                  &#8594;
+                </span>
+              </motion.button>
+            </li>
+          </ul>
+        </div>
+        <div className="lg:w-1/2">
+          <img
+            className="hidden lg:block max-w-full h-auto"
+            src="image.jpg"
+            alt="Image"
+          />
+        </div>
+      </div>
 
       {/* services we Offer  */}
 
@@ -174,6 +174,73 @@ const Home = () => {
             </p>
           </div>
         </>
+      </div>
+      {/*our expertise */}
+      <div className="bg-amber-50 ">
+        <h1 className="pt-12 text-4xl text-black text-center font-semibold">
+          Our Expertise
+        </h1>
+        <h3 className="text-lg text-gray-900 mx-auto max-w-2xl font-semibold py-6">
+          We excel in providing cutting-edge solutions and development services
+          that drive business performance, cultivate startups and accelerate
+          growth.
+        </h3>
+        <div className="lg:flex gap-10 px-10">
+          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
+              Enterprise Solutions
+            </h1>
+            <p className="text-left text-gray-800 text-md pb-4 max-w-xs">
+              We offer our clients a wide variety of modern platform solutions
+              that they can leverage for the management and growth of their
+              company. Our enterprise solutions include platforms such as the
+              following
+            </p>
+            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
+              <li>SharePoint</li>
+              <li>Workday</li>
+              <li>Salesforce</li>
+              <li>AWS</li>
+              <li>Shopify</li>
+            </ul>
+          </div>
+          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
+            Industry Solutions
+            </h1>
+            <p className="text-left text-gray-800 text-md pb-4 max-w-xs">
+              We offer our clients a wide variety of modern platform solutions
+              that they can leverage for the management and growth of their
+              company. Our enterprise solutions include platforms such as the
+              following
+            </p>
+            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
+              <li>SharePoint</li>
+              <li>Workday</li>
+              <li>Salesforce</li>
+              <li>AWS</li>
+              <li>Shopify</li>
+            </ul>
+          </div>
+          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
+            Software Development
+            </h1>
+            <p className="text-left text-gray-800 text-md pb-4 max-w-xs">
+              We offer our clients a wide variety of modern platform solutions
+              that they can leverage for the management and growth of their
+              company. Our enterprise solutions include platforms such as the
+              following
+            </p>
+            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
+              <li>SharePoint</li>
+              <li>Workday</li>
+              <li>Salesforce</li>
+              <li>AWS</li>
+              <li>Shopify</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );
