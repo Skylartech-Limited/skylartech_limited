@@ -7,6 +7,7 @@ import Userexp from "../../assets/img.png/SKYLARTECH IMG/desktopwebsky.png";
 import Iot from "../../assets/img.png/SKYLARTECH IMG/iotsky.png";
 import Support from "../../assets/img.png/SKYLARTECH IMG/custcaresky.png";
 import Web from "../../assets/img.png/SKYLARTECH IMG/codesky.png";
+import HomepageImage from "../../assets/HomepageImage.jpg";
 
 const Home = () => {
   return (
@@ -57,11 +58,11 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:w-1/2">
+        <div className="hidden lg:block lg:w-1/2 items-center">
           <img
-            className="hidden lg:block max-w-full h-auto"
-            src="image.jpg"
-            alt="Image"
+            className="max-w-full mx-auto h-72 w-90 rounded-lg mt-16"
+            src={HomepageImage}
+            alt="home"
           />
         </div>
       </div>
@@ -206,7 +207,7 @@ const Home = () => {
           </div>
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
-            Industry Solutions
+              Industry Solutions
             </h1>
             <p className="text-left text-gray-800 text-md pb-4 max-w-xs">
               We offer our clients a wide variety of modern platform solutions
@@ -224,7 +225,7 @@ const Home = () => {
           </div>
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
-            Software Development
+              Software Development
             </h1>
             <p className="text-left text-gray-800 text-md pb-4 max-w-xs">
               We offer our clients a wide variety of modern platform solutions
