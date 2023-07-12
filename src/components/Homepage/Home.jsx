@@ -67,7 +67,9 @@ const Home = () => {
         </div>
       </div>
 
+
       {/* services we Offer  */}
+
 
       <div>
         <h1 className="text-4xl text-bold text-black text-center ">
@@ -176,7 +178,9 @@ const Home = () => {
           </div>
         </>
       </div>
+
       {/*our expertise */}
+
       <div className="bg-amber-50 ">
         <h1 className="pt-12 text-4xl text-black text-center font-semibold">
           Our Expertise

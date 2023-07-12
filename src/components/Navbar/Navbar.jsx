@@ -138,7 +138,7 @@ const Navbar = () => {
                 </button>
                 {isIndustriesDropdownOpen && (
                   <motion.div
-                  className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                    className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
@@ -266,7 +266,13 @@ const Navbar = () => {
                       Services <i className="fa-solid fa-angle-down ml-1"></i>
                     </button>
                     {isServicesDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                      <motion.div
+                        className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.3 }}
+                      >
                         <div
                           className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
                           role="menu"
@@ -322,7 +328,7 @@ const Navbar = () => {
                             Support and Maintenance
                           </Link>
                         </div>
-                      </div>
+                      </motion.div>
                     )}
                   </div>
                   <Link
@@ -340,7 +346,13 @@ const Navbar = () => {
                       Industries <i className="fa-solid fa-angle-down ml-1"></i>
                     </button>
                     {isIndustriesDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                      <motion.div
+                        className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.3 }}
+                      >
                         <div
                           className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
                           role="menu"
@@ -380,7 +392,7 @@ const Navbar = () => {
                             Telecom
                           </Link>
                         </div>
-                      </div>
+                      </motion.div>
                     )}
                   </div>
                   <Link
