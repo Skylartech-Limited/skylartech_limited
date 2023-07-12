@@ -18,8 +18,18 @@ function App() {
           <Route exact path='/technologies' element={<Technologies/>} />
           <Route exact path='/contact-us' element={<Contact/>} />
           <Route exact path='/services' element={<Services/>} />
+              <Route exact path='/services/ui-ux-design' element={<Services/>} />
+              <Route exact path='/services/discovery-workshop' element={<Services/>} />
+              <Route exact path='/services/iot-development' element={<Services/>} />
+              <Route exact path='/services/web-and-app-development' element={<Services/>} />
+              <Route exact path='/services/custom-software-development' element={<Services/>} />
+              <Route exact path='/services/support-and-maintenance' element={<Services/>} />
           <Route exact path='/portfolio' element={<Portfolio/>} />
           <Route exact path='/industries' element={<Industries/>} />
+              <Route exact path='/industries/health-care' element={<Industries/>} />
+              <Route exact path='/industries/fintech' element={<Industries/>} />
+              <Route exact path='/industries/insurance' element={<Industries/>} />
+              <Route exact path='/industries/telecom' element={<Industries/>} />
       </Routes>
       <Footer/>
     </div>

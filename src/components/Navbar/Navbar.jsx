@@ -4,14 +4,24 @@ import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const toggleServicesDropdown = () => {
+    setIsServicesDropdownOpen(!isServicesDropdownOpen);
+  };
+
+  const toggleIndustriesDropdown = () => {
+    setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
+  };
+
   return (
-    <nav className="bg-gray-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <nav className="bg-gray-50 shadow-lg relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
@@ -31,31 +41,131 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex items-center">
-            <div className="hidden sm:flex">
+            <div className="hidden sm:flex space-x-4">
               <Link
                 to="/"
                 className="text-amber-500 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
               >
                 Home
               </Link>
-              <Link
-                to="/services"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
+              <div
+                className="relative inline-block text-left"
+                onMouseEnter={toggleServicesDropdown}
+                onMouseLeave={toggleServicesDropdown}
               >
-                Services
-              </Link>
+                <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                  Services <i className="fa-solid fa-angle-down ml-1"></i>
+                </button>
+                {isServicesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                      onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                    >
+                      <Link
+                        to="/services/ui-ux-design"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        UI & UX Design
+                      </Link>
+                      <Link
+                        to="/services/discovery-workshop"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Discovery Workshop
+                      </Link>
+                      <Link
+                        to="/services/iot-development"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        IOT Development
+                      </Link>
+                      <Link
+                        to="/services/web-and-app-development"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Web and App Development
+                      </Link>
+                      <Link
+                        to="/services/custom-software-development"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Custom Software Development
+                      </Link>
+                      <Link
+                        to="/services/support-and-maintenance"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Support and Maintenance
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link
                 to="/technologies"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 ml-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
               >
                 Technologies
               </Link>
-              <Link
-                to="/industries"
-                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
+              <div
+                className="relative inline-block text-left ml-3"
+                onMouseEnter={toggleIndustriesDropdown}
+                onMouseLeave={toggleIndustriesDropdown}
               >
-                Industries
-              </Link>
+                <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                  Industries <i className="fa-solid fa-angle-down ml-1"></i>
+                </button>
+                {isIndustriesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                      onMouseLeave={() => setIsIndustriesDropdownOpen(false)}
+                    >
+                      <Link
+                        to="/industries/health-care"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Health Care
+                      </Link>
+                      <Link
+                        to="/industries/fintech"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Fintech
+                      </Link>
+                      <Link
+                        to="/industries/insurance"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Insurance
+                      </Link>
+                      <Link
+                        to="/industries/telecom"
+                        className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                        role="menuitem"
+                      >
+                        Telecom
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link
                 to="/portfolio"
                 className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
@@ -69,18 +179,7 @@ const Navbar = () => {
                 Contact Us
               </Link>
             </div>
-            <div className="flex items-center ml-4">
-              <p className="text-md sm:text-md hidden sm:inline">
-                <i
-                  className="fa-solid fa-envelope fa-xl"
-                  style={{
-                    color: "#FFA000",
-                    paddingRight: "3px",
-                    paddingLeft: "4px",
-                  }}
-                ></i>
-                <span className="hidden sm:inline">info@skylartech.co.ke</span>
-              </p>
+            <div className="flex items-center ml-4 space-x-4">
               <Link
                 to="/quote"
                 className="bg-gray-800 text-white px-4 py-2 rounded-md text-md font-medium ml-2 hidden sm:block hover:bg-amber-500 transition ease-in-out delay-75 hover:-translate-y-0 hover:-translate-x-1  hover:scale-90 duration-300"
@@ -113,6 +212,7 @@ const Navbar = () => {
                 <div
                   className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2 z-20"
                   style={{
+                    padding: "1rem 0.5rem",
                     "@media (min-width: 640px)": {
                       top: "8rem",
                       right: 0,
@@ -142,13 +242,69 @@ const Navbar = () => {
                   >
                     Home
                   </Link>
-                  <Link
-                    to="/services"
-                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
-                    onClick={toggleMobileMenu}
+                  <div
+                    className="relative inline-block text-left"
+                    onMouseEnter={toggleServicesDropdown}
+                    onMouseLeave={toggleServicesDropdown}
                   >
-                    Services
-                  </Link>
+                    <button className="text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                      Services <i className="fa-solid fa-angle-down ml-1"></i>
+                    </button>
+                    {isServicesDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                        <div
+                          className="py-1"
+                          role="menu"
+                          aria-orientation="vertical"
+                          aria-labelledby="options-menu"
+                          onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                        >
+                          <Link
+                            to="/services/ui-ux-design"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            UI & UX Design
+                          </Link>
+                          <Link
+                            to="/services/discovery-workshop"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Discovery Workshop
+                          </Link>
+                          <Link
+                            to="/services/iot-development"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            IOT Development
+                          </Link>
+                          <Link
+                            to="/services/web-and-app-development"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Web and App Development
+                          </Link>
+                          <Link
+                            to="/services/custom-software-development"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Custom Software Development
+                          </Link>
+                          <Link
+                            to="/services/support-and-maintenance"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Support and Maintenance
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                   <Link
                     to="/technologies"
                     className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
@@ -156,13 +312,58 @@ const Navbar = () => {
                   >
                     Technologies
                   </Link>
-                  <Link
-                    to="/industries"
-                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
-                    onClick={toggleMobileMenu}
+                  <div
+                    className="relative inline-block text-left"
+                    onMouseEnter={toggleIndustriesDropdown}
+                    onMouseLeave={toggleIndustriesDropdown}
                   >
-                    Industries
-                  </Link>
+                    <button className="text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                      Industries <i className="fa-solid fa-angle-down ml-1"></i>
+                    </button>
+                    {isIndustriesDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                        <div
+                          className="py-1"
+                          role="menu"
+                          aria-orientation="vertical"
+                          aria-labelledby="options-menu"
+                          onMouseLeave={() =>
+                            setIsIndustriesDropdownOpen(false)
+                          }
+                        >
+                          <Link
+                            to="/industries/health-care"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Health Care
+                          </Link>
+                          <Link
+                            to="/industries/fintech"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Fintech
+                          </Link>
+                          <Link
+                            to="/industries/insurance"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Insurance
+                          </Link>
+                          <Link
+                            to="/industries/telecom"
+                            className="block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
+                            role="menuitem"
+                          >
+                            Telecom
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                   <Link
                     to="/portfolio"
                     className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
