@@ -225,8 +225,12 @@ const Navbar = () => {
                 </svg>
               </button>
               {isMobileMenuOpen && (
-                <div
-                  className="absolute top-16 right-0 bg-white rounded-md shadow-md mt-2 mr-2 z-20"
+                <motion.div
+                  className="absolute top-16 right-0 bg-amber-50 rounded-md shadow-lg mt-2 mr-2 z-20"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3 }}
                   style={{
                     padding: "1rem 0.5rem",
                     "@media (min-width: 640px)": {
@@ -409,7 +413,7 @@ const Navbar = () => {
                   >
                     Contact Us
                   </Link>
-                </div>
+                </motion.div>
               )}
             </div>
           </div>
