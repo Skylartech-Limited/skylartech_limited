@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
-import Softwaredevelopment from "../../assets/img.png/SKYLARTECH IMG/desktopsky.png";
-import Discoveryworkshop from "../../assets/img.png/SKYLARTECH IMG/searchiconsky.png";
-import Userexp from "../../assets/img.png/SKYLARTECH IMG/desktopwebsky.png";
+import SoftwareDevelopment from "../../assets/img.png/SKYLARTECH IMG/desktopsky.png";
+import DiscoveryWorkshop from "../../assets/img.png/SKYLARTECH IMG/searchiconsky.png";
+import UserExperience from "../../assets/img.png/SKYLARTECH IMG/desktopwebsky.png";
 import Iot from "../../assets/img.png/SKYLARTECH IMG/iotsky.png";
 import Support from "../../assets/img.png/SKYLARTECH IMG/custcaresky.png";
 import Web from "../../assets/img.png/SKYLARTECH IMG/codesky.png";
@@ -80,9 +80,10 @@ const Home = () => {
         <>
           <div className="text-left shadow-xs p-10 rounded-xl">
             <img
-              src={Softwaredevelopment}
+              src={SoftwareDevelopment}
               style={{ width: "4rem", height: "3.75rem" }}
               className="mb-5"
+              alt="sd"
             />
             <h3 className="text-2xl text-bold max-w-xs ">
               Custom Software Development
@@ -96,9 +97,10 @@ const Home = () => {
           </div>
           <div className="text-left shadow-xs p-10 rounded-xl">
             <img
-              src={Discoveryworkshop}
+              src={DiscoveryWorkshop}
               style={{ width: "6rem", height: "5.5rem" }}
               className="mb-3"
+              alt="dw"
             />
             <h3 className="text-2xl text-bold max-w-xs ">Discovery Workshop</h3>
             <p className="text-lg max-w-sm py-5 leading-6 text-gray-700">
@@ -110,9 +112,10 @@ const Home = () => {
           </div>
           <div className="text-left shadow-xs p-10 rounded-xl">
             <img
-              src={Userexp}
+              src={UserExperience}
               style={{ width: "4rem", height: "3.75rem" }}
               className="mb-5"
+              alt="ue"
             />
             <h3 className="text-2xl text-bold max-w-xs ">
               User Experience and Design
@@ -133,6 +136,7 @@ const Home = () => {
               src={Iot}
               style={{ width: "4rem", height: "3.75rem" }}
               className="mb-5"
+              alt="iot"
             />
             <h3 className="text-2xl text-bold max-w-xs ">
               Internet of Things (IoT)
@@ -149,6 +153,7 @@ const Home = () => {
               src={Support}
               style={{ width: "6.5rem", height: "4.75rem" }}
               className="mb-5"
+              alt="sup"
             />
             <h3 className="text-2xl text-bold max-w-xs ">
               Support and Maintenance
@@ -165,6 +170,7 @@ const Home = () => {
               src={Web}
               style={{ width: "4.5rem", height: "3.5rem" }}
               className="mb-5"
+              alt="web"
             />
             <h3 className="text-2xl text-bold max-w-xs ">
               Web & Mobile App Development
