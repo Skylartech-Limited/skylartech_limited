@@ -205,7 +205,7 @@ const Home = () => {
 
       {/*our expertise */}
 
-      <div className="bg-amber-50 flex flex-col justify-center items-center">
+      <div div className="bg-amber-50 flex flex-col justify-center items-center">
         <h1 className="pt-12 text-4xl text-black text-center font-semibold">
           Our Expertise
         </h1>
@@ -270,7 +270,10 @@ const Home = () => {
             </ul>
           </div>
         </div>
-      </div>
+        </div>
+        <div className="p-5">
+          <h1 className="font-semibold text-4xl text-center">Our <span className="text-amber-500">Clients</span></h1>
+        </div>
     </>
   );
 };
