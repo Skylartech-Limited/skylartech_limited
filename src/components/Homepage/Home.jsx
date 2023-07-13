@@ -29,7 +29,7 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
-          <h1 className="max-w-xl text-3xl md:text-4xl lg:text-5xl xl:text-4xl py-2 font-semibold text-gray-800">
+          <h1 className="max-w-md text-3xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
             Digitize Your Business With Our Modern Development Solutions
           </h1>
           <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
