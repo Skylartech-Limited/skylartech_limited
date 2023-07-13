@@ -9,6 +9,9 @@ import Support from "../../assets/img.png/SKYLARTECH IMG/custcaresky.png";
 import Web from "../../assets/img.png/SKYLARTECH IMG/codesky.png";
 import HomepageImage from "../../assets/HomepageImage.jpg";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 const Home = () => {
   return (
     <>
@@ -69,143 +72,139 @@ const Home = () => {
 
       {/* services we Offer  */}
       <div>
-  <h1 className="text-4xl font-bold text-black text-center mt-12">
-    Services We Provide
-  </h1>
-</div>
+        <h1 className="text-4xl font-bold text-black text-center mt-12">
+          Services We Provide
+        </h1>
+      </div>
 
-<div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-  <div className="lg:w-1/3 service-section">
-    <div className="text-left shadow-xs p-10 rounded-xl">
-      <img
-        src={SoftwareDevelopment}
-        style={{ width: "4rem", height: "3.75rem" }}
-        className="mb-5 rounded-full bg-gray-100"
-        alt="sd"
-      />
-      <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-        Custom Software Development
-      </h3>
-      <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-        We design and create software from scratch to fit the unique needs
-        of your users or organization. With the help of our custom
-        software development services, you can create fast-growing and
-        scalable products for your clients.
-      </p>
-    </div>
-  </div>
+      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+        <div className="lg:w-1/3 service-section">
+          <div className="text-left shadow-xs p-10 rounded-xl">
+            <img
+              src={SoftwareDevelopment}
+              style={{ width: "4rem", height: "3.75rem" }}
+              className="mb-5 rounded-full bg-gray-100"
+              alt="sd"
+            />
+            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
+              Custom Software Development
+            </h3>
+            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+              We design and create software from scratch to fit the unique needs
+              of your users or organization. With the help of our custom
+              software development services, you can create fast-growing and
+              scalable products for your clients.
+            </p>
+          </div>
+        </div>
 
-  <div className="lg:w-1/3 service-section">
-    <div className="text-left shadow-xs p-10 rounded-xl">
-      <img
-        src={DiscoveryWorkshop}
-        style={{ width: "6rem", height: "5.5rem" }}
-        className="mb-5 rounded-full bg-gray-100"
-        alt="dw"
-      />
-      <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-        Discovery Workshop
-      </h3>
-      <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-        We design and create software from scratch to fit the unique needs
-        of your users or organization. With the help of our custom
-        software development services, you can create fast-growing and
-        scalable products for your clients.
-      </p>
-    </div>
-  </div>
+        <div className="lg:w-1/3 service-section">
+          <div className="text-left shadow-xs p-10 rounded-xl">
+            <img
+              src={DiscoveryWorkshop}
+              style={{ width: "6rem", height: "5.5rem" }}
+              className="mb-5 rounded-full bg-gray-100"
+              alt="dw"
+            />
+            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
+              Discovery Workshop
+            </h3>
+            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+              We design and create software from scratch to fit the unique needs
+              of your users or organization. With the help of our custom
+              software development services, you can create fast-growing and
+              scalable products for your clients.
+            </p>
+          </div>
+        </div>
 
-  <div className="lg:w-1/3 service-section">
-    <div className="text-left shadow-xs p-10 rounded-xl">
-      <img
-        src={UserExperience}
-        style={{ width: "4rem", height: "3.75rem" }}
-        className="mb-5 rounded-full bg-gray-100"
-        alt="ue"
-      />
-      <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-        User Experience and Design
-      </h3>
-      <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-        We design and create software from scratch to fit the unique needs
-        of your users or organization. With the help of our custom
-        software development services, you can create fast-growing and
-        scalable products for your clients.
-      </p>
-    </div>
-  </div>
+        <div className="lg:w-1/3 service-section">
+          <div className="text-left shadow-xs p-10 rounded-xl">
+            <img
+              src={UserExperience}
+              style={{ width: "4rem", height: "3.75rem" }}
+              className="mb-5 rounded-full bg-gray-100"
+              alt="ue"
+            />
+            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
+              User Experience and Design
+            </h3>
+            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+              We design and create software from scratch to fit the unique needs
+              of your users or organization. With the help of our custom
+              software development services, you can create fast-growing and
+              scalable products for your clients.
+            </p>
+          </div>
+        </div>
 
-  <div className="lg:w-1/3 service-section">
-    <div className="text-left shadow-xs p-10 rounded-xl">
-      <img
-        src={Iot}
-        style={{ width: "4rem", height: "3.75rem" }}
-        className="mb-5 rounded-full bg-gray-100"
-        alt="iot"
-      />
-      <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-        Internet of Things (IoT)
-      </h3>
-      <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-        We design and create software from scratch to fit the unique needs
-        of your users or organization. With the help of our custom
-        software development services, you can create fast-growing and
-        scalable products for your clients.
-      </p>
-    </div>
-  </div>
+        <div className="lg:w-1/3 service-section">
+          <div className="text-left shadow-xs p-10 rounded-xl">
+            <img
+              src={Iot}
+              style={{ width: "4rem", height: "3.75rem" }}
+              className="mb-5 rounded-full bg-gray-100"
+              alt="iot"
+            />
+            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
+              Internet of Things (IoT)
+            </h3>
+            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+              We design and create software from scratch to fit the unique needs
+              of your users or organization. With the help of our custom
+              software development services, you can create fast-growing and
+              scalable products for your clients.
+            </p>
+          </div>
+        </div>
 
-  <div className="lg:w-1/3 service-section">
-    <div className="text-left shadow-xs p-10 rounded-xl">
-      <img
-        src={Support}
-        style={{ width: "6.5rem", height: "4.75rem" }}
-        className="mb-5 rounded-full bg-gray-100"
-        alt="sup"
-      />
-      <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-        Support and Maintenance
-      </h3>
-      <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-        We design and create software from scratch to fit the unique needs
-        of your users or organization. With the help of our custom
-        software development services, you can create fast-growing and
-        scalable products for your clients.
-      </p>
-    </div>
-  </div>
+        <div className="lg:w-1/3 service-section">
+          <div className="text-left shadow-xs p-10 rounded-xl">
+            <img
+              src={Support}
+              style={{ width: "6.5rem", height: "4.75rem" }}
+              className="mb-5 rounded-full bg-gray-100"
+              alt="sup"
+            />
+            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
+              Support and Maintenance
+            </h3>
+            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+              We design and create software from scratch to fit the unique needs
+              of your users or organization. With the help of our custom
+              software development services, you can create fast-growing and
+              scalable products for your clients.
+            </p>
+          </div>
+        </div>
 
-  <div className="lg:w-1/3 service-section">
-    <div className="text-left shadow-xs p-10 rounded-xl">
-      <img
-        src={Web}
-        style={{ width: "4.5rem", height: "3.5rem" }}
-        className="mb-5 rounded-full bg-gray-100"
-        alt="web"
-      />
-      <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-        Web & Mobile App Development
-      </h3>
-      <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-        We design and create software from scratch to fit the unique needs
-        of your users or organization. With the help of our custom
-        software development services, you can create fast-growing and
-        scalable products for your clients.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
+        <div className="lg:w-1/3 service-section">
+          <div className="text-left shadow-xs p-10 rounded-xl">
+            <img
+              src={Web}
+              style={{ width: "4.5rem", height: "3.5rem" }}
+              className="mb-5 rounded-full bg-gray-100"
+              alt="web"
+            />
+            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
+              Web & Mobile App Development
+            </h3>
+            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+              We design and create software from scratch to fit the unique needs
+              of your users or organization. With the help of our custom
+              software development services, you can create fast-growing and
+              scalable products for your clients.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/*our expertise */}
 
-      <div div className="bg-amber-50 flex flex-col justify-center items-center">
+      <div
+        div
+        className="bg-amber-50 flex flex-col justify-center items-center"
+      >
         <h1 className="pt-12 text-4xl text-black text-center font-semibold">
           Our Expertise
         </h1>
@@ -270,10 +269,30 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        </div>
-        <div className="p-5">
-          <h1 className="font-semibold text-4xl text-center">Our <span className="text-amber-500">Clients</span></h1>
-        </div>
+      </div>
+      <div className="p-5">
+        <h1 className="font-semibold text-4xl text-center">
+          Our <span className="text-amber-500">Clients</span>
+        </h1>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+          </SwiperSlide>
+          <SwiperSlide>
+            
+          </SwiperSlide>
+          <SwiperSlide>
+            
+          </SwiperSlide>
+          <SwiperSlide>
+            
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </>
   );
 };
