@@ -60,11 +60,13 @@ const Navbar = () => {
                 onMouseLeave={toggleServicesDropdown}
               >
                 <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
-                  Services <i className="fa-solid fa-angle-down ml-1"></i>
+                  <Link to="/services" className="flex items-center">
+                    Services <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
+                  </Link>
                 </button>
                 {isServicesDropdownOpen && (
                   <motion.div
-                    className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                    className="absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
@@ -134,11 +136,13 @@ const Navbar = () => {
                 onMouseLeave={toggleIndustriesDropdown}
               >
                 <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
-                  Industries <i className="fa-solid fa-angle-down ml-1"></i>
+                  <Link to="/industries" className="flex items-center">
+                    Industries <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
+                  </Link>
                 </button>
                 {isIndustriesDropdownOpen && (
                   <motion.div
-                    className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                    className="absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
@@ -266,19 +270,21 @@ const Navbar = () => {
                     className="relative inline-block text-left"
                     onClick={toggleServicesDropdown}
                   >
-                    <button className="text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
-                      Services <i className="fa-solid fa-angle-down ml-1"></i>
+                    <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                      <Link to="/services" className="flex items-center">
+                        Services <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
+                      </Link>
                     </button>
                     {isServicesDropdownOpen && (
                       <motion.div
-                        className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                        className="absolute top-full -left-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.3 }}
                       >
                         <div
-                          className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl"
+                          className="py-1 bg-amber-50 rounded-xl drop-shadow-2xl "
                           role="menu"
                           aria-orientation="vertical"
                           aria-labelledby="options-menu"
@@ -346,12 +352,14 @@ const Navbar = () => {
                     className="relative inline-block text-left"
                     onClick={toggleIndustriesDropdown}
                   >
-                    <button className="text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
-                      Industries <i className="fa-solid fa-angle-down ml-1"></i>
-                    </button>
+                  <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                  <Link to="/industries" className="flex items-center">
+                    Industries <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
+                  </Link>
+                </button>
                     {isIndustriesDropdownOpen && (
                       <motion.div
-                        className={`absolute top-full left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20`}
+                        className="absolute top-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}

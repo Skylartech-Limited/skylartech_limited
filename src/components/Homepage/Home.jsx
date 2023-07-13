@@ -74,7 +74,7 @@ const Home = () => {
   </h1>
 </div>
 
-<div className=" sm:text-left lg:flex lg:flex-wrap px-10">
+<div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
   <div className="lg:w-1/3 service-section">
     <div className="text-left shadow-xs p-10 rounded-xl">
       <img
