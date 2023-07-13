@@ -11,11 +11,13 @@ import HomepageImage from "../../assets/HomepageImage.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50">
+      <div className="flex flex-col lg:flex-row text-left p-10 ">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10">
             Delivering quality projects{" "}
@@ -270,28 +272,44 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="p-5">
-        <h1 className="font-semibold text-4xl text-center">
+     <div className="p-5 h-96">
+        <h1 className="font-semibold text-4xl text-center mt-10">
           Our <span className="text-amber-500">Clients</span>
         </h1>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <SwiperSlide>
-          </SwiperSlide>
-          <SwiperSlide>
-            
-          </SwiperSlide>
-          <SwiperSlide>
-            
-          </SwiperSlide>
-          <SwiperSlide>
-            
-          </SwiperSlide>
-        </Swiper>
+        <div className="mt-4">
+          <div className="swiper-container mt-24">
+            <div className="swiper-wrapper">
+              <Swiper
+                navigation={true}
+                spaceBetween={0}
+                modules={[Navigation]}
+                slidesPerView={1}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                direction="horizontal"
+                className="flex justify-center"
+              >
+                <SwiperSlide>
+                  <div className="slide-content flex justify-center">
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="1" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="2" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="3" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="4" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="5" />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="slide-content flex justify-center">
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="6" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="7" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="8" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="9" />
+                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="10" />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
