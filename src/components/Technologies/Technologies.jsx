@@ -2,11 +2,9 @@ import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Phone from "../../assets/phonesky-removebg-preview.png";
-import Reactimg from '../../assets/techimg/structure.png'
-import Databs from '../../assets/techimg/database.png'
-import Nodejs from '../../assets/techimg/node-js.png'
-import Python from '../../assets/techimg/python.png'
-
+import Frontend from "../../assets/frontend .png";
+import Backend from "../../assets/backend.png";
+import Cloudi from '../../assets/cloud.png'
 const Technologies = () => {
   return (
     <>
@@ -62,13 +60,20 @@ const Technologies = () => {
           <span className="text-amber-500">Mobile Apps</span>
         </h1>
         <div className="py-10 justify-center flex gap-20">
-        <img src={Phone} className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10" style={{"float":"left"}}/>
-        <p className="text-left px-10 max-w-2xl pt-20" style={{"margin-left":"40px", "fontSize":"17px"}}>
-          We have equipped ourselves with up-to-date mobile app platforms for
-          development which include native and cross-platform apps. Our purpose
-          is to ensure our customers can find all mobile app solutions in one
-          place.
-        </p>
+          <img
+            src={Phone}
+            className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10"
+            style={{ float: "left" }}
+          />
+          <p
+            className="text-left px-10 max-w-2xl pt-20"
+            style={{ "margin-left": "40px", fontSize: "17px" }}
+          >
+            We have equipped ourselves with up-to-date mobile app platforms for
+            development which include native and cross-platform apps. Our
+            purpose is to ensure our customers can find all mobile app solutions
+            in one place.
+          </p>
         </div>
       </div>
       <div className="p-10">
@@ -77,6 +82,7 @@ const Technologies = () => {
           <span className="text-amber-500">App Developers</span>
         </h1>
 
+       
         {/*more explanation8*/}
       </div>
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
@@ -185,6 +191,9 @@ const Technologies = () => {
             attractive user interface that will keep your audience hooked.
           </p>
         </div>
+        <div className="pb-20 mr-64">
+          <img src={Frontend} style={{ float: "right" }} />
+        </div>
       </div>
       <div className="container p-10 mx-auto">
         <h1 className="text-3xl font-semibold text-center">
@@ -194,7 +203,7 @@ const Technologies = () => {
         <div className="py-10 flex gap-20">
           <p
             className="text-left px-10 max-w-2xl pt-20"
-            style={{fontSize: "17px" }}
+            style={{ fontSize: "17px" }}
           >
             A full-cycle software requires a strong and dependable backend
             integration along with an interactive frontend. With the use of
@@ -205,14 +214,19 @@ const Technologies = () => {
           <img
             src={Phone}
             className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10"
-            style={{"float":"right"}}
+            style={{ float: "right" }}
           />
+        </div>
+        <div className="pb-20 mr-64">
+          <img src={Backend} style={{ float: "left" }} />
         </div>
       </div>
       <div className="container p-10 mx-auto">
         <h1 className="text-3xl font-semibold text-center text-amber-500">
           Cloud{" "}
-          <span className="text-3xl font-semibold text-center text-black">Technologies we work with</span>
+          <span className="text-3xl font-semibold text-center text-black">
+            Technologies we work with
+          </span>
         </h1>
         <div className="py-10 justify-center flex gap-20">
           <img
@@ -230,6 +244,9 @@ const Technologies = () => {
             website. By using advanced technologies, we certify a smooth and
             attractive user interface that will keep your audience hooked.
           </p>
+        </div>
+        <div className="pb-20 mr-64">
+          <img src={Cloudi} style={{ float: "right" }} />
         </div>
       </div>
     </>
