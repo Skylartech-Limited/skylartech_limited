@@ -8,6 +8,7 @@ import Technologies from './components/Technologies/Technologies';
 import Footer from './components/Footer/Footer';
 import Portfolio from './components/Portfolio/Portfolio';
 import Industries from './components/Industries/Industries';
+import Quote from './components/Quote/Quote.jsx'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route exact path='/industries/fintech' element={<Industries/>} />
               <Route exact path='/industries/insurance' element={<Industries/>} />
               <Route exact path='/industries/telecom' element={<Industries/>} />
+          <Route exact path='/quote' element={<Quote/>} />
       </Routes>
       <Footer/>
     </div>
