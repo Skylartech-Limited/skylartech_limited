@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className="hidden sm:flex space-x-4">
               <Link
                 to="/"
-                className="text-amber-500 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
+                className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
               >
                 Home
               </Link>
@@ -269,7 +269,7 @@ const Navbar = () => {
                 >
                   <Link
                     to="/"
-                    className="block text-amber-500 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
+                    className="block text-gray-700 hover:text-amber-500 px-4 py-2 font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110"
                     onClick={toggleMobileMenu}
                   >
                     Home
