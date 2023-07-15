@@ -2,11 +2,9 @@ import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Phone from "../../assets/phonesky-removebg-preview.png";
-import Reactimg from "../../assets/techimg/structure.png";
-import Databs from "../../assets/techimg/database.png";
-import Nodejs from "../../assets/techimg/node-js.png";
-import Python from "../../assets/techimg/python.png";
-
+import Frontend from "../../assets/frontend .png";
+import Backend from "../../assets/backend.png";
+import Cloudi from '../../assets/cloud.png'
 const Technologies = () => {
   return (
     <>
@@ -84,6 +82,7 @@ const Technologies = () => {
           <span className="text-amber-500">App Developers</span>
         </h1>
 
+       
         {/*more explanation8*/}
       </div>
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
@@ -192,166 +191,8 @@ const Technologies = () => {
             attractive user interface that will keep your audience hooked.
           </p>
         </div>
-      </div>
-      <div className="container p-10 mx-auto">
-        <h1 className="text-3xl font-semibold text-center">
-          Backend Technologies{" "}
-          <span className="text-amber-500">we work with</span>
-        </h1>
-        <div className="py-10 flex gap-20">
-          <p
-            className="text-left px-10 max-w-2xl pt-20"
-            style={{fontSize: "17px" }}
-          >
-            A full-cycle software requires a strong and dependable backend
-            integration along with an interactive frontend. With the use of
-            modern available technologies, our experts make sure to deliver
-            solutions that are secure, fast, and reliable and can handle the
-            complex functionalities of your desired software.{" "}
-          </p>
-          <img
-            src={Phone}
-            className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10"
-            style={{"float":"right"}}
-          />
-        </div>
-      </div>
-      <div className="container p-10 mx-auto">
-        <h1 className="text-3xl font-semibold text-center text-amber-500">
-          Cloud{" "}
-          <span className="text-3xl font-semibold text-center text-black">Technologies we work with</span>
-        </h1>
-        <div className="py-10 justify-center flex gap-20">
-          <img
-            src={Phone}
-            className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10"
-            style={{ float: "left" }}
-          />
-          <p
-            className="text-left px-10 max-w-2xl pt-20"
-            style={{ "margin-left": "40px", fontSize: "17px" }}
-          >
-            A well-designed UI determines the engagement and interaction of
-            customers with the apps. A monotonous UI with poor navigation and
-            confusing design can drive your target audience away from your
-            website. By using advanced technologies, we certify a smooth and
-            attractive user interface that will keep your audience hooked.
-          </p>
-        </div>
-      </div>
-      <div className="p-10">
-        <h1 className="mx-auto text-3xl font-semibold text-center">
-          Hire Certified IOS, Android, Flutter{" "}
-          <span className="text-amber-500">App Developers</span>
-        </h1>
-
-        {/*more explanation8*/}
-      </div>
-      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-        <div className="lg:w-1/3 service-section">
-          <div className="text-left shadow-xs p-10 rounded-xl">
-            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              Consultation with Client
-            </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              The first step of our process is to establish a meeting with the
-              client and note down their requirements and expectations of the
-              app, figure out the layout and functionalities they are looking
-              for and create wireframes according to them.
-            </p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 service-section">
-          <div className="text-left shadow-xs p-10 rounded-xl">
-            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              Prototyping, Wireframes & Mockups
-            </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              With the app idea, we proceed to the design by creating
-              wireframes, prototypes, and Mockup Apps. This allows user to
-              understand the flow of the app and its basic functionality upon
-              clicking of buttons, scrolls etc.
-            </p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 service-section">
-          <div className="text-left shadow-xs p-10 rounded-xl">
-            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              Custom iOS, Android, Flutter Development
-            </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              Enhance your existing iOS apps as well as get full maintenance
-              support by our experience iOS developers, whenever and wherever
-              you need it.
-            </p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 service-section">
-          <div className="text-left shadow-xs p-10 rounded-xl">
-            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              UI/UX Design
-            </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              Wireframes and Prototypes serve as the base for designing
-              compelling user interfaces (UI) with high- functioning user
-              experiences (UX) that show close to the real design of how the
-              actual app will look.
-            </p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 service-section">
-          <div className="text-left shadow-xs p-10 rounded-xl">
-            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              Development and Debugging
-            </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              The designed interfaces allow us to move towards development,
-              where we turn the app ideas into reality with efficient codes and
-              iterative testing to create a bug-free app that performs at its
-              best abilities.
-            </p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 service-section">
-          <div className="text-left shadow-xs p-10 rounded-xl">
-            <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              Testing and Cloud Integration
-            </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              Once the app is developed it goes to the quality assurance phase
-              where vigorous testing is performed to eliminate all kinds of
-              errors that may arise during usage of the app. After completion,
-              our experts help you to connect the app with cloud.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="container p-10 mx-auto">
-        <h1 className="text-3xl font-semibold text-center">
-          Frontend Technologies{" "}
-          <span className="text-amber-500">we work with</span>
-        </h1>
-        <div className="py-10 justify-center flex gap-20">
-          <img
-            src={Phone}
-            className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10"
-            style={{ float: "left" }}
-          />
-          <p
-            className="text-left px-10 max-w-2xl pt-20"
-            style={{ "margin-left": "40px", fontSize: "17px" }}
-          >
-            A well-designed UI determines the engagement and interaction of
-            customers with the apps. A monotonous UI with poor navigation and
-            confusing design can drive your target audience away from your
-            website. By using advanced technologies, we certify a smooth and
-            attractive user interface that will keep your audience hooked.
-          </p>
+        <div className="pb-20 mr-64">
+          <img src={Frontend} style={{ float: "right" }} />
         </div>
       </div>
       <div className="container p-10 mx-auto">
@@ -362,7 +203,7 @@ const Technologies = () => {
         <div className="py-10 flex gap-20">
           <p
             className="text-left px-10 max-w-2xl pt-20"
-            style={{fontSize: "17px" }}
+            style={{ fontSize: "17px" }}
           >
             A full-cycle software requires a strong and dependable backend
             integration along with an interactive frontend. With the use of
@@ -373,14 +214,19 @@ const Technologies = () => {
           <img
             src={Phone}
             className="max-w-full mx-auto h-72 w-90 rounded-lg pb-10"
-            style={{"float":"right"}}
+            style={{ float: "right" }}
           />
+        </div>
+        <div className="pb-20 mr-64">
+          <img src={Backend} style={{ float: "left" }} />
         </div>
       </div>
       <div className="container p-10 mx-auto">
         <h1 className="text-3xl font-semibold text-center text-amber-500">
           Cloud{" "}
-          <span className="text-3xl font-semibold text-center text-black">Technologies we work with</span>
+          <span className="text-3xl font-semibold text-center text-black">
+            Technologies we work with
+          </span>
         </h1>
         <div className="py-10 justify-center flex gap-20">
           <img
@@ -398,6 +244,9 @@ const Technologies = () => {
             website. By using advanced technologies, we certify a smooth and
             attractive user interface that will keep your audience hooked.
           </p>
+        </div>
+        <div className="pb-20 mr-64">
+          <img src={Cloudi} style={{ float: "right" }} />
         </div>
       </div>
     </>
