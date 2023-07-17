@@ -325,7 +325,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="p-5 h-96">
+      <div className="p-5">
         <h1 className="font-semibold text-4xl text-center mt-10">
           Our <span className="text-amber-500">Clients</span>
         </h1>
