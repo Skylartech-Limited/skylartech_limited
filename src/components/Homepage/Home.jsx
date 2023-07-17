@@ -14,7 +14,6 @@ import Cisco from "../../assets/slider images/cisco.png";
 import Samsung from "../../assets/slider images/samsung.png";
 import Amazon from "../../assets/slider images/amazon.png";
 
-
 const Home = () => {
   return (
     <>
@@ -325,6 +324,11 @@ const Home = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div className="p-5 h-96">
+        <h1 className="font-semibold text-4xl text-center mt-10">
+          Our <span className="text-amber-500">Clients</span>
+        </h1>
       </div>
     </>
   );
