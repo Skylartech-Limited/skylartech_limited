@@ -2,9 +2,10 @@ import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Phone from "../../assets/phone.png";
-import Frontend from "../../assets/frontend.png";
-import Backend from "../../assets/backend.png";
-import Cloud from "../../assets/cloud.png";
+import Frontend from "../../assets/Frontend.png";
+import Backend from "../../assets/Backend.png";
+import Cloud from "../../assets/Cloud.png";
+import Mobile from "../../assets/Mobile.png"
 
 const Technologies = () => {
   return (
@@ -80,8 +81,8 @@ const Technologies = () => {
             </p>
             <div className="flex justify-start mt-1">
               <img
-                src={Cloud}
-                alt="cloud"
+                src={Mobile}
+                alt="mobile"
                 className="rounded-xl w-24 md:w-48 ml-2 md:ml-6 hidden md:block"
               />
             </div>
