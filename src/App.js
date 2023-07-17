@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import Portfolio from './components/Portfolio/Portfolio';
 import Industries from './components/Industries/Industries';
 import Quote from './components/Quote/Quote.jsx'
+import Footerhero from './components/Footerhero/footerhero.jsx'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route exact path='/industries/telecom' element={<Industries/>} />
           <Route exact path='/quote' element={<Quote/>} />
       </Routes>
+      <Footerhero />
       <Footer/>
     </div>
   );
