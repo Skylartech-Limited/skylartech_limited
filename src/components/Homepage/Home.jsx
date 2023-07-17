@@ -8,11 +8,11 @@ import Iot from "../../assets/img.png/Group 4.png";
 import Support from "../../assets/img.png/support (1) 1.png";
 import Web from "../../assets/img.png/Group 2.png";
 import HomepageImage from "../../assets/HomepageImage.jpg";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import Airbnb from "../../assets/slider images/airbnb.png";
+import Apple from "../../assets/slider images/apple.png";
+import Cisco from "../../assets/slider images/cisco.png";
+import Samsung from "../../assets/slider images/samsung.png";
+import Amazon from "../../assets/slider images/amazon.png";
 
 const Home = () => {
   return (
@@ -124,7 +124,7 @@ const Home = () => {
             >
               <img
                 src={DiscoveryWorkshop}
-                 style={{ marginLeft: "11px" }}
+                style={{ marginLeft: "11px" }}
                 alt="dw"
               />
             </div>
@@ -155,7 +155,7 @@ const Home = () => {
             >
               <img
                 src={UserExperience}
-                 style={{ marginLeft: "9px" }}
+                style={{ marginLeft: "9px" }}
                 alt="ue"
               />
             </div>
@@ -184,11 +184,7 @@ const Home = () => {
                 alignItems: "center",
               }}
             >
-              <img
-                src={Iot}
-                 style={{ marginLeft: "11px" }}
-                alt="iot"
-              />
+              <img src={Iot} style={{ marginLeft: "11px" }} alt="iot" />
             </div>
 
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
@@ -215,11 +211,7 @@ const Home = () => {
                 alignItems: "center",
               }}
             >
-              <img
-                src={Support}
-                 style={{ marginLeft: "11px" }}
-                alt="sup"
-              />
+              <img src={Support} style={{ marginLeft: "11px" }} alt="sup" />
             </div>
 
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
@@ -246,11 +238,7 @@ const Home = () => {
                 alignItems: "center",
               }}
             >
-              <img
-                src={Web}
-                 style={{ marginLeft: "11px" }}
-                alt="web"
-              />
+              <img src={Web} style={{ marginLeft: "11px" }} alt="web" />
             </div>
 
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
@@ -337,44 +325,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="p-5 h-96">
+      <div className="p-5">
         <h1 className="font-semibold text-4xl text-center mt-10">
           Our <span className="text-amber-500">Clients</span>
         </h1>
-        <div className="mt-4">
-          <div className="swiper-container mt-24">
-            <div className="swiper-wrapper">
-              <Swiper
-                navigation={true}
-                spaceBetween={0}
-                modules={[Navigation]}
-                slidesPerView={1}
-                autoplay={{ delay: 2000, disableOnInteraction: false }}
-                direction="horizontal"
-                className="flex justify-center"
-              >
-                <SwiperSlide>
-                  <div className="slide-content flex justify-center">
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="1" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="2" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="3" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="4" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="5" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="slide-content flex justify-center">
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="6" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="7" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="8" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="9" />
-                    <img className="w-4/5 sm:w-2/5" src="image.jpg" alt="10" />
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );
