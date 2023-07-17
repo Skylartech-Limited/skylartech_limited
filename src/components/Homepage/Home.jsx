@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
-import SoftwareDevelopment from "../../assets/img.png/SKYLARTECH IMG/desktopsky.png";
-import DiscoveryWorkshop from "../../assets/img.png/SKYLARTECH IMG/searchiconsky.png";
-import UserExperience from "../../assets/img.png/SKYLARTECH IMG/desktopwebsky.png";
-import Iot from "../../assets/img.png/SKYLARTECH IMG/iotsky.png";
-import Support from "../../assets/img.png/SKYLARTECH IMG/custcaresky.png";
-import Web from "../../assets/img.png/SKYLARTECH IMG/codesky.png";
+import SoftwareDevelopment from "../../assets/img.png/computer 1.png";
+import DiscoveryWorkshop from "../../assets/img.png/search 1.png";
+import UserExperience from "../../assets/img.png/testing 1.png";
+import Iot from "../../assets/img.png/Group 4.png";
+import Support from "../../assets/img.png/support (1) 1.png";
+import Web from "../../assets/img.png/Group 2.png";
 import HomepageImage from "../../assets/HomepageImage.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -82,12 +82,22 @@ const Home = () => {
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
         <div className="lg:w-1/3 service-section">
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img
-              src={SoftwareDevelopment}
-              style={{ width: "4rem", height: "3.75rem" }}
-              className="mb-5 rounded-full bg-gray-100"
-              alt="sd"
-            />
+            <div
+              style={{
+                background: "#F5F5F5",
+                width: "62px",
+                height: "60px",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={SoftwareDevelopment}
+                style={{ marginLeft: "11px" }}
+                alt="sd"
+              />
+            </div>
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Custom Software Development
             </h3>
@@ -102,12 +112,23 @@ const Home = () => {
 
         <div className="lg:w-1/3 service-section">
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img
-              src={DiscoveryWorkshop}
-              style={{ width: "6rem", height: "5.5rem" }}
-              className="mb-5 rounded-full bg-gray-100"
-              alt="dw"
-            />
+            <div
+              style={{
+                background: "#F5F5F5",
+                width: "62px",
+                height: "60px",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={DiscoveryWorkshop}
+                 style={{ marginLeft: "11px" }}
+                alt="dw"
+              />
+            </div>
+
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Discovery Workshop
             </h3>
@@ -122,12 +143,23 @@ const Home = () => {
 
         <div className="lg:w-1/3 service-section">
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img
-              src={UserExperience}
-              style={{ width: "4rem", height: "3.75rem" }}
-              className="mb-5 rounded-full bg-gray-100"
-              alt="ue"
-            />
+            <div
+              style={{
+                background: "#F5F5F5",
+                width: "62px",
+                height: "60px",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={UserExperience}
+                 style={{ marginLeft: "9px" }}
+                alt="ue"
+              />
+            </div>
+
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               User Experience and Design
             </h3>
@@ -142,12 +174,23 @@ const Home = () => {
 
         <div className="lg:w-1/3 service-section">
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img
-              src={Iot}
-              style={{ width: "4rem", height: "3.75rem" }}
-              className="mb-5 rounded-full bg-gray-100"
-              alt="iot"
-            />
+            <div
+              style={{
+                background: "#F5F5F5",
+                width: "62px",
+                height: "60px",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Iot}
+                 style={{ marginLeft: "11px" }}
+                alt="iot"
+              />
+            </div>
+
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Internet of Things (IoT)
             </h3>
@@ -162,12 +205,23 @@ const Home = () => {
 
         <div className="lg:w-1/3 service-section">
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img
-              src={Support}
-              style={{ width: "6.5rem", height: "4.75rem" }}
-              className="mb-5 rounded-full bg-gray-100"
-              alt="sup"
-            />
+            <div
+              style={{
+                background: "#F5F5F5",
+                width: "62px",
+                height: "60px",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Support}
+                 style={{ marginLeft: "11px" }}
+                alt="sup"
+              />
+            </div>
+
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Support and Maintenance
             </h3>
@@ -182,12 +236,23 @@ const Home = () => {
 
         <div className="lg:w-1/3 service-section">
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img
-              src={Web}
-              style={{ width: "4.5rem", height: "3.5rem" }}
-              className="mb-5 rounded-full bg-gray-100"
-              alt="web"
-            />
+            <div
+              style={{
+                background: "#F5F5F5",
+                width: "62px",
+                height: "60px",
+                borderRadius: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Web}
+                 style={{ marginLeft: "11px" }}
+                alt="web"
+              />
+            </div>
+
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Web & Mobile App Development
             </h3>
@@ -272,7 +337,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-     <div className="p-5 h-96">
+      <div className="p-5 h-96">
         <h1 className="font-semibold text-4xl text-center mt-10">
           Our <span className="text-amber-500">Clients</span>
         </h1>
