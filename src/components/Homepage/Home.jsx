@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "./Home.css";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import SoftwareDevelopment from "../../assets/img.png/computer 1.png";
@@ -14,7 +15,44 @@ import Cisco from "../../assets/slider images/cisco.png";
 import Samsung from "../../assets/slider images/samsung.png";
 import Amazon from "../../assets/slider images/amazon.png";
 
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+
 const Home = () => {
+  const slides = [
+    { image: Amazon },
+    { image: Airbnb },
+    { image: Cisco },
+    { image: Apple },
+    { image: Samsung },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000); // Set the interval duration (in milliseconds) for automatic slide transition
+    return () => {
+      clearInterval(interval);
+    };
+  });
+
   return (
     <>
       <div className="flex flex-col lg:flex-row text-left p-10 ">
@@ -329,6 +367,31 @@ const Home = () => {
         <h1 className="font-semibold text-4xl text-center mt-10">
           Our <span className="text-amber-500">Clients</span>
         </h1>
+        <div className="max-w-[1400px] h-[250px] w-full m-auto py-16 px-4 relative group">
+          <div
+            style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
+            className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+          ></div>
+          {/* Left Arrow */}
+          <div className=" group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <BsChevronCompactLeft onClick={prevSlide} size={30} />
+          </div>
+          {/* Right Arrow */}
+          <div className=" group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <BsChevronCompactRight onClick={nextSlide} size={30} />
+          </div>
+          <div className="flex top-4 justify-center py-2">
+            {slides.map((index) => (
+              <div
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`text-2xl cursor-pointer ${
+                  index === currentIndex ? "text-amber-500" : ""
+                }`}
+              ></div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
