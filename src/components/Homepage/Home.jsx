@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import SoftwareDevelopment from "../../assets/img.png/computer 1.png";
@@ -18,31 +17,54 @@ import Amazon from "../../assets/slider images/amazon.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 const Home = () => {
-  const slides = [
-    { image: Amazon },
-    { image: Airbnb },
-    { image: Cisco },
-    { image: Apple },
-    { image: Samsung },
+  const images = [
+    Amazon,
+    Airbnb,
+    Cisco,
+    Apple,
+    Samsung,
+    Iot,
+    Web,
+    HomepageImage,
+    DiscoveryWorkshop,
   ];
+
+  const [imagesPerSlide, setImagesPerSlide] = useState(5);
+  const totalSlides = Math.ceil(images.length / imagesPerSlide);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    const newIndex = (currentIndex + 1) % totalSlides;
     setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 1024) {
+        setImagesPerSlide(2);
+      } else {
+        setImagesPerSlide(5);
+      }
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,6 +74,7 @@ const Home = () => {
       clearInterval(interval);
     };
   });
+
 
   return (
     <>
@@ -183,7 +206,6 @@ const Home = () => {
           <div className="text-left shadow-xs p-10 rounded-xl">
             <div
               style={{
-                background: "#F5F5F5",
                 width: "62px",
                 height: "60px",
                 borderRadius: "100%",
@@ -368,23 +390,61 @@ const Home = () => {
           Our <span className="text-amber-500">Clients</span>
         </h1>
         <div className="max-w-[1400px] h-[250px] w-full m-auto py-16 px-4 relative group">
-          <div
-            style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
-            className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
-          ></div>
           {/* Left Arrow */}
-          <div className=" group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <div
+            className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
+            style={{ left: "0" }}
+          >
             <BsChevronCompactLeft onClick={prevSlide} size={30} />
           </div>
           {/* Right Arrow */}
-          <div className=" group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <div
+            className="absolute top-1/2 -right-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
+            style={{ right: "0" }}
+          >
             <BsChevronCompactRight onClick={nextSlide} size={30} />
           </div>
-          <div className="flex top-4 justify-center py-2">
-            {slides.map((index) => (
+          <div
+            className="slideshow-container mt-6"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
+              height: "60%",
+            }}
+          >
+            {[...Array(imagesPerSlide)].map((_, index) => {
+              const imageIndex = currentIndex * imagesPerSlide + index;
+              const image = images[imageIndex];
+              if (!image) return null;
+              return (
+                <div
+                  key={index}
+                  className={`slideshow-image ${
+                    index === currentIndex % imagesPerSlide ? "active" : ""
+                  }`}
+                  style={{
+                    flex: `0 0 calc(100% / ${imagesPerSlide})`,
+                    maxWidth: imagesPerSlide === 2 ? "50%" : "100%",
+                    height: "100%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "contain",
+                    backgroundImage: `url(${image})`,
+                  }}
+                ></div>
+              );
+            })}
+          </div>
+          <div
+            className="flex top-4 justify-center py-2"
+            style={{ position: "absolute", bottom: "4px" }}
+          >
+            {[...Array(totalSlides)].map((_, index) => (
               <div
                 key={index}
-                onClick={() => goToSlide(index)}
+                onClick={() => setCurrentIndex(index)}
                 className={`text-2xl cursor-pointer ${
                   index === currentIndex ? "text-amber-500" : ""
                 }`}
