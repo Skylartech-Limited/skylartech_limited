@@ -6,7 +6,7 @@ import Frontend from "../../assets/Frontend.png";
 import Backend from "../../assets/Backend.png";
 import Cloud from "../../assets/Cloud.png";
 import Mobile from "../../assets/Mobile.png";
-import Tech from "../../assets/smallweb.png";
+import Slider from "./Slider";
 
 const Technologies = () => {
   return (
@@ -288,16 +288,7 @@ const Technologies = () => {
           </div>
         </div>
       </div>
-
-      {/*web technologies */}
-      <div className="px-4 sm:px-8 md:px-16 flex flex-col items-center">
-        <h1 className="font-semibold text-3xl text-center pb-8 pt-10">
-          <span className="text-amber-500">Web Technologies </span>We Work With
-        </h1>
-        <div className="flex justify-center items-center">
-          <img src={Tech} className="max-w-full pt-10 pb-10" alt="Technologies" />
-        </div>
-      </div>
+      <Slider />
     </>
   );
 };
