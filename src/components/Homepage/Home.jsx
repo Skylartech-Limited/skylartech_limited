@@ -13,6 +13,7 @@ import Apple from "../../assets/slider images/apple.png";
 import Cisco from "../../assets/slider images/cisco.png";
 import Samsung from "../../assets/slider images/samsung.png";
 import Amazon from "../../assets/slider images/amazon.png";
+import Tech from "../../assets/smallweb.png";
 
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
@@ -74,7 +75,6 @@ const Home = () => {
       clearInterval(interval);
     };
   });
-
 
   return (
     <>
@@ -452,6 +452,24 @@ const Home = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      {/*technologies work with */}
+      <div>
+        <h1 className="font-semibold text-3xl py-5">
+          <span className="text-amber-500">Technologies</span> We Work With
+        </h1>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "50vh",
+        }}
+        className="pb-10"
+      >
+        <img src={Tech} className="h-72 w-90" alt="Phone" />
       </div>
     </>
   );
