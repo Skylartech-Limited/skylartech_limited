@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Phone from "../../assets/Technology Images/phone.png";
@@ -7,17 +7,6 @@ import Backend from "../../assets/Technology Images/Backend.png";
 import Cloud from "../../assets/Technology Images/Cloud.png";
 import Mobile from "../../assets/Technology Images/Mobile.png";
 import Slider from "./Slider";
-import Angular from "../../assets/techimg/angular.png";
-import Azure from "../../assets/techimg/azure.png";
-import Html from "../../assets/techimg/html5.png";
-import Java from "../../assets/techimg/java (1).png";
-import Magento from "../../assets/techimg/magento (1).png";
-import Mongo from "../../assets/techimg/mogodb.png";
-import Node from "../../assets/techimg/node.png";
-import Php from "../../assets/techimg/php (1).png";
-import Shopify from "../../assets/techimg/shopify (1).png";
-import Press from "../../assets/techimg/wordp.png";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 const Technologies = () => {
   return (

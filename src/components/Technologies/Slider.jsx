@@ -6,6 +6,16 @@ import Airbnb from "../../assets/Technology slider/airbnb.png";
 import Cisco from "../../assets/Technology slider/cisco.png";
 import Apple from "../../assets/Technology slider/apple.png";
 import Samsung from "../../assets/Technology slider/samsung.png";
+import Angular from "../../assets/Home tech slider/angular.png";
+import Azure from "../../assets/Home tech slider/azure.png";
+import Html from "../../assets/Home tech slider/html5.png";
+import Java from "../../assets/Home tech slider/java (1).png";
+import Magento from "../../assets/Home tech slider/magento (1).png";
+import Mongo from "../../assets/Home tech slider/mogodb.png";
+import Node from "../../assets/Home tech slider/node.png";
+import Php from "../../assets/Home tech slider/php (1).png";
+import Shopify from "../../assets/Home tech slider/shopify (1).png";
+import Press from "../../assets/Home tech slider/wordp.png";
 
 const Slider = () => {
   const images = [Amazon, Airbnb, Cisco, Apple, Samsung];
