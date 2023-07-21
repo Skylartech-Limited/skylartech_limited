@@ -1,7 +1,7 @@
 import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import Phone from "../../assets/phone.png";
+import Phone from "../../assets/Technology Images/phone.png";
 
 const Services = () => {
   return (
