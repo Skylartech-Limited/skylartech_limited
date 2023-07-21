@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import Tech from "../../assets/smallweb.png";
-import Amazon from "../../assets/slider images/amazon.png";
-import Airbnb from "../../assets/slider images/airbnb.png";
-import Cisco from "../../assets/slider images/cisco.png";
-import Apple from "../../assets/slider images/apple.png";
-import Samsung from "../../assets/slider images/samsung.png";
+import Tech from "../../assets/Technology Images/smallweb.png";
+import Amazon from "../../assets/Technology slider/amazon.png";
+import Airbnb from "../../assets/Technology slider/airbnb.png";
+import Cisco from "../../assets/Technology slider/cisco.png";
+import Apple from "../../assets/Technology slider/apple.png";
+import Samsung from "../../assets/Technology slider/samsung.png";
 
 const Slider = () => {
   const images = [Amazon, Airbnb, Cisco, Apple, Samsung];

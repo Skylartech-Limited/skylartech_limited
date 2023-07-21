@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
-import SoftwareDevelopment from "../../assets/img.png/computer 1.png";
-import DiscoveryWorkshop from "../../assets/img.png/search 1.png";
-import UserExperience from "../../assets/img.png/testing 1.png";
-import Iot from "../../assets/img.png/Group 4.png";
-import Support from "../../assets/img.png/support (1) 1.png";
-import Web from "../../assets/img.png/Group 2.png";
-import HomepageImage from "../../assets/HomepageImage.jpg";
-import Airbnb from "../../assets/slider images/airbnb.png";
-import Apple from "../../assets/slider images/apple.png";
-import Cisco from "../../assets/slider images/cisco.png";
-import Samsung from "../../assets/slider images/samsung.png";
-import Amazon from "../../assets/slider images/amazon.png";
-import Tech from "../../assets/smallweb.png";
-
+import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
+import DiscoveryWorkshop from "../../assets/Homepage images/search 1.png";
+import UserExperience from "../../assets/Homepage images/testing 1.png";
+import Iot from "../../assets/Homepage images/Group 4.png";
+import Support from "../../assets/Homepage images/support (1) 1.png";
+import Web from "../../assets/Homepage images/Group 2.png";
+import HomepageImage from "../../assets/Homepage images/HomepageImage.jpg";
+import Airbnb from "../../assets/Technology slider/airbnb.png";
+import Apple from "../../assets/Technology slider/apple.png";
+import Cisco from "../../assets/Technology slider/cisco.png";
+import Samsung from "../../assets/Technology slider/samsung.png";
+import Amazon from "../../assets/Technology slider/amazon.png";
+import Technologies from "../../assets/Technology Images/technologies.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import Menu from "./Menu";
 
 const Home = () => {
   const images = [
@@ -95,16 +95,18 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
-          <h1 className="max-w-md text-3xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
-            Digitize Your Business With Our Modern Development Solutions
+          <h1 className="max-w-3xl text-3xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
+            Transform your business into the digital age by embracing our
+            cutting-edge development solutions
           </h1>
           <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
-            Skylartech is a specialized mobile and web app development company
-            with a focus on smart technologies and customer satisfaction. Born
-            in 2014, our company has been delivering high-end quality solutions
-            to global businesses with a success rate of 100%. Hire our expertise
-            at affordable prices to have the right tech solutions for your
-            company.
+            Skylartech, a distinguished company specializing in mobile and web
+            app development, prioritizes intelligent technologies and ensuring
+            utmost customer contentment. Established in 2014, our firm has
+            consistently provided top-notch solutions to businesses worldwide,
+            achieving a remarkable 100% success rate. Benefit from our skilled
+            team's services at budget-friendly rates and equip your company with
+            the perfect technological solutions it needs.
           </p>
           <ul>
             <li>
@@ -136,7 +138,7 @@ const Home = () => {
       {/* services we Offer  */}
       <div>
         <h1 className="text-4xl font-bold text-black text-center mt-12">
-          Services We Provide
+          Offered Expertise
         </h1>
       </div>
 
@@ -163,10 +165,13 @@ const Home = () => {
               Custom Software Development
             </h3>
             <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              We design and create software from scratch to fit the unique needs
-              of your users or organization. With the help of our custom
-              software development services, you can create fast-growing and
-              scalable products for your clients.
+              Experience the power of tailor-made software development
+              solutions. Our team crafts custom software solutions from the
+              ground up, perfectly tailored to suit the distinct requirements of
+              your users or organization. Leverage our expertise in custom
+              software development to build fast-growing and scalable products
+              that cater to your clients' needs and drive success for your
+              business.
             </p>
           </div>
         </div>
@@ -191,13 +196,14 @@ const Home = () => {
             </div>
 
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              Discovery Workshop
+              Requirements Gathering Session
             </h3>
             <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              We design and create software from scratch to fit the unique needs
-              of your users or organization. With the help of our custom
-              software development services, you can create fast-growing and
-              scalable products for your clients.
+              We build software completely from the beginning, perfectly aligned
+              with the specific requirements of your users or organization.
+              Utilizing our specialized custom software development services,
+              you have the opportunity to develop fast-growing and easily
+              expandable products that cater precisely to your clients' needs.
             </p>
           </div>
         </div>
@@ -211,6 +217,7 @@ const Home = () => {
                 borderRadius: "100%",
                 display: "flex",
                 alignItems: "center",
+                background: "#F5F5F5",
               }}
             >
               <img
@@ -221,13 +228,16 @@ const Home = () => {
             </div>
 
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
-              User Experience and Design
+              UX/UI Design
             </h3>
             <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
-              We design and create software from scratch to fit the unique needs
-              of your users or organization. With the help of our custom
-              software development services, you can create fast-growing and
-              scalable products for your clients.
+              Our team specializes in crafting exceptional user experiences and
+              intuitive designs. We start by understanding the distinctive
+              requirements of your users or organization and then proceed to
+              create software from scratch that perfectly aligns with those
+              needs. By leveraging our custom software development services, you
+              can produce rapid and scalable products that cater precisely to
+              your clients' demands.
             </p>
           </div>
         </div>
@@ -453,24 +463,36 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      {/*technologies work with */}
-      <div>
-        <h1 className="font-semibold text-3xl py-5">
+      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+        <h1 className="font-semibold text-4xl text-center mt-10">
           <span className="text-amber-500">Technologies</span> We Work With
         </h1>
+        <div className="mt-10">
+          <img src={Technologies} alt="tech" />
+        </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "50vh",
-        }}
-        className="pb-10"
-      >
-        <img src={Tech} className="h-72 w-90" alt="Phone" />
+      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center ">
+        <div className="inline-block">
+          <h1 className="font-semibold text-4xl text-center mt-16">
+            Our <span className="text-amber-500">Engagement Models</span>
+          </h1>
+          <h2 className="font-semibold text-2xl text-center mt-10">
+            <span className="text-amber-500">Fixed Price</span> Model
+          </h2>
+          <Menu />
+        </div>
       </div>
+      {/* <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+        <h1 className="font-semibold text-4xl text-center mt-10">
+          Our <span className="text-amber-500">Work</span>
+        </h1>
+      </div>
+      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+        <h1 className="font-semibold text-4xl text-center mt-10">
+          We Simplify Software{" "}
+          <span className="text-amber-500">Development Process</span>
+        </h1>
+      </div> */}
     </>
   );
 };
