@@ -1,8 +1,8 @@
 import React from "react";
-import Project from "../../assets/Frame 4.png";
-import Clock from "../../assets/Frame 3.png";
-import Team from "../../assets/Frame 2.png";
-import Question from "../../assets/Frame 1.png";
+import Project from "../../assets/Footer Hero/Frame 4.png";
+import Clock from "../../assets/Footer Hero/Frame 3.png";
+import Team from "../../assets/Footer Hero/Frame 2.png";
+import Question from "../../assets/Footer Hero/Frame 1.png";
 import { Link } from "react-router-dom";
 
 const footerhero = () => {
