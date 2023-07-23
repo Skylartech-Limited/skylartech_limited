@@ -463,11 +463,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center bg-amber-50">
-        <h1 className="font-semibold text-4xl text-center mt-10">
+      <div className="sm:text-center lg:flex lg:flex-wrap px-4 sm:px-6 lg:px-8 justify-center bg-amber-50">
+        <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8">
           <span className="text-amber-500">Technologies</span> We Work With
         </h1>
-        <div className="mt-10 mb-10">
+        <div className="mt-4 sm:mt-6 lg:mt-8 mb-8 sm:mb-10 lg:mb-12">
           <img
             src={Technologies}
             alt="tech"
