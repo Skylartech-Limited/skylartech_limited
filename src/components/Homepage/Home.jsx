@@ -463,22 +463,20 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center bg-amber-50">
         <h1 className="font-semibold text-4xl text-center mt-10">
           <span className="text-amber-500">Technologies</span> We Work With
         </h1>
-        <div className="mt-10">
-          <img src={Technologies} alt="tech" />
+        <div className="mt-10 mb-10">
+          <img
+            src={Technologies}
+            alt="tech"
+            style={{ width: "1024px", height: "374px" }}
+          />
         </div>
       </div>
-      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center ">
+      <div className="sm:text-center lg:flex lg:flex-wrap px-5 justify-center ">
         <div className="inline-block">
-          <h1 className="font-semibold text-4xl text-center mt-16">
-            Our <span className="text-amber-500">Engagement Models</span>
-          </h1>
-          <h2 className="font-semibold text-2xl text-center mt-10">
-            <span className="text-amber-500">Fixed Price</span> Model
-          </h2>
           <Menu />
         </div>
       </div>
