@@ -16,10 +16,10 @@ import Amazon from "../../assets/Technology slider/amazon.png";
 import Technologies from "../../assets/Technology Images/technologies.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Menu from "./Menu";
-import Rocket from "../../assets/softwareprocess/rocket 1.png"
-import Discover from "../../assets/softwareprocess/discovery 1.png"
-import Design from "../../assets/softwareprocess/graphic-design 1.png"
-import Build from "../../assets/softwareprocess/build 1.png"
+import Rocket from "../../assets/softwareprocess/rocket 1.png";
+import Discover from "../../assets/softwareprocess/discovery 1.png";
+import Design from "../../assets/softwareprocess/graphic-design 1.png";
+import Build from "../../assets/softwareprocess/build 1.png";
 
 const Home = () => {
   const images = [
@@ -503,75 +503,119 @@ const Home = () => {
           <span className="text-amber-500">Development Process</span>
         </h1>
       </div>
-      <div className="container ml-20">
-      <div className="flex flex-wrap justify-center items-center pb-10 mt-8 px-4 sm:px-2 md:px-16">
-        <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
-          <div className="pb-4">
-            <img src={Discover} />
+      <div className="container ml-20 mx-auto px-4 sm:px-8 md:px-16">
+        <div className="flex flex-wrap justify-center items-center pb-10 mt-8 px-4 sm:px-2 md:px-16">
+          <div className="pt-5 text-center w-full sm:w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              className="pr-4"
+            >
+              <div />
+              <div className="pb-4 pr-4">
+                <img src={Discover} style={{ width: "3rem" }} alt="discover"/>
+              </div>
+              <div
+                style={{ flex: 1, height: "1px", border : "1px dashed #6A1B9A" }}
+                className="hidden lg:block"
+              />
+            </div>
+
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Discover
+              </h4>
+            </div>
+            <div className="text-center">
+              <p className="text-left" style={{maxWidth:"12rem"}}  >
+                We shape brands through exploration, applying in-depth research,
+                and with the consultation of the client to produce the best
+                outcomes.
+              </p>
+            </div>
           </div>
-          <div className="pb-6">
-            <h4 className="font-medium text-lg text-left text-amber-500">
-              Discover
-            </h4>
+          <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              className="pr-4 "
+            >
+              <div />
+              <div className="pb-4 pr-4">
+                <img src={Design} style={{ width: "3rem" }} alt="design"/>
+              </div>
+              <div
+                style={{ flex: 1, height: "1px", border : "1px dashed #FFC107" }}
+                className="hidden lg:block"
+              />
+            </div>
+
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Design
+              </h4>
+            </div>
+            <div>
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
+                All our designs ensure an easy and unique interface that will
+                allow customers to easily navigate apps. We embrace the joy in
+                creating something unique.
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="text-left " style={{maxWidth : "12rem"}}>
-              We shape brands through exploration, applying in-depth research,
-              and with the consultation of the client to produce the best
-              outcomes.
-            </p>
+          <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              className="pr-4"
+            >
+              <div />
+              <div className="pb-4 pr-4">
+                <img src={Build} style={{ width: "3rem" }} alt="build"/>
+              </div>
+              <div
+                style={{ flex: 1, height: "1px", border : "1px dashed #4CAF50" }}
+                className="hidden lg:block"
+              />
+            </div>
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Build
+              </h4>
+            </div>
+            <div>
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
+                We apply our efficiency and skills to create flexible and
+                scalable business-driven solutions using modern technologies.{" "}
+              </p>
+            </div>
+          </div>
+          <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div className="pb-4">
+              <img src={Rocket} style={{ width: "3rem" }} alt="deliver"/>
+            </div>
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Deliver
+              </h4>
+            </div>
+            <div>
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
+                We have achieved excellence in our project deliveries with zero
+                compromises on quality and by providing a 100% success rate.{" "}
+              </p>
+            </div>
           </div>
         </div>
-        <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
-        <div className="pb-4">
-            <img src={Design} style={{width : "3rem" }}/>
-          </div>
-          <div className="pb-6">
-            <h4 className="font-medium text-lg text-left text-amber-500">
-              Design
-            </h4>
-          </div>
-          <div>
-            <p className="text-left" style={{maxWidth : "12rem"}}>
-              All our designs ensure an easy and unique interface that will
-              allow customers to easily navigate apps. We embrace the joy in
-              creating something unique.
-            </p>
-          </div>
-        </div>
-        <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
-        <div className="pb-4">
-            <img src={Build} style={{width : "3rem" }}/>
-          </div>
-          <div className="pb-6">
-            <h4 className="font-medium text-lg text-left text-amber-500">
-              Build
-            </h4>
-          </div>
-          <div>
-            <p className="text-left" style={{maxWidth : "12rem"}}>
-              We apply our efficiency and skills to create flexible and scalable
-              business-driven solutions using modern technologies.{" "}
-            </p>
-          </div>
-        </div>
-        <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
-        <div className="pb-4">
-            <img src={Rocket} style={{width : "3rem" }}/>
-          </div>
-          <div className="pb-6">
-            <h4 className="font-medium text-lg text-left text-amber-500">
-              Deliver
-            </h4>
-          </div>
-          <div>
-            <p className="text-left" style={{maxWidth : "12rem"}}>
-              We have achieved excellence in our project deliveries with zero
-              compromises on quality and by providing a 100% success rate.{" "}
-            </p>
-          </div>
-        </div>
-      </div>
       </div>
     </>
   );
