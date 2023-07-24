@@ -168,7 +168,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Custom Software Development
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               Experience the power of tailor-made software development
               solutions. Our team crafts custom software solutions from the
               ground up, perfectly tailored to suit the distinct requirements of
@@ -202,7 +202,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Requirements Gathering Session
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We build software completely from the beginning, perfectly aligned
               with the specific requirements of your users or organization.
               Utilizing our specialized custom software development services,
@@ -234,7 +234,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               UX/UI Design
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               Our team specializes in crafting exceptional user experiences and
               intuitive designs. We start by understanding the distinctive
               requirements of your users or organization and then proceed to
@@ -264,7 +264,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Internet of Things (IoT)
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We design and create software from scratch to fit the unique needs
               of your users or organization. With the help of our custom
               software development services, you can create fast-growing and
@@ -291,7 +291,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Support and Maintenance
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We design and create software from scratch to fit the unique needs
               of your users or organization. With the help of our custom
               software development services, you can create fast-growing and
@@ -318,7 +318,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Web & Mobile App Development
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We design and create software from scratch to fit the unique needs
               of your users or organization. With the help of our custom
               software development services, you can create fast-growing and
