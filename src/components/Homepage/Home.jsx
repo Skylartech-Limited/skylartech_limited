@@ -16,6 +16,10 @@ import Amazon from "../../assets/Technology slider/amazon.png";
 import Technologies from "../../assets/Technology Images/technologies.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Menu from "./Menu";
+import Rocket from "../../assets/softwareprocess/rocket 1.png";
+import Discover from "../../assets/softwareprocess/discovery 1.png";
+import Design from "../../assets/softwareprocess/graphic-design 1.png";
+import Build from "../../assets/softwareprocess/build 1.png";
 
 const Home = () => {
   const images = [
@@ -164,7 +168,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Custom Software Development
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               Experience the power of tailor-made software development
               solutions. Our team crafts custom software solutions from the
               ground up, perfectly tailored to suit the distinct requirements of
@@ -198,7 +202,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Requirements Gathering Session
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We build software completely from the beginning, perfectly aligned
               with the specific requirements of your users or organization.
               Utilizing our specialized custom software development services,
@@ -230,7 +234,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               UX/UI Design
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               Our team specializes in crafting exceptional user experiences and
               intuitive designs. We start by understanding the distinctive
               requirements of your users or organization and then proceed to
@@ -260,7 +264,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Internet of Things (IoT)
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We design and create software from scratch to fit the unique needs
               of your users or organization. With the help of our custom
               software development services, you can create fast-growing and
@@ -287,7 +291,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Support and Maintenance
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We design and create software from scratch to fit the unique needs
               of your users or organization. With the help of our custom
               software development services, you can create fast-growing and
@@ -314,7 +318,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Web & Mobile App Development
             </h3>
-            <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+            <p className="max-w-sm py-5 leading-6 text-gray-800">
               We design and create software from scratch to fit the unique needs
               of your users or organization. With the help of our custom
               software development services, you can create fast-growing and
@@ -491,6 +495,128 @@ const Home = () => {
           <span className="text-amber-500">Development Process</span>
         </h1>
       </div> */}
+
+      {/*software development process */}
+      <div className="pt-5 ">
+        <h1 className="font-semibold text-3xl text-center">
+          We Simplify Software{" "}
+          <span className="text-amber-500">Development Process</span>
+        </h1>
+      </div>
+      <div className="container ml-20 mx-auto px-4 sm:px-8 md:px-16">
+        <div className="flex flex-wrap justify-center items-center pb-10 mt-8 px-4 sm:px-2 md:px-16">
+          <div className="pt-5 text-center w-full sm:w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              className="pr-4"
+            >
+              <div />
+              <div className="pb-4 pr-4">
+                <img src={Discover} style={{ width: "3rem" }} alt="discover"/>
+              </div>
+              <div
+                style={{ flex: 1, height: "1px", border : "1px dashed #6A1B9A" }}
+                className="hidden lg:block"
+              />
+            </div>
+
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Discover
+              </h4>
+            </div>
+            <div className="text-center">
+              <p className="text-left" style={{maxWidth:"12rem"}}  >
+                We shape brands through exploration, applying in-depth research,
+                and with the consultation of the client to produce the best
+                outcomes.
+              </p>
+            </div>
+          </div>
+          <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              className="pr-4 "
+            >
+              <div />
+              <div className="pb-4 pr-4">
+                <img src={Design} style={{ width: "3rem" }} alt="design"/>
+              </div>
+              <div
+                style={{ flex: 1, height: "1px", border : "1px dashed #FFC107" }}
+                className="hidden lg:block"
+              />
+            </div>
+
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Design
+              </h4>
+            </div>
+            <div>
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
+                All our designs ensure an easy and unique interface that will
+                allow customers to easily navigate apps. We embrace the joy in
+                creating something unique.
+              </p>
+            </div>
+          </div>
+          <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+              className="pr-4"
+            >
+              <div />
+              <div className="pb-4 pr-4">
+                <img src={Build} style={{ width: "3rem" }} alt="build"/>
+              </div>
+              <div
+                style={{ flex: 1, height: "1px", border : "1px dashed #4CAF50" }}
+                className="hidden lg:block"
+              />
+            </div>
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Build
+              </h4>
+            </div>
+            <div>
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
+                We apply our efficiency and skills to create flexible and
+                scalable business-driven solutions using modern technologies.{" "}
+              </p>
+            </div>
+          </div>
+          <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
+            <div className="pb-4">
+              <img src={Rocket} style={{ width: "3rem" }} alt="deliver"/>
+            </div>
+            <div className="pb-6">
+              <h4 className="font-medium text-xl text-left text-amber-500">
+                Deliver
+              </h4>
+            </div>
+            <div>
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
+                We have achieved excellence in our project deliveries with zero
+                compromises on quality and by providing a 100% success rate.{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
