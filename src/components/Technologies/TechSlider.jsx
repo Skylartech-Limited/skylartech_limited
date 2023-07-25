@@ -6,16 +6,6 @@ import Airbnb from "../../assets/Technology slider/airbnb.png";
 import Cisco from "../../assets/Technology slider/cisco.png";
 import Apple from "../../assets/Technology slider/apple.png";
 import Samsung from "../../assets/Technology slider/samsung.png";
-import Angular from "../../assets/Home tech slider/angular.png";
-import Azure from "../../assets/Home tech slider/azure.png";
-import Html from "../../assets/Home tech slider/html5.png";
-import Java from "../../assets/Home tech slider/java (1).png";
-import Magento from "../../assets/Home tech slider/magento (1).png";
-import Mongo from "../../assets/Home tech slider/mogodb.png";
-import Node from "../../assets/Home tech slider/node.png";
-import Php from "../../assets/Home tech slider/php (1).png";
-import Shopify from "../../assets/Home tech slider/shopify (1).png";
-import Press from "../../assets/Home tech slider/wordp.png";
 
 const TechSlider = () => {
   const images = [Amazon, Airbnb, Cisco, Apple, Samsung];
@@ -47,46 +37,65 @@ const TechSlider = () => {
 
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? images.length - 1 : prevSlide - 1
+      prevSlide === 0 ? images.length - 2 : prevSlide - 2
     );
   };
 
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === images.length - 1 ? 0 : prevSlide + 1
+      prevSlide >= images.length - 2 ? 0 : prevSlide + 2
     );
   };
 
   const renderSlideImages = () => {
-    const activeImage = images[currentSlide];
+    const firstImage = images[currentSlide];
+    const secondImage = images[currentSlide + 1];
 
     return (
       <div
-        className="slideshow-image active"
+        className="slideshow-image flex justify-center items-center"
         style={{
           width: "100%",
-          height: "40%",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
+          height: "30%",
           position: "absolute",
-          justifyContent: "space-between",
-          backgroundRepeat: "no-repeat",
-          alignItems: "center",
-          backgroundImage: `url(${activeImage})`,
         }}
-      ></div>
+      >
+        <div
+          className="slideshow-image-item mt-2"
+          style={{
+            flex: "1",
+            maxWidth: "40%",
+            height: "100%",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${firstImage})`,
+          }}
+        ></div>
+        <div
+          className="slideshow-image-item mt-2"
+          style={{
+            flex: "1",
+            maxWidth: "40%",
+            height: "100%",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${secondImage})`,
+          }}
+        ></div>
+      </div>
     );
   };
 
   return (
-    <div className="max-w-[1400px] mx-auto p-5">
+    <div className="max-w-[1400px] mx-auto p-5 flex flex-col items-center">
       {isSmallScreen ? (
         <>
-          <h1 className="font-semibold text-3xl text-center pb-8 pt-10">
-            <span className="text-amber-500">Web Technologies </span>We Work
-            With
+          <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8">
+            <span className="text-amber-500">Web Technologies</span> We Work With
           </h1>
-          <div className="max-w-[1400px] h-[250px] w-full m-auto py-16 px-4 relative group">
+          <div className="max-w-[1400px] h-[250px] w-full m-auto py-16 relative group">
             {/* Left Arrow */}
             <div
               className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
@@ -103,7 +112,7 @@ const TechSlider = () => {
             >
               <BsChevronCompactRight size={30} />
             </div>
-            <div className="slideshow-container mt-4">
+            <div className="slideshow-container mt-6">
               {renderSlideImages()}
             </div>
           </div>
@@ -115,7 +124,7 @@ const TechSlider = () => {
             With
           </h1>
           <div className="flex justify-center items-center">
-            <img src={Tech} alt="Tech" className="max-w-full pt-10 pb-10" />
+            <img src={Tech} alt="Tech" className="pt-10 pb-10" style={{width: "1034", height: "191"}}/>
           </div>
         </div>
       )}
