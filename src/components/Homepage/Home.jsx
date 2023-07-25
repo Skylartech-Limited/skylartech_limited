@@ -489,13 +489,7 @@ const Home = () => {
           Our <span className="text-amber-500">Work</span>
         </h1>
       </div>
-      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-        <h1 className="font-semibold text-4xl text-center mt-10">
-          We Simplify Software{" "}
-          <span className="text-amber-500">Development Process</span>
-        </h1>
-      </div> */}
-
+      
       {/*software development process */}
       <div className="pt-5 ">
         <h1 className="font-semibold text-3xl text-center">
