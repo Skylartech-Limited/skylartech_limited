@@ -13,13 +13,13 @@ import Apple from "../../assets/Technology slider/apple.png";
 import Cisco from "../../assets/Technology slider/cisco.png";
 import Samsung from "../../assets/Technology slider/samsung.png";
 import Amazon from "../../assets/Technology slider/amazon.png";
-import Technologies from "../../assets/Technology Images/technologies.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Menu from "./Menu";
 import Rocket from "../../assets/softwareprocess/rocket 1.png";
 import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
+import HomeSlider from "./HomeSlider";
 
 const Home = () => {
   const images = [
@@ -399,33 +399,33 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="p-5">
-        <h1 className="font-semibold text-4xl text-center mt-10">
+      <div className="p-5 flex flex-col items-center">
+        <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8 ">
           Our <span className="text-amber-500">Clients</span>
         </h1>
-        <div className="max-w-[1400px] h-[250px] w-full m-auto py-16 px-4 relative group">
+        <div className="max-w-[1400px] h-[250px] w-full m-auto py-16  relative group">
           {/* Left Arrow */}
           <div
             className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
             style={{ left: "0" }}
+            onClick={prevSlide}
           >
-            <BsChevronCompactLeft onClick={prevSlide} size={30} />
+            <BsChevronCompactLeft size={30} />
           </div>
           {/* Right Arrow */}
           <div
             className="absolute top-1/2 -right-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
             style={{ right: "0" }}
+            onClick={nextSlide}
           >
-            <BsChevronCompactRight onClick={nextSlide} size={30} />
+            <BsChevronCompactRight size={30} />
           </div>
           <div
-            className="slideshow-container mt-6"
+            className="flex justify-center items-center mt-6"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
               width: "100%",
-              height: "60%",
+              height: "30%",
+              position: "absolute",
             }}
           >
             {[...Array(imagesPerSlide)].map((_, index) => {
@@ -440,10 +440,11 @@ const Home = () => {
                   }`}
                   style={{
                     flex: `0 0 calc(100% / ${imagesPerSlide})`,
-                    maxWidth: imagesPerSlide === 2 ? "50%" : "100%",
+                    maxWidth: imagesPerSlide === 2 ? "40%" : "100%",
                     height: "100%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
+                    justifyContent: "space-between",
                     backgroundSize: "contain",
                     backgroundImage: `url(${image})`,
                   }}
@@ -467,22 +468,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="sm:text-center lg:flex lg:flex-wrap px-4 sm:px-6 lg:px-8 justify-center bg-amber-50">
-        <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8">
-          <span className="text-amber-500">Technologies</span> We Work With
-        </h1>
-        <div className="mt-4 sm:mt-6 lg:mt-8 mb-8 sm:mb-10 lg:mb-12">
-          <img
-            src={Technologies}
-            alt="tech"
-            style={{ width: "1024px", height: "374px" }}
-          />
-        </div>
+      <div>
+        <HomeSlider />
       </div>
-      <div className="sm:text-center lg:flex lg:flex-wrap px-5 justify-center ">
-        <div className="inline-block">
-          <Menu />
-        </div>
+      <div>
+        <Menu />
       </div>
       {/* <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
         <h1 className="font-semibold text-4xl text-center mt-10">
@@ -510,10 +500,10 @@ const Home = () => {
             >
               <div />
               <div className="pb-4 pr-4">
-                <img src={Discover} style={{ width: "3rem" }} alt="discover"/>
+                <img src={Discover} style={{ width: "3rem" }} alt="discover" />
               </div>
               <div
-                style={{ flex: 1, height: "1px", border : "1px dashed #6A1B9A" }}
+                style={{ flex: 1, height: "1px", border: "1px dashed #6A1B9A" }}
                 className="hidden lg:block"
               />
             </div>
@@ -524,7 +514,7 @@ const Home = () => {
               </h4>
             </div>
             <div className="text-center">
-              <p className="text-left" style={{maxWidth:"12rem"}}  >
+              <p className="text-left" style={{ maxWidth: "12rem" }}>
                 We shape brands through exploration, applying in-depth research,
                 and with the consultation of the client to produce the best
                 outcomes.
@@ -542,10 +532,10 @@ const Home = () => {
             >
               <div />
               <div className="pb-4 pr-4">
-                <img src={Design} style={{ width: "3rem" }} alt="design"/>
+                <img src={Design} style={{ width: "3rem" }} alt="design" />
               </div>
               <div
-                style={{ flex: 1, height: "1px", border : "1px dashed #FFC107" }}
+                style={{ flex: 1, height: "1px", border: "1px dashed #FFC107" }}
                 className="hidden lg:block"
               />
             </div>
@@ -574,10 +564,10 @@ const Home = () => {
             >
               <div />
               <div className="pb-4 pr-4">
-                <img src={Build} style={{ width: "3rem" }} alt="build"/>
+                <img src={Build} style={{ width: "3rem" }} alt="build" />
               </div>
               <div
-                style={{ flex: 1, height: "1px", border : "1px dashed #4CAF50" }}
+                style={{ flex: 1, height: "1px", border: "1px dashed #4CAF50" }}
                 className="hidden lg:block"
               />
             </div>
@@ -595,7 +585,7 @@ const Home = () => {
           </div>
           <div className="pt-5 text-center w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
             <div className="pb-4">
-              <img src={Rocket} style={{ width: "3rem" }} alt="deliver"/>
+              <img src={Rocket} style={{ width: "3rem" }} alt="deliver" />
             </div>
             <div className="pb-6">
               <h4 className="font-medium text-xl text-left text-amber-500">
