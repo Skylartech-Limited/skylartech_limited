@@ -487,8 +487,8 @@ const Home = () => {
           <span className="text-amber-500">Development Process</span>
         </h1>
       </div>
-      <div className="container ml-20 mx-auto px-4 sm:px-8 md:px-16">
-        <div className="flex flex-wrap justify-center items-center pb-10 mt-8 px-4 sm:px-2 md:px-16">
+      <div className="container  mx-auto px-4 sm:px-8 md:px-16">
+        <div className="flex flex-wrap ml-20 justify-center items-center pb-10 mt-8 px-4 sm:px-2 md:px-16">
           <div className="pt-5 text-center w-full sm:w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
             <div
               style={{
