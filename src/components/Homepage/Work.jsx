@@ -27,7 +27,7 @@ const Work = () => {
     return () => {
       clearInterval(slideInterval);
     };
-  }, []);
+  });
 
   const containers = [
     <div className="container">
