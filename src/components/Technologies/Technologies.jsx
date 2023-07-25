@@ -6,7 +6,7 @@ import Frontend from "../../assets/Technology Images/Frontend.png";
 import Backend from "../../assets/Technology Images/Backend.png";
 import Cloud from "../../assets/Technology Images/Cloud.png";
 import Mobile from "../../assets/Technology Images/Mobile.png";
-import Slider from "./Slider";
+import TechSlider from "./TechSlider";
 
 const Technologies = () => {
   return (
@@ -288,7 +288,7 @@ const Technologies = () => {
           </div>
         </div>
       </div>
-      <Slider />
+      <TechSlider />
     </>
   );
 };

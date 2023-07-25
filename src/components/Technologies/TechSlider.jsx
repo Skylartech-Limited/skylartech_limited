@@ -17,7 +17,7 @@ import Php from "../../assets/Home tech slider/php (1).png";
 import Shopify from "../../assets/Home tech slider/shopify (1).png";
 import Press from "../../assets/Home tech slider/wordp.png";
 
-const Slider = () => {
+const TechSlider = () => {
   const images = [Amazon, Airbnb, Cisco, Apple, Samsung];
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -123,4 +123,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default TechSlider;
