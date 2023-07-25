@@ -20,6 +20,7 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import HomeSlider from "./HomeSlider";
+import Work from "./Work";
 
 const Home = () => {
   const images = [
@@ -474,12 +475,10 @@ const Home = () => {
       <div>
         <Menu />
       </div>
-      {/* <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-        <h1 className="font-semibold text-4xl text-center mt-10">
-          Our <span className="text-amber-500">Work</span>
-        </h1>
+      <div>
+        <Work />
       </div>
-      
+
       {/*software development process */}
       <div className="pt-5 ">
         <h1 className="font-semibold text-3xl text-center">
