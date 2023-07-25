@@ -476,6 +476,11 @@ const Home = () => {
         <Menu />
       </div>
       <div>
+      <div className="sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+        <h1 className="font-semibold text-4xl text-center mt-10">
+          Our <span className="text-amber-500">Work</span>
+        </h1>
+      </div>
         <Work />
       </div>
 
