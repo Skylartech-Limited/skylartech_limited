@@ -29,6 +29,30 @@ const Work = () => {
     };
   });
 
+  // Variables to handle touch events
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Function to handle touch start event
+  const handleTouchStart = (e) => {
+    touchStartX = e.touches[0].clientX;
+  };
+
+  // Function to handle touch move event
+  const handleTouchMove = (e) => {
+    touchEndX = e.touches[0].clientX;
+  };
+
+  // Function to handle touch end event and determine swipe direction
+  const handleTouchEnd = () => {
+    const touchDistance = touchEndX - touchStartX;
+    if (touchDistance > 0) {
+      handlePrevSlide(); // Swipe right, show previous slide
+    } else if (touchDistance < 0) {
+      handleNextSlide(); // Swipe left, show next slide
+    }
+  };
+
   const containers = [
     <div className="container">
       <div className="lg:h-[600px] lg:w-[1150px] bg-gradient-to-br from-blue-600 to-cyan-500 mx-4 md:mx-8 lg:mx-auto my-8 lg:flex lg:items-center rounded-md p-4">
@@ -230,7 +254,12 @@ const Work = () => {
           Our <span className="text-amber-500">Work</span>
         </h1>
       </div>
-      <div className="relative w-full overflow-hidden mb-11">
+      <div
+        className="relative w-full overflow-hidden mb-11"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="flex transition-transform duration-500 ease-in"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -245,18 +274,20 @@ const Work = () => {
             </div>
           ))}
         </div>
-        <button
-          className="absolute top-1/2 left-28 transform -translate-y-1/2 px-4 py-2 rounded-lg text-amber-500"
-          onClick={handlePrevSlide}
-        >
-          <BsChevronCompactLeft className="w-8 h-8 stroke-2" />
-        </button>
-        <button
-          className="absolute top-1/2 right-28 transform -translate-y-1/2 px-4 py-2 rounded-lg text-amber-500"
-          onClick={handleNextSlide}
-        >
-          <BsChevronCompactRight className="w-8 h-8 stroke-2" />
-        </button>
+        <div className="hidden md:block">
+          <button
+            className="absolute top-1/2 left-28 transform -translate-y-1/2 px-4 py-2 rounded-lg text-amber-500 arrow-buttons"
+            onClick={handlePrevSlide}
+          >
+            <BsChevronCompactLeft className="w-8 h-8 stroke-2" />
+          </button>
+          <button
+            className="absolute top-1/2 right-28 transform -translate-y-1/2 px-4 py-2 rounded-lg text-amber-500 arrow-buttons"
+            onClick={handleNextSlide}
+          >
+            <BsChevronCompactRight className="w-8 h-8 stroke-2" />
+          </button>
+        </div>
       </div>
     </>
   );
