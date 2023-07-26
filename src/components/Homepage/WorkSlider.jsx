@@ -8,26 +8,7 @@ import Comp4 from "../../assets/Homepage images/compi4.png";
 
 const Work = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handlePrevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + containers.length) % containers.length
-    );
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % containers.length);
-  };
-
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      handleNextSlide();
-    }, 4000);
-
-    return () => {
-      clearInterval(slideInterval);
-    };
-  });
+  const [touchStartX, setTouchStartX] = useState(0);
 
   const containers = [
     <div className="container">
@@ -223,6 +204,44 @@ const Work = () => {
     </div>,
   ];
 
+  const handlePrevSlide = () => {
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + containers.length) % containers.length
+    );
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % containers.length);
+  };
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      handleNextSlide();
+    }, 4000);
+
+    return () => {
+      clearInterval(slideInterval);
+    };
+  });
+
+  const handleTouchStart = (e) => {
+    // Store the initial touch position when the user starts swiping
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    // Get the final touch position when the user stops swiping
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchDifference = touchStartX - touchEndX;
+
+    // If the swipe distance is greater than 50 pixels, change the slide
+    if (touchDifference > 50) {
+      handleNextSlide();
+    } else if (touchDifference < -50) {
+      handlePrevSlide();
+    }
+  };
+
   return (
     <>
       <div className="sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
@@ -230,7 +249,11 @@ const Work = () => {
           Our <span className="text-amber-500">Work</span>
         </h1>
       </div>
-      <div className="relative w-full overflow-hidden mb-11">
+      <div
+        className="relative w-full overflow-hidden mb-11"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="flex transition-transform duration-500 ease-in"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
