@@ -20,7 +20,8 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import HomeSlider from "./HomeSlider";
-import Work from "./Work";
+import Work from "./WorkSlider";
+import Client from "./ClientSlider";
 
 const Home = () => {
   const images = [
@@ -400,89 +401,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="p-5 flex flex-col items-center">
-        <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8 ">
-          Our <span className="text-amber-500">Clients</span>
-        </h1>
-        <div className="max-w-[1400px] h-[250px] w-full m-auto py-16  relative group">
-          {/* Left Arrow */}
-          <div
-            className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
-            style={{ left: "0" }}
-            onClick={prevSlide}
-          >
-            <BsChevronCompactLeft size={30} />
-          </div>
-          {/* Right Arrow */}
-          <div
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
-            style={{ right: "0" }}
-            onClick={nextSlide}
-          >
-            <BsChevronCompactRight size={30} />
-          </div>
-          <div
-            className="flex justify-center items-center mt-6"
-            style={{
-              width: "100%",
-              height: "30%",
-              position: "absolute",
-            }}
-          >
-            {[...Array(imagesPerSlide)].map((_, index) => {
-              const imageIndex = currentIndex * imagesPerSlide + index;
-              const image = images[imageIndex];
-              if (!image) return null;
-              return (
-                <div
-                  key={index}
-                  className={`slideshow-image ${
-                    index === currentIndex % imagesPerSlide ? "active" : ""
-                  }`}
-                  style={{
-                    flex: `0 0 calc(100% / ${imagesPerSlide})`,
-                    maxWidth: imagesPerSlide === 2 ? "40%" : "100%",
-                    height: "100%",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    justifyContent: "space-between",
-                    backgroundSize: "contain",
-                    backgroundImage: `url(${image})`,
-                  }}
-                ></div>
-              );
-            })}
-          </div>
-          <div
-            className="flex top-4 justify-center py-2"
-            style={{ position: "absolute", bottom: "4px" }}
-          >
-            {[...Array(totalSlides)].map((_, index) => (
-              <div
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`text-2xl cursor-pointer ${
-                  index === currentIndex ? "text-amber-500" : ""
-                }`}
-              ></div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div>
-        <HomeSlider />
-      </div>
-      <div>
-        <Menu />
-      </div>
-      <div>
-      <div className="sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-        <h1 className="font-semibold text-4xl text-center mt-10">
-          Our <span className="text-amber-500">Work</span>
-        </h1>
-      </div>
-        <Work />
-      </div>
+
+      <Client />
+
+      <HomeSlider />
+
+      <Menu />
+
+      <Work />
 
       {/*software development process */}
       <div className="pt-5 ">

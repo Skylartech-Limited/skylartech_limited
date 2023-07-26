@@ -22,7 +22,7 @@ const Work = () => {
   useEffect(() => {
     const slideInterval = setInterval(() => {
       handleNextSlide();
-    }, 10000); 
+    }, 4000);
 
     return () => {
       clearInterval(slideInterval);
@@ -225,7 +225,12 @@ const Work = () => {
 
   return (
     <>
-      <div className="relative w-full overflow-hidden">
+      <div className="sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
+        <h1 className="font-semibold text-4xl text-center mt-10 mb-6">
+          Our <span className="text-amber-500">Work</span>
+        </h1>
+      </div>
+      <div className="relative w-full overflow-hidden mb-11">
         <div
           className="flex transition-transform duration-500 ease-in"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
