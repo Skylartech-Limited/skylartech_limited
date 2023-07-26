@@ -48,13 +48,10 @@ const ClientSlider = () => {
       }
     };
 
-    // Initial check on mount
     handleResize();
 
-    // Listen for window resize events
     window.addEventListener("resize", handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -63,12 +60,12 @@ const ClientSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 4000); // Set the interval duration (in milliseconds) for automatic slide transition
+    }, 4000);
     return () => {
       clearInterval(interval);
     };
   });
-  
+
   return (
     <div className="p-5 flex flex-col items-center">
       <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8 ">
