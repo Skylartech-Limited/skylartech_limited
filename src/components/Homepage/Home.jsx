@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
@@ -8,80 +8,17 @@ import Iot from "../../assets/Homepage images/Group 4.png";
 import Support from "../../assets/Homepage images/support (1) 1.png";
 import Web from "../../assets/Homepage images/Group 2.png";
 import HomepageImage from "../../assets/Homepage images/HomepageImage.jpg";
-import Airbnb from "../../assets/Technology slider/airbnb.png";
-import Apple from "../../assets/Technology slider/apple.png";
-import Cisco from "../../assets/Technology slider/cisco.png";
-import Samsung from "../../assets/Technology slider/samsung.png";
-import Amazon from "../../assets/Technology slider/amazon.png";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import Menu from "./Menu";
 import Rocket from "../../assets/softwareprocess/rocket 1.png";
 import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
+
 import HomeSlider from "./HomeSlider";
 import Work from "./WorkSlider";
+import Menu from "./Menu";
 import Client from "./ClientSlider";
 
 const Home = () => {
-  const images = [
-    Amazon,
-    Airbnb,
-    Cisco,
-    Apple,
-    Samsung,
-    Iot,
-    Web,
-    HomepageImage,
-    DiscoveryWorkshop,
-  ];
-
-  const [imagesPerSlide, setImagesPerSlide] = useState(5);
-  const totalSlides = Math.ceil(images.length / imagesPerSlide);
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    const newIndex = (currentIndex + 1) % totalSlides;
-    setCurrentIndex(newIndex);
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth <= 1024) {
-        setImagesPerSlide(2);
-      } else {
-        setImagesPerSlide(5);
-      }
-    };
-
-    // Initial check on mount
-    handleResize();
-
-    // Listen for window resize events
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000); // Set the interval duration (in milliseconds) for automatic slide transition
-    return () => {
-      clearInterval(interval);
-    };
-  });
-
   return (
     <>
       <div className="flex flex-col lg:flex-row text-left p-10 ">
