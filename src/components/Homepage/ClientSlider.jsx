@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import DiscoveryWorkshop from "../../assets/Homepage images/search 1.png";
 import Iot from "../../assets/Homepage images/Group 4.png";
@@ -24,7 +24,7 @@ const ClientSlider = () => {
     DiscoveryWorkshop,
   ];
 
-  const [imagesPerSlide, setImagesPerSlide] = useState(5);
+  const [imagesPerSlide, setImagesPerSlide] = useState(0);
   const totalSlides = Math.ceil(images.length / imagesPerSlide);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -102,28 +102,26 @@ const ClientSlider = () => {
             const image = images[imageIndex];
             if (!image) return null;
             return (
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={imageIndex}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className={`slideshow-image ${
-                    index === currentIndex % imagesPerSlide ? "active" : ""
-                  }`}
-                  style={{
-                    flex: `0 0 calc(100% / ${imagesPerSlide})`,
-                    maxWidth: imagesPerSlide === 2 ? "40%" : "100%",
-                    height: "100%",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    justifyContent: "space-between",
-                    backgroundSize: "contain",
-                    backgroundImage: `url(${image})`,
-                  }}
-                ></motion.div>
-              </AnimatePresence>
+              <motion.div
+                key={imageIndex}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className={`slideshow-image ${
+                  index === currentIndex % imagesPerSlide ? "active" : ""
+                }`}
+                style={{
+                  flex: `0 0 calc(100% / ${imagesPerSlide})`,
+                  maxWidth: imagesPerSlide === 2 ? "40%" : "100%",
+                  height: "100%",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  justifyContent: "space-between",
+                  backgroundSize: "contain",
+                  backgroundImage: `url(${image})`,
+                }}
+              ></motion.div>
             );
           })}
         </div>

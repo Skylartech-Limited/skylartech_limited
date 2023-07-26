@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Tech from "../../assets/Technology Images/smallweb.png";
 import Amazon from "../../assets/Technology slider/amazon.png";
 import Airbnb from "../../assets/Technology slider/airbnb.png";
@@ -54,46 +54,44 @@ const TechSlider = () => {
     const secondImage = images[currentSlide + 1];
 
     return (
-      <AnimatePresence mode="wait">
+      <motion.div
+        key={currentSlide}
+        className="slideshow-image flex justify-center items-center"
+        style={{
+          width: "100%",
+          height: "30%",
+          position: "absolute",
+        }}
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.div
-          key={currentSlide}
-          className="slideshow-image flex justify-center items-center"
+          className="slideshow-image-item mt-2"
           style={{
-            width: "100%",
-            height: "30%",
-            position: "absolute",
+            flex: "1",
+            maxWidth: "40%",
+            height: "100%",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${firstImage})`,
           }}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.div
-            className="slideshow-image-item mt-2"
-            style={{
-              flex: "1",
-              maxWidth: "40%",
-              height: "100%",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundImage: `url(${firstImage})`,
-            }}
-          ></motion.div>
-          <motion.div
-            className="slideshow-image-item mt-2"
-            style={{
-              flex: "1",
-              maxWidth: "40%",
-              height: "100%",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundImage: `url(${secondImage})`,
-            }}
-          ></motion.div>
-        </motion.div>
-      </AnimatePresence>
+        ></motion.div>
+        <motion.div
+          className="slideshow-image-item mt-2"
+          style={{
+            flex: "1",
+            maxWidth: "40%",
+            height: "100%",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${secondImage})`,
+          }}
+        ></motion.div>
+      </motion.div>
     );
   };
   return (
