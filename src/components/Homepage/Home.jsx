@@ -17,6 +17,7 @@ import HomeSlider from "./HomeSlider";
 import Work from "./WorkSlider";
 import Menu from "./Menu";
 import Client from "./ClientSlider";
+import CountUp from "./CountUp";
 
 const Home = () => {
   return (
@@ -468,6 +469,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <CountUp />
     </>
   );
 };
