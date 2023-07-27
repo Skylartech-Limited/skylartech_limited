@@ -12,40 +12,41 @@ const CountUp = () => {
         onExit={() => setCounterOn(0)}
       >
         <div className="mt-16 flex flex-col items-center justify-center lg:grid lg:grid-cols-3 lg:divide-x">
-          <div className="lg:px-8 mb-8 lg:mb-0">
-            <h1 className="text-5xl font-semibold mb-10 text-white text-center">
+          <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
+            <h1 className="text-5xl font-semibold mb-10">
               {counterOn && (
                 <Countup start={0} end={124} duration={2} delay={0} />
               )}
             </h1>
-            <h1 className="text-xl text-white text-center">
+            <h1 className="font-normal">
               COMPLETE
               <br />
               PROJECTS
             </h1>
           </div>
           <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
-            <h1 className="text-5xl font-semibold mb-10 text-white text-center">
+            <h1 className="text-5xl font-semibold mb-10">
               {counterOn && (
                 <Countup start={0} end={99} duration={2} delay={0} />
               )}
+              %
             </h1>
-            <h1>
-              COMPLETE
+            <h1 className="font-normal">
+              SATISFIED
               <br />
-              PROJECTS
+              CLIENTS
             </h1>
           </div>
           <div className="lg:px-8 text-xl text-white text-center">
-            <h1 className="text-5xl font-semibold mb-10 text-white text-center">
+            <h1 className="text-5xl font-semibold mb-10">
               {counterOn && (
                 <Countup start={0} end={325} duration={2} delay={0} />
               )}
             </h1>
-            <h1>
-              COMPLETE
+            <h1 className="font-normal">
+              SUCCESSS
               <br />
-              PROJECTS
+              CAMPAIGN
             </h1>
           </div>
         </div>
