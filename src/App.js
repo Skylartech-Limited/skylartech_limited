@@ -10,6 +10,7 @@ import Portfolio from './components/Portfolio/Portfolio';
 import Industries from './components/Industries/Industries';
 import Quote from './components/Quote/Quote.jsx'
 import Footerhero from './components/Footerhero/footerhero.jsx'
+import UI from './components/Services/Uidesign.jsx'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route exact path='/technologies' element={<Technologies/>} />
           <Route exact path='/contact-us' element={<Contact/>} />
           <Route exact path='/services' element={<Services/>} />
-              <Route exact path='/services/ui-ux-design' element={<Services/>} />
+              <Route exact path='/services/ui-ux-design' element={<UI/>} />
               <Route exact path='/services/discovery-workshop' element={<Services/>} />
               <Route exact path='/services/iot-development' element={<Services/>} />
               <Route exact path='/services/web-and-app-development' element={<Services/>} />
