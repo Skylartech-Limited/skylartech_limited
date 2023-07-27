@@ -94,7 +94,7 @@ const Navbar = () => {
                         className="focus:text-amber-500 block px-4 py-2 text-md text-gray-700 hover:text-amber-500"
                         role="menuitem"
                       >
-                        Discovery Workshop
+                        Requirements Gathering Session
                       </Link>
                       <Link
                         to="/services/iot-development"
