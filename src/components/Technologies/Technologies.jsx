@@ -31,7 +31,7 @@ const Technologies = () => {
           <h1 className="max-w-md text-3xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
             Digitize Your Business With Our Modern Development Solutions
           </h1>
-          <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-md py-5 text-gray-600">
+          <p className="text-base md: lg:text-xl xl: max-w-md py-5 text-gray-600">
             We at Skylartech ensure to work with the latest technologies
             available in the market to develop the best products for our
             customers. Our expertise and resources are used to accomplish the
@@ -105,7 +105,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold max-w-xs text-gray-800">
                   Consultation with Client
                 </h3>
-                <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+                <p className="max-w-sm py-5 leading-6 text-gray-800">
                   The first step of our process is to establish a meeting with
                   the client and note down their requirements and expectations
                   of the app, figure out the layout and functionalities they are
@@ -119,7 +119,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold max-w-xs text-gray-800">
                   Prototyping, Wireframes & Mockups
                 </h3>
-                <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+                <p className=" max-w-sm py-5 leading-6 text-gray-800">
                   With the app idea, we proceed to the design by creating
                   wireframes, prototypes, and Mockup Apps. This allows users to
                   understand the flow of the app and its basic functionality
@@ -133,7 +133,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold max-w-xs text-gray-800">
                   Custom iOS, Android, Flutter Development
                 </h3>
-                <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+                <p className=" max-w-sm py-5 leading-6 text-gray-800">
                   Enhance your existing iOS apps as well as get full maintenance
                   support by our experienced iOS developers, whenever and
                   wherever you need it.
@@ -146,7 +146,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold max-w-xs text-gray-800">
                   UI/UX Design
                 </h3>
-                <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+                <p className=" max-w-sm py-5 leading-6 text-gray-800">
                   Wireframes and Prototypes serve as the base for designing
                   compelling user interfaces (UI) with high-functioning user
                   experiences (UX) that show close to the real design of how the
@@ -160,7 +160,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold max-w-xs text-gray-800">
                   Development and Debugging
                 </h3>
-                <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+                <p className=" max-w-sm py-5 leading-6 text-gray-800">
                   The designed interfaces allow us to move towards development,
                   where we turn the app ideas into reality with efficient codes
                   and iterative testing to create a bug-free app that performs
@@ -174,7 +174,7 @@ const Technologies = () => {
                 <h3 className="text-2xl font-bold max-w-xs text-gray-800">
                   Testing and Cloud Integration
                 </h3>
-                <p className="text-lg max-w-sm py-5 leading-6 text-gray-800">
+                <p className=" max-w-sm py-5 leading-6 text-gray-800">
                   Once the app is developed, it goes through the quality
                   assurance phase where vigorous testing is performed to
                   eliminate all kinds of errors that may arise during the usage
