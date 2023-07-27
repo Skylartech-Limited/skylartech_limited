@@ -11,36 +11,41 @@ const CountUp = () => {
         onEnter={() => setCounterOn(1)}
         onExit={() => setCounterOn(0)}
       >
-        <div className="mt-16 grid grid-cols-3 divide-x">
-          <div className="pr-[10rem] pl-[10rem]">
+        <div className="mt-16 flex flex-col items-center justify-center lg:grid lg:grid-cols-3 lg:divide-x">
+          <div className="lg:px-8 mb-8 lg:mb-0">
             <h1 className="text-5xl font-semibold mb-10 text-white text-center">
               {counterOn && (
                 <Countup start={0} end={124} duration={2} delay={0} />
               )}
             </h1>
             <h1 className="text-xl text-white text-center">
-              COMPLETE <br /> PROJECTS
+              COMPLETE
+              <br />
+              PROJECTS
             </h1>
           </div>
-          <div className="pr-[10rem] pl-[9rem] text-xl text-white text-center">
-          <h1 className="text-5xl font-semibold mb-10 text-white text-center">
+          <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
+            <h1 className="text-5xl font-semibold mb-10 text-white text-center">
               {counterOn && (
                 <Countup start={0} end={99} duration={2} delay={0} />
-              )}%
+              )}
             </h1>
             <h1>
-              COMPLETE <br /> PROJECTS
+              COMPLETE
+              <br />
+              PROJECTS
             </h1>
           </div>
-          <div className="pr-[10rem] pl-[10rem] text-xl text-white text-center">
-          <h1 className="text-5xl font-semibold mb-10 text-white text-center">
+          <div className="lg:px-8 text-xl text-white text-center">
+            <h1 className="text-5xl font-semibold mb-10 text-white text-center">
               {counterOn && (
                 <Countup start={0} end={325} duration={2} delay={0} />
               )}
             </h1>
             <h1>
               COMPLETE
-              <br /> PROJECTS
+              <br />
+              PROJECTS
             </h1>
           </div>
         </div>
