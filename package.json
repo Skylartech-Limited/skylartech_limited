@@ -10,11 +10,13 @@
     "framer-motion": "^10.12.18",
     "nth-check": "^2.1.1",
     "react": "^18.2.0",
+    "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-router": "^6.14.1",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
+    "react-scroll-trigger": "^0.6.14",
     "react-simple-typewriter": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -26,9 +28,9 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "nth-check": ">=2.1.1",
     "react-scripts": "5.0.1",
-    "tailwindcss": "^3.3.2",
-    "nth-check": ">=2.1.1"
+    "tailwindcss": "^3.3.2"
   },
   "eslintConfig": {
     "extends": [
