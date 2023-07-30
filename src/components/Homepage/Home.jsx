@@ -25,10 +25,10 @@ const Home = () => {
       <div className="flex flex-col lg:flex-row text-left p-10 ">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10">
-            Delivering quality projects{" "}
+          Ensuring Excellence in PMP{" "}
             <span className="text-amber-500 font-medium">
               <Typewriter
-                words={["beyond expectations", "beyond expectations"]}
+                words={["Training Initiatives", "Training Initiatives"]}
                 loop={50}
                 typeSpeed={70}
                 deleteSpeed={50}
