@@ -7,7 +7,6 @@ import UserExperience from "../../assets/Homepage images/testing 1.png";
 import Iot from "../../assets/Homepage images/Group 4.png";
 import Support from "../../assets/Homepage images/support (1) 1.png";
 import Web from "../../assets/Homepage images/Group 2.png";
-import HomepageImage from "../../assets/Homepage images/HomepageImage.jpg";
 import Rocket from "../../assets/softwareprocess/rocket 1.png";
 import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
@@ -22,10 +21,10 @@ import CountUp from "./CountUp";
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 ">
-        <div className="lg:w-1/2">
-          <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10">
-          Ensuring Excellence in PMP{" "}
+     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
+            Ensuring Excellence in PMP{" "}
             <span className="text-amber-500 font-medium">
               <Typewriter
                 words={["Training Initiatives", "Training Initiatives"]}
@@ -39,11 +38,11 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
-          <h1 className="max-w-3xl text-3xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
             cutting-edge development solutions
           </h1>
-          <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
+          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-6 text-gray-600 leading-10 text-center">
             Skylartech, a distinguished company specializing in mobile and web
             app development, prioritizes intelligent technologies and ensuring
             utmost customer contentment. Established in 2014, our firm has
@@ -52,7 +51,7 @@ const Home = () => {
             team's services at budget-friendly rates and equip your company with
             the perfect technological solutions it needs.
           </p>
-          <ul>
+          <ul className="flex justify-center">
             <li>
               <motion.button
                 className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
@@ -69,13 +68,6 @@ const Home = () => {
               </motion.button>
             </li>
           </ul>
-        </div>
-        <div className="hidden lg:block lg:w-1/2 items-center">
-          <img
-            className="max-w-full mx-auto h-72 w-90 rounded-lg mt-16"
-            src={HomepageImage}
-            alt="home"
-          />
         </div>
       </div>
 
