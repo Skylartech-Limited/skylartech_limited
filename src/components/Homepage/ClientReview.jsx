@@ -3,7 +3,7 @@ import Corporate from "../../assets/Homepage images/corporate.jpg";
 import Quotations from "../../assets/Homepage images/Quotationmark.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Import Swiper styles
-import "swiper/css/pagination"; // Import Swiper pagination styles
+
 
 const ClientReview = () => {
   const slider = [
@@ -189,15 +189,15 @@ const ClientReview = () => {
   ];
 
   return (
+
     <div className="flex justify-center mb-16 lg:-mt-28 xl:-mt-28">
       <Swiper
-        slidesPerView={2} // Display 2 slides at a time
+        slidesPerView={2}
         className="max-w-[1150px] h-[341.2px]"
       >
-        {/* Displaying Emma 1 and Emma 2 */}
-        <SwiperSlide className="px-3">{slider[0]}</SwiperSlide>
-        <SwiperSlide className="px-3">{slider[1]}</SwiperSlide>
-        <SwiperSlide className="px-3">{slider[2]}</SwiperSlide>
+        <SwiperSlide className="px-4">{slider[0]}</SwiperSlide>
+        <SwiperSlide className="px-4">{slider[1]}</SwiperSlide>
+        <SwiperSlide className="px-4">{slider[2]}</SwiperSlide>
       </Swiper>
     </div>
   );
