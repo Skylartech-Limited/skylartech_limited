@@ -1,6 +1,9 @@
 import React from "react";
 import Corporate from "../../assets/Homepage images/corporate.jpg";
 import Quotations from "../../assets/Homepage images/Quotationmark.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; // Import Swiper styles
+import "swiper/css/pagination"; // Import Swiper pagination styles
 
 const ClientReview = () => {
   const slider = [
@@ -18,7 +21,7 @@ const ClientReview = () => {
           alt="person"
           className="mb-4 rounded-full w-[70px] h-[70px]"
         />
-        <h1 className="text-xl font-bold">Emma M</h1>
+        <h1 className="text-xl font-bold">Emma M 1</h1>
         <span className="text-sm text-slate-500 mt-2">Head of Marketing</span>
         <ul className="flex mt-6 mb-5">
           <li>
@@ -78,7 +81,7 @@ const ClientReview = () => {
           alt="person"
           className="mb-4 rounded-full w-[70px] h-[70px]"
         />
-        <h1 className="text-xl font-bold">Emma M</h1>
+        <h1 className="text-xl font-bold">Emma M 2</h1>
         <span className="text-sm text-slate-500 mt-2">Head of Marketing</span>
         <ul className="flex mt-6 mb-5">
           <li>
@@ -138,7 +141,7 @@ const ClientReview = () => {
           alt="person"
           className="mb-4 rounded-full w-[70px] h-[70px]"
         />
-        <h1 className="text-xl font-bold">Emma M</h1>
+        <h1 className="text-xl font-bold">Emma M 3</h1>
         <span className="text-sm text-slate-500 mt-2">Head of Marketing</span>
         <ul className="flex mt-6 mb-5">
           <li>
@@ -186,12 +189,16 @@ const ClientReview = () => {
   ];
 
   return (
-    <div className="flex justify-center -mt-28 mb-16">
-      <div className="flex flex-row space-x-4">
-        {slider.map((slides, index) => (
-          <div key={index}>{slides}</div>
-        ))}
-      </div>
+    <div className="flex justify-center mb-16 lg:-mt-28 xl:-mt-28">
+      <Swiper
+        slidesPerView={2} // Display 2 slides at a time
+        className="max-w-[1150px] h-[341.2px]"
+      >
+        {/* Displaying Emma 1 and Emma 2 */}
+        <SwiperSlide className="px-3">{slider[0]}</SwiperSlide>
+        <SwiperSlide className="px-3">{slider[1]}</SwiperSlide>
+        <SwiperSlide className="px-3">{slider[2]}</SwiperSlide>
+      </Swiper>
     </div>
   );
 };
