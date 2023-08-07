@@ -12,6 +12,7 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 
+import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
 import Work from "./WorkSlider";
 import Menu from "./Menu";
@@ -461,7 +462,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <CountUp />
+
+      <ClientReview/>
     </>
   );
 };
