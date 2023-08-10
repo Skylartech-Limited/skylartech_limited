@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import Discover from "../../assets/Services image/discover.png";
+import Check from "../../assets/Services image/check.png";
 
 const custom = () => {
   return (
@@ -47,6 +49,59 @@ const custom = () => {
               </motion.button>
             </li>
           </ul>
+        </div>
+      </div>
+
+      {/*methodologies */}
+      <div div className="flex flex-col justify-center items-center">
+        <h1 className="pt-12 text-3xl text-black text-center font-semibold">
+          Software Development Methodologies
+        </h1>
+        <h3 className="text-lg text-gray-900 mx-auto max-w-2xl font-semibold py-6">
+          Fast-track your projects delivery using our simple three-step
+          application development process.
+        </h3>
+        <div className="lg:flex lg:flex-row lg:justify-between flex-col gap-10 px-10">
+          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
+              Requirements Gathering
+            </h1>
+            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
+              <li>Work Breakdown Structure</li>
+              <li>Project Plan</li>
+              <li>Project Budget</li>
+              <li>Requirements Docs</li>
+              <li>Use Cases</li>
+              <li>User Stories</li>
+            </ul>
+          </div>
+          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
+              Design & Development
+            </h1>
+            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
+              <li>Low-Fidelity Design</li>
+              <li>Hi-Fidelity Design</li>
+              <li>User Experience Design</li>
+              <li>Source Code</li>
+              <li>Compiled Code</li>
+              <li>Code Documentation</li>
+            </ul>
+          </div>
+          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
+              Delivery & Support
+            </h1>
+
+            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
+              <li>Release Management</li>
+              <li>Change Management</li>
+              <li>User Docs and Training</li>
+              <li>Scheduled Maintenance</li>
+              <li>Adaptive Maintenance</li>
+              <li>Software Roadmap</li>
+            </ul>
+          </div>
         </div>
       </div>
     </>

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import CountUp from "./CountUp";
+import ClientReview from "./ClientReview";
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
-  )
-}
+    <div>
+      <CountUp />
 
-export default Portfolio
+      <ClientReview />
+    </div>
+  );
+};
+
+export default Portfolio;

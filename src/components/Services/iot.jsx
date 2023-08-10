@@ -6,6 +6,10 @@ import Scale from "../../assets/Services image/full-screen.png";
 import Lock from "../../assets/Services image/padlock.png";
 import Use from "../../assets/Services image/usability.png";
 import Consult from "../../assets/Services image/iotconsult.webp";
+import Research from "../../assets/Services image/analytics.png";
+import Integrate from "../../assets/Services image/system-integration.png";
+import Test from "../../assets/Services image/checklist.png";
+import Dev from "../../assets/Services image/vector.png";
 
 const iot = () => {
   return (
@@ -76,7 +80,7 @@ const iot = () => {
       {/*part three*/}
 
       <div className="container mx-auto px-4 sm:px-8 md:px-16">
-        <div className="relative flex flex-wrap justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
+        <div className="pt-5 relative flex flex-wrap justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
           <div className="flex flex-col items-center space-y-2">
             <div>
               <img src={Delivery} alt="Delivery" />
@@ -162,12 +166,88 @@ const iot = () => {
             />
           </div>
           <div className="flex flex-col justify-start max-w-xs md:max-w-2xl">
-          <h1 className="text-amber-500 text-left font-semibold px-4 md:px-10 pt-8 md:pt-20 md:text-base">IOT Consulting</h1>
+            <h1 className="text-amber-500 text-left font-semibold px-4 md:px-10 pt-8 md:pt-20 md:text-base">
+              IOT Consulting
+            </h1>
             <p className="text-left px-4 md:px-10 pt-8 md:pt-4 text-sm md:text-base">
-            Whether you have just embarked on your IoT journey or are an experienced player, our IoT consultants will help you make the best of new opportunities and set them in tune with your business strategy.
+              Whether you have just embarked on your IoT journey or are an
+              experienced player, our IoT consultants will help you make the
+              best of new opportunities and set them in tune with your business
+              strategy.
             </p>
             <p className="text-left px-4 md:px-10 pt-8 md:pt-4 text-sm md:text-base">
-            We collaborate and coordinate to tweak IoT project management, facilitate collaboration between stakeholders, help fill the gap in IoT-specific technical knowledge of client’s team, and take on any other part of implementation desired from our clients.            </p>
+              We collaborate and coordinate to tweak IoT project management,
+              facilitate collaboration between stakeholders, help fill the gap
+              in IoT-specific technical knowledge of client’s team, and take on
+              any other part of implementation desired from our clients.{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/*iot dev */}
+      <div className="container">
+        <div>
+          <h1 className="text-3xl font font-semibold">
+            <span className="text-amber-500">IOT</span> Development
+          </h1>
+        </div>
+        <div className="text-center max-w-3xl p-10">
+          <p>
+            With almost 20 years in technology, and 5-plus years in IoT, we
+            excel in full-cycle IoT development. Our delivery life cycle
+            includes
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center xl:gap-40 lg:gap-20 md:gap-8 md:ml-[4rem] md:justify-center p-4">
+          <div
+            style={{
+              position: "relative",
+              background: "#F5F5F5",
+              width: "150px",
+              height: "150px",
+              borderRadius: "100%",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={Research} className="ml-[2.5rem]" alt="Research Icon" />
+          </div>
+          <div
+            style={{
+              background: "#F5F5F5",
+              width: "150px",
+              height: "150px",
+              borderRadius: "100%",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={Dev} className="ml-[2.5rem]" />
+          </div>
+          <div
+            style={{
+              background: "#F5F5F5",
+              width: "150px",
+              height: "150px",
+              borderRadius: "100%",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={Integrate} className="ml-[2.5rem]" />
+          </div>
+          <div
+            style={{
+              background: "#F5F5F5",
+              width: "150px",
+              height: "150px",
+              borderRadius: "100%",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img src={Test} className="ml-[2.5rem]" />
           </div>
         </div>
       </div>
