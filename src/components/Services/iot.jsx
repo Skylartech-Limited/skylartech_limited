@@ -14,8 +14,8 @@ import Dev from "../../assets/Services image/vector.png";
 const iot = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 ml-[4rem]">
-        <div className="lg:w-1/2">
+      <div className="flex flex-col lg:flex-row text-left p-10  bg-amber-50">
+        <div className="lg:w-1/2 ml-32">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
             IOT{" "}
             <span className="text-amber-500">
@@ -61,7 +61,7 @@ const iot = () => {
       </div>
 
       {/*second part */}
-      <div className="flex flex-col md:flex-row justify-center pt-4 pb-7 mx-4 md:mx-[6rem] space-y-4 md:space-y-0 md:space-x-6">
+      <div className="flex flex-col md:flex-row justify-center pt-4 pb-7 mx-4 md:mx-[6rem] space-y-4 md:space-y-0 md:space-x-6 mt-10 mb-10">
         <div className="max-w-lg">
           <h1 className="text-center md:text-left font-semibold text-3xl">
             Propelling businesses into the connected future
@@ -79,9 +79,9 @@ const iot = () => {
 
       {/*part three*/}
 
-      <div className="container mx-auto px-4 sm:px-8 md:px-16">
-        <div className="pt-5 relative flex flex-wrap justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
-          <div className="flex flex-col items-center space-y-2">
+      <div className="container mx-auto px-4 sm:px-8 md:px-16 bg-amber-50">
+        <div className="flex justify-center items-center space-x-6 ">
+          <div className="flex flex-col items-center space-y-2 mt-28 mb-28">
             <div>
               <img src={Delivery} alt="Delivery" />
             </div>
@@ -100,7 +100,7 @@ const iot = () => {
 
           <div className="flex flex-col items-center space-y-2">
             <div>
-              <img src={Scale} alt="Delivery" />
+              <img src={Scale} alt="Scale" />
             </div>
             <div>
               <h3 className="text-amber-500 hover:text-black text-xl font-medium">
@@ -110,144 +110,117 @@ const iot = () => {
             <div>
               <p className="text-gray-500 max-w-xs">
                 We bank on advanced techniques to effectively process massive
-                data flows and enable real-time iot insights.
+                data flows and enable real-time IoT insights.
               </p>
             </div>
           </div>
-        </div>
 
-        <div className="flex flex-col items-center space-y-2 ">
-          <div>
-            <img src={Lock} alt="Delivery" />
+          <div className="flex flex-col items-center space-y-2">
+            <div>
+              <img src={Lock} alt="Lock" />
+            </div>
+            <div>
+              <h3 className="text-amber-500 hover:text-black text-xl font-medium">
+                Industry-grade security
+              </h3>
+            </div>
+            <div>
+              <p className="text-gray-500 max-w-xs">
+                Our specialists capitalize on industry’s best practices and
+                tools to protect your business and services.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-amber-500 hover:text-black text-xl font-medium">
-              Industry-grade security
-            </h3>
-          </div>
-          <div>
-            <p className="text-gray-500 max-w-xs">
-              Our specialists capitalize on industry’s best practices and tools
-              to protect your business and services.
-            </p>
-          </div>
-        </div>
 
-        <div className="flex flex-col items-center space-y-2 ">
-          <div>
-            <img src={Use} alt="Delivery" />
-          </div>
-          <div>
-            <h3 className="text-amber-500 hover:text-black text-xl font-medium">
-              Excellent usability
-            </h3>
-          </div>
-          <div>
-            <p className="text-gray-500 max-w-xs">
-              We engage top-notch developers and ux designers to create
-              intuitive, user-friendly iot applications that bring value to all
-              stakeholder.
-            </p>
+          <div className="flex flex-col items-center space-y-2">
+            <div>
+              <img src={Use} alt="Use" />
+            </div>
+            <div>
+              <h3 className="text-amber-500 hover:text-black text-xl font-medium">
+                Excellent usability
+              </h3>
+            </div>
+            <div>
+              <p className="text-gray-500 max-w-xs">
+                We engage top-notch developers and UX designers to create
+                intuitive, user-friendly IoT applications that bring value to
+                all stakeholders.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/*iot consulting */}
-      <div className="py-10">
-        <div>
-          <h1 className="font-semibold text-center text-3xl">Services</h1>
-        </div>
-        <div className="flex flex-wrap justify-center md:justify-between md:gap-20">
-          <div className="flex justify-center">
+      <div className="py-10 mb-9">
+        <h1 className="font-semibold text-center text-3xl">Services</h1>
+        <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-2 mt-10">
+          <div className="flex justify-center md:justify-start md:mr-10">
             <img
               src={Consult}
               alt="phone"
-              className="w-[500px] h-[380px] rounded-lg pb-10"
+              className="w-[500px] h-[380px] rounded-lg"
             />
           </div>
-          <div className="flex flex-col justify-start max-w-xs md:max-w-2xl">
-            <h1 className="text-amber-500 text-left font-semibold px-4 md:px-10 pt-8 md:pt-20 md:text-base">
+          <div className="max-w-xs md:max-w-2xl">
+            <h1 className="text-amber-500 text-center md:text-left font-semibold px-4 md:px-10 pt-8 md:pt-2 md:text-2xl">
               IOT Consulting
             </h1>
-            <p className="text-left px-4 md:px-10 pt-8 md:pt-4 text-sm md:text-base">
+            <p className="text-center md:text-left px-4 md:px-10 pt-8 md:pt-4 text-sm md:text-base">
               Whether you have just embarked on your IoT journey or are an
               experienced player, our IoT consultants will help you make the
               best of new opportunities and set them in tune with your business
               strategy.
             </p>
-            <p className="text-left px-4 md:px-10 pt-8 md:pt-4 text-sm md:text-base">
+            <p className="text-center md:text-left px-4 md:px-10 pt-8 md:pt-4 text-sm md:text-base">
               We collaborate and coordinate to tweak IoT project management,
               facilitate collaboration between stakeholders, help fill the gap
               in IoT-specific technical knowledge of client’s team, and take on
-              any other part of implementation desired from our clients.{" "}
+              any other part of implementation desired from our clients.
             </p>
           </div>
         </div>
       </div>
 
       {/*iot dev */}
-      <div className="container">
-        <div>
-          <h1 className="text-3xl font font-semibold">
-            <span className="text-amber-500">IOT</span> Development
+      <div class="container flex flex-col items-center justify-center">
+        <div class="text-center">
+          <h1 class="text-3xl font-semibold">
+            <span class="text-amber-500">IOT</span> Development
           </h1>
         </div>
-        <div className="text-center max-w-3xl p-10">
+        <div class="text-center font-medium text-base p-5 md:p-5 leading-7">
           <p>
             With almost 20 years in technology, and 5-plus years in IoT, we
-            excel in full-cycle IoT development. Our delivery life cycle
-            includes
+            excel in full-cycle IoT development.
+            <br /> Our delivery life cycle includes
           </p>
         </div>
-        <div className="flex flex-wrap justify-center xl:gap-40 lg:gap-20 md:gap-8 md:ml-[4rem] md:justify-center p-4">
-          <div
-            style={{
-              position: "relative",
-              background: "#F5F5F5",
-              width: "150px",
-              height: "150px",
-              borderRadius: "100%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img src={Research} className="ml-[2.5rem]" alt="Research Icon" />
+        <div class="flex justify-center items-end gap-4 md:gap-8 lg:gap-20 xl:gap-40 md:ml-[4rem] p-10">
+          <div class="relative flex flex-col items-center">
+            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+              <img src={Research} alt="Research Icon" />
+            </div>
+            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Research</h1>
           </div>
-          <div
-            style={{
-              background: "#F5F5F5",
-              width: "150px",
-              height: "150px",
-              borderRadius: "100%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img src={Dev} className="ml-[2.5rem]" />
+          <div class="relative flex flex-col items-center">
+            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+              <img src={Dev} alt="Development Icon" />
+            </div>
+            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Design and development</h1>
           </div>
-          <div
-            style={{
-              background: "#F5F5F5",
-              width: "150px",
-              height: "150px",
-              borderRadius: "100%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img src={Integrate} className="ml-[2.5rem]" />
+          <div class="relative flex flex-col items-center">
+            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+              <img src={Integrate} alt="Integration Icon" />
+            </div>
+            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Integration</h1>
           </div>
-          <div
-            style={{
-              background: "#F5F5F5",
-              width: "150px",
-              height: "150px",
-              borderRadius: "100%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img src={Test} className="ml-[2.5rem]" />
+          <div class="relative flex flex-col items-center">
+            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+              <img src={Test} alt="Testing Icon" />
+            </div>
+            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Testing</h1>
           </div>
         </div>
       </div>
