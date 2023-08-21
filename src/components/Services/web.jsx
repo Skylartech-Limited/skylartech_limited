@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
 import Discover from "../../assets/Services image/discover.png";
-
+import Requirements from "../../assets/Services image/Requirementsgathering.png"
+import Development from "../../assets/Services image/Development.png"
+import Support from "../../assets/Services image/Support.png"
 const web = () => {
   return (
     <>
@@ -62,6 +64,7 @@ const web = () => {
         </h3>
         <div className="lg:flex lg:flex-row lg:justify-between flex-col gap-10 px-10">
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+            <img className="w-32 h-16 mb-2"src={Requirements} alt="Requirements" />
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
               Requirements Gathering
             </h1>
@@ -73,6 +76,7 @@ const web = () => {
             </ul>
           </div>
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+          <img className="w-32 h-16 mb-2"src={Development} alt="Development" />
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
               Development & Testing
             </h1>
@@ -84,10 +88,10 @@ const web = () => {
             </ul>
           </div>
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
+          <img className="w-32 h-16 mb-2"src={Support} alt="Support" />
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
               Support & Maintenance
             </h1>
-
             <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
               <li>SLA Based Support</li>
               <li>L3 and Production Support Services</li>
