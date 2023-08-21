@@ -68,11 +68,11 @@ const ClientSlider = () => {
   });
 
   return (
-    <div className="p-5 flex flex-col items-center">
+    <div className="p-5 flex flex-col items-center overflow-hidden">
       <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8 ">
         Our <span className="text-amber-500">Clients</span>
       </h1>
-      <div className="max-w-[1400px] h-[250px] w-full m-auto py-16  relative group">
+      <div className="max-w-[1400px] h-[250px] w-full m-auto py-16 relative group">
         {/* Left Arrow */}
         <div
           className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer z-10"
@@ -90,7 +90,7 @@ const ClientSlider = () => {
           <BsChevronCompactRight size={30} />
         </div>
         <div
-          className="flex justify-center items-center mt-6"
+          className="flex justify-center items-center mt-6 overflow-hidden"
           style={{
             width: "100%",
             height: "30%",
