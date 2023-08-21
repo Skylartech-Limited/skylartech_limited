@@ -7,7 +7,7 @@ import Discover from "../../assets/Services image/discover.png";
 const web = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 ">
+      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
             Web &{" "}
