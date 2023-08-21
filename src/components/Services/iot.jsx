@@ -10,6 +10,7 @@ import Research from "../../assets/Services image/analytics.png";
 import Integrate from "../../assets/Services image/system-integration.png";
 import Test from "../../assets/Services image/checklist.png";
 import Dev from "../../assets/Services image/vector.png";
+import Analytics from "../../assets/Services image/iotanalytics.png";
 
 const iot = () => {
   return (
@@ -197,31 +198,89 @@ const iot = () => {
             <br /> Our delivery life cycle includes
           </p>
         </div>
-        <div class="flex justify-center items-end gap-4 md:gap-8 lg:gap-20 xl:gap-40 md:ml-[4rem] p-10">
-          <div class="relative flex flex-col items-center">
-            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+        <div className="flex justify-center items-end gap-4 md:gap-8 lg:gap-20 xl:gap-40 md:ml-[4rem] p-10">
+          <div className="relative flex flex-col items-center">
+            <div className="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
               <img src={Research} alt="Research Icon" />
             </div>
-            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Research</h1>
+            <h1 className="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
+              Research
+            </h1>
           </div>
-          <div class="relative flex flex-col items-center">
-            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+          <div className="relative flex flex-col items-center">
+            <div className="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
               <img src={Dev} alt="Development Icon" />
             </div>
-            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Design and development</h1>
+            <h1 className="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
+              Design and development
+            </h1>
           </div>
-          <div class="relative flex flex-col items-center">
-            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+          <div className="relative flex flex-col items-center">
+            <div className="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
               <img src={Integrate} alt="Integration Icon" />
             </div>
-            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Integration</h1>
+            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
+              Integration
+            </h1>
           </div>
-          <div class="relative flex flex-col items-center">
-            <div class="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
+          <div className="relative flex flex-col items-center">
+            <div className="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
               <img src={Test} alt="Testing Icon" />
             </div>
-            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">Testing</h1>
+            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
+              Testing
+            </h1>
           </div>
+        </div>
+      </div>
+
+      {/*iot analytics*/}
+      <div className="flex justify-center items-center bg-amber-50">
+        <div className="text-left p-8">
+          <h1 className="text-2xl font-bold mb-4 text-amber-500">
+            IOT ANALYTICS
+          </h1>
+          <p className="max-w-xl text-base tracking-normal">
+            We provide IoT Analytics solutions including business analysis,
+            dashboard design, architecture design and development, and quality
+            assurance. We offer IoT Analytics through:
+          </p>
+
+          <div className="mt-10">
+            <h2 className="mb-[5.5px] text-lg text-amber-500">
+              <i
+                className="fa-solid fa-circle fa-2xs mr-2"
+                style={{ color: "#ffbf00" }}
+              ></i>
+              Implementation of IOT analytics solutions
+            </h2>
+            <p className="max-w-xl">
+              We develop IoT applications based on an iterative approach and
+              launch an MVP or a first application version with a lean set of
+              high-priority features within a few months.
+            </p>
+            <h2 className="mt-10 mb-[5.5px] text-lg text-amber-500">
+              <i
+                className="fa-solid fa-circle fa-2xs mr-2"
+                style={{ color: "#ffbf00" }}
+              ></i>
+              IOT analytics as a service
+            </h2>
+            <p className="max-w-xl">
+              For businesses who want to benefit from IoT insights but do not
+              want in-house IoT implementation, we offer IoT analytics as a
+              service. Clients get access to a web interface with regular and
+              ad-hoc reports, while we handle the solution’s technical
+              implementation.
+            </p>
+          </div>
+        </div>
+        <div className="p-8">
+          <img
+            src={Analytics}
+            alt="IoT Analytics"
+            className="w-[500px] h-[400px]"
+          />
         </div>
       </div>
     </>
