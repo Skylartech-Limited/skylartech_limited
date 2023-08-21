@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
-import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
 import Discover from "../../assets/Services image/discover.png";
-import Requirements from "../../assets/Services image/Requirementsgathering.png"
-import Development from "../../assets/Services image/Development.png"
-import Support from "../../assets/Services image/Support.png"
+import Requirements from "../../assets/Services image/Requirementsgathering.png";
+import Development from "../../assets/Services image/Development.png";
+import Support from "../../assets/Services image/Support.png";
+import Fullstack from "../../assets/Services image/layers.png";
+import Api from "../../assets/Services image/api.png";
 const web = () => {
   return (
     <>
@@ -64,7 +65,11 @@ const web = () => {
         </h3>
         <div className="lg:flex lg:flex-row lg:justify-between flex-col gap-10 px-10">
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
-            <img className="w-32 h-16 mb-2"src={Requirements} alt="Requirements" />
+            <img
+              className="w-32 h-16 mb-2"
+              src={Requirements}
+              alt="Requirements"
+            />
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
               Requirements Gathering
             </h1>
@@ -76,7 +81,11 @@ const web = () => {
             </ul>
           </div>
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
-          <img className="w-32 h-16 mb-2"src={Development} alt="Development" />
+            <img
+              className="w-32 h-16 mb-2"
+              src={Development}
+              alt="Development"
+            />
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
               Development & Testing
             </h1>
@@ -88,7 +97,7 @@ const web = () => {
             </ul>
           </div>
           <div className="text-gray-800 shadow-xs p-10 rounded-xl">
-          <img className="w-32 h-16 mb-2"src={Support} alt="Support" />
+            <img className="w-32 h-16 mb-2" src={Support} alt="Support" />
             <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
               Support & Maintenance
             </h1>
@@ -120,19 +129,11 @@ const web = () => {
             <div className="text-left shadow-xs p-10 rounded-xl">
               <div
                 style={{
-                  background: "#F5F5F5",
-                  width: "62px",
-                  height: "60px",
-                  borderRadius: "100%",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={SoftwareDevelopment}
-                  style={{ marginLeft: "11px" }}
-                  alt="sd"
-                />
+                <img src={Fullstack} alt="sd" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Full Stack Development
@@ -150,19 +151,11 @@ const web = () => {
             <div className="text-left shadow-xs p-10 rounded-xl">
               <div
                 style={{
-                  background: "#F5F5F5",
-                  width: "62px",
-                  height: "60px",
-                  borderRadius: "100%",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={SoftwareDevelopment}
-                  style={{ marginLeft: "11px" }}
-                  alt="sd"
-                />
+                <img src={Api} alt="api" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 API Development
@@ -180,19 +173,11 @@ const web = () => {
             <div className="text-left shadow-xs p-10 rounded-xl">
               <div
                 style={{
-                  background: "#F5F5F5",
-                  width: "62px",
-                  height: "60px",
-                  borderRadius: "100%",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={SoftwareDevelopment}
-                  style={{ marginLeft: "11px" }}
-                  alt="sd"
-                />
+                <img src={Api} alt="api" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Upgradation and Migration
@@ -211,19 +196,11 @@ const web = () => {
             <div className="text-left shadow-xs p-10 rounded-xl">
               <div
                 style={{
-                  background: "#F5F5F5",
-                  width: "62px",
-                  height: "60px",
-                  borderRadius: "100%",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={SoftwareDevelopment}
-                  style={{ marginLeft: "11px" }}
-                  alt="sd"
-                />
+                <img src={Api} alt="api" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Prototyping & UI/UX Designing
@@ -242,19 +219,11 @@ const web = () => {
             <div className="text-left shadow-xs p-10 rounded-xl">
               <div
                 style={{
-                  background: "#F5F5F5",
-                  width: "62px",
-                  height: "60px",
-                  borderRadius: "100%",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={SoftwareDevelopment}
-                  style={{ marginLeft: "11px" }}
-                  alt="sd"
-                />
+                <img src={Api} alt="api" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Cross Platform
@@ -273,19 +242,11 @@ const web = () => {
             <div className="text-left shadow-xs p-10 rounded-xl">
               <div
                 style={{
-                  background: "#F5F5F5",
-                  width: "62px",
-                  height: "60px",
-                  borderRadius: "100%",
                   display: "flex",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={SoftwareDevelopment}
-                  style={{ marginLeft: "11px" }}
-                  alt="sd"
-                />
+                <img src={Api} alt="api" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Custom Website Development{" "}
@@ -305,12 +266,15 @@ const web = () => {
       {/*development process for mobile apps*/}
       <div className="mb-20 mt-20">
         <h1 className="text-3xl font-semibold text-center">
-          Our <span className="text-amber-500">Mobile Application</span> {" "}
+          Our <span className="text-amber-500">Mobile Application</span>{" "}
           Development Process
         </h1>
         <div className="flex flex-wrap items-start justify-center md:justify-between gap-20">
           <div className="flex flex-col justify-center max-w-3xl w-full md:w-auto md:flex-initial md:mt-24">
-            <p className="md:ml-[6rem] text-left px-10 pt-20" style={{ fontSize: "16px" }}>
+            <p
+              className="md:ml-[6rem] text-left px-10 pt-20"
+              style={{ fontSize: "16px" }}
+            >
               Working with <span className="text-amber-500">Devinx</span>, We
               ensure successful results each time. Our streamlined and thorough
               processes keep us competitive. Devinx strives to optimize the
