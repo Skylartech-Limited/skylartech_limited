@@ -1,12 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
-import Discover from "../../assets/Services image/discover.png";
+import MobileApp from "../../assets/Services image/MobileApp.png";
 import Requirements from "../../assets/Services image/Requirementsgathering.png";
 import Development from "../../assets/Services image/Development.png";
 import Support from "../../assets/Services image/Support.png";
 import Fullstack from "../../assets/Services image/layers.png";
 import Api from "../../assets/Services image/api.png";
+import WebDevelopment from "../../assets/Services image/web-development.png";
+import CrossPlatform from "../../assets/Services image/seo.png";
+import Prototyping from "../../assets/Services image/triangle.png";
+import Migration from "../../assets/Services image/migration.png";
 const web = () => {
   return (
     <>
@@ -131,6 +135,8 @@ const web = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  width: "39px",
+                  height: "39px",
                 }}
               >
                 <img src={Fullstack} alt="sd" />
@@ -153,6 +159,8 @@ const web = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  width: "39px",
+                  height: "39px",
                 }}
               >
                 <img src={Api} alt="api" />
@@ -175,9 +183,11 @@ const web = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  width: "39px",
+                  height: "39px",
                 }}
               >
-                <img src={Api} alt="api" />
+                <img src={Migration} alt="migration" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Upgradation and Migration
@@ -198,9 +208,11 @@ const web = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  width: "39px",
+                  height: "39px",
                 }}
               >
-                <img src={Api} alt="api" />
+                <img src={Prototyping} alt="prototype" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Prototyping & UI/UX Designing
@@ -221,9 +233,11 @@ const web = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  width: "39px",
+                  height: "39px",
                 }}
               >
-                <img src={Api} alt="api" />
+                <img src={CrossPlatform} alt="cp" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Cross Platform
@@ -244,9 +258,11 @@ const web = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  width: "39px",
+                  height: "39px",
                 }}
               >
-                <img src={Api} alt="api" />
+                <img src={WebDevelopment} alt="Web Dev" />
               </div>
               <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
                 Custom Website Development{" "}
@@ -264,35 +280,30 @@ const web = () => {
       </div>
 
       {/*development process for mobile apps*/}
-      <div className="mb-20 mt-20">
-        <h1 className="text-3xl font-semibold text-center">
-          Our <span className="text-amber-500">Mobile Application</span>{" "}
-          Development Process
-        </h1>
-        <div className="flex flex-wrap items-start justify-center md:justify-between gap-20">
-          <div className="flex flex-col justify-center max-w-3xl w-full md:w-auto md:flex-initial md:mt-24">
-            <p
-              className="md:ml-[6rem] text-left px-10 pt-20"
-              style={{ fontSize: "16px" }}
-            >
-              Working with <span className="text-amber-500">Devinx</span>, We
-              ensure successful results each time. Our streamlined and thorough
-              processes keep us competitive. Devinx strives to optimize the
-              mobile app development process to make sure your time and
-              investment are utilized most efficiently. By simplifying our
-              strategies, we make outsourcing mobile application development the
-              best experience for you and your customers.
-            </p>
-          </div>
-          <div className="flex justify-center mt-16 md:mr-[6rem]">
-            <img
-              src={Discover}
-              alt="phone"
-              className="h-[26rem] w-[24rem] rounded-lg pb-10"
-            />
-          </div>
-        </div>
-      </div>
+      <div className="mb-20 mt-20 flex flex-col items-center justify-center">
+  <h1 className="text-3xl font-semibold text-center">
+    Our <span className="text-amber-500">Mobile Application</span> Development Process
+  </h1>
+  <div className="flex items-center mt-6">
+    <p className="text-lg max-w-2xl text-left">
+      Working with <span className="text-amber-500">Devinx</span>, We
+      ensure successful results each time. Our streamlined and thorough
+      processes keep us competitive. Devinx strives to optimize the mobile
+      app development process to make sure your time and investment are
+      utilized most efficiently. By simplifying our strategies, we make
+      outsourcing mobile application development the best experience for
+      you and your customers.
+    </p>
+    <div className="ml-36"> {/* Add a container div for the image */}
+      <img
+        src={MobileApp}
+        alt="phone"
+        className=" mt-10 w-[384px] h-[370px] "
+      />
+    </div>
+  </div>
+</div>
+
     </>
   );
 };
