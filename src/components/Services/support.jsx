@@ -19,7 +19,7 @@ import Technique from "../../assets/Services image/technique.png";
 const support = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 ">
+      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50 ">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
             Support &{" "}
@@ -66,93 +66,88 @@ const support = () => {
       </div>
 
       {/*maintenance plans*/}
-      <div className="container">
+      <div className="container mt-12 mb-24">
         <div className="mb-6">
           <h1 className="font-semibold text-3xl text-center">
             Maintenance <span className="text-amber-500">Plans</span>
           </h1>
-        </div>
-      </div>
-      <div className="pt-5 pb-10 sm:text-center lg:flex lg:flex-wrap px-10 justify-center gap-10">
-        <div class="card bg-white shadow-xl rounded-lg h-[260px] w-[24rem]">
-          <div className="text-center p-10">
-            <img src={Budget} className="ml-[120px] mb-6" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">
-              Actual Budget
-            </h3>
-            <ul>
-              <li>
-                <motion.button
-                  className="bg-amber-500 text-white px-4 py-2 rounded-full"
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
+          <div className="flex justify-center gap-10 mt-8">
+            {" "}
+            <div className="card bg-slate-50 shadow-xl rounded-lg h-[260px] w-[24rem]">
+              <div className="text-center p-10">
+                <img src={Budget} alt="budget" className="ml-[120px] mb-6" />
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">
+                  Actual Budget
+                </h3>
+                <ul>
+                  <li>
+                    <motion.button
+                      className="bg-amber-500 text-white px-4 py-2 rounded-full"
+                      whileHover={{ scale: 0.9 }}
+                      whileTap={{ scale: 0.8 }}
+                    >
+                      Let's Talk
+                      <span
+                        className="ml-2 text-xl"
+                        style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+                      ></span>
+                    </motion.button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="card bg-slate-50 shadow-xl rounded-lg h-[260px] w-[24rem]">
+              <div className="text-center p-10">
+                <img src={Reuse} alt="reuse" className="ml-[124px] mb-6" />
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">
+                  How Does it Work?
+                </h3>
+                <ul>
+                  <li>
+                    <motion.button
+                      className="bg-amber-500 text-white px-4 py-2 rounded-full"
+                      whileHover={{ scale: 0.9 }}
+                      whileTap={{ scale: 0.8 }}
+                    >
+                      Let's Talk
+                      <span
+                        className="ml-2 text-xl"
+                        style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+                      ></span>
+                    </motion.button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="card bg-slate-50 shadow-xl rounded-lg h-[260px] w-[24rem]">
+              <div className="text-center p-10">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">
+                  What Is The Cost Involved?
+                </h3>
+                <p
+                  className="mb-6 leading-6 text-gray-600"
+                  style={{ maxWidth: "24rem" }}
                 >
-                  Let's Talk
-                  <span
-                    className="ml-2 text-xl"
-                    style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                  ></span>
-                </motion.button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-5 pb-10 sm:text-center lg:flex px-10 justify-center gap-10">
-        <div class="card bg-white shadow-xl rounded-lg h-[260px] w-[24rem]">
-          <div className="text-center p-10">
-            <img src={Reuse} className="ml-[124px] mb-6" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">
-              How Does it works?
-            </h3>
-            <ul>
-              <li>
-                <motion.button
-                  className="bg-amber-500 text-white px-4 py-2 rounded-full"
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  Let's Talk
-                  <span
-                    className="ml-2 text-xl"
-                    style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                  ></span>
-                </motion.button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-5 pb-10 sm:text-center lg:flex px-10 justify-center gap-10">
-        <div class="card bg-white shadow-xl rounded-lg h-[260px] w-[24rem]">
-          <div className="text-center p-10">
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">
-              What Is The Cost Involved?
-            </h3>
-            <p
-              className="mb-6 leading-6 text-gray-600"
-              style={{ maxWidth: "24rem" }}
-            >
-              There are three maintenance packages: Basic, Silver, and Platinum.
-              For more information, contact our account manager.
-            </p>
-            <ul>
-              <li>
-                <motion.button
-                  className="bg-amber-500 text-white px-4 py-2 rounded-full"
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  Let's Talk
-                  <span
-                    className="ml-2 text-xl"
-                    style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                  ></span>
-                </motion.button>
-              </li>
-            </ul>
+                  There are three maintenance packages: Basic, Silver, and
+                  Platinum. For more information, contact our account manager.
+                </p>
+                <ul>
+                  <li>
+                    <motion.button
+                      className="bg-amber-500 text-white px-4 py-2 rounded-full"
+                      whileHover={{ scale: 0.9 }}
+                      whileTap={{ scale: 0.8 }}
+                    >
+                      Let's Talk
+                      <span
+                        className="ml-2 text-xl"
+                        style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+                      ></span>
+                    </motion.button>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -164,10 +159,10 @@ const support = () => {
             Why <span className="text-amber-500">Devinx</span>
           </h1>
         </div>
-        <p className="text-xl max-w-4xl ml-[15rem] pb-6">
+        <p className="text-xl max-w-4xl ml-auto mr-auto pb-6 text-center">
           Your business software must remain operational at all times which is
           why getting website maintenance and support services, application
-          maintenance, and support services, as well as network maintenance and
+          maintenance and support services, as well as network maintenance and
           support services, is significant for increased stability and profits.
         </p>
 
