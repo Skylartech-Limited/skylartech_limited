@@ -25,7 +25,7 @@ const Home = () => {
      <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
-          Ensuring excellence in PMI-PMP®{" "}
+          Ensuring excellence in PMI-PMP® <br/>{" "}
             <span className="text-amber-500 font-medium">
               <Typewriter
                 words={["Training Initiatives", "Training Initiatives"]}
