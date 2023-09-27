@@ -15,6 +15,7 @@ import Search from "../../assets/Services image/search (1).png";
 import Solution from "../../assets/Services image/solution.png";
 import Sustain from "../../assets/Services image/sustainability.png";
 import Technique from "../../assets/Services image/technique.png";
+import Mockup from "../../assets/Services image/mockup (1).png";
 
 const support = () => {
   return (
@@ -276,6 +277,46 @@ const support = () => {
                 conducted by our Business Analysts.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/*drive...*/}
+      <div className="mb-16">
+        <div className="mb-16">
+          <h1 className="font-semibold text-3xl mt-10">
+            Drive Growth Through Three-Tiered{" "}
+            <span className="text-amber-500">Technical Support</span>
+          </h1>
+        </div>
+        <div className="flex">
+          <div className="ml-[8rem]">
+            <img src={Mockup} alt="mockup" className="rounded-lg " />
+          </div>
+          <div className="ml-16">
+            <h1 className="text-left max-w-xl mb-10">
+              Escalate your technical processes through Devinx simplified
+              strategies and unlock compelling opportunities, making the best
+              use of your time and investment.
+            </h1>
+            <ul className="text-lg font-semibold px-5 list-disc leading-10 text-left marker:text-amber-500 marker:text-2xl">
+              <li>Prevent Scope Creep</li>
+            </ul>
+            <p className="px-5 leading-10 text-left">
+              Issues deduction, Basic Support
+            </p>
+            <ul className="text-lg font-semibold px-5 list-disc leading-10 text-left marker:text-amber-500 marker:text-2xl">
+              <li>Advanced Level</li>
+            </ul>
+            <p className="px-5 leading-10 text-left">
+              Product Support and Technical Support
+            </p>
+            <ul className="text-lg font-semibold px-5 list-disc leading-10 text-left marker:text-amber-500 marker:text-2xl">
+              <li>Specialist Level</li>
+            </ul>
+            <p className="px-5 leading-10 text-left">
+              Product/Application Improvement
+            </p>
           </div>
         </div>
       </div>
