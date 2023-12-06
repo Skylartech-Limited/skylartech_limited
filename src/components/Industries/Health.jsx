@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Cursor, Typewriter } from "react-simple-typewriter";
 import Tele from "../../assets/Industries/layout.png";
 import Ehealth from "../../assets/Industries/medical-record.png";
 import Insure from "../../assets/Industries/health-insurance.png";
 import Exercise from "../../assets/Industries/exercise.png";
 import Serv from "../../assets/Services image/custom-software-1-1.png";
+import Healtht from "../../assets/Industries/doctor.png";
+import Team from "../../assets/Industries/teamwork.png";
 
 const Health = () => {
   return (
@@ -113,9 +114,43 @@ const Health = () => {
 
       {/*entrusting*/}
       <div>
-        <div>
-          <h1 className="font-semibold text-3xl">Entrust Your Medical Technology Development Needs to Skylartech</h1>
+        <div className="ml-[22rem]">
+          <h1 className="font-semibold text-3xl max-w-2xl">
+            Entrust Your Medical Technology Development Needs to Skylartech
+          </h1>
         </div>
+        <div className="flex mt-[6rem]">
+          <div className="card bg-amber-500 shadow-2xl rounded-lg h-[300px] w-[24rem] ml-[17rem]">
+            <div className="text-left pl-[5rem] pt-8">
+              <h1 className="font-semibold text-white text-xl mb-5">
+                Telehealth Software{" "}
+              </h1>
+              <p style={{ maxWidth: "16rem" }}>
+                Telehealthcare software development covers a broad range of
+                healthcare software services including, remote patient
+                monitoring, mobile health solutions, real-time healthcare,
+                mHealth apps, and telemedicine software.
+              </p>
+            </div>
+          </div>
+          <div className="card shadow-2xl rounded-lg h-[300px] w-[24rem] ml-[3rem]">
+            <div className="text-left pl-[5rem] pt-8">
+              <h1 className="font-semibold text-xl mb-5 text-amber-500">
+                Project-Based Model{" "}
+              </h1>
+              <p style={{ maxWidth: "16rem" }}>
+                Telehealthcare software development covers a broad range of
+                healthcare software services including, remote patient
+                monitoring, mobile health solutions, real-time healthcare,
+                mHealth apps, and telemedicine software.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-[8rem]">
+        <h1 className="text-3xl font-semibold">Automate Your Clinic</h1>
       </div>
 
       {/*automate clinic*/}
