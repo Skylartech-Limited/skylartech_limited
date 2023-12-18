@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import DiscoveryWorkshop from "../../assets/Homepage images/search 1.png";
-import Iot from "../../assets/Homepage images/Group 4.png";
-import Web from "../../assets/Homepage images/Group 2.png";
-import HomepageImage from "../../assets/Homepage images/HomepageImage.jpg";
-import Airbnb from "../../assets/Technology slider/airbnb.png";
-import Apple from "../../assets/Technology slider/apple.png";
-import Cisco from "../../assets/Technology slider/cisco.png";
-import Samsung from "../../assets/Technology slider/samsung.png";
-import Amazon from "../../assets/Technology slider/amazon.png";
+import COOP from "../../assets/Technology slider/CooperativeBank.png"
+import KCB from "../../assets/Technology slider/KCB.png"
+import Palladium from "../../assets/Technology slider/Palladium.png"
+import Ampath from "../../assets/Technology slider/Ampath.png"
+import Seacom from "../../assets/Technology slider/Seacom.png"
+import StimaSacco from "../../assets/Technology slider/StimaSacco.png"
+import IOM from "../../assets/Technology slider/IOM.png"
+import BaseTitanium from "../../assets/Technology slider/BaseTitanium.png"
+import Brisk from "../../assets/Technology slider/Brisk.png"
+import Adra from "../../assets/Technology slider/Adra.png"
 
 const ClientSlider = () => {
   const images = [
-    Amazon,
-    Airbnb,
-    Cisco,
-    Apple,
-    Samsung,
-    Iot,
-    Web,
-    HomepageImage,
-    DiscoveryWorkshop,
+    KCB,
+    COOP,
+    Palladium,
+    Ampath,
+    Seacom,
+    StimaSacco,
+    Adra,
+    BaseTitanium,
+    Brisk,
+    IOM
   ];
 
   const [imagesPerSlide, setImagesPerSlide] = useState(0);
