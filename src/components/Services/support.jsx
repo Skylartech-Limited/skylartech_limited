@@ -153,11 +153,11 @@ const support = () => {
         </div>
       </div>
 
-      {/*why denvix*/}
+      {/*why skylartech*/}
       <div className="bg-amber-50 py-20">
         <div className="pb-6">
           <h1 className="font-semibold text-3xl text-center">
-            Why <span className="text-amber-500">Devinx</span>
+            Why <span className="text-amber-500">Skylartech</span>
           </h1>
         </div>
         <p className="text-xl max-w-4xl ml-auto mr-auto pb-6 text-center">
@@ -168,7 +168,7 @@ const support = () => {
         </p>
 
         <div className="pt-5 pb-10 sm:text-center lg:flex lg:flex-wrap px-10 justify-center gap-10">
-          <div class="card bg-white hover:shadow-2xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Solution} alt="sd" className="w-[45px] h-[45px]" />
@@ -186,7 +186,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-2xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Search} alt="dw" className="w-[45px] h-[45px]" />
@@ -206,7 +206,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-2xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Choice} className="w-[45px] h-[45px]" alt="ue" />
@@ -227,7 +227,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-2xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Quality} alt="iot" className="w-[45px] h-[45px]" />
@@ -245,7 +245,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-2xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Maintain} alt="sup" className="w-[45px] h-[45px]" />
@@ -262,7 +262,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-2xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Analytics} alt="web" className="w-[45px] h-[45px]" />
@@ -317,6 +317,138 @@ const support = () => {
             <p className="px-5 leading-10 text-left">
               Product/Application Improvement
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/*maintenance and support services*/}
+      <div className="mt-[6rem]">
+        <div className="text-center">
+          <h1 className="text-3xl font-semibold mb-4">
+            Maintenance &{" "}
+            <span className="text-amber-500">Support Services</span>
+          </h1>
+          <p className="text-xl max-w-3xl ml-[300px] mb-8">
+            Depending on your specific needs, we can provide you with support
+            and maintenance for your complex applications. We keep our
+            professionals up-to-date with the latest technologies and operating
+            procedures. Our expertise and experience cover a wide range of
+            languages, databases, enterprise applications, software systems, and
+            platforms. Enhance the overall performance of your product with
+            end-to-end support services that include the following:
+          </p>
+        </div>
+        <div className="pt-5 pb-10 sm:text-center lg:flex lg:flex-wrap px-10 justify-center gap-10">
+          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem] ">
+            <div className="text-center px-10">
+              <div>
+                <img
+                  src={Hour}
+                  alt="sd"
+                  className="w-[70px] h-[70px] ml-[7rem] mt-6 mb-5"
+                />
+              </div>
+              <p
+                className="leading-6 text-gray-800"
+                style={{ maxWidth: "30rem" }}
+              >
+                Ongoing maintenance – troubleshooting, bug fixes, backups,
+                stability monitoring, and 24/7 options.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+            <div className="text-center px-10">
+              <div>
+                <img
+                  src={Code}
+                  alt="sd"
+                  className="w-[70px] h-[70px] ml-[7rem] mb-5 mt-6"
+                />
+              </div>
+              <p
+                className="leading-6 text-gray-800"
+                style={{ maxWidth: "30rem" }}
+              >
+                Enhancements and upgrades to applications and systems, as well
+                as new functionality integration.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+            <div className="text-center px-10">
+              <div>
+                <img
+                  src={Sustain}
+                  alt="sd"
+                  className="w-[70px] h-[70px] ml-[7rem] mb-5 mt-6"
+                />
+              </div>
+              <p
+                className="leading-6 text-gray-800"
+                style={{ maxWidth: "30rem" }}
+              >
+                Re-engineering software solutions to meet changes in the
+                environment and business needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+            <div className="text-center p-10">
+              <div>
+                <img
+                  src={Migrate}
+                  alt="sd"
+                  className="w-[70px] h-[70px] ml-[7rem] mb-5"
+                />
+              </div>
+              <p
+                className="leading-6 text-gray-800"
+                style={{ maxWidth: "30rem" }}
+              >
+                Migration from one platform to another.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+            <div className="text-center">
+              <div>
+                <img
+                  src={Technique}
+                  alt="sd"
+                  className="w-[70px] h-[70px] ml-[9rem] mb-5 mt-6"
+                />
+              </div>
+              <p
+                className="leading-6 text-gray-800"
+                style={{ maxWidth: "30rem" }}
+              >
+                Product/solution end-users and clients’ support (using online
+                chats, ticket systems), 24/7 option available.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+            <div className="text-center p-10">
+              <div>
+                <img
+                  src={People}
+                  alt="sd"
+                  className="w-[80px] h-[80px] ml-[7rem]"
+                />
+              </div>
+              <p
+                className="leading-6 text-gray-800"
+                style={{ maxWidth: "30rem" }}
+              >
+                Hire a dedicated support team for any sort of project.
+              </p>
+            </div>
           </div>
         </div>
       </div>

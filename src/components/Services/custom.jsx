@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import Discover from "../../assets/Services image/discover.png";
 import Check from "../../assets/Services image/check.png";
+import Serv from "../../assets/Services image/custom-software-1-1.png"
 
 const custom = () => {
   return (
@@ -52,8 +53,23 @@ const custom = () => {
         </div>
       </div>
 
+      <div className="flex ml-[8rem] mr-[5rem] mb-16 mt-12">
+        <div className="flex justify-center">
+          <img src={Serv} className="w-[457px] h-[221px] mt-10"/>
+        </div>
+        <div className="flex flex-col text-left ml-28">
+          <h1 className="font-semibold text-lg text-amber-500">WHAT YOU GET</h1>
+          <h1 className="font-semibold text-3xl my-6">Custom Software Development</h1>
+          <ul className="list-disc max-w-lg marker:text-amber-600 marker:text-3xl">
+            <li>Better business decisions with structured, augmented, and visualized data</li>
+            <li>Higher operations efficiency and automation with advanced data management</li>
+            <li>Engineering solutions leveraging new possibilities of advanced technologies (AI, Machine Learning, Big Data, IoT, and others)</li>
+          </ul>
+        </div>
+      </div>
+
       {/*methodologies */}
-      <div div className="flex flex-col justify-center items-center">
+      <div div className="flex flex-col justify-center items-center bg-amber-50">
         <h1 className="pt-12 text-3xl text-black text-center font-semibold">
           Software Development Methodologies
         </h1>

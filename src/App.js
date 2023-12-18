@@ -6,8 +6,11 @@ import Services from './components/Services/Services';
 import Contact from './components/Contact/Contact';
 import Technologies from './components/Technologies/Technologies';
 import Footer from './components/Footer/Footer';
+import Health from './components/Industries/Health.jsx'
+import Fintech from './components/Industries/Fintech.jsx'
+import Telecom from './components/Industries/Telecom.jsx'
+import Insurance from './components/Industries/Insurance.jsx'
 import Portfolio from './components/Portfolio/Portfolio';
-import Industries from './components/Industries/Industries';
 import Quote from './components/Quote/Quote.jsx'
 import Footerhero from './components/Footerhero/footerhero.jsx'
 import UI from './components/Services/Uidesign.jsx'
@@ -32,12 +35,12 @@ function App() {
               <Route exact path='/services/web-and-app-development' element={<Web/>} />
               <Route exact path='/services/custom-software-development' element={<Custom/>} />
               <Route exact path='/services/support-and-maintenance' element={<Support/>} />
+          <Route exact path='/industries' />
+              <Route exact path='/industries/health-care' element={<Health />} />
+              <Route exact path='/industries/fintech' element={<Fintech />} />
+              <Route exact path='/industries/insurance' element={<Insurance />} />
+              <Route exact path='/industries/telecom' element={<Telecom />} />
           <Route exact path='/portfolio' element={<Portfolio/>} />
-          <Route exact path='/industries' element={<Industries/>} />
-              <Route exact path='/industries/health-care' element={<Industries/>} />
-              <Route exact path='/industries/fintech' element={<Industries/>} />
-              <Route exact path='/industries/insurance' element={<Industries/>} />
-              <Route exact path='/industries/telecom' element={<Industries/>} />
           <Route exact path='/quote' element={<Quote/>} />
       </Routes>
       <Footerhero />
