@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { motion } from "framer-motion";
 import Tele from "../../assets/Industries/layout.png";
 import Ehealth from "../../assets/Industries/medical-record.png";
@@ -7,11 +7,20 @@ import Exercise from "../../assets/Industries/exercise.png";
 import Serv from "../../assets/Services image/custom-software-1-1.png";
 import Healtht from "../../assets/Industries/doctor.png";
 import Team from "../../assets/Industries/teamwork.png";
+import Background from "../../assets/Industries/healthbann.jpg";
+import Carehealth from "../../assets/Industries/healthcr1.jpg";
 
 const Health = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50 ">
+      <div
+        className="h-[35rem] flex flex-col lg:flex-row text-left p-10 bg-amber-50"
+        style={{
+          backgroundImage: `url(${Background})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
             HealthCare
@@ -112,9 +121,35 @@ const Health = () => {
         </div>
       </div>
 
+      {/*healthcare section*/}
+      <div
+        style={{
+          backgroundImage: `url(${Carehealth})`,
+          backgroundSize: "cover",
+          height: "38rem",
+          marginTop:"6rem"
+        }}
+      >
+        <div className="ml-[42rem] pt-[9rem]">
+          <h1 className="font-semibold text-3xl text-left mb-5">Healthcare</h1>
+          <p className="text-left max-w-xl leading-10">
+            We have worked alongside health professionals to create smart
+            systems that help them to streamline workflows, such as booking,
+            forecasting, and scheduling appointments. With the help of our
+            developers, we have been able to develop multiple web apps that
+            monitor a patient’s vital signs and maintain all the medical history
+            of that patient. Our AI & ML departments have also developed
+            advanced apps that detect diseases. We know everything about this
+            industry, hence can help you design and develop any sort of
+            application or software.
+          </p>
+        </div>
+      </div>
+
+
       {/*entrusting*/}
       <div>
-        <div className="ml-[22rem]">
+        <div className="ml-[22rem] mt-[3rem]">
           <h1 className="font-semibold text-3xl max-w-2xl">
             Entrust Your Medical Technology Development Needs to Skylartech
           </h1>

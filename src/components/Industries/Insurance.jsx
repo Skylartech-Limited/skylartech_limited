@@ -4,11 +4,12 @@ import Talk from "../../assets/Industries/talk.png";
 import Digi from "../../assets/Industries/currency.png";
 import Grow from "../../assets/Industries/growth.png";
 import Api from "../../assets/Industries/api (1).png";
+import Background from "../../assets/Industries/insurethsi.jpg";
 
 const Insurance = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50 ">
+      <div className="h-[35rem] flex flex-col lg:flex-row text-left p-10 bg-amber-50" style={{backgroundImage: `url(${Background})`, backgroundRepeat:"no-repeat", backgroundSize:"cover"}}>
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
             Insurance
