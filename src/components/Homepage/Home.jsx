@@ -28,8 +28,8 @@ const Home = () => {
         Your Strategic IT, Software Development and{" "}
             <span className="text-amber-500 font-medium">
               <Typewriter
-                words={["Project Management Partner", "Project Management Partner"]}
-                loop={50}
+                words={["Project Management Partner"]}
+                loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={1000}

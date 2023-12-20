@@ -4,11 +4,12 @@ import Rel from "../../assets/Industries/release.png";
 import Money from "../../assets/Industries/mobile-payment.png";
 import App from "../../assets/Industries/mobile-app.png";
 import Intelli from "../../assets/Industries/machine-learning.png";
+import Background from "../../assets/Industries/tele.jpg";
 
 const Fintech = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50 ">
+      <div className="h-[35rem] flex flex-col lg:flex-row text-left p-10 bg-amber-50" style={{backgroundImage: `url(${Background})`, backgroundRepeat:"no-repeat", backgroundSize:"cover"}}>
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
             Fintech
