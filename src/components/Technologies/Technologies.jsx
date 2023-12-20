@@ -17,8 +17,8 @@ const Technologies = () => {
             Features and{" "}
             <span className="text-amber-500 font-medium">
               <Typewriter
-                words={["Technologies", "Technologies"]}
-                loop={50}
+                words={["Technologies"]}
+                loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={1000}
