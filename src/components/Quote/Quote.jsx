@@ -1,72 +1,76 @@
 import React from "react";
-import countryCallingCodes from "../../country_calling_codes.json";
 import { motion } from "framer-motion";
 
 const Quote = () => {
   return (
-    <div className="container mx-auto mt-9 mb-9">
-      <form className="max-w-lg mx-auto p-4 bg-gray-100 rounded-lg shadow-md">
-        <div className="flex flex-wrap -mx-2 mb-4">
-          <div className="w-full md:w-1/2 px-2">
-            <label className="block mb-2 text-lg font-bold" htmlFor="name">
+    <div className="container mx-auto mt-9 mb-9 px-4">
+      <h1 className="text-4xl mb-5 font-semibold text-gray-900">Get a Quote</h1>
+      <p className="text-lg font-light tracking-wide mb-8 md:mb-16">
+        Fill up the form and our Team will get back to you within 24 hours.
+      </p>
+      <form className="max-w-lg mx-auto p-4 rounded-lg">
+        <div className="mb-4 flex flex-wrap">
+          <div className="w-full md:w-1/2 pr-0 md:pr-2 mb-4 md:mb-0">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
               Name
             </label>
             <input
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-amber-500"
               type="text"
               id="name"
-              name="name"
+              className="border-b border-gray-500 w-full h-8 mb-4 md:mb-0 focus:outline-none"
+              placeholder="Name"
               required
             />
           </div>
-          <div className="w-full md:w-1/2 px-2">
-            <label className="block mb-2 text-lg font-bold" htmlFor="email">
+          <div className="w-full md:w-1/2 pl-0 md:pl-2">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-amber-500"
               type="email"
               id="email"
-              name="email"
+              className="border-b border-gray-500 w-full h-8 mb-4 md:mb-0 focus:outline-none"
+              placeholder="Email"
               required
             />
           </div>
         </div>
-        <div className="flex flex-wrap -mx-2 mb-4">
-          <div className="w-full md:w-1/2 px-2">
-            <label className="block mb-2 text-lg font-bold" htmlFor="subject">
+        <div className="mb-4 flex flex-wrap">
+          <div className="w-full md:w-1/2 pr-0 md:pr-2">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="subject"
+            >
               Subject
             </label>
             <input
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-amber-500"
               type="text"
               id="subject"
-              name="subject"
+              className="border-b border-gray-500 w-full h-8 mb-4 md:mb-0 focus:outline-none"
+              placeholder="Subject"
               required
             />
           </div>
-          <div className="w-full md:w-1/2 px-2">
-            <label className="block mb-2 text-lg font-bold" htmlFor="phone">
+          <div className="w-full md:w-1/2 pl-0 md:pl-2">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="phone"
+            >
               Phone Number
             </label>
-            <div className="flex">
-              <select
-                className="px-2 py-2 border rounded-l-md focus:outline-none focus:border-amber-500 w-32"
-                name="country-code"
-                id="country-code"
-              >
-                {countryCallingCodes.map((country) => (
-                  <option key={country.code} value={country.code}>{`${country.name} (${country.dial_code})`}</option>
-                ))}
-              </select>
-              <input
-                className="w-full px-4 py-2 border rounded-r-md focus:outline-none focus:border-amber-500"
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-              />
-            </div>
+            <input
+              type="tel"
+              id="phone"
+              className="border-b border-gray-500 w-full h-8 mb-4 md:mb-0 focus:outline-none"
+              placeholder="Phone Number"
+              required
+            />
           </div>
         </div>
         <div className="flex flex-wrap -mx-2 mb-4">
@@ -182,12 +186,6 @@ const Quote = () => {
             />
             <label htmlFor="support">Support &amp; Maintenance</label>
           </div>
-        </div>
-        <div className="mb-4">
-          <div
-            className="g-recaptcha"
-            data-sitekey="YOUR_RECAPTCHA_SITE_KEY"
-          ></div>
         </div>
         <motion.button
           whileHover={{ scale: 0.9 }}
