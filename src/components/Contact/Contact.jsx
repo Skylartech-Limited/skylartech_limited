@@ -2,6 +2,7 @@ import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import City from "../../assets/Contact Images/City.jpeg";
+
 const Contact = () => {
   return (
     <>
@@ -33,7 +34,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Talk to our team form */}
       <div className="flex justify-center items-center mt-8">
         <form className="max-w-2xl w-full mb-12">
           <h1 className="text-4xl mb-5 font-semibold text-gray-900">
@@ -43,8 +43,6 @@ const Contact = () => {
             We'd love to discuss your ideas and look forward to bringing them to
             life!
           </p>
-
-          {/* Two columns for input fields */}
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div>
               <label
@@ -96,7 +94,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Large and centered div for messages */}
           <div className="mb-4 text-center">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -123,35 +120,37 @@ const Contact = () => {
 
       {/* location */}
       <div
-  className="flex items-center justify-center min-h-1/2-screen relative" // Adjusted min-height
-  style={{
-    backgroundImage: `url(${City})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
-  <div
-    className="absolute inset-0 bg-black opacity-80"
-    style={{ zIndex: 1 }}
-  ></div>
-  <div className="py-4 md:py-8 lg:py-16 text-center relative z-10"> {/* Adjusted padding */}
-    <div className="flex flex-col items-center space-y-4">
-      {/* Center content vertically */}
-      <div className="rounded-full bg-gray-600 p-9 h-25 w-25"> {/* Adjusted size */}
-        <i className="fa-solid fa-location-dot inline-block text-amber-500 text-xl md:text-2xl lg:text-5xl"></i>
+        className="flex items-center justify-center min-h-1/2-screen relative"
+        style={{
+          backgroundImage: `url(${City})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div
+          className="absolute inset-0 bg-black opacity-80"
+          style={{ zIndex: 1 }}
+        ></div>
+        <div className="py-4 md:py-8 lg:py-16 text-center relative z-10">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="rounded-full bg-gray-600 p-9 h-25 w-25">
+              <i className="fa-solid fa-location-dot inline-block text-amber-500 text-xl md:text-2xl lg:text-5xl"></i>
+            </div>
+
+            <h1 className="text-white font-serif text-lg md:text-xl lg:text-2xl py-2">
+              Location
+            </h1>
+            <h2 className="text-white text-md font-serif">Kenya</h2>
+            <p className="text-amber-500 text-md font-serif">
+              The Water Front, Karen
+            </p>
+            <p className="text-white text-md font-serif">+254 718-257-293</p>
+            <p className="text-white text-md font-serif">
+              info@skylartech.co.ke
+            </p>
+          </div>
+        </div>
       </div>
-
-      <h1 className="text-white font-serif text-lg md:text-xl lg:text-2xl py-2"> {/* Adjusted font size */}
-        Location
-      </h1>
-      <h2 className="text-white text-md font-serif">Kenya</h2> {/* Adjusted font size */}
-      <p className="text-amber-500 text-md font-serif">The Water Front, Karen</p> {/* Adjusted font size */}
-      <p className="text-white text-md font-serif">+254 718-257-293</p> {/* Adjusted font size */}
-      <p className="text-white text-md font-serif">info@skylartech.co.ke</p> {/* Adjusted font size */}
-    </div>
-  </div>
-</div>
-
     </>
   );
 };
