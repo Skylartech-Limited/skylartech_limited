@@ -188,13 +188,13 @@ const iot = () => {
       </div>
 
       {/*iot dev */}
-      <div class="container flex flex-col items-center justify-center">
-        <div class="text-center">
-          <h1 class="text-3xl font-semibold">
-            <span class="text-amber-500">IOT</span> Development
+      <div className="container flex flex-col items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-3xl font-semibold">
+            <span className="text-amber-500">IOT</span> Development
           </h1>
         </div>
-        <div class="text-center font-medium text-base p-5 md:p-5 leading-7">
+        <div className="text-center font-medium text-base p-5 md:p-5 leading-7">
           <p>
             With almost 20 years in technology, and 5-plus years in IoT, we
             excel in full-cycle IoT development.
@@ -222,7 +222,7 @@ const iot = () => {
             <div className="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
               <img src={Integrate} alt="Integration Icon" />
             </div>
-            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
+            <h1 className="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
               Integration
             </h1>
           </div>
@@ -230,7 +230,7 @@ const iot = () => {
             <div className="rounded-full bg-gray-100 w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
               <img src={Test} alt="Testing Icon" />
             </div>
-            <h1 class="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
+            <h1 className="text-center w-full mb-2 font-medium text-xl mt-10 text-gray-800">
               Testing
             </h1>
           </div>

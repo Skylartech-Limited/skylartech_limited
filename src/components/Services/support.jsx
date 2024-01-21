@@ -171,7 +171,7 @@ const support = () => {
         </p>
 
         <div className="pt-5 pb-10 sm:text-center lg:flex lg:flex-wrap px-10 justify-center gap-10">
-          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div className="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Solution} alt="sd" className="w-[45px] h-[45px]" />
@@ -189,7 +189,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div className="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Search} alt="dw" className="w-[45px] h-[45px]" />
@@ -209,7 +209,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div className="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Choice} className="w-[45px] h-[45px]" alt="ue" />
@@ -230,7 +230,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div className="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Quality} alt="iot" className="w-[45px] h-[45px]" />
@@ -248,7 +248,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div className="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Maintain} alt="sup" className="w-[45px] h-[45px]" />
@@ -265,7 +265,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
+          <div className="card bg-white hover:shadow-xl rounded-lg h-[350px] w-[23rem] transition ">
             <div className="text-left p-10">
               <div>
                 <img src={Analytics} alt="web" className="w-[45px] h-[45px]" />
@@ -342,7 +342,7 @@ const support = () => {
           </p>
         </div>
         <div className="pt-5 pb-10 sm:text-center lg:flex lg:flex-wrap px-10 justify-center gap-10">
-          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem] ">
+          <div className="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem] ">
             <div className="text-center px-10">
               <div>
                 <img
@@ -361,7 +361,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+          <div className="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
             <div className="text-center px-10">
               <div>
                 <img
@@ -380,7 +380,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+          <div className="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
             <div className="text-center px-10">
               <div>
                 <img
@@ -399,7 +399,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+          <div className="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
             <div className="text-center p-10">
               <div>
                 <img
@@ -417,7 +417,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+          <div className="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
             <div className="text-center">
               <div>
                 <img
@@ -436,7 +436,7 @@ const support = () => {
             </div>
           </div>
 
-          <div class="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
+          <div className="card bg-gray-200 shadow-xl rounded-lg h-[200px] w-[23rem]">
             <div className="text-center p-10">
               <div>
                 <img

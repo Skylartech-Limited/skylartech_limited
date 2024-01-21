@@ -139,14 +139,9 @@ const Navbar = () => {
                 onMouseEnter={toggleIndustriesDropdown}
                 onMouseLeave={toggleIndustriesDropdown}
               >
-                <button className=" focus:text-amber-500 text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
-                  <Link
-                    to="/industries"
-                    className="focus:text-amber-500 flex items-center"
-                  >
-                    Industries
-                    <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
-                  </Link>
+                <button className=" focus:text-amber-500 flex items-center text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                  Industries
+                  <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
                 </button>
                 {isIndustriesDropdownOpen && (
                   <motion.div
@@ -245,23 +240,23 @@ const Navbar = () => {
                   transition={{ duration: 0.3 }}
                   style={{
                     padding: "1rem 0.5rem",
-                    "@media (min-width: 640px)": {
+                    "@media (minWidth: 640px)": {
                       top: "8rem",
                       right: 0,
                     },
-                    "@media (min-width: 768px)": {
+                    "@media (minWidth: 768px)": {
                       top: "6rem",
                       right: 0,
                     },
-                    "@media (min-width: 1024px)": {
+                    "@media (minWidth: 1024px)": {
                       top: "5rem",
                       right: 0,
                     },
-                    "@media (min-width: 1280px)": {
+                    "@media (minWidth: 1280px)": {
                       top: "4rem",
                       right: "2rem",
                     },
-                    "@media (min-width: 1536px)": {
+                    "@media (minWidth: 1536px)": {
                       top: "4rem",
                       right: "4rem",
                     },
@@ -364,14 +359,9 @@ const Navbar = () => {
                     className="relative inline-block text-left"
                     onClick={toggleIndustriesDropdown}
                   >
-                    <button className="text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
-                      <Link
-                        to="/industries"
-                        className="focus:text-amber-500 flex items-center"
-                      >
-                        Industries{" "}
-                        <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
-                      </Link>
+                    <button className="focus:text-amber-500 flex items-center text-gray-700 hover:text-amber-500 px-3 py-2 rounded-md text-md font-medium transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 focus:outline-none">
+                      Industries{" "}
+                      <i className="fa-solid fa-angle-down ml-2 mt-2"></i>
                     </button>
                     {isIndustriesDropdownOpen && (
                       <motion.div
