@@ -295,7 +295,7 @@ const support = () => {
           </div>
           <div className="ml-16">
             <h1 className="text-left max-w-xl mb-10">
-              Escalate your technical processes through Devinx simplified
+              Escalate your technical processes through Skylartech simplified
               strategies and unlock compelling opportunities, making the best
               use of your time and investment.
             </h1>
