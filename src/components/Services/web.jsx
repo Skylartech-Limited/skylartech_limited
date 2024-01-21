@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom"
 import MobileApp from "../../assets/Services image/MobileApp.png";
 import Requirements from "../../assets/Services image/Requirementsgathering.png";
 import Development from "../../assets/Services image/Development.png";
@@ -40,6 +41,7 @@ const web = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
                 className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
@@ -53,6 +55,7 @@ const web = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>
