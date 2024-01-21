@@ -105,7 +105,7 @@ const discovery = () => {
           <div className="flex flex-wrap -mx-4">
             <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
               <div className="text-left shadow-xs p-10 rounded-xl">
-                <img src={Idea} className="w-[40px] h-[40px]" />
+                <img src={Idea} alt="idea" className="w-[40px] h-[40px]" />
                 <h3 className="pt-2 text-2xl font-semibold max-w-sm text-amber-500 transition hover:text-gray-800">
                   Validate Your Idea
                 </h3>
@@ -118,7 +118,7 @@ const discovery = () => {
 
             <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
               <div className="text-left shadow-xs p-10 rounded-xl">
-                <img src={Write} className="w-[40px] h-[40px]" />
+                <img src={Write} alt="write" className="w-[40px] h-[40px]" />
                 <h3 className="pt-2 text-2xl font-semibold max-w-sm text-amber-500 transition hover:text-gray-800">
                   Build concrete Requirements
                 </h3>
@@ -131,7 +131,7 @@ const discovery = () => {
 
             <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
               <div className="text-left shadow-xs p-10 rounded-xl">
-                <img src={Contact} className="w-[40px] h-[40px]" />
+                <img src={Contact} alt="contact" className="w-[40px] h-[40px]" />
 
                 <h3 className="pt-2 text-2xl font-semibold max-w-sm text-amber-500 transition hover:text-gray-800">
                   Involve Stakeholders
@@ -145,7 +145,7 @@ const discovery = () => {
 
             <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
               <div className="text-left shadow-xs p-10 rounded-xl">
-                <img src={Checker} className="w-[40px] h-[40px]" />
+                <img src={Checker} alt="checker" className="w-[40px] h-[40px]" />
 
                 <h3 className="pt-2 text-2xl font-semibold max-w-sm text-amber-500 transition hover:text-gray-800">
                   Visualize your Idea
@@ -159,7 +159,7 @@ const discovery = () => {
 
             <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
               <div className="text-left shadow-xs p-10 rounded-xl">
-                <img src={Wallet} className="w-[40px] h-[40px]" />
+                <img src={Wallet} alt="wallet" className="w-[40px] h-[40px]" />
 
                 <h3 className="pt-2 text-2xl font-semibold max-w-sm text-amber-500 transition hover:text-gray-800">
                   Save valuable Resources
@@ -173,7 +173,7 @@ const discovery = () => {
 
             <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
               <div className="text-left shadow-xs p-10 rounded-xl">
-                <img src={Clock} className="w-[40px] h-[40px]" />
+                <img src={Clock} alt="clock" className="w-[40px] h-[40px]" />
 
                 <h3 className="pt-2 text-2xl font-semibold max-w-sm text-amber-500 transition hover:text-gray-800">
                   Prevent Scope Creep
@@ -252,6 +252,7 @@ const discovery = () => {
         <div className="flex">
           <img
             src={Lap}
+            alt="lap"
             className="w-[500px] h-[340px] rounded-lg ml-[7rem] mt-10"
           />
           <ul className="pt-32 ml-[8rem] list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
