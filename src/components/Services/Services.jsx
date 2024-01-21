@@ -67,7 +67,7 @@ const Services = () => {
 
       <div className="pt-5 pb-10 sm:text-center lg:flex lg:flex-wrap px-10 justify-center gap-10">
         <Link to="/services/custom-software-development">
-          <div class="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
+          <div className="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
             <div className="text-center p-10">
               <div
                 style={{
@@ -100,7 +100,7 @@ const Services = () => {
         </Link>
 
         <Link to="/services/discovery-workshop">
-          <div class="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
+          <div className="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
             <div className="text-center p-10">
               <div
                 style={{
@@ -134,7 +134,7 @@ const Services = () => {
         </Link>
 
         <Link to="/services/ui-ux-design">
-          <div class="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
+          <div className="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
             <div className="text-center p-10">
               <div
                 style={{
@@ -171,7 +171,7 @@ const Services = () => {
         </Link>
 
         <Link to="/services/iot-development">
-          <div class="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
+          <div className="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
             <div className="text-center p-10">
               <div
                 style={{
@@ -200,7 +200,7 @@ const Services = () => {
         </Link>
 
         <Link to="/services/support-and-maintenance">
-          <div class="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
+          <div className="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
             <div className="text-center p-10">
               <div
                 style={{
@@ -230,7 +230,7 @@ const Services = () => {
         </Link>
 
         <Link to="/services/web-and-app-development">
-          <div class="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
+          <div className="card bg-gray-100 shadow-inner rounded-lg h-[440px] w-[23rem] transition hover:bg-amber-50">
             <div className="text-center p-10">
               <div
                 style={{
