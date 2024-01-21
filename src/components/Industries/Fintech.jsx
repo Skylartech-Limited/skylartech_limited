@@ -53,7 +53,7 @@ const Fintech = () => {
       </div>
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center lg:ml-[5rem]">
         <div className="mt-10">
-          <img src={Rel} />
+          <img src={Rel}  alt="rel"/>
         </div>
         <div
           className="text-left shadow-xs p-10 rounded-xl"
@@ -71,7 +71,7 @@ const Fintech = () => {
         </div>
 
         <div className="mt-10">
-          <img src={Money} />
+          <img src={Money} alt="money" />
         </div>
         <div
           className="text-left shadow-xs p-10 rounded-xl"
@@ -90,7 +90,7 @@ const Fintech = () => {
 
         <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
           <div className="mt-10">
-            <img src={Intelli} />
+            <img src={Intelli} alt="intelligent" />
           </div>
           <div
             className="text-left shadow-xs p-10 rounded-xl"
@@ -107,7 +107,7 @@ const Fintech = () => {
             </p>
           </div>
           <div className="mt-10">
-            <img src={App} />
+            <img src={App} alt="app" />
           </div>
           <div
             className="text-left shadow-xs p-10 rounded-xl"

@@ -117,7 +117,7 @@ const Uidesign = () => {
       <div>
         <h1 className="text-3xl font-semibold text-black text-center mt-12">
           Kickstart Your Project with{" "}
-          <span className="text-amber-500">Devinx</span> Reliable UI/UX Process
+          <span className="text-amber-500">Skylartech</span> Reliable UI/UX Process
         </h1>
       </div>
       <div
