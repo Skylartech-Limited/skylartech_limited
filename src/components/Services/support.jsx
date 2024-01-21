@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom"
 import Analytics from "../../assets/Services image/analytics (1).png";
 import Hour from "../../assets/Services image/24-hours-support.png";
 import Budget from "../../assets/Services image/budgeting.png";
@@ -48,6 +49,7 @@ const support = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
                 className="border-2 border-amber-500 bg-white 0 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
@@ -61,6 +63,7 @@ const support = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>

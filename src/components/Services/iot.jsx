@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom"
 import Delivery from "../../assets/Services image/delivery-box.png";
 import Scale from "../../assets/Services image/full-screen.png";
 import Lock from "../../assets/Services image/padlock.png";
@@ -43,6 +44,7 @@ const iot = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
                 className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
@@ -56,6 +58,7 @@ const iot = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>

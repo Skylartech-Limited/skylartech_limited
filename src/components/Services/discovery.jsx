@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom"
 import Discover from "../../assets/Services image/discover.png";
 import Idea from "../../assets/Services image/idea (1).png";
 import Write from "../../assets/Services image/edit-message (1).png";
@@ -46,6 +47,7 @@ const discovery = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
                 className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
@@ -59,6 +61,7 @@ const discovery = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>

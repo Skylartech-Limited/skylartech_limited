@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
 import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
 import DiscoveryWorkshop from "../../assets/Homepage images/search 1.png";
 import UserExperience from "../../assets/Homepage images/testing 1.png";
 import Iot from "../../assets/Homepage images/Group 4.png";
 import Support from "../../assets/Homepage images/support (1) 1.png";
 import Web from "../../assets/Homepage images/Group 2.png";
-import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -35,6 +35,7 @@ const Services = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
                 className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
@@ -48,6 +49,7 @@ const Services = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>
@@ -58,7 +60,7 @@ const Services = () => {
         <h1 className="text-4xl font-bold text-black text-center mt-12">
           What We Do
         </h1>
-        <h1 className="pt-5 font-semibold text-2xl">
+        <h1 className="pt-5 font-semibold text-2xl text-center">
           Solve Your Toughest Challenges
         </h1>
       </div>

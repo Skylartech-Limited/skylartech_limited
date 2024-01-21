@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"
 import Code from "../../assets/Services image/coding.png";
 import Tel from "../../assets/Industries/communication.png";
 import Soft from "../../assets/Industries/coding (1).png";
@@ -22,8 +23,9 @@ const Telecom = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
-                className="border-2 border-amber-500 bg-white 0 text-black px-4 py-2 rounded"
+                className="border-2 border-black bg-white 0 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
                 whileTap={{ scale: 0.8 }}
               >
@@ -35,6 +37,7 @@ const Telecom = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>
