@@ -23,10 +23,10 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
-        Your Strategic IT, Software Development and{" "}
+            Your Strategic IT, Software Development and{" "}
             <span className="text-amber-500 font-medium">
               <Typewriter
                 words={["Project Management Partner"]}
@@ -55,20 +55,20 @@ const Home = () => {
           </p>
           <ul className="flex justify-center">
             <li>
-            <Link to="/contact-us">
-              <motion.button
-                className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
-                whileHover={{ scale: 0.9 }}
-                whileTap={{ scale: 0.8 }}
-              >
-                Let's Talk
-                <span
-                  className="ml-2 text-xl"
-                  style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+              <Link to="/contact-us">
+                <motion.button
+                  className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
+                  whileHover={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.8 }}
                 >
-                  &#8594;
-                </span>
-              </motion.button>
+                  Let's Talk
+                  <span
+                    className="ml-2 text-xl"
+                    style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
+                  >
+                    &#8594;
+                  </span>
+                </motion.button>
               </Link>
             </li>
           </ul>
@@ -266,10 +266,7 @@ const Home = () => {
 
       {/*our expertise */}
 
-      <div
-        div
-        className="bg-amber-50 flex flex-col justify-center items-center"
-      >
+      <div className="bg-amber-50 flex flex-col justify-center items-center">
         <h1 className="pt-12 text-4xl text-black text-center font-semibold">
           Our Expertise
         </h1>
@@ -345,13 +342,15 @@ const Home = () => {
       <Work />
 
       {/*software development process */}
-      <div className="pt-5 ">
-        <h1 className="font-semibold text-3xl text-center">
-          We Simplify Software{" "}
-          <span className="text-amber-500">Development Process</span>
-        </h1>
-      </div>
+
       <div className="container  mx-auto px-4 sm:px-8 md:px-16">
+        {" "}
+        <div className="pt-5 ">
+          <h1 className="font-semibold text-3xl text-center">
+            We Simplify Software{" "}
+            <span className="text-amber-500">Development Process</span>
+          </h1>
+        </div>
         <div className="flex flex-wrap ml-20 justify-center items-center pb-10 mt-8 px-4 sm:px-2 md:px-16">
           <div className="pt-5 text-center w-full sm:w-64 h-80 mb-8 sm:mb-0 sm:mr-4 md:mr-0">
             <div
@@ -468,7 +467,7 @@ const Home = () => {
 
       <CountUp />
 
-      <ClientReview/>
+      <ClientReview />
     </>
   );
 };

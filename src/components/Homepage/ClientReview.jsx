@@ -4,10 +4,10 @@ import Quotations from "../../assets/Homepage images/Quotationmark.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Import Swiper styles
 
-
 const ClientReview = () => {
   const slider = [
-    <div className="card text-center p-[30px] bg-slate-50 rounded-xl  h-[341px] w-[546px] relative overflow-hidden">
+    // Slide 1
+    <div className="card text-center p-4 lg:p-[30px] bg-slate-50 rounded-xl sm:h-[400px] md:h-[450px] lg:h-[341px] lg:w-[546px] relative overflow-hidden">
       <div className="absolute top-0 -right-16 w-32 h-32 bg-blue-500 rounded-full -translate-y-12">
         <img
           src={Quotations}
@@ -67,7 +67,8 @@ const ClientReview = () => {
       </div>
     </div>,
 
-    <div className=" card text-center p-[30px] bg-slate-50 rounded-xl  h-[341px] w-[546px] relative overflow-hidden">
+    // Slide 2
+    <div className=" card text-center p-4 lg:p-[30px] bg-slate-50 rounded-xl sm:h-[400px] md:h-[450px] lg:h-[341px] lg:w-[546px] relative overflow-hidden">
       <div className="absolute top-0 -right-16 w-32 h-32 bg-blue-500 rounded-full -translate-y-12">
         <img
           src={Quotations}
@@ -127,7 +128,8 @@ const ClientReview = () => {
       </div>
     </div>,
 
-    <div className=" card text-center p-[30px] bg-slate-50 rounded-xl  h-[341px] w-[546px] relative overflow-hidden">
+    // Slide 3
+    <div className=" card text-center p-4 lg:p-[30px] bg-slate-50 rounded-xl sm:h-[400px] md:h-[450px] lg:h-[341px] lg:w-[546px] relative overflow-hidden">
       <div className="absolute top-0 -right-16 w-32 h-32 bg-blue-500 rounded-full -translate-y-12">
         <img
           src={Quotations}
@@ -189,15 +191,39 @@ const ClientReview = () => {
   ];
 
   return (
-
     <div className="flex justify-center mb-16 lg:-mt-28 xl:-mt-28">
       <Swiper
-        slidesPerView={2}
-        className="max-w-[1150px] h-[341.2px]"
+        slidesPerView={1}
+        spaceBetween={4}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 12,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1280: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          1536: {
+            slidesPerView: 2,
+            spaceBetween: 32,
+          },
+        }}
+        className="max-w-[1150px] lg:h-[341.2px]"
       >
-        <SwiperSlide className="px-4">{slider[0]}</SwiperSlide>
-        <SwiperSlide className="px-4">{slider[1]}</SwiperSlide>
-        <SwiperSlide className="px-4">{slider[2]}</SwiperSlide>
+        {slider.map((slide, index) => (
+          <SwiperSlide key={index} className="px-2 md:px-4">
+            {slide}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
