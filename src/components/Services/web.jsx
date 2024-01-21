@@ -123,7 +123,7 @@ const web = () => {
             Development Experts
           </h1>
           <h1 className="pt-5 text-xl ">
-            Devinx provides a host of web designing and development services for
+            Skylartech provides a host of web designing and development services for
             global clients.
           </h1>
         </div>
@@ -286,9 +286,9 @@ const web = () => {
   </h1>
   <div className="flex items-center mt-6">
     <p className="text-lg max-w-2xl text-left">
-      Working with <span className="text-amber-500">Devinx</span>, We
+      Working with <span className="text-amber-500">Skylartech</span>, We
       ensure successful results each time. Our streamlined and thorough
-      processes keep us competitive. Devinx strives to optimize the mobile
+      processes keep us competitive. Skylartech strives to optimize the mobile
       app development process to make sure your time and investment are
       utilized most efficiently. By simplifying our strategies, we make
       outsourcing mobile application development the best experience for
