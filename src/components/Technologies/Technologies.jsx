@@ -1,13 +1,13 @@
 import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Phone from "../../assets/Technology Images/phone.png";
 import Frontend from "../../assets/Technology Images/Frontend.png";
 import Backend from "../../assets/Technology Images/Backend.png";
 import Cloud from "../../assets/Technology Images/Cloud.png";
 import Mobile from "../../assets/Technology Images/Mobile.png";
 import TechSlider from "./TechSlider";
-
 const Technologies = () => {
   return (
     <>
@@ -40,6 +40,7 @@ const Technologies = () => {
           </p>
           <ul>
             <li>
+            <Link to="/contact-us">
               <motion.button
                 className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
                 whileHover={{ scale: 0.9 }}
@@ -53,6 +54,7 @@ const Technologies = () => {
                   &#8594;
                 </span>
               </motion.button>
+              </Link>
             </li>
           </ul>
         </div>
