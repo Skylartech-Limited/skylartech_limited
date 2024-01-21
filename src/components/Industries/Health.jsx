@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Tele from "../../assets/Industries/layout.png";
 import Ehealth from "../../assets/Industries/medical-record.png";
@@ -65,7 +65,7 @@ const Health = () => {
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
         <div>
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img src={Tele} />
+            <img src={Tele} alt="tele" />
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Telehealth Software
             </h3>
@@ -79,7 +79,7 @@ const Health = () => {
         </div>
         <div>
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img src={Ehealth} />
+            <img src={Ehealth} alt="ehealth" />
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Electronic Health Record Software (EHR)
             </h3>
@@ -93,7 +93,7 @@ const Health = () => {
         </div>
         <div>
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img src={Insure} />
+            <img src={Insure} alt="insure" />
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Health Insurance Software
             </h3>
@@ -107,7 +107,7 @@ const Health = () => {
         </div>
         <div>
           <div className="text-left shadow-xs p-10 rounded-xl">
-            <img src={Exercise} />
+            <img src={Exercise} alt="exercise" />
             <h3 className="text-2xl font-bold max-w-xs text-gray-800">
               Health Tracking Apps
             </h3>
@@ -127,7 +127,7 @@ const Health = () => {
           backgroundImage: `url(${Carehealth})`,
           backgroundSize: "cover",
           height: "38rem",
-          marginTop:"6rem"
+          marginTop: "6rem",
         }}
       >
         <div className="ml-[42rem] pt-[9rem]">
@@ -145,7 +145,6 @@ const Health = () => {
           </p>
         </div>
       </div>
-
 
       {/*entrusting*/}
       <div>
@@ -191,7 +190,7 @@ const Health = () => {
       {/*automate clinic*/}
       <div className="flex ml-[8rem] mr-[5rem] mb-16 mt-12">
         <div className="flex justify-center">
-          <img src={Serv} className="w-[564px] h-[250px] mt-10" />
+          <img src={Serv} alt="serv" className="w-[564px] h-[250px] mt-10" />
         </div>
         <div className="flex flex-col text-left ml-28 mt-28">
           <p className="max-w-xl">
