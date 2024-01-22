@@ -1,6 +1,6 @@
 # Skylartech Limited
 
-Welcome to the SkylarTech.co.ke GitHub repository! This repository hosts the source code and documentation for SkylarTech, a [brief description of your company and its main focus].
+Welcome to the Skylartech Limited GitHub repository! This repository hosts the source code and documentation for SkylarTech, a distinguished company specializing in mobile and web app development.
 
 ## Table of Contents
 - [About SkylarTech.co.ke](#about-skylartechcoke)
