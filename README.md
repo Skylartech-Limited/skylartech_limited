@@ -22,8 +22,14 @@ Welcome to the SkylarTech.co.ke GitHub repository! This repository hosts the sou
 
 To get started with Skylartech, follow these steps:
 ```bash
-# Example commands or code snippets
-git clone https://github.com/your-username/skylartech_limited.git
+1.Clone the repository locally
+git clone https://github.com/your-username/skylartech_limited.git](https://github.com/Skylartech-Limited/skylartech_limited.git)https://github.com/Skylartech-Limited/skylartech_limited.git
+
+2. Navigate to the repository locally and open it using visual studio code
 cd skylartech_limited
+
+3.Install all NPM dependencies
 npm install
+
+4. Run the server locally
 npm start
