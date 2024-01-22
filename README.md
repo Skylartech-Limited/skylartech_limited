@@ -16,7 +16,7 @@ Welcome to the Skylartech Limited GitHub repository! This repository hosts the s
 
 ## Features
 
-- [List key features and functionalities of SkylarTech.co.ke]
+- [List key features and functionalities of Skylartech]
 
 ## Getting Started
 
