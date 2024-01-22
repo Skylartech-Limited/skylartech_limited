@@ -3,14 +3,14 @@
 Welcome to the Skylartech Limited GitHub repository! This repository hosts the source code and documentation for SkylarTech, a distinguished company specializing in mobile and web app development.
 
 ## Table of Contents
-- [About SkylarTech.co.ke](#about-skylartechcoke)
+- [About Skylartech](#about-skylartech)
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
 - [License](https://github.com/Skylartech-Limited/skylartech_limited/blob/master/LICENSE)
 
-## About SkylarTech.co.ke
+## About Skylartech
 
 [Skylartech](https://www.skylartech.co.ke) is a distinguished company specializing in mobile and web app development, prioritizes intelligent technologies and ensuring utmost customer contentment. Established in 2014, our firm has consistently provided top-notch solutions to businesses worldwide, achieving a remarkable 100% success rate. Benefit from our skilled team's services at budget-friendly rates and equip your company with the perfect technological solutions it needs. This GitHub repository serves as the central hub for SkylarTech's digital presence, housing the codebase and documentation.
 
