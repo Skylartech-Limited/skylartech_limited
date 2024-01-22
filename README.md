@@ -8,11 +8,11 @@ Welcome to the SkylarTech.co.ke GitHub repository! This repository hosts the sou
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
-- [License](#license)
+- [License](https://github.com/Skylartech-Limited/skylartech_limited/blob/master/LICENSE)
 
 ## About SkylarTech.co.ke
 
-[SkylarTech.co.ke](https://www.skylartech.co.ke) is [provide a concise description of your company and its goals]. This GitHub repository serves as the central hub for SkylarTech's digital presence, housing the codebase and documentation.
+[Skylartech](https://www.skylartech.co.ke) is a distinguished company specializing in mobile and web app development, prioritizes intelligent technologies and ensuring utmost customer contentment. Established in 2014, our firm has consistently provided top-notch solutions to businesses worldwide, achieving a remarkable 100% success rate. Benefit from our skilled team's services at budget-friendly rates and equip your company with the perfect technological solutions it needs. This GitHub repository serves as the central hub for SkylarTech's digital presence, housing the codebase and documentation.
 
 ## Features
 
@@ -21,15 +21,9 @@ Welcome to the SkylarTech.co.ke GitHub repository! This repository hosts the sou
 ## Getting Started
 
 To get started with Skylartech, follow these steps:
-
-1. [Installation instructions, if applicable]
-2. [Configuration steps]
-3. [How to run the project locally]
-4. [Additional setup or dependencies]
-
 ```bash
 # Example commands or code snippets
-git clone https://github.com/your-username/skylartech.co.ke.git
-cd skylartech.co.ke
+git clone https://github.com/your-username/skylartech_limited.git
+cd skylartech_limited
 npm install
 npm start
