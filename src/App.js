@@ -20,6 +20,7 @@ import IOT from "./components/Services/iot.jsx";
 import Web from "./components/Services/web.jsx";
 import Custom from "./components/Services/custom.jsx";
 import Support from "./components/Services/support.jsx";
+import LiveChat from '../src/components/Livechat/Livechat.jsx';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
       </Routes>
       <Footerhero />
       <Footer />
+      <LiveChat />
     </div>
   );
 }
