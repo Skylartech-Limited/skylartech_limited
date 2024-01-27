@@ -21,6 +21,7 @@ import Web from "./components/Services/web.jsx";
 import Custom from "./components/Services/custom.jsx";
 import Support from "./components/Services/support.jsx";
 import LiveChat from '../src/components/Livechat/Livechat.jsx';
+import Scroll from "../src/components/ScrollToTop/Scroll.jsx"
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <Footerhero />
       <Footer />
       <LiveChat />
+      <Scroll />
     </div>
   );
 }
