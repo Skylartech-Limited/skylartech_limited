@@ -14,7 +14,7 @@ import Build from "../../assets/softwareprocess/build 1.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
-import Work from "./WorkSlider";
+// import Work from "./WorkSlider";
 import Menu from "./Menu";
 import Client from "./ClientSlider";
 import CountUp from "./CountUp";
@@ -339,7 +339,7 @@ const Home = () => {
 
       <Menu />
 
-      <Work />
+      {/* <Work /> */}
 
       {/*software development process */}
 
