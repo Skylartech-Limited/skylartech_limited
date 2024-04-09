@@ -11,6 +11,7 @@ import Rocket from "../../assets/softwareprocess/rocket 1.png";
 import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
+import PMPTeacher from "../../assets/Homepage images/PMPTEACHER.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
@@ -339,6 +340,10 @@ const Home = () => {
 
       <Menu />
 
+      <div className="flex justify-center mb-10">
+        {/* Here, you can adjust the classes to fit your desired size */}
+        <img src={PMPTeacher} alt="PMPTEACHER" className="w-6/12 h-auto" />
+      </div>
       {/* <Work /> */}
 
       {/*software development process */}
