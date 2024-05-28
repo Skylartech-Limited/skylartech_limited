@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
@@ -24,6 +25,18 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Skylartech Limited | PMI partner</title>
+        <meta
+          name="description"
+          content="Skylartech Limited, a trusted PMI partner, offering comprehensive tech solutions in Kenya. Visit us at skylartech.co.ke"
+        />
+        <meta
+          name="keywords"
+          content="Skylartech, PMI partner, tech solutions, Kenya, software development"
+        />
+        <link rel="canonical" href="https://skylartech.co.ke" />
+      </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
