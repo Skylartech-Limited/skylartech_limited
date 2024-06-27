@@ -35,6 +35,7 @@ const Home = () => {
           name="keywords"
           content="Skylartech, PMI partner, tech solutions, Kenya, software development"
         />
+        
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
