@@ -35,16 +35,24 @@ const Home = () => {
           name="keywords"
           content="Skylartech, PMI partner, tech solutions, Kenya, software development"
         />
-        
+
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
             Your Strategic IT, Software Development and{" "}
-            <span className="text-amber-500 font-medium">
+            <span
+              className="font-medium"
+              style={{
+                background:
+                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)", // Softer yellow
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
               <Typewriter
-                words={["Project Management Partner"]}
+                words={["Project Management Partner"]}
                 loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
@@ -55,6 +63,7 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
+
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
             cutting-edge development solutions
