@@ -81,7 +81,7 @@ const Home = () => {
             <li>
               <Link to="/contact-us">
                 <motion.button
-                  className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
+                  className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-4 py-2 rounded"
                   whileHover={{ scale: 0.9 }}
                   whileTap={{ scale: 0.8 }}
                 >
