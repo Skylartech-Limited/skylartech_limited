@@ -13,6 +13,7 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import PMPTeacher from "../../assets/Homepage images/PMPTEACHER.png";
+import Logo from "../../assets/Logo.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
@@ -40,7 +41,7 @@ const Home = () => {
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-2">
             Your Strategic IT, Software Development and{" "}
             <span
               className="font-medium"
@@ -63,6 +64,14 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
+          <div className="flex justify-center mt-6">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-96 w-auto sm:h-80 md:h-90"
+            />
+          </div>
+          
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
