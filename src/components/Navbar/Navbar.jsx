@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import Logo from "../../assets/Logo.jpg";
+import Logo from "../../assets/Logo.png";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -31,11 +31,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              {/* <img
+              <img
                 src={Logo}
                 alt="Logo"
                 className="h-10 sm:h-12 md:h-16 w-auto mr-2"
-              /> */}
+              />
               <div className="text-gray-700 text-lg sm:text-xl md:text-2xl font-sans">
                 <span className="font-semibold tracking-widest">
                   Skylartech

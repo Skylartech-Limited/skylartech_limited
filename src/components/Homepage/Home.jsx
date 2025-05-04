@@ -13,7 +13,9 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import PMPTeacher from "../../assets/Homepage images/PMPTEACHER.png";
-import Logo from "../../assets/Logo.png";
+// import Logo from "../../assets/Logo.png";
+import Pass from "../../assets/Homepage images/PassPMP.png";
+import Learn from "../../assets/Homepage images/LearnPMI.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
@@ -64,14 +66,18 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
-          <div className="flex justify-center mt-6">
+          <div className="flex flex-wrap justify-center items-center mt-6 gap-4">
             <img
-              src={Logo}
-              alt="Logo"
-              className="h-96 w-auto sm:h-80 md:h-90"
+              src={Pass}
+              alt="PMPExamPrep"
+              className="max-w-full h-auto w-4/5 sm:w-2/3 md:w-1/3 lg:w-1/3 mx-auto"
+            />
+            <img
+              src={Learn}
+              alt="LearnPMP"
+              className="max-w-full h-auto w-4/5 sm:w-2/3 md:w-1/3 lg:w-1/3 mx-auto"
             />
           </div>
-          
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
