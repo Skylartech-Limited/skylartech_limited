@@ -14,8 +14,6 @@ import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import PMPTeacher from "../../assets/Homepage images/PMPTEACHER.png";
 // import Logo from "../../assets/Logo.png";
-import Pass from "../../assets/Homepage images/PassPMP.png";
-import Learn from "../../assets/Homepage images/LearnPMI.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
@@ -43,7 +41,7 @@ const Home = () => {
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-28">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2">
             Your Strategic IT, Software Development and{" "}
             <span
               className="font-medium"
@@ -66,19 +64,6 @@ const Home = () => {
               <Cursor cursorStyle="~" />
             </span>
           </h2>
-          <div className="flex justify-center items-center mt-6 gap-4 flex-wrap md:flex-nowrap">
-            <img
-              src={Pass}
-              alt="PMPExamPrep"
-              className="max-w-full h-auto w-1/3 sm:w-1/4 md:w-1/4"
-            />
-            <img
-              src={Learn}
-              alt="LearnPMP"
-              className="max-w-full h-auto w-2/3 sm:w-3/5 md:w-1/2"
-            />
-          </div>
-
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
             cutting-edge development solutions
