@@ -27,23 +27,23 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gray-50 shadow-lg relative z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img
                 src={Logo}
                 alt="Logo"
-                className="h-10 sm:h-12 md:h-16 w-auto mr-2"
+                className="h-12 sm:h-10 md:h-12 w-auto mr-2"
               />
-              <div className="text-gray-700 text-lg sm:text-xl md:text-2xl font-sans">
+              {/* <div className="text-gray-700 text-lg sm:text-xl md:text-2xl font-sans">
                 <span className="font-semibold tracking-widest">
                   Skylartech
                 </span>{" "}
                 <span className="mb-1 font-semibold tracking-widest">
                   Limited
                 </span>
-              </div>
+              </div> */}
             </Link>
           </div>
           <div className="flex items-center">
