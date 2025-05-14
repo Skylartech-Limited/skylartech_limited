@@ -54,7 +54,7 @@ const Home = () => {
               }}
             >
               <Typewriter
-                words={["and Technology for Exceptional Results🚀"]}
+                words={["and Technology for Exceptional Results"]}
                 loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
