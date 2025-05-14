@@ -41,8 +41,9 @@ const Home = () => {
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2">
-            Your Strategic IT, Software Development and{" "}
+          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl font-medium text-gray-800 py-2">
+            Leading the Future of Project Management | Driving Powerful
+            Transformation Across People, Processes,{" "}
             <span
               className="font-medium"
               style={{
@@ -53,7 +54,7 @@ const Home = () => {
               }}
             >
               <Typewriter
-                words={["Project Management Partner"]}
+                words={["and Technology for Exceptional Results🚀"]}
                 loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
@@ -61,27 +62,96 @@ const Home = () => {
               />
             </span>
             <span className="text-gray-800">
-              <Cursor cursorStyle="~" />
+              <Cursor cursorStyle="~🚀" />
             </span>
           </h2>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
+          <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
             cutting-edge development solutions
           </h1>
-          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-6 text-gray-600 leading-10 text-center">
-            Skylartech, a distinguished company specializing in mobile and web
-            app development, prioritizes intelligent technologies and ensuring
-            utmost customer contentment. Established in 2014, our firm has
-            consistently provided top-notch solutions to businesses worldwide,
-            achieving a remarkable 100% success rate. Benefit from our skilled
-            team's services at budget-friendly rates and equip your company with
-            the perfect technological solutions it needs.
+          <p className="text-sm md:text-base lg:text-base xl:text-lg py-6 text-gray-600 leading-8 text-center">
+            At Skylartech, we are at the forefront of mobile and web app
+            development, harnessing intelligent technologies to deliver
+            exceptional solutions that drive customer satisfaction. Since our
+            establishment in 2014, we have consistently provided top-tier
+            services to businesses worldwide, boasting an impressive 100%
+            success rate.
+            <br />
+            <br />
+            <strong>
+              Driving Transformation Across People, Processes, and Technology:
+            </strong>
+            <br />
+            <br />
+            <strong>People:</strong> We prioritize human-centered design,
+            ensuring that our solutions are not only innovative but also
+            user-centric. By empowering teams with the skills and mindset to
+            embrace change, we foster collaboration, continuous learning, and
+            leadership development. Our focus on cultivating leaders at all
+            levels ensures that they can champion culture transformation, drive
+            innovation, and inspire teams to achieve their best.
+            <br />
+            <br />
+            <strong>Processes:</strong> Our approach is tailored to enhance
+            efficiency and agility, streamlining workflows to reduce overhead
+            and maximize productivity. With proven project management
+            methodologies, we ensure that every step of the process is optimized
+            for smooth delivery, even in the most complex environments. Our
+            focus on agility, adaptability, and continuous improvement allows us
+            to respond to evolving project needs and ensure successful, on-time
+            delivery.
+            <br />
+            <br />
+            <strong>Technology:</strong> At the heart of our transformation is
+            the integration of cutting-edge technologies. Whether through mobile
+            app development, web solutions, or innovative tools, we ensure that
+            your company is equipped with scalable and future-proof technology
+            solutions that align with your goals.
+            <br />
+            <br />
+            <strong>Our Project Management Approach:</strong>
+            <br />
+            <br />
+            <strong>Clear Communication:</strong> We believe that effective
+            communication is key to successful project management. Our dedicated
+            project managers maintain regular, transparent communication with
+            all stakeholders, ensuring that expectations are aligned and that
+            progress is tracked at every stage of the project.
+            <br />
+            <br />
+            <strong>Tailored Solutions:</strong> Every project is unique, and we
+            take a customized approach to suit your specific needs. From the
+            planning phase to execution, we adjust our strategies to address the
+            complexities of each project, ensuring the optimal balance between
+            time, cost, and quality.
+            <br />
+            <br />
+            <strong>Risk Management:</strong> We proactively identify and
+            mitigate potential risks early in the project lifecycle. Our risk
+            management strategy ensures that we address challenges before they
+            escalate, keeping your project on track and minimizing disruptions.
+            <br />
+            <br />
+            <strong>Agile Methodology:</strong> With a focus on flexibility and
+            iterative progress, we employ Agile methodologies to ensure that
+            your project can quickly adapt to changing requirements. Our
+            iterative approach allows for frequent reviews, making sure the
+            final product meets or exceeds expectations.
+            <br />
+            <br />
+            <strong>Continuous Monitoring & Improvement:</strong> Throughout the
+            project lifecycle, we use real-time monitoring tools to track
+            progress, measure performance, and ensure quality. Our team is
+            committed to identifying opportunities for improvement and applying
+            lessons learned to ensure continuous growth and optimal project
+            delivery.
           </p>
+
           <ul className="flex justify-center">
             <li>
               <Link to="/contact-us">
                 <motion.button
-                  className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-4 py-2 rounded"
+                  className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-4 py-2 rounded mb-6"
                   whileHover={{ scale: 0.9 }}
                   whileTap={{ scale: 0.8 }}
                 >
