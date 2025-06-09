@@ -42,19 +42,21 @@ const Home = () => {
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
           <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl font-medium text-gray-800 py-2">
-            Leading the Future of Project Management | Driving Powerful
-            Transformation Across People, Processes,{" "}
+            Leading the Future of Project Management,
+            <br />
+            Driving Powerful Transformation Across People, Processes
+            <br />{" "}
             <span
               className="font-medium"
               style={{
                 background:
-                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)", // Softer yellow
+                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
               }}
             >
               <Typewriter
-                words={["and Technology for Exceptional Results🚀"]}
+                words={["and Technology for Exceptional Results"]}
                 loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
@@ -62,9 +64,10 @@ const Home = () => {
               />
             </span>
             <span className="text-gray-800">
-              <Cursor cursorStyle="~🚀" />
+              <Cursor cursorStyle="" />
             </span>
           </h2>
+
           <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl py-6 font-semibold text-gray-800">
             Transform your business into the digital age by embracing our
             cutting-edge development solutions
