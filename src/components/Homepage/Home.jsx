@@ -39,138 +39,111 @@ const Home = () => {
 
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
-          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-3xl font-medium text-gray-800 py-2">
-            Leading the Future of Project Management,
-            <br />
-            Driving Powerful Transformation Across People, Processes
-            <br />{" "}
-            <span
-              className="font-medium"
-              style={{
-                background:
-                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-              }}
-            >
-              <Typewriter
-                words={["and Technology for Exceptional Results"]}
-                loop={1}
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-            <span className="text-gray-800">
-              <Cursor cursorStyle="" />
-            </span>
-          </h2>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
+        <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800 py-6 text-center">
+          Leading the Future of
+          <span
+            className="font-medium"
+            style={{
+              background:
+                "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            <Typewriter
+              words={[" Project Management"]}
+              loop={1}
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </span>
+          <span className="text-gray-800">
+            <Cursor cursorStyle="" />
+          </span>
+        </h2>
 
-          <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl py-6 font-semibold text-gray-800">
-            Transform your business into the digital age by embracing our
-            cutting-edge development solutions
-          </h1>
-          <p className="text-sm md:text-base lg:text-base xl:text-lg py-6 text-gray-600 leading-8 text-center">
-            At Skylartech, we are at the forefront of mobile and web app
-            development, harnessing intelligent technologies to deliver
-            exceptional solutions that drive customer satisfaction. Since our
-            establishment in 2014, we have consistently provided top-tier
-            services to businesses worldwide, boasting an impressive 100%
-            success rate.
-            <br />
-            <br />
-            <strong>
-              Driving Transformation Across People, Processes, and Technology:
-            </strong>
-            <br />
-            <br />
-            <strong>People:</strong> We prioritize human-centered design,
-            ensuring that our solutions are not only innovative but also
-            user-centric. By empowering teams with the skills and mindset to
-            embrace change, we foster collaboration, continuous learning, and
-            leadership development. Our focus on cultivating leaders at all
-            levels ensures that they can champion culture transformation, drive
-            innovation, and inspire teams to achieve their best.
-            <br />
-            <br />
-            <strong>Processes:</strong> Our approach is tailored to enhance
-            efficiency and agility, streamlining workflows to reduce overhead
-            and maximize productivity. With proven project management
-            methodologies, we ensure that every step of the process is optimized
-            for smooth delivery, even in the most complex environments. Our
-            focus on agility, adaptability, and continuous improvement allows us
-            to respond to evolving project needs and ensure successful, on-time
-            delivery.
-            <br />
-            <br />
-            <strong>Technology:</strong> At the heart of our transformation is
-            the integration of cutting-edge technologies. Whether through mobile
-            app development, web solutions, or innovative tools, we ensure that
-            your company is equipped with scalable and future-proof technology
-            solutions that align with your goals.
-            <br />
-            <br />
-            <strong>Our Project Management Approach:</strong>
-            <br />
-            <br />
-            <strong>Clear Communication:</strong> We believe that effective
-            communication is key to successful project management. Our dedicated
-            project managers maintain regular, transparent communication with
-            all stakeholders, ensuring that expectations are aligned and that
-            progress is tracked at every stage of the project.
-            <br />
-            <br />
-            <strong>Tailored Solutions:</strong> Every project is unique, and we
-            take a customized approach to suit your specific needs. From the
-            planning phase to execution, we adjust our strategies to address the
-            complexities of each project, ensuring the optimal balance between
-            time, cost, and quality.
-            <br />
-            <br />
-            <strong>Risk Management:</strong> We proactively identify and
-            mitigate potential risks early in the project lifecycle. Our risk
-            management strategy ensures that we address challenges before they
-            escalate, keeping your project on track and minimizing disruptions.
-            <br />
-            <br />
-            <strong>Agile Methodology:</strong> With a focus on flexibility and
-            iterative progress, we employ Agile methodologies to ensure that
-            your project can quickly adapt to changing requirements. Our
-            iterative approach allows for frequent reviews, making sure the
-            final product meets or exceeds expectations.
-            <br />
-            <br />
-            <strong>Continuous Monitoring & Improvement:</strong> Throughout the
-            project lifecycle, we use real-time monitoring tools to track
-            progress, measure performance, and ensure quality. Our team is
-            committed to identifying opportunities for improvement and applying
-            lessons learned to ensure continuous growth and optimal project
-            delivery.
+        <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-4xl py-6 font-semibold text-gray-800 text-center">
+          Driving Powerful Transformation Across People, Processes and
+          Technology for Exceptional Results
+          <br />
+          <span className="text-lg md:text-xl lg:text-2xl text-gray-600 block mt-8">
+            Transform your business into the digital age with <br />Skylartech’s
+            practical, tech-driven, and leadership-centered solutions.
+          </span>
+        </h1>
+
+        <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+          <h3 className="text-3xl font-semibold text-gray-800 mb-2">About Us: Who We Are</h3>
+          <p className="mb-4">
+            We are a dynamic business operating at the intersection of project management consulting, leadership development, and technology — developing solutions, implementing systems, and building capacity for long-term sustainability.
+          </p>
+          <p className="mb-4">
+            As an Authorized Training Partner (ATP) of the Project Management Institute (PMI), we deliver globally recognized certification programs that empower professionals and institutions to lead change and deliver value across Africa and beyond.
+          </p>
+          <p className="mb-4">
+            Our mission is to advance excellence through practical, context-relevant training and consulting solutions tailored to the evolving needs of leaders, development practitioners, and organizations.
+          </p>
+          <p className="mb-4">
+            Since our establishment in 2014, we’ve served businesses worldwide with a 100% success rate, combining world-class consulting, agile software development, and capacity building to help our clients lead and thrive in a fast-changing world.
+          </p>
+        </section>
+
+        <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+          <h3 className="text-3xl font-semibold text-gray-800 mb-2">
+            Our Value Proposition: Driving Transformation Across People, Processes, and Technology
+          </h3>
+
+          <p className="mb-2">
+            <strong className="text-gray-800">People:</strong> We prioritize human-centered design, ensuring that our solutions are both innovative and user-centric. Through skills development, coaching, and leadership training, we empower teams to lead change, collaborate effectively, and inspire high performance.
           </p>
 
-          <ul className="flex justify-center">
+          <p className="mb-2">
+            <strong className="text-gray-800">Processes:</strong> We help organizations streamline workflows, improve agility, and reduce complexity. Using proven project management methodologies (PMP®, Agile, Scrum), we align every phase of delivery with strategic goals—balancing time, cost, and quality.
+          </p>
+
+          <p className="mb-2">
+            <strong className="text-gray-800">Technology:</strong> At Skylartech, we are at the forefront of mobile and web application development, integrating intelligent technologies to provide scalable, future-proof digital solutions that meet real business needs.
+          </p>
+        </section>
+
+        <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+          <h3 className="text-3xl font-semibold text-gray-800 mb-8">Our Project Management Approach</h3>
+          <ul className="list-disc list-inside space-y-2">
             <li>
-              <Link to="/contact-us">
-                <motion.button
-                  className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-4 py-2 rounded mb-6"
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  Let's Talk
-                  <span
-                    className="ml-2 text-xl"
-                    style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                  >
-                    &#8594;
-                  </span>
-                </motion.button>
-              </Link>
+              <strong className="text-gray-800">Clear Communication –</strong> Transparent stakeholder engagement at every phase.
+            </li>
+            <li>
+              <strong className="text-gray-800">Tailored Solutions –</strong> Every project is uniquely crafted to meet specific client needs.
+            </li>
+            <li>
+              <strong className="text-gray-800">Risk Management –</strong> Proactive identification and mitigation of risks from day one.
+            </li>
+            <li>
+              <strong className="text-gray-800">Agile Methodology –</strong> Adaptive, iterative delivery that incorporates client feedback.
+            </li>
+            <li>
+              <strong className="text-gray-800">Continuous Monitoring & Improvement –</strong> Real-time tracking for quality and efficiency.
             </li>
           </ul>
+        </section>
+
+        <div className="flex justify-center mt-8 mb-8">
+          <Link to="/contact-us">
+            <motion.button
+              className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-6 py-2 rounded-xl text-lg"
+              whileHover={{ scale: 0.95 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Let's Talk
+              <span className="ml-2 text-xl transform scale-125">&#8594;</span>
+            </motion.button>
+          </Link>
         </div>
       </div>
+    </div>
 
       {/* services we Offer  */}
       <div>
