@@ -76,7 +76,7 @@ const Home = () => {
         </h1>
 
         <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-2">About Us: Who We Are</h3>
+          <h3 className="text-3xl font-semibold text-gray-800 mb-2">Who We Are</h3>
           <p className="mb-4">
             We are a dynamic business operating at the intersection of project management consulting, leadership development, and technology — developing solutions, implementing systems, and building capacity for long-term sustainability.
           </p>
@@ -93,7 +93,7 @@ const Home = () => {
 
         <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
           <h3 className="text-3xl font-semibold text-gray-800 mb-2">
-            Our Value Proposition: Driving Transformation Across People, Processes, and Technology
+            Driving Transformation Across People, Processes, and Technology
           </h3>
 
           <p className="mb-2">
