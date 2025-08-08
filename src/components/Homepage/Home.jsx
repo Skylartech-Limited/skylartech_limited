@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
+
 import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
 import DiscoveryWorkshop from "../../assets/Homepage images/search 1.png";
 import UserExperience from "../../assets/Homepage images/testing 1.png";
@@ -13,17 +15,32 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import PMPTeacher from "../../assets/Homepage images/PMPTEACHER.png";
-// import Logo from "../../assets/Logo.png";
+import Cert1 from "../../assets/Homepage images/Cert1.jpg";
+import Cert2 from "../../assets/Homepage images/Cert2.jpg";
+import Cert3 from "../../assets/Homepage images/Cert3.jpg";
+import Cert4 from "../../assets/Homepage images/Cert4.jpg";
+import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
-// import Work from "./WorkSlider";
 import Menu from "./Menu";
 import Client from "./ClientSlider";
 import CountUp from "./CountUp";
-import { Link } from "react-router-dom";
 
 const Home = () => {
+const images = [Cert1, Cert2, Cert3, Cert4];
+
+const [index, setIndex] = useState(0);
+
+// Auto-slide effect
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((prev) => (prev + 1) % images.length);
+  }, 4000); // 4 seconds per slide
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <>
       <Helmet>
@@ -40,110 +57,112 @@ const Home = () => {
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
-        <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800 py-6 text-center">
-          Leading the Future of
-          <span
-            className="font-medium"
-            style={{
-              background:
-                "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            <Typewriter
-              words={[" Project Management"]}
-              loop={1}
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </span>
-          <span className="text-gray-800">
-            <Cursor cursorStyle="" />
-          </span>
-        </h2>
-
-        <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-4xl py-6 font-semibold text-gray-800 text-center">
-          Driving Powerful Transformation Across People, Processes and
-          Technology for Exceptional Results
-          <br />
-          <span className="text-lg md:text-xl lg:text-2xl text-gray-600 block mt-8">
-            Transform your business into the digital age with <br />Skylartech’s
-            practical, tech-driven, and leadership-centered solutions.
-          </span>
-        </h1>
-
-        <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-2">Who We Are</h3>
-          <p className="mb-4">
-            We are a dynamic business operating at the intersection of project management consulting, leadership development, and technology — developing solutions, implementing systems, and building capacity for long-term sustainability.
-          </p>
-          <p className="mb-4">
-            As an Authorized Training Partner (ATP) of the Project Management Institute (PMI), we deliver globally recognized certification programs that empower professionals and institutions to lead change and deliver value across Africa and beyond.
-          </p>
-          <p className="mb-4">
-            Our mission is to advance excellence through practical, context-relevant training and consulting solutions tailored to the evolving needs of leaders, development practitioners, and organizations.
-          </p>
-          <p className="mb-4">
-            Since our establishment in 2014, we’ve served businesses worldwide with a 100% success rate, combining world-class consulting, agile software development, and capacity building to help our clients lead and thrive in a fast-changing world.
-          </p>
-        </section>
-
-        <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-2">
-            Driving Transformation Across People, Processes, and Technology
-          </h3>
-
-          <p className="mb-2">
-            <strong className="text-gray-800">People:</strong> We prioritize human-centered design, ensuring that our solutions are both innovative and user-centric. Through skills development, coaching, and leadership training, we empower teams to lead change, collaborate effectively, and inspire high performance.
-          </p>
-
-          <p className="mb-2">
-            <strong className="text-gray-800">Processes:</strong> We help organizations streamline workflows, improve agility, and reduce complexity. Using proven project management methodologies (PMP®, Agile, Scrum), we align every phase of delivery with strategic goals—balancing time, cost, and quality.
-          </p>
-
-          <p className="mb-2">
-            <strong className="text-gray-800">Technology:</strong> At Skylartech, we are at the forefront of mobile and web application development, integrating intelligent technologies to provide scalable, future-proof digital solutions that meet real business needs.
-          </p>
-        </section>
-
-        <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-8">Our Project Management Approach</h3>
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong className="text-gray-800">Clear Communication –</strong> Transparent stakeholder engagement at every phase.
-            </li>
-            <li>
-              <strong className="text-gray-800">Tailored Solutions –</strong> Every project is uniquely crafted to meet specific client needs.
-            </li>
-            <li>
-              <strong className="text-gray-800">Risk Management –</strong> Proactive identification and mitigation of risks from day one.
-            </li>
-            <li>
-              <strong className="text-gray-800">Agile Methodology –</strong> Adaptive, iterative delivery that incorporates client feedback.
-            </li>
-            <li>
-              <strong className="text-gray-800">Continuous Monitoring & Improvement –</strong> Real-time tracking for quality and efficiency.
-            </li>
-          </ul>
-        </section>
-
-        <div className="flex justify-center mt-8 mb-8">
-          <Link to="/contact-us">
-            <motion.button
-              className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-6 py-2 rounded-xl text-lg"
-              whileHover={{ scale: 0.95 }}
-              whileTap={{ scale: 0.9 }}
+        <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
+          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800 py-6 text-center">
+            Leading the Future of
+            <span
+              className="font-medium"
+              style={{
+                background:
+                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
             >
-              Let's Talk
-              <span className="ml-2 text-xl transform scale-125">&#8594;</span>
-            </motion.button>
-          </Link>
+              <Typewriter
+                words={[" Project Management"]}
+                loop={1}
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+            <span className="text-gray-800">
+              <Cursor cursorStyle="" />
+            </span>
+          </h2>
+
+          <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-4xl py-6 font-semibold text-gray-800 text-center">
+            Driving Powerful Transformation Across People, Processes and
+            Technology for Exceptional Results
+            <br />
+            <span className="text-lg md:text-xl lg:text-2xl text-gray-600 block mt-8">
+              Transform your business into the digital age with <br />
+              Skylartech’s practical, tech-driven, and leadership-centered
+              solutions.
+            </span>
+          </h1>
+
+          <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+            <h3 className="text-3xl font-semibold text-gray-800 mb-2">
+              Who We Are
+            </h3>
+            <p className="mb-6">
+              We specialize in project management consulting, leadership
+              development, and technology integration. We empower professionals
+              to lead change through world-class certifications, capacity
+              building, and agile systems implementation.
+            </p>
+
+            {/* Auto-sliding enlarged slideshow */}
+            <div className="relative w-full md:w-5/6 lg:w-4/5 xl:w-2/3 mx-auto mt-8 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={index}
+                  src={images[index]}
+                  alt={`Certificate ${index + 1}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="rounded-xl shadow-xl w-full h-auto object-cover"
+                />
+              </AnimatePresence>
+            </div>
+          </section>
+
+          <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+            <h3 className="text-3xl font-semibold text-gray-800 mb-4">
+              What We Do
+            </h3>
+
+            <ul className=" space-y-4">
+              <li>
+                We build leadership and team capacity through coaching,
+                training, and human-centered design.
+              </li>
+              <li>
+                We streamline workflows using PMP®, Agile, and Scrum to deliver
+                results aligned with your strategy.
+              </li>
+              <li>
+                We develop scalable digital solutions—from mobile apps to
+                intelligent platforms—that support business growth.
+              </li>
+            </ul>
+            <img
+              src={GroupPhoto}
+              alt="What We Do"
+              className="w-full md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto mb-6 mt-8 rounded-lg shadow"
+            />
+          </section>
+
+          <div className="flex justify-center mt-8 mb-8">
+            <Link to="/contact-us">
+              <motion.button
+                className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-6 py-2 rounded-xl text-lg"
+                whileHover={{ scale: 0.95 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Let's Talk
+                <span className="ml-2 text-xl transform scale-125">
+                  &#8594;
+                </span>
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* services we Offer  */}
       <div>
