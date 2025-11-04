@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
+
 import SoftwareDevelopment from "../../assets/Homepage images/computer 1.png";
 import DiscoveryWorkshop from "../../assets/Homepage images/search 1.png";
 import UserExperience from "../../assets/Homepage images/testing 1.png";
@@ -13,16 +15,32 @@ import Discover from "../../assets/softwareprocess/discovery 1.png";
 import Design from "../../assets/softwareprocess/graphic-design 1.png";
 import Build from "../../assets/softwareprocess/build 1.png";
 import PMPTeacher from "../../assets/Homepage images/PMPTEACHER.png";
+import Cert1 from "../../assets/Homepage images/Cert1.jpg";
+import Cert2 from "../../assets/Homepage images/Cert2.jpg";
+import Cert3 from "../../assets/Homepage images/Cert3.jpg";
+import Cert4 from "../../assets/Homepage images/Cert4.jpg";
+import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
-// import Work from "./WorkSlider";
 import Menu from "./Menu";
 import Client from "./ClientSlider";
 import CountUp from "./CountUp";
-import { Link } from "react-router-dom";
 
 const Home = () => {
+const images = [Cert1, Cert2, Cert3, Cert4];
+
+const [index, setIndex] = useState(0);
+
+// Auto-slide effect
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIndex((prev) => (prev + 1) % images.length);
+  }, 4000); // 4 seconds per slide
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <>
       <Helmet>
@@ -38,21 +56,21 @@ const Home = () => {
 
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/1 px-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
-            Your Strategic IT, Software Development and{" "}
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+        <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
+          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800 py-6 text-center">
+            Leading the Future of
             <span
               className="font-medium"
               style={{
                 background:
-                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)", // Softer yellow
+                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
               }}
             >
               <Typewriter
-                words={["Project Management Partner"]}
+                words={[" Project Management"]}
                 loop={1}
                 typeSpeed={70}
                 deleteSpeed={50}
@@ -60,42 +78,89 @@ const Home = () => {
               />
             </span>
             <span className="text-gray-800">
-              <Cursor cursorStyle="~" />
+              <Cursor cursorStyle="" />
             </span>
           </h2>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl py-6 font-semibold text-gray-800">
-            Transform your business into the digital age by embracing our
-            cutting-edge development solutions
+          <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-4xl py-6 font-semibold text-gray-800 text-center">
+            Driving Powerful Transformation Across People, Processes and
+            Technology for Exceptional Results
+            <br />
+            <span className="text-lg md:text-xl lg:text-2xl text-gray-600 block mt-8">
+              Transform your business into the digital age with <br />
+              Skylartech’s practical, tech-driven, and leadership-centered
+              solutions.
+            </span>
           </h1>
-          <p className="text-base md:text-lg lg:text-xl xl:text-2xl py-6 text-gray-600 leading-10 text-center">
-            Skylartech, a distinguished company specializing in mobile and web
-            app development, prioritizes intelligent technologies and ensuring
-            utmost customer contentment. Established in 2014, our firm has
-            consistently provided top-notch solutions to businesses worldwide,
-            achieving a remarkable 100% success rate. Benefit from our skilled
-            team's services at budget-friendly rates and equip your company with
-            the perfect technological solutions it needs.
-          </p>
-          <ul className="flex justify-center">
-            <li>
-              <Link to="/contact-us">
-                <motion.button
-                  className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-4 py-2 rounded"
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  Let's Talk
-                  <span
-                    className="ml-2 text-xl"
-                    style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                  >
-                    &#8594;
-                  </span>
-                </motion.button>
-              </Link>
-            </li>
-          </ul>
+
+          <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+            <h3 className="text-3xl font-semibold text-gray-800 mb-2">
+              Who We Are
+            </h3>
+            <p className="mb-6">
+              We specialize in project management consulting, leadership
+              development, and technology integration. We empower professionals
+              to lead change through world-class certifications, capacity
+              building, and agile systems implementation.
+            </p>
+
+            {/* Auto-sliding enlarged slideshow */}
+            <div className="relative w-full md:w-5/6 lg:w-4/5 xl:w-2/3 mx-auto mt-8 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={index}
+                  src={images[index]}
+                  alt={`Certificate ${index + 1}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="rounded-xl shadow-xl w-full h-auto object-cover"
+                />
+              </AnimatePresence>
+            </div>
+          </section>
+
+          <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
+            <h3 className="text-3xl font-semibold text-gray-800 mb-4">
+              What We Do
+            </h3>
+
+            <ul className=" space-y-4">
+              <li>
+                We build leadership and team capacity through coaching,
+                training, and human-centered design.
+              </li>
+              <li>
+                We streamline workflows using PMP®, Agile, and Scrum to deliver
+                results aligned with your strategy.
+              </li>
+              <li>
+                We develop scalable digital solutions—from mobile apps to
+                intelligent platforms—that support business growth.
+              </li>
+            </ul>
+            <img
+              src={GroupPhoto}
+              alt="What We Do"
+              className="w-full md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto mb-6 mt-8 rounded-lg shadow"
+            />
+          </section>
+
+          <div className="flex justify-center mt-8 mb-8">
+            <Link to="/contact-us">
+              <motion.button
+                className="border-2 border-purple-500 bg-white hover:bg-violet-400 text-black px-6 py-2 rounded-xl text-lg"
+                whileHover={{ scale: 0.95 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Let's Talk
+                <span className="ml-2 text-xl transform scale-125">
+                  &#8594;
+                </span>
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </div>
 
