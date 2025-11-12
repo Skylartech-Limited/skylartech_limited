@@ -6,8 +6,8 @@ import Ehealth from "../../assets/Industries/medical-record.png";
 import Insure from "../../assets/Industries/health-insurance.png";
 import Exercise from "../../assets/Industries/exercise.png";
 import Serv from "../../assets/Services image/custom-software-1-1.png";
-import Healtht from "../../assets/Industries/doctor.png";
-import Team from "../../assets/Industries/teamwork.png";
+//import Healtht from "../../assets/Industries/doctor.png";
+//import Team from "../../assets/Industries/teamwork.png";
 import Background from "../../assets/Industries/healthbann.jpg";
 import Carehealth from "../../assets/Industries/healthcr1.jpg";
 

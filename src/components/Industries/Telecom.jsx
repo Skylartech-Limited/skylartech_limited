@@ -53,7 +53,7 @@ const Telecom = () => {
       </div>
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center lg:ml-[5rem]">
         <div className="mt-10">
-          <img src={Soft} className="h-[45px]" />
+          <img src={Soft} className="h-[45px]" alt="soft"/>
         </div>
         <div
           className="text-left shadow-xs p-10 rounded-xl"
@@ -71,7 +71,7 @@ const Telecom = () => {
         </div>
 
         <div className="mt-10">
-          <img src={Code} className="h-[45px]" />
+          <img src={Code} className="h-[45px]" alt="code"/>
         </div>
         <div
           className="text-left shadow-xs p-10 rounded-xl"
@@ -91,7 +91,7 @@ const Telecom = () => {
 
         <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
           <div className="mt-10">
-            <img src={Tel} className="h-[45px]" />
+            <img src={Tel} className="h-[45px]" alt="tel"/>
           </div>
           <div
             className="text-left shadow-xs p-10 rounded-xl"
@@ -109,7 +109,7 @@ const Telecom = () => {
             </p>
           </div>
           <div className="mt-10">
-            <img src={Perform} className="h-[45px]" />
+            <img src={Perform} className="h-[45px]" alt="perf"/>
           </div>
           <div
             className="text-left shadow-xs p-10 rounded-xl"

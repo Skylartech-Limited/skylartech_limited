@@ -54,7 +54,7 @@ const Insurance = () => {
       </div>
       <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center lg:ml-[5rem]">
         <div className="mt-10">
-          <img src={Talk} className="h-[45px]" />
+          <img src={Talk} className="h-[45px]" alt="tk" />
         </div>
         <div
           className="text-left shadow-xs p-10 rounded-xl"
@@ -72,7 +72,7 @@ const Insurance = () => {
         </div>
 
         <div className="mt-10">
-          <img src={Digi} className="h-[45px]" />
+          <img src={Digi} className="h-[45px]" alt="digi"/>
         </div>
         <div
           className="text-left shadow-xs p-10 rounded-xl"
@@ -91,7 +91,7 @@ const Insurance = () => {
 
         <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
           <div className="mt-10">
-            <img src={Grow} className="h-[45px]" />
+            <img src={Grow} className="h-[45px]" alt="grow" />
           </div>
           <div
             className="text-left shadow-xs p-10 rounded-xl"
@@ -109,7 +109,7 @@ const Insurance = () => {
             </p>
           </div>
           <div className="mt-10">
-            <img src={Api} className="h-[45px]" />
+            <img src={Api} className="h-[45px]" alt="api"/>
           </div>
           <div
             className="text-left shadow-xs p-10 rounded-xl"
