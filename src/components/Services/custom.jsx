@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom"
-import Discover from "../../assets/Services image/discover.png";
-import Check from "../../assets/Services image/check.png";
+//import Discover from "../../assets/Services image/discover.png";
+//import Check from "../../assets/Services image/check.png";
 import Serv from "../../assets/Services image/custom-software-1-1.png"
 
 const custom = () => {
@@ -58,7 +58,7 @@ const custom = () => {
 
       <div className="flex ml-[8rem] mr-[5rem] mb-16 mt-12">
         <div className="flex justify-center">
-          <img src={Serv} className="w-[457px] h-[221px] mt-10"/>
+          <img src={Serv} className="w-[457px] h-[221px] mt-10" alt="serv"/>
         </div>
         <div className="flex flex-col text-left ml-28">
           <h1 className="font-semibold text-lg text-amber-500">WHAT YOU GET</h1>
