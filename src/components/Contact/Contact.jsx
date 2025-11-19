@@ -1,11 +1,33 @@
 import React from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import City from "../../assets/Contact Images/City.jpeg";
 
 const Contact = () => {
   return (
-    <>
+     <>
+      {/* Helmet SEO tags */}
+      <Helmet>
+        <title>Contact SkylarTech | IT Consulting & App Development</title>
+        <meta
+          name="description"
+          content="Get in touch with SkylarTech for expert IT consulting, app development, and custom software solutions. Reach out today!"
+        />
+        <meta name="robots" content="index, follow" />
+        {/* Open Graph / social sharing */}
+        <meta property="og:title" content="Contact Skylartech" />
+        <meta
+          property="og:description"
+          content="Reach out to SkylarTech for IT consulting and software development solutions."
+        />
+        <meta property="og:url" content="https://www.skylartech.co.ke/contact" />
+        <meta
+          property="og:image"
+          content="https://www.skylartech.co.ke/assets/Logo.png"
+        />
+      </Helmet>
+
       <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-gray-800 py-2 pt-10">
