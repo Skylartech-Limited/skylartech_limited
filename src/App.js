@@ -1,31 +1,30 @@
+import { Route, Routes } from "react-router-dom";
+import LiveChat from '../src/components/Livechat/Livechat.jsx';
+import Scroll from "../src/components/ScrollToTop/Scroll.jsx";
 import "./App.css";
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar.jsx";
-import Home from "./components/Homepage/Home.jsx";
-import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
-import Technologies from "./components/Technologies/Technologies";
 import Footer from "./components/Footer/Footer";
-import Health from "./components/Industries/Health.jsx";
+import Footerhero from "./components/Footerhero/footerhero.jsx";
+import Home from "./components/Homepage/Home.jsx";
 import Fintech from "./components/Industries/Fintech.jsx";
-import Telecom from "./components/Industries/Telecom.jsx";
+import Health from "./components/Industries/Health.jsx";
 import Insurance from "./components/Industries/Insurance.jsx";
+import Telecom from "./components/Industries/Telecom.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Quote from "./components/Quote/Quote.jsx";
-import Footerhero from "./components/Footerhero/footerhero.jsx";
+import Services from "./components/Services/Services";
 import UI from "./components/Services/Uidesign.jsx";
+import Custom from "./components/Services/custom.jsx";
 import Discovery from "./components/Services/discovery.jsx";
 import IOT from "./components/Services/iot.jsx";
-import Web from "./components/Services/web.jsx";
-import Custom from "./components/Services/custom.jsx";
 import Support from "./components/Services/support.jsx";
-import LiveChat from '../src/components/Livechat/Livechat.jsx';
-import Scroll from "../src/components/ScrollToTop/Scroll.jsx"
+import Web from "./components/Services/web.jsx";
+import Technologies from "./components/Technologies/Technologies";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App App overflow-x-hidden">
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
