@@ -1,30 +1,28 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const LiveChat = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://embed.tawk.to/65b38aae8d261e1b5f58305c/1hl2lbf78';
-    script.charset = 'UTF-8';
-    script.setAttribute('crossorigin', '*');
-    script.onload = () => {
-      console.log('Script loaded successfully!');
-    };
-    script.onerror = () => {
-      console.error('Error loading script!');
-    };
-    document.head.appendChild(script);
-  
-    return () => {
-      // Remove the script removal line to see if it makes a difference
-      // document.head.removeChild(script);
-    };
+    // Prevent duplicate script injection
+    if (window.Tawk_API) return;
+
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+
+    const s1 = document.createElement('script');
+    const s0 = document.getElementsByTagName('script')[0];
+
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/65b38aae8d261e1b5f58305c/1hl2lbf78';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+
+    s0.parentNode.insertBefore(s1, s0);
+
+    s1.onload = () => console.log('Tawk.to loaded!');
+    s1.onerror = () => console.error('Failed to load Tawk.to');
   }, []);
 
-  return (
-    <div>
-    </div>
-  );
+  return null; // no extra UI needed
 };
 
 export default LiveChat;
