@@ -44,14 +44,14 @@ useEffect(() => {
   return (
     <>
       <Helmet>
-        <title>Skylartech Limited | PMI partner</title>
+        <title>Skylartech Limited | PMI Partner</title>
         <meta
           name="description"
-          content="Skylartech Limited, a trusted PMI partner, offering comprehensive tech solutions in Kenya. Visit us at skylartech.co.ke"
+          content="Skylartech Limited, a trusted PMI Partner, offering comprehensive tech solutions in Kenya. Visit us at skylartech.co.ke"
         />
         <meta
           name="keywords"
-          content="Skylartech, PMI partner, tech solutions, Kenya, software development"
+          content="Skylartech, PMI Partner, Tech Solutions, Kenya, Software Development"
         />
 
         <link rel="canonical" href="https://skylartech.co.ke" />
