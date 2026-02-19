@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import LiveChat from '../src/components/Livechat/Livechat.jsx';
+// import LiveChat from '../src/components/Livechat/Livechat.jsx';
 import Scroll from "../src/components/ScrollToTop/Scroll.jsx";
 import "./App.css";
 import Contact from "./components/Contact/Contact";
@@ -46,7 +46,7 @@ function App() {
       </Routes>
       <Footerhero />
       <Footer />
-      <LiveChat />
+      //<LiveChat />
       <Scroll />
     </div>
   );
