@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import LiveChat from '../src/components/Livechat/Livechat.jsx';
+// import LiveChat from '../src/components/Livechat/Livechat.jsx';
 import Scroll from "../src/components/ScrollToTop/Scroll.jsx";
 import "./App.css";
 import Contact from "./components/Contact/Contact";
@@ -14,13 +14,13 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Quote from "./components/Quote/Quote.jsx";
 import Services from "./components/Services/Services";
-import UI from "./components/Services/Uidesign.jsx";
+import Training from "./components/Services/Training.jsx";
 import Custom from "./components/Services/custom.jsx";
-import Discovery from "./components/Services/discovery.jsx";
+import Software from "./components/Services/Software.jsx";
 import IOT from "./components/Services/iot.jsx";
 import Support from "./components/Services/support.jsx";
 import Web from "./components/Services/web.jsx";
-import Technologies from "./components/Technologies/Technologies";
+import Projects from "./components/Projects/projects.jsx";
 
 function App() {
   return (
@@ -29,13 +29,13 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/services" element={<Services />} />
-        <Route exact path="/services/ui-ux-design" element={<UI />} />
-        <Route exact path="/services/discovery-workshop" element={<Discovery />}/>
+        <Route exact path="/services/training-and-certifications" element={<Training />} />
+        <Route exact path="/services/software-engineering" element={<Software/>}/>
         <Route exact path="/services/iot-development" element={<IOT />} />
         <Route exact path="/services/web-and-app-development" element={<Web />}/>
         <Route exact path="/services/custom-software-development" element={<Custom />}/>
         <Route exact path="/services/support-and-maintenance" element={<Support />}/> 
-        <Route exact path="/technologies" element={<Technologies />} />
+        <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/industries/health-care" element={<Health />} />
         <Route exact path="/industries/fintech" element={<Fintech />} />
         <Route exact path="/industries/insurance" element={<Insurance />} />
@@ -46,7 +46,7 @@ function App() {
       </Routes>
       <Footerhero />
       <Footer />
-      <LiveChat />
+      {/* <LiveChat /> */}
       <Scroll />
     </div>
   );
