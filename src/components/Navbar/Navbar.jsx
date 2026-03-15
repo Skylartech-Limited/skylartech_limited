@@ -34,7 +34,7 @@ const Navbar = () => {
               <img
                 src={Logo}
                 alt="Logo"
-                className="h-12 sm:h-10 md:h-12 w-auto mr-2"
+                className="h-16 sm:h-18 md:h-16 w-auto mr-2"
               />
               {/* <div className="text-gray-700 text-lg sm:text-xl md:text-2xl font-sans">
                 <span className="font-semibold tracking-widest">
