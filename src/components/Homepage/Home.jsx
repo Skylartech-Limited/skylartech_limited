@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
@@ -20,6 +20,7 @@ import Cert2 from "../../assets/Homepage images/Cert2.jpg";
 import Cert3 from "../../assets/Homepage images/Cert3.jpg";
 import Cert4 from "../../assets/Homepage images/Cert4.jpg";
 import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
+import PMI from "../../assets/Homepage images/PMI.jpeg";
 
 import ClientReview from "./ClientReview";
 import HomeSlider from "./HomeSlider";
@@ -28,18 +29,18 @@ import Client from "./ClientSlider";
 import CountUp from "./CountUp";
 
 const Home = () => {
-const images = [Cert1, Cert2, Cert3, Cert4];
+  const images = [Cert1, Cert2, Cert3, Cert4];
 
-const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-// Auto-slide effect
-useEffect(() => {
-  const interval = setInterval(() => {
-    setIndex((prev) => (prev + 1) % images.length);
-  }, 4000);
+  // Auto-slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
 
-  return () => clearInterval(interval);
-}, [images.length]);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <>
@@ -81,8 +82,14 @@ useEffect(() => {
               <Cursor cursorStyle="" />
             </span>
           </h2>
-
-          <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-4xl py-6 font-semibold text-gray-800 text-center">
+          <div className="flex justify-center mb-6">
+            <img
+              src={PMI}
+              alt="PMI"
+              className="w-full max-w-md md:max-w-lg lg:max-w-xl"
+            />
+          </div>
+          {/* <h1 className="text-xl md:text-2xl lg:text-2xl xl:text-4xl py-6 font-semibold text-gray-800 text-center">
             Driving Powerful Transformation Across People, Processes and
             Technology for Exceptional Results
             <br />
@@ -91,18 +98,30 @@ useEffect(() => {
               Skylartech’s practical, tech-driven, and leadership-centered
               solutions.
             </span>
-          </h1>
+          </h1> */}
 
           <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-            <h3 className="text-3xl font-semibold text-gray-800 mb-2">
+            {/* <h3 className="text-3xl font-semibold text-gray-800 mb-2">
               Who We Are
-            </h3>
-            <p className="mb-6">
-              We specialize in project management consulting, leadership
-              development, and technology integration. We empower professionals
-              to lead change through world-class certifications, capacity
-              building, and agile systems implementation.
-            </p>
+            </h3> */}
+            <ul className="space-y-4">
+              <li>
+                Skylartech Limited is a Premier Authorized Training Partner
+                (ATP) of the Project Management Institute (PMI), delivering
+                world-class, PMI-aligned training that empowers professionals to
+                achieve globally recognized certifications and excel in project
+                leadership.
+              </li>
+              <li>
+                With over a decade of experience, we support organizations
+                across banking, telecommunications, IT, procurement, and the
+                public sector through a unique blend of professional training,
+                software engineering outsourcing, leadership development, and
+                consulting. Our ATP status reinforces our commitment to quality,
+                credibility, and industry-leading standards in project
+                management education.
+              </li>
+            </ul>
 
             {/* Auto-sliding enlarged slideshow */}
             <div className="relative w-full md:w-5/6 lg:w-4/5 xl:w-2/3 mx-auto mt-8 overflow-hidden">
@@ -122,22 +141,24 @@ useEffect(() => {
           </section>
 
           <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-            <h3 className="text-3xl font-semibold text-gray-800 mb-4">
+            {/* <h3 className="text-3xl font-semibold text-gray-800 mb-4">
               What We Do
-            </h3>
+            </h3> */}
 
             <ul className=" space-y-4">
               <li>
-                We build leadership and team capacity through coaching,
-                training, and human-centered design.
+                We enable professionals to get trained, get certified, and lead
+                with confidence, while helping organizations operate smarter,
+                grow faster, and compete effectively in a dynamic global
+                environment.
               </li>
               <li>
-                We streamline workflows using PMP®, Agile, and Scrum to deliver
-                results aligned with your strategy.
-              </li>
-              <li>
-                We develop scalable digital solutions—from mobile apps to
-                intelligent platforms—that support business growth.
+                We provide expert-led PMP® and project management training using
+                PMI-authorized content, alongside highly skilled software
+                engineers and dedicated development teams to support global
+                projects. By integrating capability development with technology
+                solutions, we help organizations scale efficiently, optimize
+                performance, and deliver measurable results.
               </li>
             </ul>
             <img
@@ -535,7 +556,8 @@ useEffect(() => {
             <div>
               <p className="text-left" style={{ maxWidth: "12rem" }}>
                 We apply our efficiency and skills to create flexible and
-                scalable business-driven solutions using modern technologies.{" "}
+                scalable business-driven solutions using modern
+                technologies.{" "}
               </p>
             </div>
           </div>
@@ -551,7 +573,8 @@ useEffect(() => {
             <div>
               <p className="text-left" style={{ maxWidth: "12rem" }}>
                 We have achieved excellence in our project deliveries with zero
-                compromises on quality and by providing a 100% success rate.{" "}
+                compromises on quality and by providing a 100% success
+                rate.{" "}
               </p>
             </div>
           </div>
