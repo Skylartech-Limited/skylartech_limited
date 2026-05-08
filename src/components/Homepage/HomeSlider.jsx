@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { motion } from "framer-motion";
-import Technologies from "../../assets/Technology Images/technologies.png";
 import Amazon from "../../assets/Technology slider/amazon.png";
 import Airbnb from "../../assets/Technology slider/airbnb.png";
 import Cisco from "../../assets/Technology slider/cisco.png";
@@ -126,16 +125,6 @@ const HomeSlider = () => {
         </>
       ) : (
         <>
-          <h1 className="font-semibold text-2xl sm:text-xl lg:text-4xl text-center mt-8 sm:mt-10 mb-4 sm:mb-6 lg:mb-8">
-            <span className="text-amber-500">Technologies</span> We Work With
-          </h1>
-          <div className="mt-4 sm:mt-6 lg:mt-8 mb-8 sm:mb-10 lg:mb-12 items-center">
-            <img
-              src={Technologies}
-              alt="tech"
-              className="w-full max-w-[1024px] h-[374px] object-contain"
-            />
-          </div>
         </>
       )}
     </div>

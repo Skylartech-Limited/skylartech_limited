@@ -104,7 +104,7 @@ const Footer = () => {
             <i className="fab fa-twitter text-2xl"></i>
           </a>
           <a
-            href="https://www.linkedin.com/company/skylartechlimited"
+            href=" https://www.linkedin.com/company/skylartechlimited/?viewAsMember=true"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 mr-4"
@@ -113,7 +113,7 @@ const Footer = () => {
             <i className="fab fa-linkedin-in text-2xl"></i>
           </a>
           <a
-            href="https://www.facebook.com/SkylartechKE"
+            href=" https://www.facebook.com/SkylartechKE/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300"
