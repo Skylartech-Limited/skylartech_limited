@@ -9,7 +9,7 @@ import Cert2 from "../../assets/Homepage images/Cert2.jpg";
 import Cert3 from "../../assets/Homepage images/Cert3.jpg";
 import Cert4 from "../../assets/Homepage images/Cert4.jpg";
 import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
-import PMI from "../../assets/Homepage images/PMI.jpeg";
+import PMI from "../../assets/Homepage images/PMI.png";
 
 import ClientReview from "./ClientReview";
 import Client from "./ClientSlider";
