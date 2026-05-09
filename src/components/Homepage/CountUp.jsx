@@ -16,13 +16,13 @@ const CountUp = () => {
             <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
               <h1 className="text-5xl font-semibold mb-10">
                 {counterOn && (
-                  <Countup start={0} end={124} duration={2} delay={0} />
+                  <Countup start={0} end={500} duration={2} delay={0} />
                 )}
               </h1>
               <h1 className="font-normal">
-                COMPLETE
+                PROFESSIONALS
                 <br />
-                PROJECTS
+                TRAINED
               </h1>
             </div>
             <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
@@ -33,21 +33,23 @@ const CountUp = () => {
                 %
               </h1>
               <h1 className="font-normal">
-                SATISFIED
+                CERTFICATION SUCCESS
                 <br />
-                CLIENTS
+                SUPPORT RATE
               </h1>
             </div>
             <div className="lg:px-8 text-xl text-white text-center">
-              <h1 className="text-5xl font-semibold mb-10">
+              <h1 className="text-5xl font-semibold mb-10 flex items-start justify-center gap-1">
                 {counterOn && (
-                  <Countup start={0} end={325} duration={2} delay={0} />
+                  <Countup start={0} end={50} duration={2} delay={0} />
                 )}
+                <span className="text-5xl leading-none">+</span>
               </h1>
+
               <h1 className="font-normal">
-                SUCCESSS
+                CLIENTS ACROSS
                 <br />
-                CAMPAIGN
+                INDUSTRIES
               </h1>
             </div>
           </div>

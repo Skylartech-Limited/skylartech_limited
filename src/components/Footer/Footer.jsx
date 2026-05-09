@@ -76,7 +76,10 @@ const Footer = () => {
               </li>
               <li className="mb-4">
                 <i className="far fa-envelope mr-2"></i>
-                <a href="mailto:info@skylartech.co.ke" className="hover:text-white">
+                <a
+                  href="mailto:info@skylartech.co.ke"
+                  className="hover:text-white"
+                >
                   Email: info@skylartech.co.ke
                 </a>
               </li>
@@ -103,8 +106,9 @@ const Footer = () => {
           >
             <i className="fab fa-twitter text-2xl"></i>
           </a>
+
           <a
-            href=" https://www.linkedin.com/company/skylartechlimited/?viewAsMember=true"
+            href="https://www.linkedin.com/company/skylartechlimited/?viewAsMember=true"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 mr-4"
@@ -112,14 +116,24 @@ const Footer = () => {
           >
             <i className="fab fa-linkedin-in text-2xl"></i>
           </a>
+
           <a
-            href=" https://www.facebook.com/SkylartechKE/"
+            href="https://www.facebook.com/SkylartechKE/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-gray-300"
+            className="text-white hover:text-gray-300 mr-4"
             aria-label="Facebook"
           >
             <i className="fab fa-facebook text-2xl"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/skylartechlife/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300 mr-4"
+            aria-label="Instagram"
+          >
+            <i className="fab fa-instagram text-2xl"></i>
           </a>
         </div>
 
