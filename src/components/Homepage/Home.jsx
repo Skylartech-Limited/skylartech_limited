@@ -16,7 +16,7 @@ import Client from "./ClientSlider";
 import CountUp from "./CountUp";
 
 const Home = () => {
-  const images = [Cert1, Cert2, Cert3, Cert4];
+  const images = [Cert1, Cert2, Cert3, Cert4, GroupPhoto];
 
   const [index, setIndex] = useState(0);
 
@@ -145,12 +145,6 @@ const Home = () => {
                 optimize performance, and deliver measurable business results.
               </li>
             </ul>
-
-            <img
-              src={GroupPhoto}
-              alt="Project Management Training"
-              className="w-full md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto mb-6 mt-10 rounded-2xl shadow-xl"
-            />
           </section>
 
           {/* CTA BUTTON */}
