@@ -24,7 +24,7 @@ const ClientReview = () => {
 
   const Card = ({ text }) => (
     <div
-      className="bg-white rounded-3xl shadow-lg border border-gray-100 p-6 sm:p-8 
+      className="bg-white rounded-3xl border border-stone-300 p-6 sm:p-8 
       min-h-[360px] flex flex-col justify-between relative overflow-hidden h-full"
     >
       {/* Quote bubble */}
