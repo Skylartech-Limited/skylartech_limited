@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 
@@ -48,7 +48,7 @@ const Home = () => {
       </Helmet>
 
       {/* HERO SECTION */}
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-16">
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-16 pt-32">
         <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 py-6 text-center leading-tight">
             Empowering Global
@@ -93,60 +93,6 @@ const Home = () => {
             />
           </motion.div>
 
-          <section className="text-gray-700 text-base lg:text-lg leading-8 py-4">
-            <ul className="space-y-6">
-              <li>
-                Skylartech Limited is a Premier Authorized Training Partner
-                (ATP) of the Project Management Institute (PMI), delivering
-                PMI-authorized training that equips professionals with
-                internationally respected certifications and practical project
-                execution capability.
-              </li>
-
-              <li>
-                With over a decade of experience, we support organizations
-                across banking, telecommunications, IT, procurement, and the
-                public sector through professional training, consulting,
-                leadership development, and software engineering solutions that
-                strengthen organizational capability and delivery performance.
-              </li>
-            </ul>
-
-            {/* Slideshow */}
-            <div className="relative w-full md:w-5/6 lg:w-4/5 xl:w-2/3 mx-auto mt-10 overflow-hidden rounded-xl">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={index}
-                  src={images[index]}
-                  alt={`PMI Authorized Training Excellence ${index + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="rounded-xl shadow-2xl w-full h-auto object-cover"
-                />
-              </AnimatePresence>
-            </div>
-          </section>
-
-          <section className="text-gray-700 text-base lg:text-lg leading-8 py-8">
-            <ul className="space-y-6">
-              <li>
-                We equip professionals with the skills, certification, and
-                confidence to drive successful project outcomes while helping
-                organizations grow, innovate, and compete effectively in a
-                dynamic global environment.
-              </li>
-
-              <li>
-                We provide expert-led PMP® and project management certification
-                training alongside highly skilled software engineering teams and
-                technology solutions that help organizations scale efficiently,
-                optimize performance, and deliver measurable business results.
-              </li>
-            </ul>
-          </section>
-
           {/* CTA BUTTON */}
           <div className="flex justify-center mt-8 mb-8">
             <Link to="/contact-us">
@@ -162,8 +108,129 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* ABOUT SKYLARTECH */}
+      <div id="about-skylartech" className="bg-amber-50 py-20 scroll-mt-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h1 className="text-4xl lg:text-5xl font-bold text-black">
+              About Skylartech
+            </h1>
+
+            <p className="text-gray-700 text-lg leading-8 max-w-4xl mx-auto mt-6">
+              PMI® Premier Authorized Training Partner delivering globally
+              recognized project management training, leadership development,
+              consulting, and scalable technology solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            {/* LEFT CONTENT */}
+            <div className="space-y-8 text-gray-700 text-base lg:text-lg leading-8">
+              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
+                <h2 className="text-2xl font-bold text-amber-500 mb-5">
+                  PMI® Premier ATP
+                </h2>
+
+                <p>
+                  Skylartech Limited is a Premier Authorized Training Partner
+                  (ATP) of the Project Management Institute (PMI), delivering
+                  PMI-authorized training that equips professionals with
+                  internationally respected certifications and practical project
+                  execution capability.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
+                <h2 className="text-2xl font-bold text-amber-500 mb-5">
+                  Global Training & Consulting Excellence
+                </h2>
+
+                <p>
+                  With over a decade of experience, we support organizations
+                  across banking, telecommunications, IT, procurement, and the
+                  public sector through professional training, consulting,
+                  leadership development, and software engineering solutions
+                  that strengthen organizational capability and delivery
+                  performance.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
+                <h2 className="text-2xl font-bold text-amber-500 mb-5">
+                  Empowering Organizations
+                </h2>
+
+                <p>
+                  We equip professionals with the skills, certification, and
+                  confidence to drive successful project outcomes while helping
+                  organizations grow, innovate, and compete effectively in a
+                  dynamic global environment.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
+                <h2 className="text-2xl font-bold text-amber-500 mb-5">
+                  Technology & Software Engineering
+                </h2>
+
+                <p>
+                  We provide expert-led PMP® and project management
+                  certification training alongside highly skilled software
+                  engineering teams and technology solutions that help
+                  organizations scale efficiently, optimize performance, and
+                  deliver measurable business results.
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE SLIDESHOW */}
+            {/* RIGHT IMAGE WHEEL CAROUSEL */}
+            <div className="relative w-full h-[500px] flex items-center justify-center perspective-1000">
+              <div className="relative w-full h-full flex items-center justify-center">
+                {images.map((img, i) => {
+                  const total = images.length;
+
+                  // position relative to active index
+                  const offset = i - index;
+
+                  // wrap around logic for smooth wheel effect
+                  const normalizedOffset =
+                    ((offset + total / 2) % total) - total / 2;
+
+                  const isActive = i === index;
+
+                  return (
+                    <motion.img
+                      key={i}
+                      src={img}
+                      alt={`PMI ${i}`}
+                      className="absolute w-[100%] h-[100%] object-cover rounded-3xl shadow-2xl"
+                      animate={{
+                        rotateY: normalizedOffset * 45,
+                        scale: isActive ? 1 : 0.75,
+                        x: normalizedOffset * 120,
+                        zIndex: isActive ? 10 : 0,
+                        opacity: Math.abs(normalizedOffset) > 2 ? 0 : 1,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* PROFESSIONAL CERTIFICATION PROGRAMS */}
-      <div className="py-20 bg-gray-50">
+      <div
+        id="certification-programs"
+        className="py-20 bg-gray-50 scroll-mt-28"
+      >
         <div className="px-6">
           <h1 className="text-4xl lg:text-5xl font-bold text-black text-center">
             Professional Certification Programs
@@ -176,9 +243,7 @@ const Home = () => {
           </p>
         </div>
 
-        {/* WIDER GRID (FIXED) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 lg:px-10 xl:px-12 mt-16 max-w-[1700px] mx-auto">
-          {/* Core Certifications */}
           <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 border border-gray-100 hover:-translate-y-2 w-full">
             <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
               <span className="text-2xl font-bold text-blue-600">01</span>
@@ -196,7 +261,6 @@ const Home = () => {
             </ul>
           </div>
 
-          {/* Specialized Certifications */}
           <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 border border-gray-100 hover:-translate-y-2 w-full">
             <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6">
               <span className="text-2xl font-bold text-green-600">02</span>
@@ -217,7 +281,6 @@ const Home = () => {
             </ul>
           </div>
 
-          {/* Sustainability Certifications */}
           <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 border border-gray-100 hover:-translate-y-2 w-full">
             <div className="w-14 h-14 rounded-2xl bg-violet-100 flex items-center justify-center mb-6">
               <span className="text-2xl font-bold text-violet-600">03</span>
@@ -235,7 +298,7 @@ const Home = () => {
       </div>
 
       {/* OUR EXPERTISE */}
-      <div className="bg-amber-50 py-20">
+      <div id="our-expertise" className="bg-amber-50 py-20 scroll-mt-28">
         <div className="flex flex-col justify-center items-center px-6">
           <h1 className="text-4xl lg:text-5xl text-black text-center font-bold">
             Our Expertise
@@ -250,7 +313,6 @@ const Home = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 lg:px-16 mt-10">
-          {/* Card 1 */}
           <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-amber-100 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6">
               <span className="text-2xl font-bold text-red-600">01</span>
@@ -269,7 +331,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Card 2 */}
           <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-amber-100 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mb-6">
               <span className="text-2xl font-bold text-slate-600">02</span>
@@ -287,7 +348,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Card 3 */}
           <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-amber-100 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center mb-6">
               <span className="text-2xl font-bold text-amber-600">03</span>
@@ -307,11 +367,12 @@ const Home = () => {
         </div>
       </div>
 
-      <Client />
-
-      <CountUp />
-
-      <ClientReview />
+      {/* OUR CLIENTS */}
+      <div id="our-clients" className="scroll-mt-28">
+        <Client />
+        <CountUp />
+        <ClientReview />
+      </div>
     </>
   );
 };
