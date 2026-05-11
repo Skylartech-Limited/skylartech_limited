@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 
@@ -10,6 +10,7 @@ import Cert3 from "../../assets/Homepage images/Cert3.jpg";
 import Cert4 from "../../assets/Homepage images/Cert4.jpg";
 import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
 import PMI from "../../assets/Homepage images/PMI.png";
+import PMI2 from "../../assets/Homepage images/PMI2.png";
 
 import ClientReview from "./ClientReview";
 import Client from "./ClientSlider";
@@ -47,66 +48,118 @@ const Home = () => {
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
 
-     {/* HERO SECTION */}
-<div className="min-h-screen flex items-start justify-center bg-gray-100 pt-24">
-  <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
+{/* HERO SECTION */}
+<div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-10 py-10 lg:py-16 overflow-hidden">
+  <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
+    
+    {/* LEFT SIDE - PMI IMAGE */}
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="flex justify-center items-center"
+    >
+      <img
+        src={PMI}
+        alt="PMI Premier ATP"
+        className="
+          w-full
+          max-w-[180px]
+          sm:max-w-[240px]
+          md:max-w-[280px]
+          lg:max-w-[320px]
+          xl:max-w-[360px]
+          2xl:max-w-[420px]
+          h-auto
+          object-contain
+        "
+      />
+    </motion.div>
 
-    <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-900 py-6 text-center leading-tight">
-      Empowering Global{" "}
-      <span
-        className="font-semibold"
-        style={{
-          background:
-            "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-          WebkitBackgroundClip: "text",
-          color: "transparent",
-        }}
-      >
-        <Typewriter
-          words={[" Project Leaders"]}
-          loop={1}
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
-      </span>
-      <span className="text-gray-900">
-        <Cursor cursorStyle="" />
-      </span>
-    </h2>
-
-<p className="text-center text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-8 px-4 sm:px-6">
-  PMI® Premier ATP delivering world-class project management,
-  certification, leadership, and organizational transformation training.
-</p>
-
-<motion.div
-  initial={{ opacity: 0, scale: 1.05 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="flex justify-center items-center mt-10 mb-8 px-4"
->
-  <img
-    src={PMI}
-    alt="PMI Premier ATP"
-    className="w-auto max-w-full max-h-[320px] sm:max-h-[380px] md:max-h-[420px] lg:max-h-[450px] object-contain"
-  />
-</motion.div>
-
-    {/* CTA BUTTON */}
-    <div className="flex justify-center mt-8">
-      <Link to="/contact-us">
-        <motion.button
-          className="border-2 border-purple-500 bg-white hover:bg-violet-500 hover:text-white transition-all duration-300 text-black px-8 py-3 rounded-2xl text-lg font-medium shadow-lg"
-          whileHover={{ scale: 0.95 }}
-          whileTap={{ scale: 0.9 }}
+    {/* CENTER - TEXT */}
+    <div className="text-center px-2">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight">
+        Empowering Global{" "}
+        <span
+          className="font-semibold"
+          style={{
+            background:
+              "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
         >
-          Let's Talk
-          <span className="ml-2 text-xl">→</span>
-        </motion.button>
-      </Link>
+          <Typewriter
+            words={[" Project Leaders"]}
+            loop={1}
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </span>
+
+        <span className="text-gray-900">
+          <Cursor cursorStyle="" />
+        </span>
+      </h2>
+
+      <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-7 max-w-2xl mx-auto">
+        PMI® Premier ATP delivering world-class project management,
+        certification, leadership, and organizational transformation
+        training.
+      </p>
+
+      {/* CTA BUTTON */}
+      <div className="mt-8 flex justify-center">
+        <Link to="/contact-us">
+          <motion.button
+            className="
+              border-2 border-purple-500
+              bg-white
+              hover:bg-violet-500
+              hover:text-white
+              transition-all duration-300
+              text-black
+              px-6 sm:px-8
+              py-3
+              rounded-2xl
+              text-sm sm:text-base lg:text-lg
+              font-medium
+              shadow-lg
+            "
+            whileHover={{ scale: 0.95 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Let's Talk
+            <span className="ml-2 text-xl">→</span>
+          </motion.button>
+        </Link>
+      </div>
     </div>
 
+    {/* RIGHT SIDE - PMI2 IMAGE */}
+    <motion.div
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="flex justify-center items-center"
+    >
+      <img
+        src={PMI2}
+        alt="PMI ATP"
+        className="
+          w-full
+          max-w-[180px]
+          sm:max-w-[240px]
+          md:max-w-[280px]
+          lg:max-w-[320px]
+          xl:max-w-[360px]
+          2xl:max-w-[420px]
+          h-auto
+          object-contain
+        "
+      />
+    </motion.div>
   </div>
 </div>
 
