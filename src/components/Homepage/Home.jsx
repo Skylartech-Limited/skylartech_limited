@@ -11,6 +11,7 @@ import Cert4 from "../../assets/Homepage images/Cert4.jpg";
 import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
 import PMI from "../../assets/Homepage images/PMI.png";
 import PMI2 from "../../assets/Homepage images/PMI2.png";
+import Logo from "../../assets/Logo.png";
 
 import ClientReview from "./ClientReview";
 import Client from "./ClientSlider";
@@ -48,21 +49,20 @@ const Home = () => {
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
 
-{/* HERO SECTION */}
-<div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-10 py-10 lg:py-16 overflow-hidden">
-  <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
-    
-    {/* LEFT SIDE - PMI IMAGE */}
-    <motion.div
-      initial={{ opacity: 0, x: -40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex justify-center items-center"
-    >
-      <img
-        src={PMI}
-        alt="PMI Premier ATP"
-        className="
+      {/* HERO SECTION */}
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-10 py-10 lg:py-16 overflow-hidden">
+        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
+          {/* LEFT SIDE - PMI IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex justify-center items-center"
+          >
+            <img
+              src={PMI}
+              alt="PMI Premier ATP"
+              className="
           w-full
           max-w-[180px]
           sm:max-w-[240px]
@@ -73,47 +73,70 @@ const Home = () => {
           h-auto
           object-contain
         "
-      />
-    </motion.div>
+            />
+          </motion.div>
 
-    {/* CENTER - TEXT */}
-    <div className="text-center px-2">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight">
-        Empowering Global{" "}
-        <span
-          className="font-semibold"
-          style={{
-            background:
-              "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          <Typewriter
-            words={[" Project Leaders"]}
-            loop={1}
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </span>
+          {/* CENTER - SKYLARTECH LOGO + TEXT */}
+          <div className="text-center px-2 flex flex-col items-center">
+            {/* SKYLARTECH LOGO */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-6"
+            >
+              <img
+                src={Logo}
+                alt="SkylarTech Logo"
+                className="
+      w-auto
+      max-w-[180px]
+      sm:max-w-[230px]
+      md:max-w-[280px]
+      lg:max-w-[330px]
+      xl:max-w-[380px]
+      2xl:max-w-[420px]
+      object-contain
+    "
+              />
+            </motion.div>
 
-        <span className="text-gray-900">
-          <Cursor cursorStyle="" />
-        </span>
-      </h2>
+            {/* HERO TEXT */}
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight">
+              Empowering Global{" "}
+              <span
+                className="font-semibold"
+                style={{
+                  background:
+                    "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                <Typewriter
+                  words={[" Project Leaders"]}
+                  loop={1}
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+              <span className="text-gray-900">
+                <Cursor cursorStyle="" />
+              </span>
+            </h2>
 
-      <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-7 max-w-2xl mx-auto">
-        PMI® Premier ATP delivering world-class project management,
-        certification, leadership, and organizational transformation
-        training.
-      </p>
+            <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-7 max-w-2xl mx-auto">
+              PMI® Premier ATP delivering world-class project management,
+              certification, leadership, and organizational transformation
+              training.
+            </p>
 
-      {/* CTA BUTTON */}
-      <div className="mt-8 flex justify-center">
-        <Link to="/contact-us">
-          <motion.button
-            className="
+            {/* CTA BUTTON */}
+            <div className="mt-8 flex justify-center">
+              <Link to="/contact-us">
+                <motion.button
+                  className="
               border-2 border-purple-500
               bg-white
               hover:bg-violet-500
@@ -127,27 +150,27 @@ const Home = () => {
               font-medium
               shadow-lg
             "
-            whileHover={{ scale: 0.95 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Let's Talk
-            <span className="ml-2 text-xl">→</span>
-          </motion.button>
-        </Link>
-      </div>
-    </div>
+                  whileHover={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Let's Talk
+                  <span className="ml-2 text-xl">→</span>
+                </motion.button>
+              </Link>
+            </div>
+          </div>
 
-    {/* RIGHT SIDE - PMI2 IMAGE */}
-    <motion.div
-      initial={{ opacity: 0, x: 40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex justify-center items-center"
-    >
-      <img
-        src={PMI2}
-        alt="PMI ATP"
-        className="
+          {/* RIGHT SIDE - PMI2 IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex justify-center items-center"
+          >
+            <img
+              src={PMI2}
+              alt="PMI ATP"
+              className="
           w-full
           max-w-[180px]
           sm:max-w-[240px]
@@ -158,11 +181,10 @@ const Home = () => {
           h-auto
           object-contain
         "
-      />
-    </motion.div>
-  </div>
-</div>
-
+            />
+          </motion.div>
+        </div>
+      </div>
       {/* ABOUT SKYLARTECH */}
       <div id="about-skylartech" className="bg-amber-50 py-20 scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6">

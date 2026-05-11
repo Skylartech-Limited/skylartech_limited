@@ -24,12 +24,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/services/pmp-training" element={<UI />} />
-        <Route exact path="/services/consulting" element={<PMConsulting />}/>
-        <Route exact path="/services/corporate-training" element={<CorpoPMI />} />
-        <Route exact path="/services/web-and-app-development" element={<Web />}/>
-        <Route exact path="/services/agile-and-scrum" element={<Agile />}/>
-        <Route exact path="/services/capm-training" element={<Capm />}/> 
+        <Route exact path="/offerings/pmp-training" element={<UI />} />
+        <Route exact path="/offerings/consulting" element={<PMConsulting />}/>
+        <Route exact path="/offerings/corporate-training" element={<CorpoPMI />} />
+        <Route exact path="/offerings/web-and-app-development" element={<Web />}/>
+        <Route exact path="/offerings/agile-and-scrum" element={<Agile />}/>
+        <Route exact path="/offerings/capm-training" element={<Capm />}/> 
         <Route exact path="/industries/health-care" element={<Health />} />
         <Route exact path="/industries/fintech" element={<Fintech />} />
         <Route exact path="/industries/insurance" element={<Insurance />} />
