@@ -47,74 +47,75 @@ const Home = () => {
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
 
-      {/* HERO SECTION */}
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-16 pt-32">
-        <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 py-6 text-center leading-tight">
-            Empowering Global
-            <span
-              className="font-semibold"
-              style={{
-                background:
-                  "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-              }}
-            >
-              <Typewriter
-                words={[" Project Leaders"]}
-                loop={1}
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-            <span className="text-gray-900">
-              <Cursor cursorStyle="" />
-            </span>
-          </h2>
+     {/* HERO SECTION */}
+<div className="min-h-screen flex items-start justify-center bg-gray-100 pt-24">
+  <div className="w-full md:w-11/12 lg:w-10/12 xl:w-4/5">
 
-          <p className="text-center text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-8">
-            PMI® Premier ATP delivering world-class project management,
-            certification, leadership, and organizational transformation
-            training.
-          </p>
+    <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-900 py-6 text-center leading-tight">
+      Empowering Global{" "}
+      <span
+        className="font-semibold"
+        style={{
+          background:
+            "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+          WebkitBackgroundClip: "text",
+          color: "transparent",
+        }}
+      >
+        <Typewriter
+          words={[" Project Leaders"]}
+          loop={1}
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
+      </span>
+      <span className="text-gray-900">
+        <Cursor cursorStyle="" />
+      </span>
+    </h2>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex justify-center mb-8 mt-10 px-4"
-          >
-            <img
-              src={PMI}
-              alt="PMI Premier ATP"
-              className="w-full sm:w-4/5 md:w-4/5 lg:w-3/5 xl:w-1/3 h-auto object-contain rounded-xl"
-            />
-          </motion.div>
+<p className="text-center text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-8 px-4 sm:px-6">
+  PMI® Premier ATP delivering world-class project management,
+  certification, leadership, and organizational transformation training.
+</p>
 
-          {/* CTA BUTTON */}
-          <div className="flex justify-center mt-8 mb-8">
-            <Link to="/contact-us">
-              <motion.button
-                className="border-2 border-purple-500 bg-white hover:bg-violet-500 hover:text-white transition-all duration-300 text-black px-8 py-3 rounded-2xl text-lg font-medium shadow-lg"
-                whileHover={{ scale: 0.95 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Let's Talk
-                <span className="ml-2 text-xl">&#8594;</span>
-              </motion.button>
-            </Link>
-          </div>
-        </div>
-      </div>
+<motion.div
+  initial={{ opacity: 0, scale: 1.05 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="flex justify-center items-center mt-10 mb-8 px-4"
+>
+  <img
+    src={PMI}
+    alt="PMI Premier ATP"
+    className="w-auto max-w-full max-h-[320px] sm:max-h-[380px] md:max-h-[420px] lg:max-h-[450px] object-contain"
+  />
+</motion.div>
+
+    {/* CTA BUTTON */}
+    <div className="flex justify-center mt-8">
+      <Link to="/contact-us">
+        <motion.button
+          className="border-2 border-purple-500 bg-white hover:bg-violet-500 hover:text-white transition-all duration-300 text-black px-8 py-3 rounded-2xl text-lg font-medium shadow-lg"
+          whileHover={{ scale: 0.95 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          Let's Talk
+          <span className="ml-2 text-xl">→</span>
+        </motion.button>
+      </Link>
+    </div>
+
+  </div>
+</div>
 
       {/* ABOUT SKYLARTECH */}
       <div id="about-skylartech" className="bg-amber-50 py-20 scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <h1 className="text-4xl lg:text-5xl font-bold text-black">
-              About Skylartech
+              Who we are
             </h1>
 
             <p className="text-gray-700 text-lg leading-8 max-w-4xl mx-auto mt-6">
