@@ -20,7 +20,7 @@ const Contact = () => {
 
       {/* SEO */}
       <Helmet>
-        <title>Contact SkylarTech | IT Consulting & App Development</title>
+        <title>Contact Skylartech | PMP Training & Certification</title>
       </Helmet>
 
       {/* HERO */}
