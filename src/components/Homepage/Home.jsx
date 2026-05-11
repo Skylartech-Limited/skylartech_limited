@@ -40,160 +40,151 @@ const Home = () => {
           name="description"
           content="Skylartech Limited is a PMI Premier Authorized Training Partner delivering project management certification training, leadership development, consulting, and technology solutions globally."
         />
-
-        <meta
-          name="keywords"
-          content="Skylartech, PMI Premier ATP, PMP Training, Project Management Certifications, PMI Training, Agile Certifications, PMO Consulting, Leadership Training, Software Engineering"
-        />
-
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
-
       {/* HERO SECTION */}
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-10 py-10 lg:py-16 overflow-hidden">
-        <div className="w-full max-w-7xl flex flex-col items-center">
-   {/* MAIN GRID */}
-<div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 items-center">
-  
- {/* LEFT PMI */}
-<motion.div
-  initial={{ opacity: 0, x: -40 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="
-    flex 
-    justify-center 
-    -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 xl:-mt-40
-  "
->
-  <img
-    src={PMI}
-    alt="PMI Premier ATP"
-    className="
-      w-full
-      max-w-[180px]
-      sm:max-w-[240px]
-      md:max-w-[280px]
-      lg:max-w-[320px]
-      xl:max-w-[360px]
-      2xl:max-w-[420px]
-      h-auto
-      object-contain
-    "
-  />
-</motion.div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-10 py-16 pt-28 overflow-hidden">
+        <div className="w-full max-w-7xl">
+          {/* MAIN LAYOUT */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* LEFT SIDE */}
+            <div className="flex flex-col items-center lg:items-start">
+              {/* SKYLARTECH LOGO (MOBILE ONLY TOP) */}
+              <div className="lg:hidden mb-6 flex justify-center">
+                <motion.img
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  src={Logo}
+                  alt="SkylarTech Logo"
+                  className="w-[220px] sm:w-[260px] object-contain"
+                />
+              </div>
 
-  {/* CENTER TEXT */}
-  <div className="text-center px-2 flex flex-col items-center">
-    
-    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 leading-tight">
-      Empowering Global{" "}
-      <span
-        className="font-semibold"
-        style={{
-          background:
-            "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-          WebkitBackgroundClip: "text",
-          color: "transparent",
-        }}
-      >
-        <Typewriter
-          words={[" Project Leaders"]}
-          loop={1}
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
-      </span>
+              {/* PMI STACK (RESPONSIVE SAFE LAYOUT) */}
+              <div className="relative flex items-center justify-center gap-[-20px] mb-8">
+                <motion.img
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  src={PMI}
+                  alt="PMI 1"
+                  className="
+              h-[120px] sm:h-[140px] md:h-[160px] lg:h-[180px]
+              w-auto object-contain z-10
+              -mr-6 sm:-mr-8
+            "
+                />
 
-      <Cursor cursorStyle="" />
-    </h2>
+                <motion.img
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  src={PMI2}
+                  alt="PMI 2"
+                  className="
+              h-[120px] sm:h-[140px] md:h-[160px] lg:h-[180px]
+              w-auto object-contain
+              -ml-6 sm:-ml-0
+            "
+                />
+              </div>
 
-    <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-7 max-w-2xl mx-auto">
-      PMI® Premier ATP delivering world-class project management,
-      certification, leadership, and organizational transformation
-      training.
-    </p>
+              {/* TEXT */}
+              <div className="text-center lg:text-left max-w-2xl">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight">
+                  Empowering Global{" "}
+                  <span
+                    className="font-semibold"
+                    style={{
+                      background:
+                        "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+                      WebkitBackgroundClip: "text",
+                      color: "transparent",
+                    }}
+                  >
+                    <Typewriter
+                      words={[" Project Leaders"]}
+                      loop={1}
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                    />
+                  </span>
+                  <Cursor cursorStyle="" />
+                </h2>
 
-    {/* SKYLARTECH LOGO BELOW PARAGRAPH */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="mt-8 mb-6"
-    >
-      <img
-        src={Logo}
-        alt="SkylarTech Logo"
-        className="
-          w-auto
-          max-w-[320px]
-          sm:max-w-[420px]
-          md:max-w-[520px]
-          lg:max-w-[620px]
-          xl:max-w-[700px]
-          2xl:max-w-[780px]
-          object-contain
-        "
-      />
-    </motion.div>
+                {/* WHY CHOOSE US */}
+                <div className="mt-6 bg-white/90 backdrop-blur-md border border-gray-200 rounded-3xl p-5 sm:p-6 shadow-xl">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    Why Choose Us
+                  </h3>
 
-    {/* CTA BUTTON */}
-    <div className="mt-4 flex justify-center">
-      <Link to="/contact-us">
-        <motion.button
-          className="
-            border-2 border-purple-500
-            bg-white
-            hover:bg-violet-500
-            hover:text-white
-            transition-all duration-300
-            text-black
-            px-6 sm:px-8
-            py-3
-            rounded-2xl
-            text-sm sm:text-base lg:text-lg
-            font-medium
-            shadow-lg
+                  <p className="text-gray-600 text-sm sm:text-base leading-7">
+                    As a Premier PMI Authorized Training Partner, we deliver
+                    globally recognized PMI-accredited learning experiences
+                    designed for real-world success.
+                  </p>
+
+                  <div className="mt-4 space-y-3 text-sm text-gray-700">
+                    <p>✓ Official PMI course content</p>
+                    <p>✓ Globally trusted training partner</p>
+                    <p>✓ Certification-ready alignment</p>
+                    <p>✓ Expert-led practical learning</p>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-6 flex justify-center lg:justify-start">
+                  <Link to="/contact-us">
+                    <motion.button
+                      className="
+                  border-2 border-purple-500
+                  bg-white
+                  hover:bg-violet-500
+                  hover:text-white
+                  transition-all duration-300
+                  text-black
+                  px-6 sm:px-8
+                  py-3
+                  rounded-2xl
+                  text-sm sm:text-base lg:text-lg
+                  font-medium
+                  shadow-lg
+                "
+                      whileHover={{ scale: 0.95 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      Let's Talk
+                      <span className="ml-2 text-xl">→</span>
+                    </motion.button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE (DESKTOP SKYLARTECH LOGO) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="hidden lg:flex justify-center lg:justify-end"
+            >
+              <img
+                src={Logo}
+                alt="SkylarTech Logo"
+                className="
+            w-full
+            max-w-[320px]
+            sm:max-w-[420px]
+            md:max-w-[520px]
+            lg:max-w-[620px]
+            xl:max-w-[720px]
+            object-contain
           "
-          whileHover={{ scale: 0.95 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Let's Talk
-          <span className="ml-2 text-xl">→</span>
-        </motion.button>
-      </Link>
-    </div>
-  </div>
-
-  {/* RIGHT PMI */}
-<motion.div
-  initial={{ opacity: 0, x: 40 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  className="
-    flex 
-    justify-center 
-    -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 xl:-mt-40
-  "
->
-  <img
-    src={PMI2}
-    alt="PMI ATP"
-    className="
-      w-full
-      max-w-[180px]
-      sm:max-w-[240px]
-      md:max-w-[280px]
-      lg:max-w-[320px]
-      xl:max-w-[360px]
-      2xl:max-w-[420px]
-      h-auto
-      object-contain
-    "
-  />
-</motion.div>
-</div>
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
       {/* ABOUT SKYLARTECH */}
