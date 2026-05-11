@@ -11,11 +11,11 @@ import Health from "./components/Industries/Health.jsx";
 import Insurance from "./components/Industries/Insurance.jsx";
 import Telecom from "./components/Industries/Telecom.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import UI from "./components/Services/Uidesign.jsx";
-import Custom from "./components/Services/custom.jsx";
-import Discovery from "./components/Services/discovery.jsx";
-import IOT from "./components/Services/iot.jsx";
-import Support from "./components/Services/support.jsx";
+import UI from "./components/Services/PMPTraining.jsx";
+import Agile from "./components/Services/agile.jsx";
+import PMConsulting from "./components/Services/PMConsulting.jsx";
+import CorpoPMI from "./components/Services/CorpoPMI.jsx";
+import Capm from "./components/Services/capm.jsx";
 import Web from "./components/Services/web.jsx";
 
 function App() {
@@ -24,12 +24,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/services/ui-ux-design" element={<UI />} />
-        <Route exact path="/services/discovery-workshop" element={<Discovery />}/>
-        <Route exact path="/services/iot-development" element={<IOT />} />
+        <Route exact path="/services/pmp-training" element={<UI />} />
+        <Route exact path="/services/consulting" element={<PMConsulting />}/>
+        <Route exact path="/services/corporate-training" element={<CorpoPMI />} />
         <Route exact path="/services/web-and-app-development" element={<Web />}/>
-        <Route exact path="/services/custom-software-development" element={<Custom />}/>
-        <Route exact path="/services/support-and-maintenance" element={<Support />}/> 
+        <Route exact path="/services/agile-and-scrum" element={<Agile />}/>
+        <Route exact path="/services/capm-training" element={<Capm />}/> 
         <Route exact path="/industries/health-care" element={<Health />} />
         <Route exact path="/industries/fintech" element={<Fintech />} />
         <Route exact path="/industries/insurance" element={<Insurance />} />

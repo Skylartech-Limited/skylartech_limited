@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
 import MobileApp from "../../assets/Services image/MobileApp.png";
 import Requirements from "../../assets/Services image/Requirementsgathering.png";
 import Development from "../../assets/Services image/Development.png";
@@ -12,303 +13,299 @@ import WebDevelopment from "../../assets/Services image/web-development.png";
 import CrossPlatform from "../../assets/Services image/seo.png";
 import Prototyping from "../../assets/Services image/triangle.png";
 import Migration from "../../assets/Services image/migration.png";
-const web = () => {
+
+const Web = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row text-left p-10 bg-amber-50">
-        <div className="lg:w-1/2">
-          <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
-            Web &{" "}
-            <span className="text-amber-500">
-              <Typewriter
-                words={["Mobile App Development"]}
-                loop={1}
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-            <span className="text-gray-800">
-              <Cursor cursorStyle="~" />
-            </span>
-          </h2>
-          <h1 className="max-w-xl text-5xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
-            We do not build web & apps We build experiences
-          </h1>
-          <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
-            We believe in building interactive web, Mobile applications, To
-            create experiences beyond our clients’ expectations.
-          </p>
-          <ul>
-            <li>
-            <Link to="/contact-us">
-              <motion.button
-                className="border-2 border-amber-500 bg-white hover:bg-amber-500 text-black px-4 py-2 rounded"
-                whileHover={{ scale: 0.9 }}
-                whileTap={{ scale: 0.8 }}
-              >
-                Let's Talk
-                <span
-                  className="ml-2 text-xl"
-                  style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                >
-                  &#8594;
+      {/* HERO SECTION */}
+      <section className="bg-gradient-to-br from-amber-50 via-white to-orange-50 overflow-hidden mt-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* LEFT CONTENT */}
+            <div>
+              <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Web & Mobile Application Development
+              </div>
+
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Building Digital{" "}
+                <span className="text-amber-500">
+                  <Typewriter
+                    words={[
+                      "Experiences",
+                      "Solutions",
+                      "Applications",
+                    ]}
+                    loop={0}
+                    typeSpeed={70}
+                    deleteSpeed={40}
+                    delaySpeed={1500}
+                  />
                 </span>
-              </motion.button>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      {/*web how we do it */}
-      <div div className="flex flex-col justify-center items-center">
-        <h1 className="pt-12 text-4xl text-black text-center font-semibold">
-          How We <span className="text-amber-500">Do It</span>
-        </h1>
-        <h3 className="text-lg text-gray-900 mx-auto max-w-2xl font-semibold py-6">
-          Fast-track your projects delivery using our simple three-step
-          application development process.
-        </h3>
-        <div className="lg:flex lg:flex-row lg:justify-between flex-col gap-10 px-10">
-          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
-            <img
-              className="w-32 h-16 mb-2"
-              src={Requirements}
-              alt="Requirements"
-            />
-            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
-              Requirements Gathering
+                <span className="text-amber-500">
+                  <Cursor cursorStyle="|" />
+                </span>
+              </h2>
+
+              <p className="mt-8 text-lg md:text-xl text-gray-600 leading-relaxed">
+                We create modern web and mobile applications that help
+                businesses streamline operations, engage customers, and drive
+                digital transformation through scalable and user-focused
+                solutions.
+              </p>
+
+              {/* FEATURES */}
+              <div className="mt-8 space-y-4">
+                {[
+                  "Custom Web Application Development",
+                  "Mobile App Development",
+                  "UI/UX Focused Experiences",
+                  "Scalable & Secure Solutions",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+
+                    <span className="text-gray-700 text-base md:text-lg">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* BUTTON */}
+              <div className="mt-10">
+                <Link to="/contact-us">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg transition-all duration-300"
+                  >
+                    Let’s Build Together →
+                  </motion.button>
+                </Link>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
+              <img
+                src={MobileApp}
+                alt="Web and Mobile Development"
+                className="w-full max-w-lg rounded-3xl shadow-2xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS SECTION */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              How We <span className="text-amber-500">Build Solutions</span>
             </h1>
-            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
-              <li>Requirements Definition</li>
-              <li>Analyzing the Requirements</li>
-              <li>Documenting Process</li>
-              <li>Provide Initial Design</li>
-            </ul>
+
+            <p className="text-gray-600 text-lg mt-6 max-w-3xl mx-auto">
+              Our streamlined development process ensures efficient delivery,
+              high-quality applications, and exceptional user experiences.
+            </p>
           </div>
-          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
-            <img
-              className="w-32 h-16 mb-2"
-              src={Development}
-              alt="Development"
-            />
-            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
-              Development & Testing
+
+          {/* PROCESS CARDS */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: Requirements,
+                title: "Requirements Gathering",
+                items: [
+                  "Requirements Definition",
+                  "Business Analysis",
+                  "Planning & Documentation",
+                  "Initial Design Strategy",
+                ],
+              },
+              {
+                image: Development,
+                title: "Development & Testing",
+                items: [
+                  "Frontend & Backend Development",
+                  "Agile SCRUM Collaboration",
+                  "Quality Assurance Testing",
+                  "Deployment & Optimization",
+                ],
+              },
+              {
+                image: Support,
+                title: "Support & Maintenance",
+                items: [
+                  "Continuous Technical Support",
+                  "System Monitoring",
+                  "Performance Optimization",
+                  "Ongoing Maintenance",
+                ],
+              },
+            ].map((card, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className="bg-amber-50 rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-300"
+              >
+                <img
+                  className="w-20 h-20 object-contain mb-6"
+                  src={card.image}
+                  alt={card.title}
+                />
+
+                <h2 className="text-3xl font-bold text-amber-500 mb-6">
+                  {card.title}
+                </h2>
+
+                <ul className="space-y-4">
+                  {card.items.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-700"
+                    >
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES SECTION */}
+      <section className="bg-amber-50 py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Our Development Services
             </h1>
-            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
-              <li>Frontend & backend development</li>
-              <li>Weekly Client Feedback (SCRUM)</li>
-              <li>QA Testing</li>
-              <li>Deployment</li>
-            </ul>
+
+            <p className="text-gray-600 text-lg mt-6 max-w-3xl mx-auto">
+              We deliver modern, scalable, and secure digital solutions tailored
+              to your business goals and user needs.
+            </p>
           </div>
-          <div className="text-gray-800 shadow-xs p-10 rounded-xl">
-            <img className="w-32 h-16 mb-2" src={Support} alt="Support" />
-            <h1 className="text-left font-semibold text-amber-500 text-3xl pb-4">
-              Support & Maintenance
-            </h1>
-            <ul className="px-5 list-disc leading-8 text-left marker:text-amber-500 marker:text-2xl">
-              <li>SLA Based Support</li>
-              <li>L3 and Production Support Services</li>
-              <li>Operational support where needed</li>
-              <li>On-going Support</li>
-            </ul>
+
+          {/* SERVICE CARDS */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: Fullstack,
+                title: "Full Stack Development",
+                text: "Modern frontend and backend development using scalable technologies and frameworks.",
+              },
+              {
+                image: Api,
+                title: "API Development",
+                text: "Secure API integrations and custom backend services for seamless connectivity.",
+              },
+              {
+                image: Migration,
+                title: "System Migration",
+                text: "Upgrade and migrate legacy systems into modern scalable platforms.",
+              },
+              {
+                image: Prototyping,
+                title: "UI/UX & Prototyping",
+                text: "Interactive interfaces and user-centered experiences designed for engagement.",
+              },
+              {
+                image: CrossPlatform,
+                title: "Cross Platform Apps",
+                text: "Develop responsive applications that work seamlessly across multiple devices.",
+              },
+              {
+                image: WebDevelopment,
+                title: "Custom Web Solutions",
+                text: "Tailored websites and enterprise systems designed to support business growth.",
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
+
+                <h3 className="text-2xl font-bold text-amber-500 mb-4">
+                  {service.title}
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed">
+                  {service.text}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/*hiring web designers */}
-      <div className="bg-amber-50 mt-12">
-        <div>
-          <h1 className="text-4xl font-semibold text-center pt-14">
-            Hire <span className="text-amber-500">Web Design</span> and
-            Development Experts
-          </h1>
-          <h1 className="pt-5 text-xl ">
-            Skylartech provides a host of web designing and development services for
-            global clients.
-          </h1>
-        </div>
+      {/* ABOUT SECTION */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* TEXT */}
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Delivering Modern{" "}
+                <span className="text-amber-500">
+                  Digital Experiences
+                </span>
+              </h1>
 
-        <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-          <div className="lg:w-1/3 service-section">
-            <div className="text-left shadow-xs p-10 rounded-xl">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "39px",
-                  height: "39px",
-                }}
-              >
-                <img src={Fullstack} alt="sd" />
-              </div>
-              <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
-                Full Stack Development
-              </h3>
-              <p className="max-w-sm py-5 leading-6 text-gray-500">
-                We have a team of skilled full-stack developers with expertise
-                in MEAN and MERN stack. You can hire frontend and backend
-                development teams separately as well. Get full-stack development
-                on MEAN, MERN, PHP + Vue.js, .Net + JS, to name a few.
+              <p className="text-gray-600 text-lg mt-8 leading-relaxed">
+                We combine strategy, design, and technology to create impactful
+                digital products that improve efficiency, customer engagement,
+                and business growth.
               </p>
+
+              <p className="text-gray-600 text-lg mt-6 leading-relaxed">
+                Our team focuses on scalable architecture, seamless user
+                experiences, and agile development methodologies to ensure
+                successful project delivery from concept to deployment.
+              </p>
+
+              <div className="mt-10">
+                <Link to="/contact-us">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg transition-all duration-300"
+                  >
+                    Start Your Project
+                  </motion.button>
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <div className="lg:w-1/3 service-section">
-            <div className="text-left shadow-xs p-10 rounded-xl">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "39px",
-                  height: "39px",
-                }}
-              >
-                <img src={Api} alt="api" />
-              </div>
-              <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
-                API Development
-              </h3>
-              <p className="max-w-sm py-5 leading-6 text-gray-500">
-                Our web development team is highly experienced in APIs, custom
-                data connectors, web services, and middleware for secure
-                integration with third-party solutions. You can outsource API
-                development projects to develop fully functional APIs.
-              </p>
-            </div>
-          </div>
-
-          <div className="lg:w-1/3 service-section">
-            <div className="text-left shadow-xs p-10 rounded-xl">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "39px",
-                  height: "39px",
-                }}
-              >
-                <img src={Migration} alt="migration" />
-              </div>
-              <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
-                Upgradation and Migration
-              </h3>
-              <p className="max-w-sm py-5 leading-6 text-gray-500">
-                Our team of web developers and designers has expertise in
-                developing solutions using the newest technologies. Either you
-                want to upgrade outdated web technology or want to migrate to a
-                new CMS, we have skilled web developers and designers to make
-                the transition smooth.
-              </p>
-            </div>
-          </div>
-
-          <div className="lg:w-1/3 service-section">
-            <div className="text-left shadow-xs p-10 rounded-xl">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "39px",
-                  height: "39px",
-                }}
-              >
-                <img src={Prototyping} alt="prototype" />
-              </div>
-              <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
-                Prototyping & UI/UX Designing
-              </h3>
-              <p className="max-w-sm py-5 leading-6 text-gray-500">
-                Our skillful engineers create interactive prototyping and
-                usability testing to ensure a project with a pleasant user
-                experience. Hire professional UI/UX designers to create
-                meaningful interfaces that enable users to feel comfortable
-                while using your platform.
-              </p>
-            </div>
-          </div>
-
-          <div className="lg:w-1/3 service-section">
-            <div className="text-left shadow-xs p-10 rounded-xl">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "39px",
-                  height: "39px",
-                }}
-              >
-                <img src={CrossPlatform} alt="cp" />
-              </div>
-              <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
-                Cross Platform
-              </h3>
-              <p className="max-w-sm py-5 leading-6 text-gray-500">
-                Cross-Platform Tools, which include JavaScript frameworks, App
-                factories, Web-to-native wrappers, Runtimes, and Source code
-                translators, are used to create Native, Hybrid, and Web Apps.
-                One of the popular methods for creating cross-platform
-                applications is the hybrid mobile application.
-              </p>
-            </div>
-          </div>
-
-          <div className="lg:w-1/3 service-section">
-            <div className="text-left shadow-xs p-10 rounded-xl">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "39px",
-                  height: "39px",
-                }}
-              >
-                <img src={WebDevelopment} alt="Web Dev" />
-              </div>
-              <h3 className="text-2xl font-semibold max-w-xs text-amber-500 transition hover:text-gray-800">
-                Custom Website Development{" "}
-              </h3>
-              <p className="max-w-sm py-5 leading-6 text-gray-500">
-                We ideate and plan to design and develop custom web solutions to
-                connect our clients with their customers efficiently. Let’s
-                develop feature-rich, highly functional, robust, secure, and
-                scalable custom web solutions along with engaging UI/UX design
-                that enhances your brand.
-              </p>
+            {/* IMAGE */}
+            <div className="flex justify-center">
+              <img
+                src={MobileApp}
+                alt="Mobile Development"
+                className="w-full max-w-lg"
+              />
             </div>
           </div>
         </div>
-      </div>
-
-      {/*development process for mobile apps*/}
-      <div className="mb-20 mt-20 flex flex-col items-center justify-center">
-  <h1 className="text-3xl font-semibold text-center">
-    Our <span className="text-amber-500">Mobile Application</span> Development Process
-  </h1>
-  <div className="flex items-center mt-6">
-    <p className="text-lg max-w-2xl text-left">
-      Working with <span className="text-amber-500">Skylartech</span>, We
-      ensure successful results each time. Our streamlined and thorough
-      processes keep us competitive. Skylartech strives to optimize the mobile
-      app development process to make sure your time and investment are
-      utilized most efficiently. By simplifying our strategies, we make
-      outsourcing mobile application development the best experience for
-      you and your customers.
-    </p>
-    <div className="ml-36"> {/* Add a container div for the image */}
-      <img
-        src={MobileApp}
-        alt="phone"
-        className=" mt-10 w-[384px] h-[370px] "
-      />
-    </div>
-  </div>
-</div>
-
+      </section>
     </>
   );
 };
 
-export default web;
+export default Web;
