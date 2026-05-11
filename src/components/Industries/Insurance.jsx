@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
+import {
+  Shield,
+  FileCheck,
+  Settings,
+  Link2,
+} from "lucide-react";
+
 import Talk from "../../assets/Industries/talk.png";
 import Digi from "../../assets/Industries/currency.png";
 import Grow from "../../assets/Industries/growth.png";
@@ -10,124 +18,105 @@ import Background from "../../assets/Industries/insurethsi.jpg";
 const Insurance = () => {
   return (
     <>
-      <div className="h-[35rem] flex flex-col lg:flex-row text-left p-10 bg-amber-50" style={{backgroundImage: `url(${Background})`, backgroundRepeat:"no-repeat", backgroundSize:"cover"}}>
-        <div className="lg:w-1/2">
-          <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-2xl font-medium text-gray-800 py-2 pt-10 ">
-            Insurance
-          </h2>
-          <h1 className="max-w-xl text-4xl md:text-4xl lg:text-5xl xl:text-3xl py-2 font-semibold text-gray-800">
-            Insurance solutions that address people, processes and business{" "}
-          </h1>
-          <p className="text-base md:text-lg lg:text-xl xl:text-lg max-w-xl py-5 text-gray-600">
-            Skylartech is helping global insurance companies to transform their
-            insurance services and get ahead with emerging technology.
-          </p>
-          <ul>
-            <li>
+      {/* HERO */}
+      <section
+        className="relative min-h-[70vh] flex items-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${Background})` }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-2xl bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl">
+            <h2 className="flex items-center gap-2 text-amber-500 font-semibold">
+              <Shield className="w-5 h-5" />
+              Insurance
+            </h2>
+
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3">
+              Insurance solutions that modernize your business
+            </h1>
+
+            <p className="text-gray-600 mt-4">
+              Transform your insurance operations with scalable, secure and
+              digital-first software solutions.
+            </p>
+
             <Link to="/contact-us">
               <motion.button
-                className="border-2 border-black bg-white 0 text-black px-4 py-2 rounded"
-                whileHover={{ scale: 0.9 }}
-                whileTap={{ scale: 0.8 }}
+                className="mt-6 bg-amber-500 text-white px-6 py-3 rounded-xl hover:scale-105 transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Let's Talk
-                <span
-                  className="ml-2 text-xl"
-                  style={{ lineHeight: "0.7", transform: "scale(1.2)" }}
-                >
-                  &#8594;
-                </span>
+                Let’s Talk →
               </motion.button>
-              </Link>
-            </li>
-          </ul>
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/*provide*/}
-      <div className="ml-[14rem]">
-        <h1 className="text-3xl font-semibold mt-12 max-w-4xl">
-          Providing Reliable{" "}
-          <span className="text-amber-500">Insurance Software Development</span>{" "}
-          Services at Reasonable Costs, Fit for all Medical Facades
-        </h1>
-      </div>
-      <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center lg:ml-[5rem]">
-        <div className="mt-10">
-          <img src={Talk} className="h-[45px]" alt="tk" />
-        </div>
-        <div
-          className="text-left shadow-xs p-10 rounded-xl"
-          style={{ position: "relative" }}
-        >
-          <h3 className="text-xl font-semibold max-w-xs text-gray-800">
-            Insuretech Automation Consulting{" "}
-          </h3>
-          <p className="text-md max-w-xs py-5 leading-6 text-gray-500">
-            With our vast experience in insurance application development, our
-            team of experts can audit your existing workflow and suggest an
-            elegant technical solution to boost your productivity. We help you
-            innovate with the right choice of architecture and technologies
+      {/* INTRO */}
+      <section className="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-3xl font-bold">
+          Insurance <span className="text-amber-500">Software Development</span>
+        </h2>
+        <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+          We design modern insurance platforms that improve efficiency, reduce
+          manual processes and enhance customer experience.
+        </p>
+      </section>
+
+      {/* SERVICES */}
+      <section className="max-w-7xl mx-auto px-6 pb-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            icon: FileCheck,
+            img: Talk,
+            title: "Insurtech Consulting",
+            text: "Improve workflows with modern digital transformation strategies.",
+          },
+          {
+            icon: Settings,
+            img: Digi,
+            title: "Custom Insurance Software",
+            text: "Tailored platforms for claims, policies and underwriting.",
+          },
+          {
+            icon: Shield,
+            img: Grow,
+            title: "System Customization",
+            text: "Upgrade and enhance your existing insurance systems.",
+          },
+          {
+            icon: Link2,
+            img: Api,
+            title: "API Integration",
+            text: "Connect systems for seamless insurance data exchange.",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition text-center"
+          >
+            <img src={item.img} className="w-10 mx-auto mb-4" alt="" />
+            <item.icon className="mx-auto text-amber-500 mb-2" />
+            <h3 className="font-semibold text-lg">{item.title}</h3>
+            <p className="text-gray-600 text-sm mt-2">{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* WHY SECTION */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Why Choose Our Insurance Solutions?
+          </h2>
+          <p className="text-gray-600">
+            We help insurers modernize legacy systems, improve automation, and
+            build scalable digital platforms for future growth.
           </p>
         </div>
-
-        <div className="mt-10">
-          <img src={Digi} className="h-[45px]" alt="digi"/>
-        </div>
-        <div
-          className="text-left shadow-xs p-10 rounded-xl"
-          style={{ position: "relative" }}
-        >
-          <h3 className="text-xl font-semibold max-w-xs text-gray-800">
-            Bespoke Insurance Software Development{" "}
-          </h3>
-          <p className="text-md max-w-xs py-5 leading-6 text-gray-500">
-            We build powerful environments that help insurance providers expand
-            their services and attract more customers. Whether it’s custom web
-            development or smart quoting algorithms, our developers make
-            technology work for your benefit.
-          </p>
-        </div>
-
-        <div className=" sm:text-center lg:flex lg:flex-wrap px-10 justify-center">
-          <div className="mt-10">
-            <img src={Grow} className="h-[45px]" alt="grow" />
-          </div>
-          <div
-            className="text-left shadow-xs p-10 rounded-xl"
-            style={{ position: "relative" }}
-          >
-            <h3 className="text-xl font-semibold max-w-xs text-gray-800">
-              Insuretech Software Customization{" "}
-            </h3>
-            <p className="text-md max-w-xs py-5 leading-6 text-gray-500">
-              Let us polish your existing programs by tailoring them to your
-              unique, insurance- related needs. Our team of engineers helps you
-              by adding new features and configurations to your app to adjust
-              generic solutions according to your specialized business and
-              security needs.
-            </p>
-          </div>
-          <div className="mt-10">
-            <img src={Api} className="h-[45px]" alt="api"/>
-          </div>
-          <div
-            className="text-left shadow-xs p-10 rounded-xl"
-            style={{ position: "relative" }}
-          >
-            <h3 className="text-xl font-semibold max-w-xs text-gray-800">
-              API Development{" "}
-            </h3>
-            <p className="text-md max-w-xs py-5 leading-6 text-gray-500">
-              Establish a consolidated data view by connecting your digital
-              programs with a custom API. Our developers rely on REST APIs to
-              unite your risk management systems with claim management and other
-              software for a 360-degree view, standardized protocols, and faster
-              cycles.
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
     </>
   );
 };
