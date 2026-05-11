@@ -6,7 +6,6 @@ import {
   Wallet,
   BrainCircuit,
   LineChart,
-  ShieldCheck,
   Smartphone,
 } from "lucide-react";
 
