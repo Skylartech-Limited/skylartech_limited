@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] =
-    useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] =
     useState(false);
@@ -42,7 +41,7 @@ const Navbar = () => {
           </div>
 
           {/* DESKTOP NAV */}
-         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 ml-auto">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 ml-auto">
             {/* HOME */}
             <Link
               to="/"
@@ -57,7 +56,7 @@ const Navbar = () => {
               href="#about-skylartech"
               className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
             >
-              About Skylartech
+              About
             </a>
 
             {/* CERTIFICATIONS */}
@@ -224,151 +223,145 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="lg:hidden bg-white shadow-2xl border-t border-gray-200"
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.25 }}
-          >
-            <div className="px-6 py-5 space-y-4">
+     {/* MOBILE MENU */}
+<AnimatePresence>
+  {isMobileMenuOpen && (
+    <motion.div
+      className="lg:hidden bg-white shadow-2xl border-t border-gray-200"
+      initial={{ opacity: 0, y: -15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.25 }}
+    >
+      <div className="px-6 py-5 space-y-4">
+
+        {/* HOME */}
+        <Link
+          to="/"
+          onClick={() => {
+            toggleMobileMenu();
+            scrollToTop();
+          }}
+          className="block text-gray-700 hover:text-amber-500 font-medium"
+        >
+          Home
+        </Link>
+
+        {/* ABOUT */}
+        <a
+          href="#about-skylartech"
+          onClick={toggleMobileMenu}
+          className="block text-gray-700 hover:text-amber-500 font-medium"
+        >
+          About
+        </a>
+
+        {/* CERTIFICATIONS */}
+        <a
+          href="#certification-programs"
+          onClick={toggleMobileMenu}
+          className="block text-gray-700 hover:text-amber-500 font-medium"
+        >
+          Certifications
+        </a>
+
+        {/* EXPERTISE */}
+        <a
+          href="#our-expertise"
+          onClick={toggleMobileMenu}
+          className="block text-gray-700 hover:text-amber-500 font-medium"
+        >
+          Expertise
+        </a>
+
+        {/* CLIENTS */}
+        <a
+          href="#our-clients"
+          onClick={toggleMobileMenu}
+          className="block text-gray-700 hover:text-amber-500 font-medium"
+        >
+          Clients
+        </a>
+
+        {/* SERVICES (MATCH DESKTOP) */}
+        <div>
+          <p className="text-gray-900 font-semibold mb-2">Services</p>
+
+          <div className="pl-4 space-y-2">
+            {[
+              {
+                name: "PMP® Certification Training",
+                path: "/services/pmp-training",
+              },
+              {
+                name: "Project Management Consulting",
+                path: "/services/consulting",
+              },
+              {
+                name: "Corporate Project Management Training",
+                path: "/services/corporate-training",
+              },
+              {
+                name: "Web and App Development",
+                path: "/services/web-and-app-development",
+              },
+              {
+                name: "Agile and Scrum Training",
+                path: "/services/agile-and-scrum",
+              },
+              {
+                name: "CAPM® Certification Training",
+                path: "/services/capm-training",
+              },
+            ].map((item, index) => (
               <Link
-                to="/"
-                onClick={() => {
-                  toggleMobileMenu();
-                  scrollToTop();
-                }}
-                className="block text-gray-700 hover:text-amber-500 font-medium"
+                key={index}
+                to={item.path}
+                className="block text-gray-600 hover:text-amber-500"
+                onClick={toggleMobileMenu}
               >
-                Home
+                {item.name}
               </Link>
+            ))}
+          </div>
+        </div>
 
-              <a
-                href="#about-skylartech"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-amber-500 font-medium"
-              >
-                About Skylartech
-              </a>
+        {/* INDUSTRIES (MATCH DESKTOP) */}
+        <div>
+          <p className="text-gray-900 font-semibold mb-2">Industries</p>
 
-              <a
-                href="#certification-programs"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-amber-500 font-medium"
-              >
-                Certification Programs
-              </a>
-
-              <a
-                href="#our-expertise"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-amber-500 font-medium"
-              >
-                Our Expertise
-              </a>
-
-              <a
-                href="#our-clients"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-amber-500 font-medium"
-              >
-                Our Clients
-              </a>
-
-              {/* MOBILE SERVICES */}
-              <div>
-                <p className="text-gray-900 font-semibold mb-2">Services</p>
-
-                <div className="pl-4 space-y-2">
-                  <Link
-                    to="/services/ui-ux-design"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    UI & UX Design
-                  </Link>
-
-                  <Link
-                    to="/services/discovery-workshop"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    Discovery Workshop
-                  </Link>
-
-                  <Link
-                    to="/services/iot-development"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    IOT Development
-                  </Link>
-
-                  <Link
-                    to="/services/web-and-app-development"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    Web & App Development
-                  </Link>
-                </div>
-              </div>
-
-              {/* MOBILE INDUSTRIES */}
-              <div>
-                <p className="text-gray-900 font-semibold mb-2">
-                  Industries
-                </p>
-
-                <div className="pl-4 space-y-2">
-                  <Link
-                    to="/industries/health-care"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    Health Care
-                  </Link>
-
-                  <Link
-                    to="/industries/fintech"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    Fintech
-                  </Link>
-
-                  <Link
-                    to="/industries/insurance"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    Insurance
-                  </Link>
-
-                  <Link
-                    to="/industries/telecom"
-                    className="block text-gray-600 hover:text-amber-500"
-                    onClick={toggleMobileMenu}
-                  >
-                    Telecom
-                  </Link>
-                </div>
-              </div>
-
+          <div className="pl-4 space-y-2">
+            {[
+              { name: "Health Care", path: "/industries/health-care" },
+              { name: "Fintech", path: "/industries/fintech" },
+              { name: "Insurance", path: "/industries/insurance" },
+              { name: "Telecom", path: "/industries/telecom" },
+            ].map((item, index) => (
               <Link
-                to="/contact-us"
+                key={index}
+                to={item.path}
+                className="block text-gray-600 hover:text-amber-500"
                 onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-amber-500 font-medium"
               >
-                Contact Us
+                {item.name}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </div>
+        </div>
+
+        {/* CONTACT */}
+        <Link
+          to="/contact-us"
+          onClick={toggleMobileMenu}
+          className="block text-gray-700 hover:text-amber-500 font-medium"
+        >
+          Contact Us
+        </Link>
+
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 };
