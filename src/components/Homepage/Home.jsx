@@ -1,8 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
+import {
+  Briefcase,
+  ShieldCheck,
+  Leaf,
+  CheckCircle2,
+  Building2,
+  Award,
+  Globe,
+  Users,
+  Laptop,
+} from "lucide-react";
 
 import Cert1 from "../../assets/Homepage images/Cert1.jpg";
 import Cert2 from "../../assets/Homepage images/Cert2.jpg";
@@ -18,19 +29,48 @@ import Client from "./ClientSlider";
 import CountUp from "./CountUp";
 
 const Home = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const images = [Cert1, Cert2, Cert3, Cert4, GroupPhoto];
 
-  const [index, setIndex] = useState(0);
-
-  // Auto-slide effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);
 
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const [startX, setStartX] = useState(null);
+
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!startX) return;
+
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        handleNext(); // swipe left
+      } else {
+        handlePrev(); // swipe right
+      }
+    }
+
+    setStartX(null);
+  };
   return (
     <>
       <Helmet>
@@ -43,154 +83,184 @@ const Home = () => {
         <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
       {/* HERO SECTION */}
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-10 py-16 pt-28 overflow-hidden">
-        <div className="w-full max-w-7xl">
-          {/* MAIN LAYOUT */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* LEFT SIDE */}
-            <div className="flex flex-col items-center lg:items-start">
-              {/* SKYLARTECH LOGO (MOBILE ONLY TOP) */}
-              <div className="lg:hidden mb-6 flex justify-center">
-                <motion.img
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  src={Logo}
-                  alt="SkylarTech Logo"
-                  className="w-[220px] sm:w-[260px] object-contain"
-                />
-              </div>
+      <div className="min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-10 pt-28 py-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto relative">
+          {/* MOBILE LOGO */}
+          <div className="lg:hidden flex justify-center mb-8">
+            <motion.img
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              src={Logo}
+              alt="SkylarTech Logo"
+              className="
+      w-[260px]
+      sm:w-[320px]
+      md:w-[380px]
+      object-contain
+    "
+            />
+          </div>
 
-              {/* PMI STACK (RESPONSIVE SAFE LAYOUT) */}
-              <div className="relative flex items-center justify-center gap-[-20px] mb-8">
-                <motion.img
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  src={PMI}
-                  alt="PMI 1"
-                  className="
-              h-[120px] sm:h-[140px] md:h-[160px] lg:h-[180px]
-              w-auto object-contain z-10
-              -mr-6 sm:-mr-8
-            "
-                />
+          {/* DESKTOP TOP RIGHT LOGO */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hidden lg:block absolute top-0 right-0"
+          >
+            <img
+              src={Logo}
+              alt="SkylarTech Logo"
+              className="
+      w-[320px]
+      xl:w-[420px]
+      2xl:w-[500px]
+      object-contain
+    "
+            />
+          </motion.div>
+          {/* HERO CONTENT */}
+          <div className="flex flex-col items-center justify-center min-h-[80vh]">
+            {/* TOP CONTENT AREA */}
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              {/* LEFT SIDE - PMI LOGOS */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="relative flex items-center justify-center">
+                  <motion.img
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    src={PMI}
+                    alt="PMI 1"
+                    className="
+        h-[100px]
+        sm:h-[120px]
+        md:h-[150px]
+        lg:h-[180px]
+        xl:h-[200px]
+        w-auto object-contain z-10
+        -mr-5 sm:-mr-7
+      "
+                  />
 
-                <motion.img
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  src={PMI2}
-                  alt="PMI 2"
-                  className="
-              h-[120px] sm:h-[140px] md:h-[160px] lg:h-[180px]
-              w-auto object-contain
-              -ml-6 sm:-ml-0
-            "
-                />
-              </div>
-
-              {/* TEXT */}
-              <div className="text-center lg:text-left max-w-2xl">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 leading-tight">
-                  Empowering Global{" "}
-                  <span
-                    className="font-semibold"
-                    style={{
-                      background:
-                        "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
-                      WebkitBackgroundClip: "text",
-                      color: "transparent",
-                    }}
-                  >
-                    <Typewriter
-                      words={[" Project Leaders"]}
-                      loop={1}
-                      typeSpeed={70}
-                      deleteSpeed={50}
-                      delaySpeed={1000}
-                    />
-                  </span>
-                  <Cursor cursorStyle="" />
-                </h2>
-
-                {/* WHY CHOOSE US */}
-                <div className="mt-6 bg-white/90 backdrop-blur-md border border-gray-200 rounded-3xl p-5 sm:p-6 shadow-xl">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
-                    Why Choose Us
-                  </h3>
-
-                  <p className="text-gray-600 text-sm sm:text-base leading-7">
-                    As a Premier PMI Authorized Training Partner, we deliver
-                    globally recognized PMI-accredited learning experiences
-                    designed for real-world success.
-                  </p>
-
-                  <div className="mt-4 space-y-3 text-sm text-gray-700">
-                    <p>✓ Official PMI course content</p>
-                    <p>✓ Globally trusted training partner</p>
-                    <p>✓ Certification-ready alignment</p>
-                    <p>✓ Expert-led practical learning</p>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="mt-6 flex justify-center lg:justify-start">
-                  <Link to="/contact-us">
-                    <motion.button
-                      className="
-                  border-2 border-purple-500
-                  bg-white
-                  hover:bg-violet-500
-                  hover:text-white
-                  transition-all duration-300
-                  text-black
-                  px-6 sm:px-8
-                  py-3
-                  rounded-2xl
-                  text-sm sm:text-base lg:text-lg
-                  font-medium
-                  shadow-lg
-                "
-                      whileHover={{ scale: 0.95 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      Let's Talk
-                      <span className="ml-2 text-xl">→</span>
-                    </motion.button>
-                  </Link>
+                  <motion.img
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    src={PMI2}
+                    alt="PMI 2"
+                    className="
+        h-[100px]
+        sm:h-[120px]
+        md:h-[150px]
+        lg:h-[180px]
+        xl:h-[200px]
+        w-auto object-contain
+        -ml-5 sm:-ml-1
+      "
+                  />
                 </div>
               </div>
+
+              {/* RIGHT SIDE EMPTY SPACE FOR LOGO */}
+              <div className="hidden lg:block"></div>
             </div>
 
-            {/* RIGHT SIDE (DESKTOP SKYLARTECH LOGO) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="hidden lg:flex justify-center lg:justify-end"
-            >
-              <img
-                src={Logo}
-                alt="SkylarTech Logo"
-                className="
-            w-full
-            max-w-[320px]
-            sm:max-w-[420px]
-            md:max-w-[520px]
-            lg:max-w-[620px]
-            xl:max-w-[720px]
-            object-contain
-          "
-              />
-            </motion.div>
+            {/* CENTER CONTENT */}
+            <div className="mt-10 text-center max-w-4xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 leading-tight">
+                Developing World-Class{" "}
+                <span
+                  className="font-semibold"
+                  style={{
+                    background:
+                      "linear-gradient(to right, violet, indigo, blue, green, #f1c40f, orange, red)",
+                    WebkitBackgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
+                  <Typewriter
+                    words={[" Project Leaders"]}
+                    loop={1}
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+                </span>
+                <Cursor cursorStyle="" />
+              </h2>
+
+              {/* WHY CHOOSE US CARD */}
+              <div className="mt-8 bg-white/90 backdrop-blur-md border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-xl">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                  Why Choose Us
+                </h3>
+
+                <p className="text-gray-600 text-sm sm:text-base leading-7 max-w-2xl mx-auto">
+                  As a Premier PMI Authorized Training Partner, we deliver
+                  globally recognized PMI-accredited learning experiences
+                  designed for real-world success.
+                </p>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-gray-700">
+                  <div className="bg-gray-50 rounded-2xl p-4">
+                    ✓ Official PMI course content
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-4">
+                    ✓ Globally trusted training partner
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-4">
+                    ✓ Certification-ready alignment
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-4">
+                    ✓ Expert-led practical learning
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA BUTTON */}
+              <div className="mt-8 flex justify-center">
+                <Link to="/contact-us">
+                  <motion.button
+                    className="
+                border-2 border-purple-500
+                bg-white
+                hover:bg-violet-500
+                hover:text-white
+                transition-all duration-300
+                text-black
+                px-8 sm:px-10
+                py-3 sm:py-4
+                rounded-2xl
+                text-base sm:text-lg
+                font-medium
+                shadow-lg
+              "
+                    whileHover={{ scale: 0.95 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    Let's Talk
+                    <span className="ml-2 text-xl">→</span>
+                  </motion.button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {/* ABOUT SKYLARTECH */}
       <div id="about-skylartech" className="bg-amber-50 py-20 scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6">
+          {/* HEADER */}
           <div className="text-center mb-14">
+            <div className="flex justify-center mb-4">
+              <Building2 className="w-10 h-10 text-amber-500" />
+            </div>
+
             <h1 className="text-4xl lg:text-5xl font-bold text-black">
               Who we are
             </h1>
@@ -202,97 +272,109 @@ const Home = () => {
             </p>
           </div>
 
+          {/* GRID */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             {/* LEFT CONTENT */}
-            <div className="space-y-8 text-gray-700 text-base lg:text-lg leading-8">
-              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
-                <h2 className="text-2xl font-bold text-amber-500 mb-5">
-                  PMI® Premier ATP
-                </h2>
-
-                <p>
-                  Skylartech Limited is a Premier Authorized Training Partner
-                  (ATP) of the Project Management Institute (PMI), delivering
-                  PMI-authorized training that equips professionals with
-                  internationally respected certifications and practical project
-                  execution capability.
-                </p>
+            <div className="space-y-6">
+              <div className="bg-white rounded-3xl p-7 shadow-md border border-gray-100 flex gap-4">
+                <Award className="w-6 h-6 text-amber-500 mt-1" />
+                <div>
+                  <h2 className="text-xl font-bold mb-2">PMI® Premier ATP</h2>
+                  <p className="text-gray-700 leading-7">
+                    Skylartech Limited is a Premier Authorized Training Partner
+                    (ATP) of PMI, delivering globally recognized certification
+                    training.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
-                <h2 className="text-2xl font-bold text-amber-500 mb-5">
-                  Global Training & Consulting Excellence
-                </h2>
-
-                <p>
-                  With over a decade of experience, we support organizations
-                  across banking, telecommunications, IT, procurement, and the
-                  public sector through professional training, consulting,
-                  leadership development, and software engineering solutions
-                  that strengthen organizational capability and delivery
-                  performance.
-                </p>
+              <div className="bg-white rounded-3xl p-7 shadow-md border border-gray-100 flex gap-4">
+                <Globe className="w-6 h-6 text-blue-500 mt-1" />
+                <div>
+                  <h2 className="text-xl font-bold mb-2">
+                    Global Training & Consulting Excellence
+                  </h2>
+                  <p className="text-gray-700 leading-7">
+                    We support banking, telecom, IT, procurement, and public
+                    sector organizations through training and consulting.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
-                <h2 className="text-2xl font-bold text-amber-500 mb-5">
-                  Empowering Organizations
-                </h2>
-
-                <p>
-                  We equip professionals with the skills, certification, and
-                  confidence to drive successful project outcomes while helping
-                  organizations grow, innovate, and compete effectively in a
-                  dynamic global environment.
-                </p>
+              <div className="bg-white rounded-3xl p-7 shadow-md border border-gray-100 flex gap-4">
+                <Users className="w-6 h-6 text-green-500 mt-1" />
+                <div>
+                  <h2 className="text-xl font-bold mb-2">
+                    Empowering Organizations
+                  </h2>
+                  <p className="text-gray-700 leading-7">
+                    We equip professionals with skills and certification for
+                    global success.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
-                <h2 className="text-2xl font-bold text-amber-500 mb-5">
-                  Technology & Software Engineering
-                </h2>
-
-                <p>
-                  We provide expert-led PMP® and project management
-                  certification training alongside highly skilled software
-                  engineering teams and technology solutions that help
-                  organizations scale efficiently, optimize performance, and
-                  deliver measurable business results.
-                </p>
+              <div className="bg-white rounded-3xl p-7 shadow-md border border-gray-100 flex gap-4">
+                <Laptop className="w-6 h-6 text-violet-500 mt-1" />
+                <div>
+                  <h2 className="text-xl font-bold mb-2">
+                    Technology & Software Engineering
+                  </h2>
+                  <p className="text-gray-700 leading-7">
+                    We deliver scalable software solutions and engineering teams
+                    for organizations.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* RIGHT IMAGE SLIDESHOW */}
-            {/* RIGHT IMAGE WHEEL CAROUSEL */}
-            <div className="relative w-full h-[500px] flex items-center justify-center perspective-1000">
+            {/* RIGHT IMAGE - CURVED VERTICAL LINE */}
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="relative w-full h-[550px] flex items-center justify-center overflow-hidden"
+            >
+              {/* soft glow background */}
+              <div className="absolute w-[85%] h-[85%] bg-amber-200/30 blur-3xl rounded-full" />
+
               <div className="relative w-full h-full flex items-center justify-center">
                 {images.map((img, i) => {
                   const total = images.length;
 
-                  // position relative to active index
-                  const offset = i - index;
+                  // distance from active image
+                  let offset = i - activeIndex;
 
-                  // wrap around logic for smooth wheel effect
-                  const normalizedOffset =
-                    ((offset + total / 2) % total) - total / 2;
+                  // wrap for infinite loop feel
+                  if (offset > total / 2) offset -= total;
+                  if (offset < -total / 2) offset += total;
 
-                  const isActive = i === index;
+                  const isActive = i === activeIndex;
 
                   return (
                     <motion.img
                       key={i}
                       src={img}
-                      alt={`PMI ${i}`}
-                      className="absolute w-[100%] h-[100%] object-cover rounded-3xl shadow-2xl"
+                      alt={`slide-${i}`}
+                      className="
+            absolute
+            w-[92%]   /* 🔥 wider images */
+            h-[90%]
+            object-cover
+            rounded-3xl
+            shadow-2xl
+            border border-white/30
+          "
                       animate={{
-                        rotateY: normalizedOffset * 45,
-                        scale: isActive ? 1 : 0.75,
-                        x: normalizedOffset * 120,
-                        zIndex: isActive ? 10 : 0,
-                        opacity: Math.abs(normalizedOffset) > 2 ? 0 : 1,
+                        // 🔥 CURVED BENT LINE EFFECT
+                        y: offset * 110, // vertical spacing
+                        x: offset * offset * 18, // 🔥 creates the bend curve
+                        rotateZ: offset * 3, // slight tilt for depth
+                        scale: isActive ? 1 : 0.78, // focus center image
+                        opacity: Math.abs(offset) > 2 ? 0 : 1,
+                        zIndex: isActive ? 10 : 1,
                       }}
                       transition={{
-                        duration: 0.8,
+                        duration: 0.9,
                         ease: "easeInOut",
                       }}
                     />
@@ -303,7 +385,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       {/* PROFESSIONAL CERTIFICATION PROGRAMS */}
       <div
         id="certification-programs"
@@ -321,60 +402,97 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 lg:px-10 xl:px-12 mt-16 max-w-[1700px] mx-auto">
-          <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 border border-gray-100 hover:-translate-y-2 w-full">
-            <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
-              <span className="text-2xl font-bold text-blue-600">01</span>
+        {/* GRID (unchanged structure, only responsive spacing improved) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_1.35fr_1fr] gap-6 sm:gap-8 px-4 sm:px-6 lg:px-8 xl:px-10 mt-16 max-w-[2200px] mx-auto">
+          {/* CARD 1 */}
+          <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 sm:p-8 lg:p-10 border border-gray-100 hover:-translate-y-2 w-full">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0">
+                <Briefcase className="w-7 h-7 text-blue-600" />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-amber-500 leading-tight">
+                Core Certifications
+              </h3>
             </div>
 
-            <h3 className="text-2xl font-bold text-amber-500 mb-6">
-              Core Certifications
-            </h3>
-
-            <ul className="space-y-4 text-gray-700 leading-7">
-              <li>• Certified Associate in Project Management (CAPM)®</li>
-              <li>• Project Management Professional (PMP)®</li>
-              <li>• Program Management Professional (PgMP)®</li>
-              <li>• Portfolio Management Professional (PfMP)®</li>
+            <ul className="space-y-4">
+              {[
+                "Certified Associate in Project Management (CAPM)®",
+                "Project Management Professional (PMP)®",
+                "Program Management Professional (PgMP)®",
+                "Portfolio Management Professional (PfMP)®",
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-gray-700 text-sm sm:text-base"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                  <span className="break-words leading-relaxed">{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 border border-gray-100 hover:-translate-y-2 w-full">
-            <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6">
-              <span className="text-2xl font-bold text-green-600">02</span>
+          {/* CARD 2 */}
+          <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 sm:p-8 lg:p-10 border border-gray-100 hover:-translate-y-2 w-full">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-7 h-7 text-green-600" />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-amber-500 leading-tight">
+                Specialized Certifications
+              </h3>
             </div>
 
-            <h3 className="text-2xl font-bold text-amber-500 mb-6">
-              Specialized Certifications
-            </h3>
-
-            <ul className="space-y-4 text-gray-700 leading-7">
-              <li>• PMI Construction Professional (PMI-CP)™</li>
-              <li>• PMI Agile Certified Practitioner (PMI-ACP)®</li>
-              <li>• PMI Risk Management Professional (PMI-RMP)®</li>
-              <li>• PMI PMO Certified Professional (PMI-PMOCP)™</li>
-              <li>• PMI Professional in Business Analysis (PMI-PBA)®</li>
-              <li>• PMI Scheduling Professional (PMI-SP)®</li>
-              <li>• PMI Certified Professional in Managing AI (PMI-CPMAI)™</li>
+            <ul className="space-y-4">
+              {[
+                "PMI Construction Professional (PMI-CP)™",
+                "PMI Agile Certified Practitioner (PMI-ACP)®",
+                "PMI Risk Management Professional (PMI-RMP)®",
+                "PMI PMO Certified Professional (PMI-PMOCP)™",
+                "PMI Professional in Business Analysis (PMI-PBA)®",
+                "PMI Scheduling Professional (PMI-SP)®",
+                "PMI Certified Professional in Managing AI (PMI-CPMAI)™",
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-gray-700 text-sm sm:text-base"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span className="break-words leading-relaxed">{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-10 border border-gray-100 hover:-translate-y-2 w-full">
-            <div className="w-14 h-14 rounded-2xl bg-violet-100 flex items-center justify-center mb-6">
-              <span className="text-2xl font-bold text-violet-600">03</span>
+          {/* CARD 3 */}
+          <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 sm:p-8 lg:p-10 border border-gray-100 hover:-translate-y-2 w-full">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-violet-100 flex items-center justify-center shrink-0">
+                <Leaf className="w-7 h-7 text-violet-600" />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-amber-500 leading-tight">
+                Sustainability & Green Project Management
+              </h3>
             </div>
 
-            <h3 className="text-2xl font-bold text-amber-500 mb-6">
-              Sustainability & Green Project Management
-            </h3>
-
-            <ul className="space-y-4 text-gray-700 leading-7">
-              <li>• Green Project Manager–Basic (GPM-b)™</li>
+            <ul className="space-y-4">
+              {["Green Project Manager–Basic (GPM-b)™"].map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-gray-700 text-sm sm:text-base"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-violet-500 shrink-0 mt-0.5" />
+                  <span className="break-words leading-relaxed">{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
-
       {/* OUR EXPERTISE */}
       <div id="our-expertise" className="bg-amber-50 py-20 scroll-mt-28">
         <div className="flex flex-col justify-center items-center px-6">
