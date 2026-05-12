@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
@@ -24,13 +24,13 @@ const ClientSlider = () => {
 
   const totalSlides = Math.ceil(images.length / imagesPerSlide);
 
-  const prevSlide = () => {
-    setCurrentIndex((p) => (p === 0 ? totalSlides - 1 : p - 1));
-  };
+const prevSlide = useCallback(() => {
+  setCurrentIndex((p) => (p === 0 ? totalSlides - 1 : p - 1));
+}, [totalSlides]);
 
-  const nextSlide = () => {
-    setCurrentIndex((p) => (p + 1) % totalSlides);
-  };
+const nextSlide = useCallback(() => {
+  setCurrentIndex((p) => (p + 1) % totalSlides);
+}, [totalSlides]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,10 +45,13 @@ const ClientSlider = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+useEffect(() => {
+  const interval = setInterval(() => {
+    nextSlide();
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, [nextSlide]);
 
   return (
     <div className="relative w-full py-12 px-4 sm:px-6 lg:px-10">
