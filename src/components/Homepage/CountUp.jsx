@@ -7,54 +7,42 @@ const CountUp = () => {
 
   return (
     <>
-      <div className="hidden xl:block lg:h-[315px] lg:w-[1138px] bg-gradient-to-br from-blue-500 to-sky-500 mx-4 md:mx-8 lg:mx-auto my-8 lg:items-center rounded-md p-4">
-        <ScrollTrigger
-          onEnter={() => setCounterOn(1)}
-          onExit={() => setCounterOn(0)}
-        >
-          <div className="mt-16 flex flex-col items-center justify-center lg:grid lg:grid-cols-3 lg:divide-x">
-            <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
-              <h1 className="text-5xl font-semibold mb-10">
-                {counterOn && (
-                  <Countup start={0} end={500} duration={2} delay={0} />
-                )}
-              </h1>
-              <h1 className="font-normal">
-                PROFESSIONALS
-                <br />
-                TRAINED
-              </h1>
-            </div>
-            <div className="lg:px-8 mb-8 lg:mb-0 text-xl text-white text-center">
-              <h1 className="text-5xl font-semibold mb-10">
-                {counterOn && (
-                  <Countup start={0} end={99} duration={2} delay={0} />
-                )}
-                %
-              </h1>
-              <h1 className="font-normal">
-                CERTFICATION SUCCESS
-                <br />
-                SUPPORT RATE
-              </h1>
-            </div>
-            <div className="lg:px-8 text-xl text-white text-center">
-              <h1 className="text-5xl font-semibold mb-10 flex items-start justify-center gap-1">
-                {counterOn && (
-                  <Countup start={0} end={50} duration={2} delay={0} />
-                )}
-                <span className="text-5xl leading-none">+</span>
-              </h1>
+ <div className="py-16 flex justify-center">
+  <div className="w-full max-w-6xl mx-4 rounded-3xl 
+    bg-white/5 backdrop-blur-xl border border-white/10 
+    shadow-2xl relative overflow-hidden">
 
-              <h1 className="font-normal">
-                CLIENTS ACROSS
-                <br />
-                INDUSTRIES
-              </h1>
-            </div>
+    {/* glow */}
+    <div className="absolute -top-20 -right-20 w-72 h-72 bg-amber-400/20 blur-3xl rounded-full" />
+
+    <ScrollTrigger
+      onEnter={() => setCounterOn(1)}
+      onExit={() => setCounterOn(0)}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-3 text-center py-14">
+        
+        {[
+          { value: 500, label: "Professionals Trained" },
+          { value: 99, suffix: "%", label: "Certification Success Rate" },
+          { value: 50, suffix: "+", label: "Industries Served" },
+        ].map((item, i) => (
+          <div key={i} className="px-6">
+            <h1 className="text-4xl font-bold text-white">
+              {counterOn && (
+                <Countup start={0} end={item.value} duration={2} />
+              )}
+              {item.suffix}
+            </h1>
+            <p className="text-white/60 mt-2 text-sm uppercase tracking-wider">
+              {item.label}
+            </p>
           </div>
-        </ScrollTrigger>
+        ))}
+
       </div>
+    </ScrollTrigger>
+  </div>
+</div>
     </>
   );
 };

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import emailjs from "@emailjs/browser";
 
 import {
   User,
@@ -10,172 +11,208 @@ import {
   MessageSquare,
   Send,
   MapPin,
+  Building2,
 } from "lucide-react";
 
 import City from "../../assets/Contact Images/City.jpeg";
 
 const Contact = () => {
-  return (
-    <div className="bg-white text-gray-900">
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // success | error
 
+  // EMAIL SEND FUNCTION
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    emailjs
+      .sendForm(
+        "service_io0r674",
+        "template_zasi06u",
+        formRef.current,
+        "-_TWrocdzHf5_ObxW"
+      )
+      .then(() => {
+        setStatus("success");
+        setLoading(false);
+        formRef.current.reset();
+
+        setTimeout(() => setStatus(null), 4000);
+      })
+      .catch((error) => {
+        console.error(error);
+        setStatus("error");
+        setLoading(false);
+
+        setTimeout(() => setStatus(null), 4000);
+      });
+  };
+
+  return (
+    <div className="bg-white">
       {/* SEO */}
       <Helmet>
-        <title>Contact Skylartech | PMP Training & Certification</title>
+        <title>Contact Skylartech | PMI Training & Consulting</title>
       </Helmet>
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section
         className="relative min-h-[70vh] flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${City})`,
-        }}
+        style={{ backgroundImage: `url(${City})` }}
       >
-        {/* overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-indigo-950/70 to-purple-900/70" />
 
         <div className="relative max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-10 items-center">
-
-          {/* LEFT TEXT */}
-          <div className="text-white text-center md:text-left">
+          <div className="text-white text-center md:text-left space-y-6">
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-              Get in{" "}
-              <span className="text-amber-400">
-                <Typewriter words={["Touch"]} loop={1} />
+              Contact{" "}
+              <span className="text-purple-300">
+                <Typewriter words={["Skylartech"]} loop={1} />
               </span>
               <Cursor cursorStyle="|" />
             </h2>
 
-            <p className="mt-5 text-gray-200 max-w-md mx-auto md:mx-0">
-              We build modern software solutions, apps, and digital systems.
-              Let’s turn your idea into a product.
+            <p className="text-white/80 max-w-md">
+              Connect with our PMI® Premier Authorized Training team.
             </p>
-
-            <div className="mt-6 flex gap-3 justify-center md:justify-start">
-              <div className="flex items-center gap-2 text-sm text-gray-200">
-                <Phone className="w-4 h-4 text-amber-400" />
-                Fast Response
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-200">
-                <Mail className="w-4 h-4 text-amber-400" />
-                24/7 Support
-              </div>
-            </div>
           </div>
-
         </div>
       </section>
 
-      {/* FORM SECTION */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      {/* ================= CONTACT SECTION ================= */}
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950" />
 
-          {/* INFO SIDE */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Let’s Build Something Great
+        <div className="relative max-w-4xl mx-auto">
+
+          {/* TITLE */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Get In Touch
             </h2>
-
-            <p className="mt-4 text-gray-600">
-              Tell us about your project and we’ll get back to you quickly with a solution.
-            </p>
-
-            <div className="mt-6 space-y-3 text-gray-700">
-
-              <div className="flex items-center gap-3">
-                <MapPin className="text-amber-500 w-5 h-5" />
-                Nairobi, Kenya
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone className="text-amber-500 w-5 h-5" />
-                +254 718 257 293
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="text-amber-500 w-5 h-5" />
-                info@skylartech.co.ke
-              </div>
-
-            </div>
           </div>
 
-          {/* FORM CARD */}
+          {/* STATUS MESSAGE */}
+          {status && (
+            <div
+              className={`mb-6 px-5 py-3 rounded-xl text-sm font-medium text-center shadow-lg backdrop-blur-xl border ${
+                status === "success"
+                  ? "bg-green-500/20 text-green-200 border-green-400/30"
+                  : "bg-red-500/20 text-red-200 border-red-400/30"
+              }`}
+            >
+              {status === "success"
+                ? "✅ Message sent successfully! We’ll get back to you shortly."
+                : "❌ Failed to send message. Please try again."}
+            </div>
+          )}
+
+          {/* FORM */}
           <motion.form
-            initial={{ opacity: 0, y: 20 }}
+            ref={formRef}
+            onSubmit={sendEmail}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white shadow-2xl rounded-2xl p-8 space-y-5"
+            className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl p-10 space-y-6"
           >
-
-            <h3 className="text-xl font-semibold text-center mb-4">
-              Contact Form
-            </h3>
-
-            {/* NAME */}
+            {/* FULL NAME */}
             <div className="relative">
-              <User className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+              <User className="absolute left-3 top-3 text-white/60 w-5 h-5" />
               <input
-                className="w-full pl-10 py-3 border rounded-xl focus:ring-2 focus:ring-amber-400 outline-none"
-                placeholder="Your Name"
+                name="full_name"
+                required
+                className="w-full pl-10 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50"
+                placeholder="Full Name"
+              />
+            </div>
+
+            {/* COMPANY */}
+            <div className="relative">
+              <Building2 className="absolute left-3 top-3 text-white/60 w-5 h-5" />
+              <input
+                name="company"
+                className="w-full pl-10 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50"
+                placeholder="Company"
               />
             </div>
 
             {/* EMAIL */}
             <div className="relative">
-              <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+              <Mail className="absolute left-3 top-3 text-white/60 w-5 h-5" />
               <input
-                className="w-full pl-10 py-3 border rounded-xl focus:ring-2 focus:ring-amber-400 outline-none"
-                placeholder="Your Email"
+                name="email"
+                type="email"
+                required
+                className="w-full pl-10 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50"
+                placeholder="Email Address"
               />
             </div>
 
             {/* PHONE */}
             <div className="relative">
-              <Phone className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+              <Phone className="absolute left-3 top-3 text-white/60 w-5 h-5" />
               <input
-                className="w-full pl-10 py-3 border rounded-xl focus:ring-2 focus:ring-amber-400 outline-none"
+                name="phone"
+                className="w-full pl-10 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50"
                 placeholder="Phone Number"
               />
             </div>
 
+            {/* SERVICE */}
+            <select
+              name="service"
+              className="w-full py-3 bg-white/5 border border-white/20 rounded-xl text-white"
+            >
+              <option className="text-black">Service Interested In</option>
+              <option className="text-black">PMP Training</option>
+              <option className="text-black">Consulting</option>
+              <option className="text-black">PMO Advisory</option>
+              <option className="text-black">Agile Transformation</option>
+              <option className="text-black">Software Engineering</option>
+            </select>
+
             {/* MESSAGE */}
             <div className="relative">
-              <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+              <MessageSquare className="absolute left-3 top-3 text-white/60 w-5 h-5" />
               <textarea
+                name="message"
                 rows="5"
-                className="w-full pl-10 py-3 border rounded-xl focus:ring-2 focus:ring-amber-400 outline-none"
-                placeholder="Your Message"
+                required
+                className="w-full pl-10 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-white/50"
+                placeholder="Message"
               />
             </div>
 
-            {/* BUTTON */}
+            {/* SUBMIT */}
             <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-amber-500 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-amber-600 transition"
+              whileHover={{ scale: loading ? 1 : 1.02 }}
+              whileTap={{ scale: loading ? 1 : 0.98 }}
+              type="submit"
+              disabled={loading}
+              className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 font-medium transition ${
+                loading
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-gradient-to-r from-purple-600 via-indigo-600 to-fuchsia-600"
+              } text-white`}
             >
               <Send className="w-5 h-5" />
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </motion.button>
-
           </motion.form>
-
         </div>
       </section>
 
-      {/* FOOTER LOCATION STRIP */}
-      <section className="bg-gray-900 text-white py-16 text-center">
-        <MapPin className="mx-auto text-amber-400 w-8 h-8" />
-
+      {/* ================= FOOTER ================= */}
+      <section className="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white py-14 text-center">
+        <MapPin className="mx-auto text-purple-300 w-8 h-8" />
         <h2 className="text-2xl font-bold mt-3">Nairobi, Kenya</h2>
-        <p className="text-gray-300 mt-2">
-          The Waterfront, Karen
-        </p>
-
-        <p className="mt-4 text-gray-400">
-          info@skylartech.co.ke | +254 718 257 293
+        <p className="text-white/70 mt-2">The Waterfront, Karen</p>
+        <p className="mt-4 text-white/60 text-sm">
+          training@skylartech.co.ke | +254 718 257 293
         </p>
       </section>
-
     </div>
   );
 };

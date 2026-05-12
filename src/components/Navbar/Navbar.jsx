@@ -1,220 +1,188 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] =
-    useState(false);
+  const navLink =
+    "text-gray-700 hover:text-purple-700 transition font-medium text-sm tracking-wide";
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-
-    setIsServicesDropdownOpen(false);
-    setIsIndustriesDropdownOpen(false);
-  };
+  const dropdownItem =
+    "block px-5 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition";
 
   return (
-  <nav className="fixed top-0 left-0 w-full bg-gray-50/95 backdrop-blur-md shadow-lg z-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    {/* CHANGED justify-between TO justify-center */}
-    <div className="flex items-center justify-center h-20 w-full">
-      
-      {/* DESKTOP NAV */}
-      <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-8">
-        
-        {/* HOME */}
-        <Link
-          to="/"
-          onClick={scrollToTop}
-          className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
-        >
-          Home
-        </Link>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/75 backdrop-blur-xl border-b border-purple-100 shadow-sm">
+      {/* subtle gradient line */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-purple-200 via-indigo-200 to-transparent" />
 
-        {/* ABOUT */}
-        <a
-          href="#about-skylartech"
-          className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
-        >
-          About
-        </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 lg:h-24">
+          {/* LOGO */}
+          <Link to="/" onClick={scrollToTop} className="flex items-center">
+            <img
+              src={Logo}
+              alt="SkylarTech"
+              className="w-[150px] sm:w-[180px] lg:w-[220px] object-contain"
+            />
+          </Link>
 
-        {/* CERTIFICATIONS */}
-        <a
-          href="#certification-programs"
-          className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
-        >
-          Certifications
-        </a>
+          {/* DESKTOP NAV */}
+          <div className="hidden lg:flex items-center gap-10 flex-1 justify-center">
+            {/* HOME */}
+            <Link to="/" onClick={scrollToTop} className={navLink}>
+              Home
+            </Link>
 
-        {/* EXPERTISE */}
-        <a
-          href="#our-expertise"
-          className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
-        >
-          Expertise
-        </a>
+            {/* ABOUT DROPDOWN */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("about")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={navLink + " flex items-center gap-1"}>
+                About
+                <i className="fa-solid fa-chevron-down text-[10px] text-purple-500"></i>
+              </button>
 
-        {/* CLIENTS */}
-        <a
-          href="#our-clients"
-          className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
-        >
-          Clients
-        </a>
+              <AnimatePresence>
+                {openDropdown === "about" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full mt-3 w-72 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-purple-100 overflow-hidden"
+                  >
+                    <a href="/#about-skylartech" className={dropdownItem}>
+                      About Skylartech
+                    </a>
 
-        {/* SERVICES */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsServicesDropdownOpen(true)}
-          onMouseLeave={() => setIsServicesDropdownOpen(false)}
-        >
-          <button className="flex items-center text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300">
-            Offerings
-            <i className="fa-solid fa-angle-down ml-2 text-xs"></i>
-          </button>
+                    <a href="/#why-choose-us" className={dropdownItem}>
+                      Why Choose Us
+                    </a>
 
-          <AnimatePresence>
-            {isServicesDropdownOpen && (
-              <motion.div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white rounded-2xl shadow-2xl overflow-hidden"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="bg-amber-50 py-3">
-                  {[
-                    {
-                      name: "PMP® Certification Training",
-                      path: "/offerings/pmp-training",
-                    },
-                    {
-                      name: "Project Management Consulting",
-                      path: "/offerings/consulting",
-                    },
-                    {
-                      name: "Corporate Project Management Training",
-                      path: "/offerings/corporate-training",
-                    },
-                    {
-                      name: "Web and App Development",
-                      path: "/offerings/web-and-app-development",
-                    },
-                    {
-                      name: "Agile and Scrum Training",
-                      path: "/offerings/agile-and-scrum",
-                    },
-                    {
-                      name: "CAPM® Certification Training",
-                      path: "/offerings/capm-training",
-                    },
-                  ].map((item, index) => (
-                    <Link
-                      key={index}
-                      to={item.path}
-                      className="block px-5 py-3 text-sm text-gray-700 hover:bg-amber-100 hover:text-amber-600 transition"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                    <div className="border-t border-purple-100 my-1" />
+
+                    <a href="/#certification-programs" className={dropdownItem}>
+                      Certifications
+                    </a>
+
+                    <a href="/#our-expertise" className={dropdownItem}>
+                      Expertise
+                    </a>
+
+                    <a href="/#our-clients" className={dropdownItem}>
+                      Clients & Success Stories
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* OFFERINGS */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("offerings")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={navLink + " flex items-center gap-1"}>
+                Offerings
+                <i className="fa-solid fa-chevron-down text-[10px] text-purple-500"></i>
+              </button>
+
+              <AnimatePresence>
+                {openDropdown === "offerings" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full mt-3 w-72 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-purple-100 overflow-hidden"
+                  >
+                    {[
+                      { name: "PMP Training", link: "/offerings/pmp-training" },
+                      {
+                        name: "Corporate Training",
+                        link: "/offerings/corporate-training",
+                      },
+                      { name: "Consulting", link: "/offerings/consulting" },
+                      {
+                        name: "Agile Transformation",
+                        link: "/offerings/agile-and-scrum",
+                      },
+                      {
+                        name: "Software Engineering",
+                        link: "/offerings/web-and-app-development",
+                      },
+                    ].map((item, i) => (
+                      <Link
+                        key={i}
+                        to={item.link}
+                        onClick={scrollToTop}
+                        className={dropdownItem}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* CONTACT */}
+            <Link to="/contact-us" className={navLink}>
+              Contact
+            </Link>
+          </div>
+
+          {/* MOBILE BUTTON */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-700 text-2xl"
+            >
+              {isMobileMenuOpen ? "✕" : "☰"}
+            </button>
+          </div>
         </div>
-
-        {/* INDUSTRIES */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsIndustriesDropdownOpen(true)}
-          onMouseLeave={() => setIsIndustriesDropdownOpen(false)}
-        >
-          <button className="flex items-center text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300">
-            Industries
-            <i className="fa-solid fa-angle-down ml-2 text-xs"></i>
-          </button>
-
-          <AnimatePresence>
-            {isIndustriesDropdownOpen && (
-              <motion.div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-2xl shadow-2xl overflow-hidden"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="bg-amber-50 py-3">
-                  {[
-                    {
-                      name: "Health Care",
-                      path: "/industries/health-care",
-                    },
-                    {
-                      name: "Fintech",
-                      path: "/industries/fintech",
-                    },
-                    {
-                      name: "Insurance",
-                      path: "/industries/insurance",
-                    },
-                    {
-                      name: "Telecom",
-                      path: "/industries/telecom",
-                    },
-                  ].map((item, index) => (
-                    <Link
-                      key={index}
-                      to={item.path}
-                      className="block px-5 py-3 text-sm text-gray-700 hover:bg-amber-100 hover:text-amber-600 transition"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* CONTACT */}
-        <Link
-          to="/contact-us"
-          className="text-gray-700 hover:text-amber-500 text-sm xl:text-base font-medium transition duration-300 hover:-translate-y-1"
-        >
-          Contact Us
-        </Link>
       </div>
 
-      {/* MOBILE MENU BUTTON */}
-      <div className="lg:hidden absolute right-4 flex items-center">
-        <button
-          type="button"
-          className="text-gray-700 hover:text-amber-500 p-2 rounded-lg transition"
-          onClick={toggleMobileMenu}
-        >
-          {isMobileMenuOpen ? (
-            <i className="fa-solid fa-xmark text-2xl"></i>
-          ) : (
-            <i className="fa-solid fa-bars text-2xl"></i>
-          )}
-        </button>
-      </div>
-    </div>
-  </div>
-</nav>
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="lg:hidden bg-white border-t border-purple-100 px-6 py-6 space-y-4"
+          >
+            <Link to="/" className="block text-gray-700">
+              Home
+            </Link>
+
+            <a href="#about-skylartech" className="block text-gray-700">
+              About
+            </a>
+            <a href="#certification-programs" className="block text-gray-700">
+              Certifications
+            </a>
+            <a href="#our-expertise" className="block text-gray-700">
+              Expertise
+            </a>
+            <a href="#our-clients" className="block text-gray-700">
+              Clients
+            </a>
+
+            <Link to="/contact-us" className="block text-gray-700">
+              Contact
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
