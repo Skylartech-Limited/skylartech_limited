@@ -3,148 +3,144 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900">
-      <div className="container mx-auto py-8 px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center">
-          <div className="text-white">
-            <h3 className="text-xl font-semibold mb-4">Useful Links</h3>
-            <ul className="text-gray-300">
-              <li className="mb-4">
-                <Link to="/" className="hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/services" className="hover:text-white">
-                  Services
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/technologies" className="hover:text-white">
-                  Technologies
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/portfolio" className="hover:text-white">
-                  Portfolio
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/contact-us" className="hover:text-white">
-                  Contact Us
-                </Link>
-              </li>
+    <footer className="relative bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white overflow-hidden">
+
+      {/* subtle glow */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-500/10 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/10 blur-3xl rounded-full" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+          {/* QUICK LINKS */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">
+              Quick Links
+            </h3>
+
+            <ul className="space-y-3 text-white/70">
+              {[
+                ["Home", "/"],
+                ["About Us", "/about-us"],
+                ["Certifications", "/offerings/pmp-training"],
+                ["Offerings", "/services"],
+                ["Industries", "/industries"],
+                ["Clients & Success Stories", "/#our-clients"],
+                ["Contact Us", "/contact-us"],
+              ].map(([label, path], i) => (
+                <li key={i}>
+                  <Link
+                    to={path}
+                    className="hover:text-white transition"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="text-white">
-            <h3 className="text-xl font-semibold mb-4">Feature Services</h3>
-            <ul className="text-gray-300">
-              <li className="mb-4">
-                <Link to="/" className="hover:text-white">
-                  Custom Software Development
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/" className="hover:text-white">
-                  Discovery Workshop
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/" className="hover:text-white">
-                  Web and App Development
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link to="/" className="hover:text-white">
-                  UI/UX Design
-                </Link>
-              </li>
+
+          {/* CERTIFICATIONS */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">
+              Certifications
+            </h3>
+
+            <ul className="space-y-3 text-white/70">
+              {[
+                "PMP®",
+                "CAPM®",
+                "PMI-ACP®",
+                "PMI-RMP®",
+                "PMI-PBA®",
+              ].map((item, i) => (
+                <li key={i} className="hover:text-white transition cursor-default">
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="text-white">
-            <h3 className="text-xl font-semibold mb-4">Contact Details</h3>
-            <ul className="text-gray-300">
-              <li className="mb-4">
-                <i className="fas fa-map-marker-alt mr-2"></i>
-                <span className="hover:text-white">The Water Front, Karen</span>
-              </li>
-              <li className="mb-4">
-                <i className="fas fa-phone-alt mr-2"></i>
-                <a href="tel:+254718257293" className="hover:text-white">
-                  Phone: +254 718-257-293
-                </a>
-              </li>
-              <li className="mb-4">
-                <i className="far fa-envelope mr-2"></i>
-                <a
-                  href="mailto:info@skylartech.co.ke"
-                  className="hover:text-white"
-                >
-                  Email: info@skylartech.co.ke
-                </a>
-              </li>
+
+          {/* OFFERINGS */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">
+              Offerings
+            </h3>
+
+            <ul className="space-y-3 text-white/70">
+              {[
+                "Corporate Training",
+                "Consulting",
+                "PMO Advisory",
+                "Agile Transformation",
+                "Software Engineering",
+              ].map((item, i) => (
+                <li key={i} className="hover:text-white transition cursor-default">
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7419717032712!2d36.71209707461479!3d-1.3309057986564705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b40e8700ce9%3A0xf4eb6d3689e5364b!2sThe%20Waterfront%20Karen!5e0!3m2!1sen!2ske!4v1688904954033!5m2!1sen!2ske"
-            style={{ width: "100%", height: "20rem", border: "transparent" }}
-            allowFullScreen=""
-            loading="async"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="map"
-          ></iframe>
+
+          {/* MAP */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-6">
+              Location
+            </h3>
+
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7419717032712!2d36.71209707461479!3d-1.3309057986564705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b40e8700ce9%3A0xf4eb6d3689e5364b!2sThe%20Waterfront%20Karen!5e0!3m2!1sen!2ske!4v1688904954033!5m2!1sen!2ske"
+                className="w-full h-48"
+                loading="lazy"
+                title="map"
+              />
+            </div>
+
+            <p className="text-white/60 text-sm">
+              The Waterfront, Karen, Nairobi
+            </p>
+          </div>
         </div>
 
-        {/* Social Links */}
-        <div className="mt-8 flex items-center justify-center">
-          <a
-            href="https://twitter.com/skylartechke"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 mr-4"
-            aria-label="Twitter"
-          >
-            <i className="fab fa-twitter text-2xl"></i>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/company/skylartechlimited/?viewAsMember=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 mr-4"
-            aria-label="LinkedIn"
-          >
-            <i className="fab fa-linkedin-in text-2xl"></i>
-          </a>
-
-          <a
-            href="https://www.facebook.com/SkylartechKE/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 mr-4"
-            aria-label="Facebook"
-          >
-            <i className="fab fa-facebook text-2xl"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/skylartechlife/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 mr-4"
-            aria-label="Instagram"
-          >
-            <i className="fab fa-instagram text-2xl"></i>
-          </a>
+        {/* SOCIALS */}
+        <div className="mt-14 flex justify-center gap-6 text-white/70">
+          {[
+            ["twitter", "https://twitter.com/skylartechke"],
+            ["linkedin", "https://www.linkedin.com/company/skylartechlimited/?viewAsMember=true"],
+            ["facebook", "https://www.facebook.com/SkylartechKE/"],
+            ["instagram", "https://www.instagram.com/skylartechlife/"],
+          ].map(([icon, url], i) => (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition text-xl"
+            >
+              <i className={`fab fa-${icon}`} />
+            </a>
+          ))}
         </div>
 
-        {/* Horizontal rule */}
-        <hr className="my-8 border-purple-200" />
+        {/* DIVIDER */}
+        <div className="my-10 border-t border-white/10" />
 
-        {/* Copyright */}
-        <p className="text-center text-gray-300">
-          &copy; {new Date().getFullYear()} Skylartech Limited. All rights
-          reserved.
-        </p>
+        {/* FOOTER NOTE (PMI COMPLIANT STYLE) */}
+        <div className="text-center text-xs text-white/60 leading-6 max-w-4xl mx-auto">
+          <p>
+            PMI®, PMP®, CAPM®, PMI-ACP®, PgMP®, PfMP®, PMI-RMP®, PMI-PBA®, PMI-SP®,
+            and the PMI Authorized Training Partner logo are registered marks of
+            Project Management Institute, Inc.
+          </p>
+
+          <p className="mt-4">
+            © {new Date().getFullYear()} Skylartech Limited. All rights reserved.
+          </p>
+        </div>
+
       </div>
     </footer>
   );

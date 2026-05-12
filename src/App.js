@@ -4,7 +4,6 @@ import Scroll from "../src/components/ScrollToTop/Scroll.jsx";
 import "./App.css";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import Footerhero from "./components/Footerhero/footerhero.jsx";
 import Home from "./components/Homepage/Home.jsx";
 import Fintech from "./components/Industries/Fintech.jsx";
 import Health from "./components/Industries/Health.jsx";
@@ -17,11 +16,14 @@ import PMConsulting from "./components/Services/PMConsulting.jsx";
 import CorpoPMI from "./components/Services/CorpoPMI.jsx";
 import Capm from "./components/Services/capm.jsx";
 import Web from "./components/Services/web.jsx";
+import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
 
 function App() {
   return (
     <div className="App App overflow-x-hidden">
       <Navbar />
+
+      <PageScroll />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/offerings/pmp-training" element={<UI />} />
@@ -36,7 +38,6 @@ function App() {
         <Route exact path="/industries/telecom" element={<Telecom />} />
         <Route exact path="/contact-us" element={<Contact />} />
       </Routes>
-      <Footerhero />
       <Footer />
       <LiveChat />
       <Scroll />
