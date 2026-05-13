@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
-import COOP from "../../assets/Technology slider/CooperativeBank.png";
-import KCB from "../../assets/Technology slider/KCB.png";
-import Palladium from "../../assets/Technology slider/Palladium.png";
-import Ampath from "../../assets/Technology slider/Ampath.png";
-import Seacom from "../../assets/Technology slider/Seacom.png";
-import StimaSacco from "../../assets/Technology slider/StimaSacco.png";
-import IOM from "../../assets/Technology slider/IOM.png";
-import BaseTitanium from "../../assets/Technology slider/BaseTitanium.png";
-import Brisk from "../../assets/Technology slider/Brisk.png";
-import Adra from "../../assets/Technology slider/Adra.png";
+import COOP from "../../assets/Client Slider/CooperativeBank.png";
+import KCB from "../../assets/Client Slider/KCB.png";
+import Palladium from "../../assets/Client Slider/Palladium.png";
+import Ampath from "../../assets/Client Slider/Ampath.png";
+import Seacom from "../../assets/Client Slider/Seacom.png";
+import StimaSacco from "../../assets/Client Slider/StimaSacco.png";
+import IOM from "../../assets/Client Slider/IOM.png";
+import BaseTitanium from "../../assets/Client Slider/BaseTitanium.png";
+import Brisk from "../../assets/Client Slider/Brisk.png";
+import Adra from "../../assets/Client Slider/Adra.png";
 
 const ClientSlider = () => {
   const images = [

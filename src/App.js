@@ -15,12 +15,12 @@ import Healthcare from "./components/Industries/Healthcare.jsx";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
 
-import UI from "./components/Services/PMPTraining.jsx";
-import Agile from "./components/Services/agile.jsx";
-import PMConsulting from "./components/Services/PMConsulting.jsx";
-import CorpoPMI from "./components/Services/CorpoPMI.jsx";
-import Capm from "./components/Services/capm.jsx";
-import Web from "./components/Services/web.jsx";
+import UI from "./components/Offerings/PMPTraining.jsx";
+import Agile from "./components/Offerings/agile.jsx";
+import PMConsulting from "./components/Offerings/PMConsulting.jsx";
+import CorpoPMI from "./components/Offerings/CorpoPMI.jsx";
+import Capm from "./components/Offerings/capm.jsx";
+import Web from "./components/Offerings/web.jsx";
 
 import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
 function App() {
