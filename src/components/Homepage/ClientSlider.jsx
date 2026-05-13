@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
-import COOP from "../../assets/Technology slider/CooperativeBank.png";
-import KCB from "../../assets/Technology slider/KCB.png";
-import Palladium from "../../assets/Technology slider/Palladium.png";
-import Ampath from "../../assets/Technology slider/Ampath.png";
-import Seacom from "../../assets/Technology slider/Seacom.png";
-import StimaSacco from "../../assets/Technology slider/StimaSacco.png";
-import IOM from "../../assets/Technology slider/IOM.png";
-import BaseTitanium from "../../assets/Technology slider/BaseTitanium.png";
-import Brisk from "../../assets/Technology slider/Brisk.png";
-import Adra from "../../assets/Technology slider/Adra.png";
+import COOP from "../../assets/Client Slider/CooperativeBank.png";
+import KCB from "../../assets/Client Slider/KCB.png";
+import Palladium from "../../assets/Client Slider/Palladium.png";
+import Ampath from "../../assets/Client Slider/Ampath.png";
+import Seacom from "../../assets/Client Slider/Seacom.png";
+import StimaSacco from "../../assets/Client Slider/StimaSacco.png";
+import IOM from "../../assets/Client Slider/IOM.png";
+import BaseTitanium from "../../assets/Client Slider/BaseTitanium.png";
+import Brisk from "../../assets/Client Slider/Brisk.png";
+import Adra from "../../assets/Client Slider/Adra.png";
 
 const ClientSlider = () => {
   const images = [
@@ -24,13 +23,13 @@ const ClientSlider = () => {
 
   const totalSlides = Math.ceil(images.length / imagesPerSlide);
 
-const prevSlide = useCallback(() => {
-  setCurrentIndex((p) => (p === 0 ? totalSlides - 1 : p - 1));
-}, [totalSlides]);
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((p) => (p === 0 ? totalSlides - 1 : p - 1));
+  }, [totalSlides]);
 
-const nextSlide = useCallback(() => {
-  setCurrentIndex((p) => (p + 1) % totalSlides);
-}, [totalSlides]);
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((p) => (p + 1) % totalSlides);
+  }, [totalSlides]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,13 +44,14 @@ const nextSlide = useCallback(() => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    nextSlide();
-  }, 4000);
+  // auto-slide (optimized, no interval dependency issues)
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex((p) => (p + 1) % totalSlides);
+    }, 4000);
 
-  return () => clearInterval(interval);
-}, [nextSlide]);
+    return () => clearInterval(id);
+  }, [totalSlides]);
 
   return (
     <div className="relative w-full py-12 px-4 sm:px-6 lg:px-10">
@@ -65,87 +65,61 @@ useEffect(() => {
           Banking, telecom, NGOs, and enterprises using our training and consulting services.
         </p>
       </div>
-{/* SLIDER WRAPPER */}
-<div className="relative max-w-6xl mx-auto px-6">
 
-  {/* LEFT ARROW (OUTSIDE CONTENT AREA) */}
-  <button
-    onClick={prevSlide}
-    className="
-      absolute -left-4 sm:-left-6 lg:-left-10
-      top-1/2 -translate-y-1/2
-      z-30
-      bg-white/90 hover:bg-white
-      shadow-lg
-      p-3 rounded-full
-      transition
-    "
-  >
-    <BsChevronCompactLeft size={26} />
-  </button>
+      {/* SLIDER */}
+      <div className="relative max-w-6xl mx-auto px-6">
 
-  {/* RIGHT ARROW */}
-  <button
-    onClick={nextSlide}
-    className="
-      absolute -right-4 sm:-right-6 lg:-right-10
-      top-1/2 -translate-y-1/2
-      z-30
-      bg-white/90 hover:bg-white
-      shadow-lg
-      p-3 rounded-full
-      transition
-    "
-  >
-    <BsChevronCompactRight size={26} />
-  </button>
-
-  {/* SLIDES */}
-  <div className="overflow-hidden">
-    <div
-      className="flex transition-transform duration-700 ease-in-out"
-      style={{
-        transform: `translateX(-${currentIndex * 100}%)`,
-      }}
-    >
-      {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-        <div
-          key={slideIndex}
-          className="min-w-full flex justify-center items-center gap-4 sm:gap-6"
+        <button
+          onClick={prevSlide}
+          className="absolute -left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 p-3 rounded-full shadow-lg"
         >
-          {images
-            .slice(
-              slideIndex * imagesPerSlide,
-              slideIndex * imagesPerSlide + imagesPerSlide
-            )
-            .map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="
-                  flex-1
-                  bg-white
-                  shadow-md
-                  rounded-2xl
-                  p-4 sm:p-6
-                  flex items-center justify-center
-                  h-24 sm:h-28 lg:h-32
-                  border border-gray-100
-                "
-              >
-                <img
-                  src={img}
-                  alt="client"
-                  className="h-full w-full object-contain"
-                />
-              </motion.div>
-            ))}
-        </div>
-      ))}
-    </div>
-  </div>
+          <BsChevronCompactLeft size={26} />
+        </button>
 
-</div>
+        <button
+          onClick={nextSlide}
+          className="absolute -right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 p-3 rounded-full shadow-lg"
+        >
+          <BsChevronCompactRight size={26} />
+        </button>
+
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+              <div
+                key={slideIndex}
+                className="min-w-full flex justify-center items-center gap-4 sm:gap-6"
+              >
+                {images
+                  .slice(
+                    slideIndex * imagesPerSlide,
+                    slideIndex * imagesPerSlide + imagesPerSlide
+                  )
+                  .map((img, i) => (
+                    <div
+                      key={i}
+                      className="
+                        flex-1 bg-white shadow-md rounded-2xl p-4 sm:p-6
+                        flex items-center justify-center
+                        h-24 sm:h-28 lg:h-32 border border-gray-100
+                        transition-transform duration-300 hover:scale-105
+                      "
+                    >
+                      <img
+                        src={img}
+                        alt="client"
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

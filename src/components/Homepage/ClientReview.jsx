@@ -1,92 +1,143 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Quotations from "../../assets/Homepage images/Quotationmark.png";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const ClientReview = () => {
-  const swiperRef = useRef(null);
-
-  useEffect(() => {
-    const swiperInstance = swiperRef.current?.swiper;
-
-    if (swiperInstance) {
-      const interval = setInterval(() => {
-        if (swiperInstance.isEnd) {
-          swiperInstance.slideTo(0);
-        } else {
-          swiperInstance.slideNext();
-        }
-      }, 5000);
-
-      return () => clearInterval(interval);
-    }
-  }, []);
-
   const slider = [
-    `"It was a great experience to acquire Project Management Training Skills, 23 PDUs with an additional bonus of 24 coaching sessions for exam preparation. The PMI Africa Initiative Program is equipped with a powerful source of support." - Susanne Mwaitsi, CAPM®`,
-    `"I passed the CAPM exam 6 days ago. Thank you Coach for your helpful tips, practice and mindset readiness" - Brice Seri, MBA, CAPM®`,
-    `"Thank you Skylartech Limited PMP, here I come!" – Rachael Njoki Gachui, CAPM®`,
-    `"Thank you Skylartech Limited for the great support on this journey. Good preparations made this possible." – John Njenga, PMP®`,
-    `"Thank You Skylartech Limited." - Alex Odhiambo Otieno, CAPM®`,
-    `"I'm absolutely thrilled to announce I have successfully passed the CAPM exam. Thank you Skylartech Limited for your mentorship." – Helga Ries, CAPM®`,
-    `"Thanks, Skylartech Limited for your partnership in this journey. You are a huge part of this success!" – Branice M. Mengesa, PMP®`,
-    `"Thank you Skylartech Limited for your dedication and support in this success journey." – Michael Muthui, PMP®`,
+    {
+      review:
+        "It was a great experience training with Skylartech. The instructors were knowledgeable, supportive, and ensured every concept was well understood. The guidance and mentorship throughout the program gave me the confidence I needed to prepare for my certification journey successfully.",
+      name: "Susanne Mwaitsi",
+    },
+    {
+      review:
+        "I passed the CAPM exam successfully thanks to the excellent training and support from Skylartech. The lessons were practical, engaging, and well structured. The team was always available to answer questions and provide encouragement throughout the preparation process.",
+      name: "Brice Seri",
+    },
+    {
+      review:
+        "Thank you Skylartech for the professionalism, support, and mentorship during my training journey. The learning environment was excellent, and the trainers simplified complex project management concepts in a very practical and understandable way.",
+      name: "Rachael Njoki",
+    },
+    {
+      review:
+        "Great support from the trainers and the entire Skylartech team. The sessions were interactive, insightful, and highly practical. I gained valuable knowledge that I have already started applying in my professional work environment.",
+      name: "John Njenga",
+    },
+    {
+      review:
+        "Thank you Skylartech for the outstanding guidance and commitment to student success. The training materials, mentorship, and exam preparation sessions were extremely helpful and played a major role in my professional growth.",
+      name: "Alex Odhiambo",
+    },
+    {
+      review:
+        "Thrilled to announce that I successfully completed my training journey with Skylartech. The instructors were supportive, highly experienced, and passionate about helping students succeed. I truly appreciated the structured learning approach.",
+      name: "Helga Ries",
+    },
+    {
+      review:
+        "Skylartech played a huge part in this success. The support, coaching, and mentorship throughout the program were exceptional. I felt fully prepared and confident during my certification process thanks to the quality of training provided.",
+      name: "Branice M. Mengesa",
+    },
+    {
+      review:
+        "Great mentorship and an incredible learning experience overall. The trainers were patient, professional, and always willing to provide additional guidance whenever needed. I would highly recommend Skylartech to anyone pursuing project management training.",
+      name: "Michael Muthui",
+    },
   ];
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-10 bg-transparent">
-      
-      {/* HEADER */}
-      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-white mb-12">
-        Client <span className="text-amber-400">Success Stories</span>
-      </h2>
+      {/* HEADING */}
+      <div className="max-w-4xl mx-auto text-center mb-14">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+          Client{" "}
+          <span className="text-amber-400">Success Stories</span>
+        </h2>
 
+        <p className="text-white/60 mt-5 text-sm sm:text-base md:text-lg leading-relaxed">
+          Hear from professionals and organizations that have worked with
+          Skylartech across project management training, consulting, and PMO
+          transformation initiatives.
+        </p>
+      </div>
+
+      {/* SLIDER */}
       <Swiper
-        ref={swiperRef}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         slidesPerView={1}
-        spaceBetween={20}
+        spaceBetween={24}
         loop
         breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 2 },
+          768: {
+            slidesPerView: 2,
+          },
+          1280: {
+            slidesPerView: 3,
+          },
         }}
-        className="max-w-6xl mx-auto"
+        className="max-w-7xl mx-auto"
       >
-        {slider.map((text, i) => (
-          <SwiperSlide key={i} className="h-auto flex">
-            
-            {/* CARD (FORCED EQUAL HEIGHT) */}
-            <div className="h-[320px] w-full flex flex-col justify-between
-              bg-white/5 backdrop-blur-xl border border-white/10 
-              rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden">
+        {slider.map((item, i) => (
+     <SwiperSlide key={i} className="h-auto flex">
+  <div
+    className="
+      w-full
+      h-[420px] sm:h-[440px] lg:h-[460px]
+      flex flex-col
+      justify-between
+      bg-white/5
+      border border-white/10
+      rounded-3xl
+      p-6 sm:p-7
+      text-white
+      relative
+      overflow-hidden
+      backdrop-blur-xl
+      transition-all
+      duration-300
+      hover:bg-white/[0.07]
+    "
+  >
+    {/* GLOW */}
+    <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-400/20 blur-2xl rounded-full" />
 
-              {/* decorative glow */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 
-                bg-amber-400/20 blur-2xl rounded-full" />
+    {/* QUOTE ICON */}
+    <img
+      src={Quotations}
+      alt="quotation mark"
+      className="w-8 h-8 opacity-70 mb-5"
+    />
 
-              {/* QUOTE ICON */}
-              <img
-                src={Quotations}
-                alt="quote"
-                className="w-8 h-8 opacity-70 mb-4"
-              />
+    {/* REVIEW (CLAMPED FOR CONSISTENCY) */}
+    <p className="text-white/80 leading-7 text-sm sm:text-base relative z-10 line-clamp-6">
+      “{item.review}”
+    </p>
 
-              {/* TEXT (fixed area so height doesn't change) */}
-              <div className="flex-1 overflow-hidden">
-                <p className="text-white/80 leading-7 text-sm sm:text-base">
-                  {text}
-                </p>
-              </div>
+    {/* FOOTER */}
+    <div className="mt-8 relative z-10 text-center">
+      <div className="flex justify-center text-amber-400 text-lg mb-4">
+        ★★★★★
+      </div>
 
-              {/* STARS */}
-              <div className="mt-6 flex justify-center">
-                {Array(5).fill(0).map((_, i) => (
-                  <span key={i} className="text-amber-400 text-lg">★</span>
-                ))}
-              </div>
+      <div>
+        <h3 className="font-semibold text-base sm:text-lg">
+          {item.name}
+        </h3>
 
-            </div>
-          </SwiperSlide>
+        <p className="text-white/50 text-sm mt-1">
+          Verified Client Review
+        </p>
+      </div>
+    </div>
+  </div>
+</SwiperSlide>
         ))}
       </Swiper>
     </div>

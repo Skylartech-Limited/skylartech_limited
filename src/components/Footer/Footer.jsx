@@ -74,8 +74,7 @@ const Footer = () => {
                 "Corporate Training",
                 "Consulting",
                 "PMO Advisory",
-                "Agile Transformation",
-                "Software Engineering",
+                "Agile Transformation"
               ].map((item, i) => (
                 <li key={i} className="hover:text-white transition cursor-default">
                   {item}
