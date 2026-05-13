@@ -76,46 +76,27 @@ const Home = () => {
   };
   return (
     <>
-      <Helmet>
+     <Helmet>
         <title>Skylartech Limited | PMI Premier ATP</title>
-
-        <meta
-          name="description"
-          content="Skylartech Limited is a PMI Premier Authorized Training Partner delivering project management certification training, leadership development, consulting, and technology solutions globally."
-        />
-        <link rel="canonical" href="https://skylartech.co.ke" />
       </Helmet>
-      {/* HERO SECTION */}
-      <div className="relative min-h-screen flex items-center overflow-hidden px-6 lg:px-12 pt-28">
-        {/* BACKGROUND */}
+
+      {/* ================= HERO (FIXED SPACING) ================= */}
+      <div className="relative min-h-screen flex items-center overflow-hidden px-6 lg:px-12 pt-28 pb-24 lg:pb-32">
         <div
           className="absolute inset-0 bg-cover bg-center scale-110 blur-sm"
           style={{ backgroundImage: `url(${Project})` }}
         />
         <div className="absolute inset-0 bg-black/50" />
 
-        {/* CONTENT WRAPPER */}
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT: CONVERSION COLUMN */}
           <div className="space-y-6 max-w-2xl">
-            {/* MAIN HEADLINE */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight">
               Developing World-Class{" "}
-              <span
-                className="font-bold"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #c084fc, #6366f1, #22d3ee, #34d399, #facc15, #fb923c, #f43f5e)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  filter: "brightness(1.2) saturate(1.5)",
-                }}
-              >
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-300">
                 Project Leaders
               </span>
             </h1>
 
-            {/* KEY VALUE POINTS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-white/90">
               {[
                 "Official PMI® course content",
@@ -125,60 +106,45 @@ const Home = () => {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white/10 border border-white/10 backdrop-blur-md rounded-xl px-4 py-3"
+                  className="bg-white/10 border border-white/10 rounded-xl px-4 py-3"
                 >
                   ✓ {item}
                 </div>
               ))}
             </div>
 
-            {/* CTA ROW (OPTIMIZED) */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link to="/offerings/pmp-training">
-                <button className="px-8 py-3 rounded-xl bg-white text-black font-medium hover:bg-amber-400 transition">
+                <button className="px-8 py-3 rounded-xl bg-white text-black hover:bg-amber-400 transition">
                   Explore Certifications
                 </button>
               </Link>
 
               <Link to="/contact-us">
-                <button className="px-8 py-3 rounded-xl border border-white/40 text-white font-medium hover:bg-green-500 transition">
+                <button className="px-8 py-3 rounded-xl border border-white/40 text-white hover:bg-green-500 transition">
                   Talk to an Expert
                 </button>
               </Link>
             </div>
           </div>
 
-          {/* RIGHT: TRUST + VISUAL STACK */}
-          <div className="relative flex flex-col items-center justify-center space-y-10">
-            {/* GLOW */}
-            <div className="absolute w-[85%] h-[85%] bg-violet-300/20 blur-3xl rounded-full"></div>
+          <div className="relative flex flex-col items-center space-y-10">
+            <div className="absolute w-[85%] h-[85%] bg-violet-300/20 blur-3xl rounded-full" />
 
-            {/* PMI LOGOS */}
-            <div className="relative flex items-center justify-center">
-              <img
-                src={PMI}
-                alt="PMI"
-                className="h-32 sm:h-40 lg:h-48 object-contain z-10 -mr-2 sm:-mr-3"
-              />
-
-              <img
-                src={PMI2}
-                alt="PMI2"
-                className="h-32 sm:h-40 lg:h-48 object-contain z-10 -ml-2 sm:-ml-3"
-              />
+            <div className="flex items-center justify-center">
+              <img src={PMI} alt="PMI" className="h-36 sm:h-44 lg:h-48 -mr-2" />
+              <img src={PMI2} alt="PMI2"className="h-36 sm:h-44 lg:h-48 -ml-2" />
             </div>
 
-            {/* TRUST BADGE STACK */}
-            <div className="flex flex-col items-center text-center space-y-3">
-              {/* BADGE IMAGE (BIGGER + MORE AUTHORITY) */}
+            {/* FIXED BADGE SPACING */}
+            <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8">
               <img
                 src={Badge}
-                alt="PMI Badge"
-                className="h-44 sm:h-40 md:h-48 lg:h-72 object-contain drop-shadow-xl"
+                alt="badge"
+                className="h-36 sm:h-44 md:h-52 lg:h-72 object-contain drop-shadow-xl"
               />
 
-              {/* MODERN CLASSY LABEL */}
-              <span className="text-xs sm:text-sm md:text-base font-medium text-white/80 tracking-widest uppercase bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+              <span className="text-xs sm:text-sm text-white/80 uppercase tracking-widest bg-white/10 px-4 py-2 rounded-full border border-white/20">
                 PMI® Premier Authorized Training Partner
               </span>
             </div>
