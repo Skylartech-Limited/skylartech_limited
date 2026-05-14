@@ -76,7 +76,7 @@ const Home = () => {
   };
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>Skylartech Limited | PMI Premier ATP</title>
       </Helmet>
 
@@ -127,26 +127,72 @@ const Home = () => {
               </Link>
             </div>
           </div>
+          <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
+            {/* Accreditation Card */}
+            <div
+              className="
+      relative w-full max-w-2xl lg:max-w-3xl
+      flex flex-col items-center
+      space-y-6 sm:space-y-7 lg:space-y-8
+      bg-gradient-to-b from-[#0f172a] to-[#111827]
+      border border-white/10
+      rounded-2xl
+      p-6 sm:p-8 lg:p-10
+      shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+      overflow-hidden
+    "
+            >
+              {/* Top Pill */}
+              <div className="relative z-10">
+                <span className="text-[10px] sm:text-xs lg:text-sm uppercase tracking-widest text-white/90 bg-green-500/60 border border-white/10 px-4 py-1.5 rounded-full shadow-md">
+                  Accreditation
+                </span>
+              </div>
 
-          <div className="relative flex flex-col items-center space-y-10">
-            <div className="absolute w-[85%] h-[85%] bg-violet-300/20 blur-3xl rounded-full" />
+              {/* Glow */}
+              <div className="absolute w-[85%] sm:w-[70%] h-[70%] bg-violet-500/15 blur-2xl rounded-full top-10" />
 
-            <div className="flex items-center justify-center">
-              <img src={PMI} alt="PMI" className="h-36 sm:h-44 lg:h-48 -mr-2" />
-              <img src={PMI2} alt="PMI2"className="h-36 sm:h-44 lg:h-48 -ml-2" />
-            </div>
+              {/* PMI Logos */}
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="flex items-center">
+                  <img
+                    src={PMI}
+                    alt="PMI"
+                    className="h-28 sm:h-32 md:h-36 lg:h-44 object-contain drop-shadow-lg"
+                  />
+                  <img
+                    src={PMI2}
+                    alt="PMI2"
+                    className="h-28 sm:h-32 md:h-36 lg:h-44 object-contain -ml-5 sm:-ml-6 md:-ml-8 drop-shadow-lg"
+                  />
+                </div>
+              </div>
 
-            {/* FIXED BADGE SPACING */}
-            <div className="flex flex-col items-center text-center space-y-6 sm:space-y-8">
-              <img
-                src={Badge}
-                alt="badge"
-                className="h-36 sm:h-44 md:h-52 lg:h-72 object-contain drop-shadow-xl"
-              />
+              {/* Badge + Text */}
+              <div className="relative z-10 flex flex-col items-center text-center space-y-5 sm:space-y-6">
+                <img
+                  src={Badge}
+                  alt="badge"
+                  className="
+          h-32 sm:h-40 md:h-48 lg:h-64
+          object-contain drop-shadow-2xl
+        "
+                />
 
-              <span className="text-xs sm:text-sm text-white/80 uppercase tracking-widest bg-white/10 px-4 py-2 rounded-full border border-white/20">
-                PMI® Premier Authorized Training Partner
-              </span>
+                <span
+                  className="
+          text-[11px] sm:text-sm lg:text-base
+          text-white/85 leading-relaxed
+          max-w-sm sm:max-w-md lg:max-w-lg
+          bg-white/5 border border-white/10
+          px-4 py-3
+          rounded-xl
+        "
+                >
+                  Skylartech is a premier Authorized Training Partner (ATP) of
+                  Project Management Institute, USA.
+                </span>
+              </div>
             </div>
           </div>
         </div>
