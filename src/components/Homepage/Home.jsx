@@ -74,6 +74,7 @@ const Home = () => {
 
     setStartX(null);
   };
+
   return (
     <>
       <Helmet>
@@ -114,7 +115,7 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/offerings/pmp-training">
+              <Link to="/offerings/professional-training-and-certification">
                 <button className="px-8 py-3 rounded-xl bg-white text-black hover:bg-amber-400 transition">
                   Explore Certifications
                 </button>
@@ -128,19 +129,37 @@ const Home = () => {
             </div>
           </div>
           <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
+            {/* 🔥 CORNER PIN BADGE (BIGGER + OVERLAPPING) */}
+            <div
+              className="
+    absolute top-0 right-0
+    translate-x-1/3 -translate-y-1/3
+    z-30
+  "
+            >
+              <img
+                src={Badge}
+                alt="badge"
+                className="
+      h-28 sm:h-32 md:h-36 lg:h-56
+      object-contain
+      drop-shadow-2xl
+    "
+              />
+            </div>
             {/* Accreditation Card */}
             <div
               className="
-      relative w-full max-w-2xl lg:max-w-3xl
-      flex flex-col items-center
-      space-y-6 sm:space-y-7 lg:space-y-8
-      bg-gradient-to-b from-[#0f172a] to-[#111827]
-      border border-white/10
-      rounded-2xl
-      p-6 sm:p-8 lg:p-10
-      shadow-[0_20px_60px_rgba(0,0,0,0.6)]
-      overflow-hidden
-    "
+    relative w-full max-w-2xl lg:max-w-3xl
+    flex flex-col items-center
+    space-y-6 sm:space-y-7 lg:space-y-8
+    bg-gradient-to-b from-[#0f172a] to-[#111827]
+    border border-white/10
+    rounded-2xl
+    p-6 sm:p-8 lg:p-10
+    shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+    overflow-hidden
+  "
             >
               {/* Top Pill */}
               <div className="relative z-10">
@@ -168,26 +187,17 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Badge + Text */}
+              {/* Text */}
               <div className="relative z-10 flex flex-col items-center text-center space-y-5 sm:space-y-6">
-                <img
-                  src={Badge}
-                  alt="badge"
-                  className="
-          h-32 sm:h-40 md:h-48 lg:h-64
-          object-contain drop-shadow-2xl
-        "
-                />
-
                 <span
                   className="
-          text-[11px] sm:text-sm lg:text-base
-          text-white/85 leading-relaxed
-          max-w-sm sm:max-w-md lg:max-w-lg
-          bg-white/5 border border-white/10
-          px-4 py-3
-          rounded-xl
-        "
+        text-[11px] sm:text-sm lg:text-base
+        text-white/85 leading-relaxed
+        max-w-sm sm:max-w-md lg:max-w-lg
+        bg-white/5 border border-white/10
+        px-4 py-3
+        rounded-xl
+      "
                 >
                   Skylartech is a premier Authorized Training Partner (ATP) of
                   Project Management Institute, USA.
@@ -870,6 +880,14 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
+                <div className="mt-8">
+                  <Link
+                    to="/offerings/professional-training-and-certification"
+                    className="text-white font-medium hover:underline"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -927,55 +945,62 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
+                <div className="mt-8">
+                  <Link
+                    to="/offerings/consulting-and-organizational-transformation"
+                    className="text-white font-medium hover:underline"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* CARD 3 */}
             <div
               className="
-          group
-          relative
-          overflow-hidden
-          rounded-3xl
-          bg-white/10
-          border border-white/10
-          backdrop-blur-xl
-          p-8 sm:p-10
-          hover:-translate-y-2
-          hover:bg-white/15
-          transition-all duration-500
-        "
+    group
+    relative
+    overflow-hidden
+    rounded-3xl
+    bg-white/10
+    border border-white/10
+    backdrop-blur-xl
+    p-8 sm:p-10
+    hover:-translate-y-2
+    hover:bg-white/15
+    transition-all duration-500
+  "
             >
               {/* CARD GLOW */}
-              <div className="absolute top-0 left-0 w-40 h-40 bg-fuchsia-400/10 blur-3xl rounded-full" />
+              <div className="absolute top-0 left-0 w-40 h-40 bg-emerald-400/10 blur-3xl rounded-full" />
 
               {/* NUMBER */}
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-600 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center shadow-lg">
                 <span className="text-2xl font-bold text-white">03</span>
               </div>
 
               {/* CONTENT */}
               <div className="relative z-10 mt-8">
                 <h3 className="text-2xl font-semibold text-white leading-snug">
-                  Technology & Software Engineering Solutions
+                  Portfolio, PMO & Governance Excellence
                 </h3>
 
                 <p className="mt-5 text-white/75 leading-8 text-base">
-                  We provide scalable software engineering teams and digital
-                  transformation solutions that help organizations modernize
-                  operations, improve delivery capability, automate workflows,
-                  and strengthen business performance in rapidly evolving
-                  environments.
+                  We help organizations establish high-performing PMOs, improve
+                  portfolio governance, and align strategic initiatives with
+                  business outcomes using globally recognized PMI® frameworks
+                  and maturity models.
                 </p>
 
                 {/* FEATURE TAGS */}
                 <div className="flex flex-wrap gap-3 mt-6">
                   {[
-                    "Web Applications",
-                    "Digital Transformation",
-                    "Engineering Teams",
-                    "Automation",
-                    "Scalable Systems",
+                    "PMO Design",
+                    "Portfolio Management",
+                    "Governance Frameworks",
+                    "Strategy Execution",
+                    "Maturity Models",
                   ].map((item, i) => (
                     <span
                       key={i}
@@ -984,6 +1009,194 @@ const Home = () => {
                       {item}
                     </span>
                   ))}
+                </div>
+                <div className="mt-8">
+                  <Link
+                    to="/offerings/portfolio-pmo-and-governance-excellence"
+                    className="text-white font-medium hover:underline"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 4 */}
+            <div
+              className="
+    group
+    relative
+    overflow-hidden
+    rounded-3xl
+    bg-white/10
+    border border-white/10
+    backdrop-blur-xl
+    p-8 sm:p-10
+    hover:-translate-y-2
+    hover:bg-white/15
+    transition-all duration-500
+  "
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 blur-3xl rounded-full" />
+
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center shadow-lg">
+                <span className="text-2xl font-bold text-white">04</span>
+              </div>
+
+              <div className="relative z-10 mt-8">
+                <h3 className="text-2xl font-semibold text-white leading-snug">
+                  Agile & Adaptive Delivery Excellence
+                </h3>
+
+                <p className="mt-5 text-white/75 leading-8 text-base">
+                  We enable organizations to adopt Agile frameworks such as
+                  Scrum, Kanban, and SAFe to improve delivery speed,
+                  flexibility, and customer value.
+                </p>
+
+                <div className="flex flex-wrap gap-3 mt-6">
+                  {[
+                    "Scrum",
+                    "Kanban",
+                    "SAFe",
+                    "Lean Thinking",
+                    "Agile Coaching",
+                  ].map((item, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Link
+                    to="offerings/agile-and-adaptive-delivery-excellence"
+                    className="text-white font-medium hover:underline"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 5 */}
+            <div
+              className="
+    group
+    relative
+    overflow-hidden
+    rounded-3xl
+    bg-white/10
+    border border-white/10
+    backdrop-blur-xl
+    p-8 sm:p-10
+    hover:-translate-y-2
+    hover:bg-white/15
+    transition-all duration-500
+  "
+            >
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full" />
+
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg">
+                <span className="text-2xl font-bold text-white">05</span>
+              </div>
+
+              <div className="relative z-10 mt-8">
+                <h3 className="text-2xl font-semibold text-white leading-snug">
+                  Risk, Compliance & Assurance
+                </h3>
+
+                <p className="mt-5 text-white/75 leading-8 text-base">
+                  We strengthen organizational resilience through structured
+                  risk management, compliance frameworks, and governance
+                  assurance models aligned with PMI® standards.
+                </p>
+
+                <div className="flex flex-wrap gap-3 mt-6">
+                  {[
+                    "Risk Identification",
+                    "Mitigation",
+                    "Audits",
+                    "Controls",
+                    "Assurance",
+                  ].map((item, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Link
+                    to="/offerings/risk-compliance-and-assurance"
+                    className="text-white font-medium hover:underline"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 6 */}
+            <div
+              className="
+    group
+    relative
+    overflow-hidden
+    rounded-3xl
+    bg-white/10
+    border border-white/10
+    backdrop-blur-xl
+    p-8 sm:p-10
+    hover:-translate-y-2
+    hover:bg-white/15
+    transition-all duration-500
+  "
+            >
+              <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-400/10 blur-3xl rounded-full" />
+
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-violet-600 flex items-center justify-center shadow-lg">
+                <span className="text-2xl font-bold text-white">06</span>
+              </div>
+
+              <div className="relative z-10 mt-8">
+                <h3 className="text-2xl font-semibold text-white leading-snug">
+                  Business Analysis & Requirements Engineering
+                </h3>
+
+                <p className="mt-5 text-white/75 leading-8 text-base">
+                  We help organizations define clear business requirements,
+                  improve stakeholder alignment, and ensure project success
+                  through structured analysis and documentation practices.
+                </p>
+
+                <div className="flex flex-wrap gap-3 mt-6">
+                  {[
+                    "Requirements",
+                    "Stakeholders",
+                    "Analysis",
+                    "Documentation",
+                    "Value Delivery",
+                  ].map((item, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Link
+                    to="/offerings/business-analysis-and-requirements-gathering"
+                    className="text-white font-medium hover:underline"
+                  >
+                    Learn More →
+                  </Link>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ import Test from "../../assets/Services image/checklist.png";
 import Dev from "../../assets/Services image/vector.png";
 import Analytics from "../../assets/Services image/iotanalytics.png";
 
-const CorpoPMI = () => {
+const Consulting = () => {
   return (
     <>
       {/* HERO SECTION */}
@@ -286,4 +286,4 @@ const CorpoPMI = () => {
   );
 };
 
-export default CorpoPMI;
+export default Consulting;

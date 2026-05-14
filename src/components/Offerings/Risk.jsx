@@ -14,7 +14,7 @@ import CrossPlatform from "../../assets/Services image/seo.png";
 import Prototyping from "../../assets/Services image/triangle.png";
 import Migration from "../../assets/Services image/migration.png";
 
-const Web = () => {
+const Risk = () => {
   return (
     <>
       {/* HERO SECTION */}
@@ -31,18 +31,13 @@ const Web = () => {
                 Building Digital{" "}
                 <span className="text-amber-500">
                   <Typewriter
-                    words={[
-                      "Experiences",
-                      "Solutions",
-                      "Applications",
-                    ]}
+                    words={["Experiences", "Solutions", "Applications"]}
                     loop={0}
                     typeSpeed={70}
                     deleteSpeed={40}
                     delaySpeed={1500}
                   />
                 </span>
-
                 <span className="text-amber-500">
                   <Cursor cursorStyle="|" />
                 </span>
@@ -246,9 +241,7 @@ const Web = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
-                  {service.text}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{service.text}</p>
               </motion.div>
             ))}
           </div>
@@ -263,9 +256,7 @@ const Web = () => {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 Delivering Modern{" "}
-                <span className="text-amber-500">
-                  Digital Experiences
-                </span>
+                <span className="text-amber-500">Digital Experiences</span>
               </h1>
 
               <p className="text-gray-600 text-lg mt-8 leading-relaxed">
@@ -308,4 +299,4 @@ const Web = () => {
   );
 };
 
-export default Web;
+export default Risk;
