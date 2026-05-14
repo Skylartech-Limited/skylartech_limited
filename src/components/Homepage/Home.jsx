@@ -200,7 +200,7 @@ const Home = () => {
         rounded-xl
       "
                 >
-                  Skylartech is a premier Authorized Training Partner (ATP) of
+                  Skylartech is a Premier Authorized Training Partner (ATP) of
                   Project Management Institute, USA.
                 </span>
               </div>

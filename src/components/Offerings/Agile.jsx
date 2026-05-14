@@ -12,7 +12,6 @@ import {
   BookOpen,
 } from "lucide-react";
 
-import Serv from "../../assets/Services image/custom-software-1-1.png";
 
 const Agile = () => {
   return (
@@ -68,14 +67,7 @@ const Agile = () => {
             </div>
           </div>
 
-          {/* IMAGE */}
-          <div className="flex justify-center">
-            <img
-              src={Serv}
-              alt="Agile Training"
-              className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
-            />
-          </div>
+  
         </div>
       </section>
 
