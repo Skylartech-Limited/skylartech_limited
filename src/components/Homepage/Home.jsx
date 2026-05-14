@@ -10,7 +10,6 @@ import Cert4 from "../../assets/Homepage images/Cert4.jpg";
 import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
 import PMI from "../../assets/Homepage images/PMI.png";
 import PMI2 from "../../assets/Homepage images/PMI2.png";
-import Badge from "../../assets/Homepage images/Badge.png";
 import Project from "../../assets/Homepage images/Project.jpg";
 import Planning from "../../assets/Homepage images/Planning.jpg";
 import ClientReview from "./ClientReview";
@@ -129,25 +128,6 @@ const Home = () => {
             </div>
           </div>
           <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
-          {/* 🔥 CORNER PIN BADGE (RESPONSIVE + ATTACHED TO CARD) */}
-<div
-  className="
-    absolute top-0 right-0
-    translate-x-1/4 -translate-y-1/4
-    z-30
-  "
->
-  <img
-    src={Badge}
-    alt="badge"
-    className="
-      h-20 sm:h-28 md:h-40 lg:h-48
-      w-auto
-      object-contain
-      drop-shadow-2xl
-    "
-  />
-</div>
             {/* Accreditation Card */}
             <div
               className="
