@@ -10,7 +10,7 @@ import Contact from "../../assets/Services image/user.png";
 import Checker from "../../assets/Services image/correct (1).png";
 import Wallet from "../../assets/Services image/wallet (1).png";
 
-const PMConsulting = () => {
+const Consulting = () => {
   return (
     <>
       {/* HERO SECTION */}
@@ -239,4 +239,4 @@ const PMConsulting = () => {
   );
 };
 
-export default PMConsulting;
+export default Consulting;

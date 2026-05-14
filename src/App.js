@@ -15,12 +15,12 @@ import Healthcare from "./components/Industries/Healthcare.jsx";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
 
-import UI from "./components/Offerings/PMPTraining.jsx";
-import Agile from "./components/Offerings/agile.jsx";
-import PMConsulting from "./components/Offerings/PMConsulting.jsx";
-import CorpoPMI from "./components/Offerings/CorpoPMI.jsx";
-import Capm from "./components/Offerings/capm.jsx";
-import Web from "./components/Offerings/web.jsx";
+import Professionaltraining from "./components/Offerings/Professional-training.jsx";
+import Agile from "./components/Offerings/Agile.jsx";
+import Consulting from "./components/Offerings/Consulting.jsx";
+import Portfolio from "./components/Offerings/Portfolio.jsx";
+import Risk from "./components/Offerings/Risk.jsx";
+import Analysis from "./components/Offerings/Analysis.jsx"
 
 import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
 function App() {
@@ -34,17 +34,38 @@ function App() {
         {/* HOME */}
         <Route path="/" element={<Home />} />
 
-        {/* SERVICES */}
-        <Route path="/offerings/pmp-training" element={<UI />} />
-        <Route path="/offerings/consulting" element={<PMConsulting />} />
-        <Route path="/offerings/corporate-training" element={<CorpoPMI />} />
-        <Route path="/offerings/web-and-app-development" element={<Web />} />
-        <Route path="/offerings/agile-and-scrum" element={<Agile />} />
-        <Route path="/offerings/capm-training" element={<Capm />} />
+        {/* OFFERINGS */}
+        <Route
+          path="/offerings/professional-training-and-certification"
+          element={<Professionaltraining />}
+        />
+        <Route
+          path="/offerings/consulting-and-organizational-transformation"
+          element={<Consulting />}
+        />
+        <Route
+          path="/offerings/portfolio-pmo-and-governance-excellence"
+          element={<Portfolio />}
+        />
+        <Route
+          path="/offerings/agile-and-adaptive-delivery-excellence"
+          element={<Agile />}
+        />
+        <Route
+          path="/offerings/risk-compliance-and-assurance"
+          element={<Risk />}
+        />
+          <Route
+          path="/offerings/business-analysis-and-requirements-gathering"
+          element={<Analysis />}
+        />
 
         {/* INDUSTRIES */}
         <Route path="/industries/banking-and-finance" element={<Banking />} />
-        <Route path="/industries/telecommunications" element={<Telecommunications />} />
+        <Route
+          path="/industries/telecommunications"
+          element={<Telecommunications />}
+        />
         <Route path="/industries/ngos" element={<Ngos />} />
         <Route path="/industries/government" element={<Government />} />
         <Route path="/industries/healthcare" element={<Healthcare />} />

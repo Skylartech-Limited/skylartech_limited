@@ -14,7 +14,7 @@ import {
 
 import Serv from "../../assets/Services image/custom-software-1-1.png";
 
-const agile = () => {
+const Agile = () => {
   return (
     <>
       {/* HERO */}
@@ -187,4 +187,4 @@ const agile = () => {
   );
 };
 
-export default agile;
+export default Agile;

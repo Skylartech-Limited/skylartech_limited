@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const PMPTraining = () => {
+const Professionaltraining = () => {
   const services = [
     {
       icon: <BookOpen size={34} />,
@@ -234,4 +234,4 @@ const PMPTraining = () => {
   );
 };
 
-export default PMPTraining;
+export default Professionaltraining;

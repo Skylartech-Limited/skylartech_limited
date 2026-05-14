@@ -60,7 +60,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 
+    <nav
+      className="fixed top-0 left-0 w-full z-50 
       bg-white/60 backdrop-blur-2xl 
       bg-gradient-to-r from-purple-50/30 via-white/70 to-indigo-50/20
       border-b border-purple-100/40 
@@ -71,7 +72,6 @@ const Navbar = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 lg:h-28">
-
           {/* LOGO */}
           <Link to="/" onClick={scrollToTop} className="flex items-center">
             <img
@@ -83,7 +83,6 @@ const Navbar = () => {
 
           {/* DESKTOP NAV */}
           <div className="hidden lg:flex items-center gap-14 xl:gap-16 flex-1 justify-center">
-
             <Link to="/" onClick={scrollToTop} className={navLink}>
               Home
             </Link>
@@ -134,20 +133,41 @@ const Navbar = () => {
               <AnimatePresence>
                 {openDropdown === "offerings" && (
                   <motion.div className="absolute left-0 top-full mt-3 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden">
-                    <Link to="/offerings/pmp-training" className={dropdownItem}>
-                      PMP Training
+                    <Link
+                      to="/offerings/professional-training-and-certification"
+                      className={dropdownItem}
+                    >
+                      Professional Training & Certification
                     </Link>
-                    <Link to="/offerings/corporate-training" className={dropdownItem}>
-                      Corporate Training
+                    <Link
+                      to="/offerings/consulting-and-organizational-transformation"
+                      className={dropdownItem}
+                    >
+                      Consulting & Organizational Transformation
                     </Link>
-                    <Link to="/offerings/consulting" className={dropdownItem}>
-                      Consulting
+                    <Link
+                      to="/offerings/portfolio-pmo-and-governance-excellence"
+                      className={dropdownItem}
+                    >
+                      Portfolio, PMO & Governance Excellence
                     </Link>
-                    <Link to="/offerings/agile-and-scrum" className={dropdownItem}>
-                      Agile Transformation
+                    <Link
+                      to="/offerings/agile-and-adaptive-delivery-excellence"
+                      className={dropdownItem}
+                    >
+                      Agile & Adaptive Delivery Excellence
                     </Link>
-                    <Link to="/offerings/web-and-app-development" className={dropdownItem}>
-                      Software Engineering
+                    <Link
+                      to="/offerings/risk-compliance-and-assurance"
+                      className={dropdownItem}
+                    >
+                      Risk, Compliance & Assurance
+                    </Link>
+                    <Link
+                      to="/offerings/business-analysis-and-requirements-gathering"
+                      className={dropdownItem}
+                    >
+                     Business Analysis & Requirements Engineering
                     </Link>
                   </motion.div>
                 )}
@@ -185,7 +205,6 @@ const Navbar = () => {
             <Link to="/contact-us" onClick={scrollToTop} className={navLink}>
               Contact
             </Link>
-
           </div>
 
           {/* MOBILE BUTTON */}
@@ -197,7 +216,6 @@ const Navbar = () => {
               {isMobileMenuOpen ? "✕" : "☰"}
             </button>
           </div>
-
         </div>
       </div>
 
@@ -211,25 +229,66 @@ const Navbar = () => {
             className="lg:hidden bg-white border-t border-purple-100/40 px-6 py-6"
           >
             <div className="space-y-3 text-center">
-
               <Link to="/" onClick={closeMenus} className="block py-2">
                 Home
               </Link>
 
               <MobileDropdown title="About">
-                <a href="/#about-skylartech" onClick={closeMenus}>About Skylartech</a>
-                <a href="/#why-choose-us" onClick={closeMenus}>Why Choose Us</a>
-                <a href="/#certification-programs" onClick={closeMenus}>Certifications</a>
-                <a href="/#our-expertise" onClick={closeMenus}>Expertise</a>
-                <a href="/#our-clients" onClick={closeMenus}>Clients & Success Stories</a>
+                <a href="/#about-skylartech" onClick={closeMenus}>
+                  About Skylartech
+                </a>
+                <a href="/#why-choose-us" onClick={closeMenus}>
+                  Why Choose Us
+                </a>
+                <a href="/#certification-programs" onClick={closeMenus}>
+                  Certifications
+                </a>
+                <a href="/#our-expertise" onClick={closeMenus}>
+                  Expertise
+                </a>
+                <a href="/#our-clients" onClick={closeMenus}>
+                  Clients & Success Stories
+                </a>
               </MobileDropdown>
 
               <MobileDropdown title="Offerings">
-                <Link to="/offerings/pmp-training" onClick={closeMenus}>PMP Training</Link>
-                <Link to="/offerings/corporate-training" onClick={closeMenus}>Corporate Training</Link>
-                <Link to="/offerings/consulting" onClick={closeMenus}>Consulting</Link>
-                <Link to="/offerings/agile-and-scrum" onClick={closeMenus}>Agile Transformation</Link>
-                <Link to="/offerings/web-and-app-development" onClick={closeMenus}>Software Engineering</Link>
+                <Link
+                  to="/offerings/professional-training-and-certification"
+                  onClick={closeMenus}
+                >
+                  Professional Training & Certification
+                </Link>
+                <Link
+                  to="/offerings/consulting-and-organizational-transformation"
+                  onClick={closeMenus}
+                >
+                  Consulting & Organizational Transformation
+                </Link>
+                <Link
+                  to="/offerings/portfolio-pmo-and-governance-excellence"
+                  onClick={closeMenus}
+                >
+                  Portfolio, PMO & Governance Excellence
+                </Link>
+                <Link
+                  to="/offerings/agile-and-adaptive-delivery-excellence"
+                  onClick={closeMenus}
+                >
+                  {" "}
+                  Agile & Adaptive Delivery Excellence
+                </Link>
+                <Link
+                  to="/offerings/risk-compliance-and-assurance"
+                  onClick={closeMenus}
+                >
+                  Risk, Compliance & Assurance
+                </Link>
+                <Link
+                  to="/offerings/business-analysis-and-requirements-gathering"
+                  onClick={closeMenus}
+                >
+                  Business Analysis & Requirements Engineering
+                </Link>
               </MobileDropdown>
 
               <MobileDropdown title="Industries">
@@ -240,10 +299,13 @@ const Navbar = () => {
                 ))}
               </MobileDropdown>
 
-              <Link to="/contact-us" onClick={closeMenus} className="block py-2 mt-2">
+              <Link
+                to="/contact-us"
+                onClick={closeMenus}
+                className="block py-2 mt-2"
+              >
                 Contact
               </Link>
-
             </div>
           </motion.div>
         )}
