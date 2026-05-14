@@ -6,14 +6,13 @@ import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
+
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const closeMenus = () => {
-    setIsMobileMenuOpen(false);
-    setOpenDropdown(null);
-  };
+const closeMenus = () => {
+  setIsMobileMenuOpen(false);
+};
 
   /* ================= PREMIUM PURPLE NAV STYLE ================= */
   const navLink =
