@@ -11,7 +11,7 @@ import {
   MapPin,
   Building2,
   Clock3,
-  Globe
+  Globe,
 } from "lucide-react";
 
 import City from "../../assets/Contact Images/City.jpeg";
@@ -53,16 +53,15 @@ const Contact = () => {
       </Helmet>
 
       {/* ================= HERO ================= */}
-  <section
-  className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center pt-28 sm:pt-32 lg:pt-36"
-  style={{ backgroundImage: `url(${City})` }}
->
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center pt-28 sm:pt-32 lg:pt-36"
+        style={{ backgroundImage: `url(${City})` }}
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#071019]/85 to-[#102033]/75" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         {/* HERO CONTENT */}
         <div className="relative w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
-          
           {/* BADGE */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-6">
             <Globe className="w-4 h-4 text-sky-300" />
@@ -72,9 +71,9 @@ const Contact = () => {
           </div>
 
           {/* TITLE */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.15] sm:leading-[1.1]">
             Let’s Build Better
-            <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-300 to-blue-400">
+            <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-300 to-blue-400 leading-[1.2] pb-2">
               Project Delivery Systems
             </span>
           </h1>
@@ -116,7 +115,9 @@ const Contact = () => {
               >
                 <item.icon className="w-5 h-5 text-sky-300 mb-2 sm:mb-3" />
                 <p className="text-xs sm:text-sm text-white/50">{item.title}</p>
-                <h3 className="font-semibold mt-1 text-sm sm:text-base">{item.value}</h3>
+                <h3 className="font-semibold mt-1 text-sm sm:text-base">
+                  {item.value}
+                </h3>
               </div>
             ))}
           </div>
@@ -129,7 +130,6 @@ const Contact = () => {
         <div className="absolute bottom-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10">
-          
           {/* LEFT */}
           <div className="lg:col-span-2 space-y-8 text-center lg:text-left">
             <div>
@@ -173,8 +173,12 @@ const Contact = () => {
                   </div>
 
                   <div className="text-center lg:text-left">
-                    <p className="text-white/50 text-xs sm:text-sm">{item.title}</p>
-                    <h3 className="font-medium text-sm sm:text-base">{item.value}</h3>
+                    <p className="text-white/50 text-xs sm:text-sm">
+                      {item.title}
+                    </p>
+                    <h3 className="font-medium text-sm sm:text-base">
+                      {item.value}
+                    </h3>
                   </div>
                 </div>
               ))}
@@ -203,7 +207,9 @@ const Contact = () => {
               className="bg-white/[0.04] border border-white/10 rounded-3xl p-5 sm:p-6 lg:p-8 backdrop-blur-2xl"
             >
               <div className="mb-6 sm:mb-8 text-center lg:text-left">
-                <h3 className="text-xl sm:text-2xl font-bold">Send Us a Message</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">
+                  Send Us a Message
+                </h3>
                 <p className="text-white/55 mt-2 text-sm sm:text-base">
                   We respond quickly to all inquiries.
                 </p>
