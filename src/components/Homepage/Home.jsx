@@ -10,7 +10,6 @@ import Cert4 from "../../assets/Homepage images/Cert4.jpg";
 import GroupPhoto from "../../assets/Homepage images/GroupPhoto.png";
 import PMI from "../../assets/Homepage images/PMI.png";
 import PMI2 from "../../assets/Homepage images/PMI2.png";
-import Badge from "../../assets/Homepage images/Badge.png";
 import Project from "../../assets/Homepage images/Project.jpg";
 import Planning from "../../assets/Homepage images/Planning.jpg";
 import ClientReview from "./ClientReview";
