@@ -129,24 +129,25 @@ const Home = () => {
             </div>
           </div>
           <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
-            {/* 🔥 CORNER PIN BADGE (BIGGER + OVERLAPPING) */}
-            <div
-              className="
+           {/* 🔥 CORNER PIN BADGE (RESPONSIVE) */}
+<div
+  className="
     absolute top-0 right-0
-    translate-x-1/3 -translate-y-1/3
+    translate-x-1/4 -translate-y-1/4
+    sm:translate-x-1/3 sm:-translate-y-1/3
     z-30
   "
-            >
-              <img
-                src={Badge}
-                alt="badge"
-                className="
+>
+  <img
+    src={Badge}
+    alt="badge"
+    className="
       h-28 sm:h-32 md:h-36 lg:h-56
       object-contain
       drop-shadow-2xl
     "
-              />
-            </div>
+  />
+</div>
             {/* Accreditation Card */}
             <div
               className="
