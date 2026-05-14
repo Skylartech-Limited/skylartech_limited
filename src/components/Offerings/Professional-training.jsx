@@ -407,10 +407,10 @@ const ProfessionalTraining = () => {
       </section>
 
       {/* ================= CERTIFICATIONS SECTION ================= */}
-    <section
-  id="certifications-pathways"
-  className="scroll-mt-28 py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-[#060607]"
->
+      <section
+        id="certifications-pathways"
+        className="scroll-mt-28 py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-[#060607]"
+      >
         <div className="max-w-7xl mx-auto">
           {/* TITLE */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white">
@@ -430,23 +430,23 @@ const ProfessionalTraining = () => {
                   {group.group}
                 </h3>
 
-                {/* GRID WRAPPER (CENTERED) */}
-                <div className="w-full flex justify-center">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 justify-items-center">
+                {/* GRID WRAPPER (FIXED MOBILE + RESPONSIVE SAFETY) */}
+                <div className="w-full">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 place-items-stretch">
                     {group.items.map((cert, idx) => (
                       <div
                         key={idx}
                         className="
-                    w-full max-w-sm
-                    bg-[#13090A]/60
-                    border border-red-400/10
-                    rounded-3xl
-                    p-6 sm:p-7
-                    text-center
-                    backdrop-blur-xl
-                    hover:border-red-400/30
-                    transition-all duration-300
-                  "
+          w-full
+          bg-[#13090A]/60
+          border border-red-400/10
+          rounded-3xl
+          p-6 sm:p-7
+          text-center
+          backdrop-blur-xl
+          hover:border-red-400/30
+          transition-all duration-300
+        "
                       >
                         <h4 className="text-red-300 font-bold text-lg sm:text-xl">
                           {cert.name}
@@ -464,84 +464,132 @@ const ProfessionalTraining = () => {
           </div>
         </div>
       </section>
+      {/*Certification Maintenance*/}
+      <section
+        id="maintenance"
+        className="scroll-mt-28 py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-gradient-to-b from-[#060607] via-[#120607] to-[#060607]"
+      >
+        <div className="max-w-7xl mx-auto">
+          {/* TITLE */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white">
+            Certification Maintenance Requirements
+          </h2>
 
-    <section
-  id="maintenance"
-  className="scroll-mt-28 py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-gradient-to-b from-[#060607] via-[#120607] to-[#060607]"
->
-  <div className="max-w-7xl mx-auto">
+          <p className="text-red-100/60 mt-4 sm:mt-6 text-center max-w-3xl mx-auto text-sm sm:text-base">
+            Keep your PMI® certification active through continuous professional
+            development
+          </p>
 
-    {/* TITLE */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white">
-      Certification Maintenance Requirements
-    </h2>
+          {/* DESKTOP TABLE */}
+          <div className="mt-14 hidden md:block">
+            <div className="bg-[#13090A]/50 border border-red-400/10 rounded-3xl backdrop-blur-xl overflow-hidden">
+              {/* HEADER */}
+              <div className="grid grid-cols-3 p-5 text-red-300 font-semibold border-b border-red-400/10">
+                <div>Certification</div>
+                <div>Cycle</div>
+                <div>PDUs Required</div>
+              </div>
 
-    <p className="text-red-100/60 mt-4 sm:mt-6 text-center max-w-3xl mx-auto text-sm sm:text-base">
-      Keep your PMI® certification active through continuous professional development
-    </p>
-
-    {/* DESKTOP TABLE */}
-    <div className="mt-14 hidden md:block">
-      <div className="bg-[#13090A]/50 border border-red-400/10 rounded-3xl backdrop-blur-xl overflow-hidden">
-
-        {/* HEADER */}
-        <div className="grid grid-cols-3 p-5 text-red-300 font-semibold border-b border-red-400/10">
-          <div>Certification</div>
-          <div>Cycle</div>
-          <div>PDUs Required</div>
-        </div>
-
-        {/* ROWS */}
-        {[
-          { cert: "CAPM®", cycle: "5 years", pdu: "No PDUs (Re-exam required)" },
-          { cert: "PMP®", cycle: "3 years", pdu: "60 PDUs" },
-          { cert: "PgMP®", cycle: "3 years", pdu: "60 PDUs" },
-          { cert: "PfMP®", cycle: "3 years", pdu: "60 PDUs (Portfolio focus)" },
-          { cert: "PMI-ACP®", cycle: "3 years", pdu: "30 PDUs (Agile focus)" },
-          { cert: "PMI-PBA®", cycle: "3 years", pdu: "60 PDUs (BA focus)" },
-          { cert: "PMI-RMP®", cycle: "3 years", pdu: "30 PDUs (Risk focus)" },
-          { cert: "PMI-SP®", cycle: "3 years", pdu: "30 PDUs (Scheduling focus)" },
-        ].map((row, i) => (
-          <div
-            key={i}
-            className="grid grid-cols-3 p-5 text-white/70 border-b border-white/5 hover:bg-white/5 transition"
-          >
-            <div className="text-red-200 font-medium">{row.cert}</div>
-            <div>{row.cycle}</div>
-            <div>{row.pdu}</div>
+              {/* ROWS */}
+              {[
+                {
+                  cert: "CAPM®",
+                  cycle: "5 years",
+                  pdu: "No PDUs (Re-exam required)",
+                },
+                { cert: "PMP®", cycle: "3 years", pdu: "60 PDUs" },
+                { cert: "PgMP®", cycle: "3 years", pdu: "60 PDUs" },
+                {
+                  cert: "PfMP®",
+                  cycle: "3 years",
+                  pdu: "60 PDUs (Portfolio focus)",
+                },
+                {
+                  cert: "PMI-ACP®",
+                  cycle: "3 years",
+                  pdu: "30 PDUs (Agile focus)",
+                },
+                {
+                  cert: "PMI-PBA®",
+                  cycle: "3 years",
+                  pdu: "60 PDUs (BA focus)",
+                },
+                {
+                  cert: "PMI-RMP®",
+                  cycle: "3 years",
+                  pdu: "30 PDUs (Risk focus)",
+                },
+                {
+                  cert: "PMI-SP®",
+                  cycle: "3 years",
+                  pdu: "30 PDUs (Scheduling focus)",
+                },
+              ].map((row, i) => (
+                <div
+                  key={i}
+                  className="grid grid-cols-3 p-5 text-white/70 border-b border-white/5 hover:bg-white/5 transition"
+                >
+                  <div className="text-red-200 font-medium">{row.cert}</div>
+                  <div>{row.cycle}</div>
+                  <div>{row.pdu}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
 
-    {/* MOBILE CARDS */}
-    <div className="mt-10 md:hidden space-y-4">
-      {[
-        { cert: "CAPM®", cycle: "5 years", pdu: "No PDUs (Re-exam required)" },
-        { cert: "PMP®", cycle: "3 years", pdu: "60 PDUs" },
-        { cert: "PgMP®", cycle: "3 years", pdu: "60 PDUs" },
-        { cert: "PfMP®", cycle: "3 years", pdu: "60 PDUs (Portfolio focus)" },
-        { cert: "PMI-ACP®", cycle: "3 years", pdu: "30 PDUs (Agile focus)" },
-        { cert: "PMI-PBA®", cycle: "3 years", pdu: "60 PDUs (BA focus)" },
-        { cert: "PMI-RMP®", cycle: "3 years", pdu: "30 PDUs (Risk focus)" },
-        { cert: "PMI-SP®", cycle: "3 years", pdu: "30 PDUs (Scheduling focus)" },
-      ].map((row, i) => (
-        <div
-          key={i}
-          className="bg-[#13090A]/50 border border-red-400/10 rounded-2xl p-5 backdrop-blur-xl"
-        >
-          <h3 className="text-red-200 font-semibold text-lg">{row.cert}</h3>
+          {/* MOBILE CARDS */}
+          <div className="mt-10 md:hidden space-y-4">
+            {[
+              {
+                cert: "CAPM®",
+                cycle: "5 years",
+                pdu: "No PDUs (Re-exam required)",
+              },
+              { cert: "PMP®", cycle: "3 years", pdu: "60 PDUs" },
+              { cert: "PgMP®", cycle: "3 years", pdu: "60 PDUs" },
+              {
+                cert: "PfMP®",
+                cycle: "3 years",
+                pdu: "60 PDUs (Portfolio focus)",
+              },
+              {
+                cert: "PMI-ACP®",
+                cycle: "3 years",
+                pdu: "30 PDUs (Agile focus)",
+              },
+              { cert: "PMI-PBA®", cycle: "3 years", pdu: "60 PDUs (BA focus)" },
+              {
+                cert: "PMI-RMP®",
+                cycle: "3 years",
+                pdu: "30 PDUs (Risk focus)",
+              },
+              {
+                cert: "PMI-SP®",
+                cycle: "3 years",
+                pdu: "30 PDUs (Scheduling focus)",
+              },
+            ].map((row, i) => (
+              <div
+                key={i}
+                className="bg-[#13090A]/50 border border-red-400/10 rounded-2xl p-5 backdrop-blur-xl"
+              >
+                <h3 className="text-red-200 font-semibold text-lg">
+                  {row.cert}
+                </h3>
 
-          <div className="mt-3 text-white/70 text-sm space-y-1">
-            <p><span className="text-red-300">Cycle:</span> {row.cycle}</p>
-            <p><span className="text-red-300">PDUs:</span> {row.pdu}</p>
+                <div className="mt-3 text-white/70 text-sm space-y-1">
+                  <p>
+                    <span className="text-red-300">Cycle:</span> {row.cycle}
+                  </p>
+                  <p>
+                    <span className="text-red-300">PDUs:</span> {row.pdu}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-
-  </div>
-</section>
+      </section>
       {/* ================= PREMIUM CTA ================= */}
       <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 text-center overflow-hidden">
         {/* Glass container */}
