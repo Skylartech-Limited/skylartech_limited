@@ -129,12 +129,11 @@ const Home = () => {
             </div>
           </div>
           <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
-           {/* 🔥 CORNER PIN BADGE (RESPONSIVE) */}
+          {/* 🔥 CORNER PIN BADGE (RESPONSIVE + ATTACHED TO CARD) */}
 <div
   className="
     absolute top-0 right-0
     translate-x-1/4 -translate-y-1/4
-    sm:translate-x-1/3 sm:-translate-y-1/3
     z-30
   "
 >
@@ -142,7 +141,8 @@ const Home = () => {
     src={Badge}
     alt="badge"
     className="
-      h-28 sm:h-32 md:h-36 lg:h-56
+      h-20 sm:h-28 md:h-40 lg:h-48
+      w-auto
       object-contain
       drop-shadow-2xl
     "
