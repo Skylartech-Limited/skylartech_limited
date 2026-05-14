@@ -6,14 +6,13 @@ import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
+
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const closeMenus = () => {
-    setIsMobileMenuOpen(false);
-    setOpenDropdown(null);
-  };
+const closeMenus = () => {
+  setIsMobileMenuOpen(false);
+};
 
   /* ================= PREMIUM PURPLE NAV STYLE ================= */
   const navLink =
@@ -88,118 +87,93 @@ const Navbar = () => {
             </Link>
 
             {/* ABOUT */}
-            <div
-              className="relative py-4"
-              onMouseEnter={() => setOpenDropdown("about")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
+            <div className="relative py-4 group">
               <button className={navLink + " flex items-center gap-1"}>
                 About <ChevronDown className="w-3 h-3 text-purple-500" />
               </button>
 
-              <AnimatePresence>
-                {openDropdown === "about" && (
-                  <motion.div className="absolute left-0 top-full mt-3 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden">
-                    <a href="/#about-skylartech" className={dropdownItem}>
-                      About Skylartech
-                    </a>
-                    <a href="/#why-choose-us" className={dropdownItem}>
-                      Why Choose Us
-                    </a>
-                    <a href="/#certification-programs" className={dropdownItem}>
-                      Certifications
-                    </a>
-                    <a href="/#our-expertise" className={dropdownItem}>
-                      Expertise
-                    </a>
-                    <a href="/#our-clients" className={dropdownItem}>
-                      Clients & Success Stories
-                    </a>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <a href="/#about-skylartech" className={dropdownItem}>
+                  About Skylartech
+                </a>
+                <a href="/#why-choose-us" className={dropdownItem}>
+                  Why Choose Us
+                </a>
+                <a href="/#certification-programs" className={dropdownItem}>
+                  Certifications
+                </a>
+                <a href="/#our-expertise" className={dropdownItem}>
+                  Expertise
+                </a>
+                <a href="/#our-clients" className={dropdownItem}>
+                  Clients & Success Stories
+                </a>
+              </motion.div>
             </div>
-
             {/* OFFERINGS */}
-            <div
-              className="relative py-4"
-              onMouseEnter={() => setOpenDropdown("offerings")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
+            <div className="relative py-4 group">
               <button className={navLink + " flex items-center gap-1"}>
                 Offerings <ChevronDown className="w-3 h-3 text-purple-500" />
               </button>
 
-              <AnimatePresence>
-                {openDropdown === "offerings" && (
-                  <motion.div className="absolute left-0 top-full mt-3 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden">
-                    <Link
-                      to="/offerings/professional-training-and-certification"
-                      className={dropdownItem}
-                    >
-                      Professional Training & Certification
-                    </Link>
-                    <Link
-                      to="/offerings/consulting-and-organizational-transformation"
-                      className={dropdownItem}
-                    >
-                      Consulting & Organizational Transformation
-                    </Link>
-                    <Link
-                      to="/offerings/portfolio-pmo-and-governance-excellence"
-                      className={dropdownItem}
-                    >
-                      Portfolio, PMO & Governance Excellence
-                    </Link>
-                    <Link
-                      to="/offerings/agile-and-adaptive-delivery-excellence"
-                      className={dropdownItem}
-                    >
-                      Agile & Adaptive Delivery Excellence
-                    </Link>
-                    <Link
-                      to="/offerings/risk-compliance-and-assurance"
-                      className={dropdownItem}
-                    >
-                      Risk, Compliance & Assurance
-                    </Link>
-                    <Link
-                      to="/offerings/business-analysis-and-requirements-gathering"
-                      className={dropdownItem}
-                    >
-                     Business Analysis & Requirements Engineering
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link
+                  to="/offerings/professional-training-and-certification"
+                  className={dropdownItem}
+                >
+                  Professional Training & Certification
+                </Link>
+                <Link
+                  to="/offerings/consulting-and-organizational-transformation"
+                  className={dropdownItem}
+                >
+                  Consulting & Organizational Transformation
+                </Link>
+                <Link
+                  to="/offerings/portfolio-pmo-and-governance-excellence"
+                  className={dropdownItem}
+                >
+                  Portfolio, PMO & Governance Excellence
+                </Link>
+                <Link
+                  to="/offerings/agile-and-adaptive-delivery-excellence"
+                  className={dropdownItem}
+                >
+                  Agile & Adaptive Delivery Excellence
+                </Link>
+                <Link
+                  to="/offerings/risk-compliance-and-assurance"
+                  className={dropdownItem}
+                >
+                  Risk, Compliance & Assurance
+                </Link>
+                <Link
+                  to="/offerings/business-analysis-and-requirements-gathering"
+                  className={dropdownItem}
+                >
+                  Business Analysis & Requirements Engineering
+                </Link>
+              </motion.div>
             </div>
 
             {/* INDUSTRIES */}
-            <div
-              className="relative py-4"
-              onMouseEnter={() => setOpenDropdown("industries")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
+            <div className="relative py-4 group">
               <button className={navLink + " flex items-center gap-1"}>
                 Industries <ChevronDown className="w-3 h-3 text-purple-500" />
               </button>
 
-              <AnimatePresence>
-                {openDropdown === "industries" && (
-                  <motion.div className="absolute left-0 top-full mt-3 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden">
-                    {industries.map((item, i) => (
-                      <Link
-                        key={i}
-                        to={item.link}
-                        onClick={scrollToTop}
-                        className={dropdownItem}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {industries.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.link}
+                    onClick={scrollToTop}
+                    className={dropdownItem}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </motion.div>
             </div>
 
             <Link to="/contact-us" onClick={scrollToTop} className={navLink}>
