@@ -80,191 +80,179 @@ const Healthcare = () => {
         </div>
       </section>
 
-      {/* ================= OVERVIEW ================= */}
-      <section
-        id="overview"
-        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#061a17] to-[#0b1220]"
+  {/* ================= HEALTHCARE INSIGHTS (MERGED SECTION) ================= */}
+<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#061a17] to-[#0b1220]">
+
+  {/* ================= HEADER ================= */}
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+      Healthcare Project Management & Delivery Excellence
+    </h2>
+
+    <p className="text-white/60 mt-6 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg">
+      Healthcare projects require precision, compliance, and coordination across clinical and administrative systems to ensure patient safety and operational efficiency.
+    </p>
+  </div>
+
+  {/* ================= KEY FOCUS AREAS ================= */}
+  <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-6xl mx-auto">
+    {[
+      {
+        icon: ShieldPlus,
+        title: "High-Stakes Clinical Environment",
+        desc: "Project outcomes directly impact patient safety and care quality.",
+      },
+      {
+        icon: Users,
+        title: "Multidisciplinary Stakeholder Alignment",
+        desc: "Coordination across clinicians, IT, and administration teams.",
+      },
+      {
+        icon: FileText,
+        title: "Regulatory Compliance",
+        desc: "Strict adherence to healthcare laws, ethics, and data security.",
+      },
+      {
+        icon: AlertTriangle,
+        title: "Risk & Safety Management",
+        desc: "Proactive risk identification to protect patient outcomes.",
+      },
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.07] hover:border-emerald-400/20"
       >
-        {/* TOP HEADING */}
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Key Focus Areas in Healthcare Project Management
-          </h2>
+        <item.icon className="text-emerald-300 w-6 h-6 mb-4" />
 
-          <p className="text-white/60 mt-6 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg">
-            Healthcare projects require precision, compliance, and coordination
-            across clinical and administrative systems to ensure patient safety.
-          </p>
-        </div>
+        <h3 className="font-semibold text-lg sm:text-xl leading-snug">
+          {item.title}
+        </h3>
 
-        {/* FOCUS CARDS */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-6xl mx-auto">
-          {[
-            {
-              icon: ShieldPlus,
-              title: "High-Stakes Clinical Environment",
-              desc: "Project outcomes directly impact patient safety and care quality.",
-            },
-            {
-              icon: Users,
-              title: "Multidisciplinary Stakeholder Alignment",
-              desc: "Coordination across clinicians, IT, and administration teams.",
-            },
-            {
-              icon: FileText,
-              title: "Regulatory Compliance",
-              desc: "Strict adherence to healthcare laws, ethics, and data security.",
-            },
-            {
-              icon: AlertTriangle,
-              title: "Risk & Safety Management",
-              desc: "Proactive risk identification to protect patient outcomes.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-5 sm:p-6
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:bg-white/[0.07]
-                hover:border-emerald-400/20
-              "
-            >
-              <item.icon className="text-emerald-300 w-6 h-6 mb-4" />
+        <p className="text-white/60 mt-3 text-sm sm:text-base leading-relaxed">
+          {item.desc}
+        </p>
+      </div>
+    ))}
+  </div>
 
-              <h3 className="font-semibold text-lg sm:text-xl leading-snug">
-                {item.title}
-              </h3>
+  {/* ================= PROJECT TYPES ================= */}
+  <div className="mt-20 max-w-6xl mx-auto text-center">
+    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+      Common Healthcare Project Types
+    </h3>
+  </div>
 
-              <p className="text-white/60 mt-3 text-sm sm:text-base leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
+  <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 max-w-6xl mx-auto">
+    {[
+      {
+        icon: Database,
+        title: "EHR / EPR Systems",
+        desc: "Implementation of electronic health record systems.",
+      },
+      {
+        icon: Activity,
+        title: "Workflow Optimization",
+        desc: "Improving hospital efficiency and patient flow.",
+      },
+      {
+        icon: Stethoscope,
+        title: "Clinical Expansion",
+        desc: "Launching new medical services and departments.",
+      },
+      {
+        icon: FileText,
+        title: "Infrastructure Projects",
+        desc: "Hospital construction and facility upgrades.",
+      },
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.07] hover:border-emerald-400/20"
+      >
+        <item.icon className="text-emerald-300 w-6 h-6 mb-4" />
 
-        {/* SECOND HEADING */}
-        <div className="max-w-6xl mx-auto text-center mt-20 sm:mt-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Common Healthcare Project Types
-          </h2>
-        </div>
+        <h3 className="font-semibold text-lg sm:text-xl leading-snug">
+          {item.title}
+        </h3>
 
-        {/* PROJECT TYPE CARDS */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 max-w-6xl mx-auto">
-          {[
-            {
-              icon: Database,
-              title: "EHR / EPR Systems",
-              desc: "Implementation of electronic health record systems.",
-            },
-            {
-              icon: Activity,
-              title: "Workflow Optimization",
-              desc: "Improving hospital efficiency and patient flow.",
-            },
-            {
-              icon: Stethoscope,
-              title: "Clinical Expansion",
-              desc: "Launching new medical services and departments.",
-            },
-            {
-              icon: FileText,
-              title: "Infrastructure Projects",
-              desc: "Hospital construction and facility upgrades.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-5 sm:p-6
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:bg-white/[0.07]
-                hover:border-emerald-400/20
-                h-full
-              "
-            >
-              <item.icon className="text-emerald-300 w-6 h-6 mb-4" />
+        <p className="text-white/60 mt-3 text-sm sm:text-base leading-relaxed">
+          {item.desc}
+        </p>
+      </div>
+    ))}
+  </div>
 
-              <h3 className="font-semibold text-lg sm:text-xl leading-snug">
-                {item.title}
-              </h3>
+  {/* ================= SKILLS ================= */}
+  <div className="mt-20 max-w-6xl mx-auto text-center">
+    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+      Essential Skills & Best Practices
+    </h3>
+  </div>
 
-              <p className="text-white/60 mt-3 text-sm sm:text-base leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+  <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto">
+    {[
+      "Patient Safety & Risk Management",
+      "Clinical Communication",
+      "Data-Driven Healthcare Decisions",
+      "Regulatory Compliance",
+      "Change Management",
+      "Resource Optimization",
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="p-5 sm:p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-xl hover:border-emerald-400/20 transition-all duration-300"
+      >
+        <p className="text-white/80 font-medium text-sm sm:text-base leading-relaxed">
+          ✔ {item}
+        </p>
+      </div>
+    ))}
+  </div>
 
-      {/* ================= SKILLS ================= */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#05060A] text-center">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Essential Skills & Best Practices
-          </h2>
-        </div>
+</section>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto text-left">
-          {[
-            "Patient Safety & Risk Management",
-            "Clinical Communication",
-            "Data-Driven Healthcare Decisions",
-            "Regulatory Compliance",
-            "Change Management",
-            "Resource Optimization",
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="
-                p-5 sm:p-6
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                backdrop-blur-xl
-                hover:border-emerald-400/20
-                transition-all
-                duration-300
-              "
-            >
-              <p className="text-white/80 font-medium text-sm sm:text-base leading-relaxed">
-                ✔ {item}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* ================= PREMIUM HEALTHCARE CTA ================= */}
+<section className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#05060A] overflow-hidden text-center">
 
-      {/* ================= CTA ================= */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#05060A] text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Transform Healthcare Delivery with Structured Project Management
-          </h2>
+  {/* Glow background */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="w-[600px] h-[600px] bg-emerald-400/10 blur-[120px] rounded-full" />
+  </div>
 
-          <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base md:text-lg">
-            Improve patient outcomes, safety, and efficiency through structured
-            healthcare project systems.
-          </p>
+  {/* Glass card */}
+  <motion.div
+    className="relative max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-10 sm:p-14 shadow-2xl overflow-hidden"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    whileHover={{ scale: 1.01 }}
+  >
+    {/* Border glow */}
+    <div className="absolute inset-0 rounded-3xl border border-emerald-400/10 animate-pulse pointer-events-none" />
 
-          <Link to="/contact-us">
-            <button className="mt-8 bg-emerald-400 text-black px-7 py-3 rounded-xl font-semibold hover:scale-105 transition duration-300 w-full sm:w-auto">
-              Get Started →
-            </button>
-          </Link>
-        </div>
-      </section>
+    {/* Content */}
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+      Transform Healthcare Delivery with Structured Project Management
+    </h2>
+
+    <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
+      Improve patient outcomes, safety, and operational efficiency through structured healthcare project systems designed for modern clinical environments.
+    </p>
+
+    {/* CTA Button (FIXED like Government pattern) */}
+    <Link to="/contact-us" className="inline-block mt-10">
+      <button className="px-8 py-3 rounded-xl font-semibold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 shadow-lg hover:scale-105 transition duration-300">
+        Get Healthcare Support →
+      </button>
+    </Link>
+
+    {/* Trust line */}
+    <p className="text-white/40 text-xs mt-6">
+      Trusted for hospital systems modernization, digital health & clinical transformation
+    </p>
+  </motion.div>
+</section>
     </div>
   );
 };

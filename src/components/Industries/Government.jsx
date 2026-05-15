@@ -8,6 +8,7 @@ import {
   Landmark,
   ClipboardCheck,
   AlertTriangle,
+  Check,
 } from "lucide-react";
 
 import Govt from "../../assets/Industries/Government.jpg";
@@ -78,140 +79,225 @@ const Government = () => {
         </div>
       </section>
 
-      {/* ================= OVERVIEW ================= */}
+      {/* ================= GOVERNMENT INSIGHTS (MERGED SECTION) ================= */}
       <section
         id="overview"
         className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#060913]"
       >
+        {/* ================= HEADER ================= */}
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Key Aspects of Government Project Management
+            Government Transformation Through Structured Delivery
           </h2>
 
           <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base">
             Public sector projects operate under strict governance frameworks
-            that prioritize transparency, efficiency, and public value delivery.
+            where structured execution drives transparency, accountability, and
+            national value delivery.
           </p>
         </div>
 
+        {/* ================= GOVERNANCE CARDS ================= */}
         <div className="mt-14 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
           {[
             {
               icon: ShieldCheck,
               title: "Compliance & Accountability",
-              desc: "Ensures adherence to procurement laws, financial regulations, and audit standards.",
+              text: "Ensures adherence to procurement laws, financial regulations, and audit standards.",
             },
             {
               icon: ClipboardCheck,
               title: "Monitoring & Evaluation (M&E)",
-              desc: "Tracks progress through structured reporting cycles and performance measurement.",
+              text: "Tracks progress through structured reporting cycles and performance measurement.",
             },
             {
               icon: Users,
               title: "Stakeholder Engagement",
-              desc: "Manages citizens, government bodies, contractors, and institutions effectively.",
+              text: "Manages citizens, government bodies, contractors, and institutions effectively.",
             },
             {
               icon: AlertTriangle,
               title: "Risk & Governance Challenges",
-              desc: "Handles bureaucratic delays, political changes, and resource constraints.",
+              text: "Handles bureaucratic delays, political changes, and resource constraints.",
             },
           ].map((item, i) => (
             <div
               key={i}
               className="
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-5 sm:p-6
-                backdrop-blur-xl
-                hover:border-blue-400/20
-                transition-all
-                duration-300
-              "
+          bg-white/5
+          border border-white/10
+          rounded-2xl
+          p-5 sm:p-6
+          backdrop-blur-xl
+          hover:border-blue-400/20
+          transition-all
+          duration-300
+        "
             >
               <item.icon className="text-blue-300 w-6 h-6 mb-3" />
 
               <h3 className="font-semibold text-lg">{item.title}</h3>
 
               <p className="text-white/60 mt-2 text-sm leading-relaxed">
-                {item.desc}
+                {item.text}
               </p>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* ================= PRACTICES ================= */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#081426] to-[#0A1C33]">
-        <div className="max-w-5xl mx-auto text-center">
+        {/* ================= DELIVERY ================= */}
+        <div className="max-w-5xl mx-auto text-center mt-20 sm:mt-24">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Trends & Best Practices in Government Projects
+            Structured Government Project Delivery
           </h2>
 
           <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base">
-            Modern governments are shifting toward structured delivery models
-            that improve efficiency and transparency.
+            Structured delivery ensures public sector programs are executed with
+            clarity, control, and improved governance outcomes across complex
+            environments.
           </p>
         </div>
 
-        <div className="mt-14 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div className="mt-14 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {[
-            {
-              title: "Project Management Offices (PMOs)",
-              desc: "Improve coordination, governance, and standardization.",
-            },
-            {
-              title: "Digital Transformation",
-              desc: "Enhances transparency and reporting accuracy.",
-            },
-            {
-              title: "National Alignment",
-              desc: "Aligns projects with national development goals.",
-            },
-          ].map((item, i) => (
+            "National Infrastructure Delivery",
+            "Public Sector Program Management",
+            "Hybrid Governance Models",
+          ].map((t, i) => (
             <div
               key={i}
               className="
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-5 sm:p-6
-                backdrop-blur-xl
-                hover:border-blue-400/20
-                transition-all
-                duration-300
-              "
+          bg-white/5
+          border border-white/10
+          p-5 sm:p-6
+          rounded-2xl
+          backdrop-blur-xl
+          text-center
+          hover:border-blue-400/30
+          transition-all
+          duration-300
+        "
             >
-              <h3 className="text-blue-300 font-semibold text-lg mb-2">
-                {item.title}
-              </h3>
+              <ClipboardCheck className="w-6 h-6 text-blue-300 mx-auto mb-3" />
 
-              <p className="text-white/60 text-sm leading-relaxed">
-                {item.desc}
+              <p className="font-medium text-sm sm:text-base text-white/80">
+                {t}
               </p>
             </div>
           ))}
         </div>
 
-        {/* ================= SUPPORT SECTION ================= */}
-        <div className="max-w-4xl mx-auto text-center mt-20 sm:mt-24">
+        {/* ================= BENEFITS ================= */}
+        <div className="max-w-5xl mx-auto text-center mt-20 sm:mt-24">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Strengthen Your Public Sector Project Delivery
+            Key Benefits of Structured Delivery
           </h2>
+        </div>
 
-          <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base">
-            Implement structured governance frameworks that improve transparency,
-            accountability, and efficiency across government projects.
-          </p>
+        <div className="mt-14 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          {[
+            "Improved Public Accountability",
+            "Reduced Project Delays",
+            "Stronger Governance Frameworks",
+            "Higher Delivery Success Rate",
+            "Better Stakeholder Coordination",
+            "Enhanced Transparency",
+          ].map((b, i) => (
+            <div
+              key={i}
+              className="
+          bg-white/5
+          border border-white/10
+          p-5 sm:p-6
+          rounded-2xl
+          text-center
+          backdrop-blur-xl
+          hover:border-blue-400/30
+          transition-all
+          duration-300
+        "
+            >
+              <Check className="w-5 h-5 text-blue-300 mx-auto mb-2" />
 
-          <Link to="/contact-us">
-            <button className="mt-8 bg-blue-400 text-black px-7 py-3 rounded-xl font-semibold hover:scale-105 transition duration-300 w-full sm:w-auto">
-              Get Expert Support →
-            </button>
-          </Link>
+              <p className="text-sm text-white/80">{b}</p>
+            </div>
+          ))}
         </div>
       </section>
+ {/* ================= PREMIUM CTA ================= */}
+<section className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#05060A] overflow-hidden text-center">
+  {/* Glow background (SAFE: does not block clicks) */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full" />
+  </div>
+
+  {/* Glass card (SAFE STACKING) */}
+  <motion.div
+    className="
+      relative z-10
+      max-w-4xl
+      mx-auto
+      bg-white/5
+      border border-white/10
+      backdrop-blur-2xl
+      rounded-3xl
+      p-10 sm:p-14
+      shadow-2xl
+      overflow-hidden
+    "
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    whileHover={{ scale: 1.01 }}
+  >
+    {/* Animated border glow (SAFE) */}
+    <div className="absolute inset-0 rounded-3xl border border-blue-400/10 animate-pulse pointer-events-none" />
+
+    {/* Content */}
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+      Strengthen Public Sector Delivery with Structured Governance
+    </h2>
+
+    <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
+      Partner with government project management experts to improve transparency,
+      accountability, compliance, and execution efficiency across public sector
+      transformation initiatives.
+    </p>
+
+    {/* CTA Button (BANKING-STYLE SAFE LINK) */}
+    <Link to="/contact-us">
+      <motion.button
+        whileHover={{
+          scale: 1.05,
+          boxShadow: "0px 0px 25px rgba(96,165,250,0.35)",
+        }}
+        whileTap={{ scale: 0.97 }}
+        className="
+          mt-10
+          inline-flex
+          items-center
+          justify-center
+          px-8 py-3
+          rounded-xl
+          font-semibold
+          text-black
+          bg-gradient-to-r
+          from-blue-400
+          to-blue-500
+          shadow-lg
+        "
+      >
+        Get Expert Government Support →
+      </motion.button>
+    </Link>
+
+    {/* Trust line */}
+    <p className="text-white/40 text-xs mt-6">
+      Trusted for public sector modernization, governance transformation & national infrastructure delivery
+    </p>
+  </motion.div>
+</section>
     </div>
   );
 };
