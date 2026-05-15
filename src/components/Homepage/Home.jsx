@@ -1232,23 +1232,41 @@ const Home = () => {
             {/* INDUSTRIES / FEATURE TAGS */}
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               {[
-                "Banking & Financial Services",
-                "Telecommunications",
-                "Government & Public Sector",
-                "Information Technology",
-                "Construction & Infrastructure",
-                "NGOs & Development",
-                "Manufacturing",
-                "Education",
-                "Supply Chain",
-                "Healthcare",
+                {
+                  name: "Banking & Financial Services",
+                  link: "/industries/banking-and-finance",
+                },
+                {
+                  name: "Telecommunications",
+                  link: "/industries/telecommunications",
+                },
+                {
+                  name: "Government & Public Sector",
+                  link: "/industries/government",
+                },
+                { name: "NGOs & Development", link: "/industries/ngos" },
+                { name: "Healthcare", link: "/industries/healthcare" },
               ].map((item, i) => (
-                <span
+                <Link
                   key={i}
-                  className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm backdrop-blur-md"
+                  to={item.link}
+                  className="
+        inline-flex
+        items-center
+        justify-center
+        px-4 py-2
+        rounded-full
+        bg-white/10
+        border border-white/20
+        text-white/80 text-sm
+        backdrop-blur-md
+        hover:bg-white/20 hover:text-white
+        transition-all duration-200
+        whitespace-nowrap
+      "
                 >
-                  {item}
-                </span>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>

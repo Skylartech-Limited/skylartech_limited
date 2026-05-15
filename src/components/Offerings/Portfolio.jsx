@@ -1,289 +1,328 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Cursor, Typewriter } from "react-simple-typewriter";
+import { Typewriter, Cursor } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 
-import Delivery from "../../assets/Services image/delivery-box.png";
-import Scale from "../../assets/Services image/full-screen.png";
-import Lock from "../../assets/Services image/padlock.png";
-import Use from "../../assets/Services image/usability.png";
-import Consult from "../../assets/Services image/iotconsult.webp";
-import Research from "../../assets/Services image/analytics.png";
-import Integrate from "../../assets/Services image/system-integration.png";
-import Test from "../../assets/Services image/checklist.png";
-import Dev from "../../assets/Services image/vector.png";
-import Analytics from "../../assets/Services image/iotanalytics.png";
+import {
+  Briefcase,
+  Target,
+  Workflow,
+  Users,
+  Building2,
+  TrendingUp,
+  Shield,
+  CheckCircle,
+  Layers,
+} from "lucide-react";
 
-const Consulting = () => {
+import Portfolio from "../../assets/Services image/Portfolio.jpg";
+
+const PortfolioGovernance = () => {
+  const features = [
+    "Portfolio Management & Optimization",
+    "PMO Design & Implementation",
+    "Governance Framework Development",
+    "Strategy Execution Alignment",
+    "Maturity Model Assessments",
+  ];
+
+  const benefits = [
+    {
+      icon: Target,
+      title: "Strategic Alignment",
+      text: "Ensure every project delivers measurable business value.",
+    },
+    {
+      icon: Workflow,
+      title: "Execution Excellence",
+      text: "Transform strategy into structured and predictable delivery.",
+    },
+    {
+      icon: Users,
+      title: "Stakeholder Visibility",
+      text: "Improve executive reporting and decision transparency.",
+    },
+    {
+      icon: Building2,
+      title: "PMO Optimization",
+      text: "Build or enhance PMOs tailored to your organization.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Portfolio Performance",
+      text: "Maximize ROI through prioritization and resource balance.",
+    },
+    {
+      icon: Shield,
+      title: "Governance Control",
+      text: "Strengthen compliance, accountability, and risk management.",
+    },
+  ];
+
   return (
-    <>
-      {/* HERO SECTION */}
-      <section className="bg-gradient-to-br from-amber-50 via-white to-orange-50 overflow-hidden mt-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            {/* LEFT CONTENT */}
-            <div>
-              <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Corporate Project Management Training
+    <div className="min-h-screen text-white bg-gradient-to-br from-slate-950 via-indigo-950 to-black">
+      {/* ================= HERO ================= */}
+      <section
+        className="
+          relative min-h-screen flex items-center
+          pt-24 sm:pt-28 lg:pt-32
+          overflow-hidden
+        "
+        style={{
+          backgroundImage: `url(${Portfolio})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* overlay (stronger for visibility) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-indigo-950/70 to-transparent" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="flex justify-start">
+            {/* HERO CARD */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="
+                w-full max-w-2xl
+                bg-white/10 backdrop-blur-2xl
+                border border-white/15
+                text-white
+                p-5 sm:p-8 md:p-10 lg:p-12
+                rounded-3xl
+                shadow-[0_25px_80px_rgba(0,0,0,0.7)]
+                min-h-[420px]
+                flex flex-col justify-center
+              "
+            >
+              {/* TAG */}
+              <div className="w-full flex justify-center mb-5 sm:mb-6">
+                <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-xs sm:text-sm">
+                  <Briefcase size={16} />
+                  Portfolio, PMO & Governance Excellence
+                </div>
               </div>
 
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Corporate Project{" "}
-                <span className="text-amber-500">
+              {/* TITLE + TYPEWRITER */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight min-h-[120px] sm:min-h-[140px]">
+                Elevate Execution with{" "}
+                <span className="text-indigo-300">
                   <Typewriter
                     words={[
-                      "Management Training",
-                      "Leadership Development",
-                      "Team Excellence",
+                      "PMO Excellence",
+                      "Portfolio Governance",
+                      "Strategy Execution",
+                      "Enterprise Alignment",
                     ]}
                     loop={0}
-                    typeSpeed={70}
+                    typeSpeed={80}
                     deleteSpeed={40}
                     delaySpeed={1500}
                   />
                 </span>
-
-                <span className="text-amber-500">
+                <span className="text-indigo-300">
                   <Cursor cursorStyle="|" />
                 </span>
-              </h2>
+              </h1>
 
-              <p className="mt-8 text-lg md:text-xl text-gray-600 leading-relaxed">
-                Empower your teams with modern project management knowledge,
-                leadership capabilities, and organizational strategies designed
-                to improve efficiency, collaboration, and project delivery
-                success.
+              {/* DESCRIPTION */}
+              <p className="mt-4 sm:mt-5 md:mt-6 text-gray-200 text-sm sm:text-base md:text-lg leading-relaxed">
+                Bridging the gap between strategy and execution. We build PMOs,
+                optimize project portfolios, and establish governance
+                frameworks that drive sustainable growth.
               </p>
 
               {/* FEATURES */}
-              <div className="mt-8 space-y-4">
-                {[
-                  "Team Training Programs",
-                  "Organizational Project Management",
-                  "Leadership Development",
-                  "Strategic Project Delivery",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-
-                    <span className="text-gray-700 text-base md:text-lg">
+              <div className="mt-5 sm:mt-6 md:mt-8 grid gap-3">
+                {features.map((item, i) => (
+                  <div key={i} className="flex items-start sm:items-center gap-3">
+                    <CheckCircle size={18} className="text-indigo-300 shrink-0" />
+                    <span className="text-gray-200 text-sm sm:text-base leading-snug">
                       {item}
                     </span>
                   </div>
                 ))}
               </div>
 
-              {/* BUTTON */}
-              <div className="mt-10">
+              {/* CTA */}
+              <div className="mt-7 sm:mt-8 md:mt-10 flex flex-col sm:flex-row gap-4">
                 <Link to="/contact-us">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg transition-all duration-300"
-                  >
-                    Start Training →
-                  </motion.button>
+                  <button className="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-xl w-full sm:w-auto">
+                    Book a Consultation
+                  </button>
+                </Link>
+
+                <Link to="/services">
+                  <button className="bg-white/10 hover:bg-white/15 text-white px-6 py-3 rounded-2xl font-semibold border border-white/15 w-full sm:w-auto">
+                    Explore Services
+                  </button>
                 </Link>
               </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="flex justify-center">
-              <img
-                src={Consult}
-                alt="Corporate Training"
-                className="w-full max-w-lg rounded-3xl shadow-2xl object-cover"
-              />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* INTRO SECTION */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Developing High-Performing Teams Through{" "}
-                <span className="text-amber-500">
-                  Corporate PM Training
-                </span>
-              </h2>
+     {/* ================= PORTFOLIO & GOVERNANCE ================= */}
+<section className="py-20 sm:py-24 lg:py-28 bg-gradient-to-b from-slate-950 via-indigo-950 to-black">
 
-              <p className="text-gray-600 text-lg mt-8 leading-relaxed">
-                Our corporate training programs are designed to strengthen team
-                collaboration, improve project execution, and build leadership
-                capabilities across organizations.
-              </p>
+  <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
 
-              <p className="text-gray-600 text-lg mt-6 leading-relaxed">
-                We help businesses implement modern project management
-                frameworks, align organizational objectives, and create a
-                culture of accountability and operational excellence.
-              </p>
-            </div>
+    {/* LEFT CONTENT */}
+    <div>
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+        Empowering Strategic Execution
+      </h2>
 
-            <div className="flex justify-center">
-              <img
-                src={Analytics}
-                alt="Training"
-                className="rounded-3xl shadow-xl w-full max-w-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <p className="mt-6 text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+        In today’s fast-paced business environment, great ideas are only as
+        good as their execution. We transform chaotic project environments into
+        structured, transparent, and high-performing systems.
+      </p>
 
-      {/* BENEFITS SECTION */}
-      <section className="bg-amber-50 py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Why Organizations Choose Our Training
-            </h2>
+      <p className="mt-4 text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed">
+        We partner with executives and project leaders to design PMOs, align
+        portfolios with strategy, and implement governance frameworks that
+        ensure accountability and growth.
+      </p>
+    </div>
 
-            <p className="text-gray-600 text-lg mt-6 max-w-3xl mx-auto">
-              We provide practical and results-driven training programs that
-              help organizations improve leadership, productivity, and project
-              delivery performance.
+    {/* RIGHT CARD */}
+    <div className="rounded-3xl p-6 sm:p-8 bg-white/5 border border-white/10 backdrop-blur-xl">
+
+      <Layers className="text-indigo-300 mb-5" size={34} />
+
+      <h3 className="text-xl sm:text-2xl font-bold mb-4">
+        PMI-Aligned Governance Model
+      </h3>
+
+      <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+        A structured approach built on globally recognized PMI® frameworks to
+        improve delivery maturity, control, and performance.
+      </p>
+    </div>
+
+  </div>
+
+  {/* ================= BENEFITS ================= */}
+  <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-16">
+
+    <div className="text-center mb-12">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+        Why Portfolio & Governance Excellence Matters
+      </h2>
+
+      <p className="text-gray-400 mt-4 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg">
+        Structured governance ensures organizations invest in the right work,
+        execute effectively, and deliver measurable outcomes.
+      </p>
+    </div>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+      {benefits.map((item, i) => {
+        const Icon = item.icon;
+
+        return (
+          <motion.div
+            key={i}
+            whileHover={{ y: -6 }}
+            className="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl"
+          >
+            <Icon className="text-indigo-300 mb-4" size={26} />
+            <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+            <p className="text-gray-400 text-sm sm:text-base">
+              {item.text}
             </p>
-          </div>
+          </motion.div>
+        );
+      })}
 
-          {/* CARDS */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                image: Delivery,
-                title: "Improved Team Performance",
-                text: "Enhance collaboration, communication, and efficiency across project teams.",
-              },
-              {
-                image: Scale,
-                title: "Organizational Alignment",
-                text: "Align projects with organizational strategy and long-term business objectives.",
-              },
-              {
-                image: Lock,
-                title: "Leadership Excellence",
-                text: "Develop strong project leaders capable of driving successful outcomes.",
-              },
-              {
-                image: Use,
-                title: "Practical Learning",
-                text: "Hands-on training programs focused on real-world project management scenarios.",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 text-center"
-              >
-                <div className="w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-10 h-10 object-contain"
-                  />
-                </div>
+    </div>
+  </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {item.title}
-                </h3>
+</section>
 
-                <p className="text-gray-600 leading-relaxed">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
+  {/* ================= PREMIUM PORTFOLIO CTA ================= */}
+<section className="relative py-24 sm:py-28 lg:py-32 text-center overflow-hidden">
+
+  {/* soft background continuity (no harsh section break) */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+
+  {/* indigo ambient glow */}
+  <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-[560px] h-[560px] bg-indigo-500/10 blur-[180px] rounded-full" />
+  <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/10 blur-[160px] rounded-full" />
+
+  <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
+
+    {/* GLASS CARD */}
+    <div className="
+      relative
+      bg-white/5 backdrop-blur-2xl
+      border border-white/10
+      rounded-3xl
+      p-8 sm:p-12 lg:p-14
+      shadow-[0_25px_80px_rgba(0,0,0,0.6)]
+      overflow-hidden
+    ">
+
+      {/* subtle inner glow */}
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent" />
+
+      <div className="relative">
+
+        {/* ICON */}
+        <div className="flex justify-center mb-6">
+          <div className="p-3 rounded-2xl bg-indigo-500/10 border border-indigo-400/20">
+            <Briefcase className="text-indigo-300" size={30} />
           </div>
         </div>
-      </section>
 
-      {/* TRAINING PROCESS */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Our Training Approach
-            </h2>
+        {/* LABEL */}
+        <p className="text-indigo-200/70 text-xs sm:text-sm tracking-[0.3em] uppercase">
+          Portfolio • PMO • Governance Excellence
+        </p>
 
-            <p className="text-gray-600 text-lg mt-6 max-w-3xl mx-auto">
-              We follow a structured and collaborative training process to
-              ensure measurable results and long-term organizational growth.
-            </p>
-          </div>
+        {/* TITLE */}
+        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
+          Strategy without execution is just vision —
+          <span className="text-indigo-300"> let’s fix that.</span>
+        </h2>
 
-          {/* PROCESS */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {[
-              {
-                image: Research,
-                title: "Assessment",
-              },
-              {
-                image: Dev,
-                title: "Program Design",
-              },
-              {
-                image: Integrate,
-                title: "Training Delivery",
-              },
-              {
-                image: Test,
-                title: "Performance Evaluation",
-              },
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center shadow-md">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="w-16 h-16 object-contain"
-                  />
-                </div>
+        {/* SUBTEXT */}
+        <p className="text-gray-300 mt-6 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
+          Build high-performing PMO structures, align portfolios to strategy, and enable governance systems that deliver measurable business outcomes.
+        </p>
 
-                <h3 className="mt-8 text-2xl font-bold text-gray-900">
-                  {step.title}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
+        {/* DIVIDER */}
+        <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-indigo-400/60 to-transparent mx-auto my-8" />
+
+        {/* BUTTON */}
+        <div className="flex justify-center">
+          <Link to="/contact-us">
+            <button className="
+              bg-indigo-500 hover:bg-indigo-600
+              text-white
+              px-8 py-4
+              rounded-2xl
+              font-semibold
+              shadow-lg shadow-indigo-500/20
+              hover:shadow-indigo-500/40
+              hover:scale-[1.03]
+              transition-all duration-300
+            ">
+              Start Transformation
+            </button>
+          </Link>
         </div>
-      </section>
 
-      {/* CTA SECTION */}
-      <section className="bg-gradient-to-r from-amber-500 to-orange-500 py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Transform Your Organization Through Professional Training
-          </h2>
-
-          <p className="text-amber-100 text-lg mt-6 max-w-3xl mx-auto leading-relaxed">
-            Equip your teams with the skills, leadership mindset, and project
-            management expertise needed to drive organizational success.
-          </p>
-
-          <div className="mt-10">
-            <Link to="/contact-us">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-amber-600 px-8 py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
-              >
-                Contact Us
-              </motion.button>
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
   );
 };
 
-export default Consulting;
+export default PortfolioGovernance;

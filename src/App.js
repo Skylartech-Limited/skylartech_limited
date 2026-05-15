@@ -20,7 +20,7 @@ import Agile from "./components/Offerings/Agile.jsx";
 import Consulting from "./components/Offerings/Consulting.jsx";
 import Portfolio from "./components/Offerings/Portfolio.jsx";
 import Risk from "./components/Offerings/Risk.jsx";
-import Analysis from "./components/Offerings/Analysis.jsx"
+import Analysis from "./components/Offerings/Analysis.jsx";
 
 import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
 function App() {
@@ -55,7 +55,7 @@ function App() {
           path="/offerings/risk-compliance-and-assurance"
           element={<Risk />}
         />
-          <Route
+        <Route
           path="/offerings/business-analysis-and-requirements-gathering"
           element={<Analysis />}
         />
