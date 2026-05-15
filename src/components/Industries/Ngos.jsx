@@ -29,8 +29,8 @@ const Ngos = () => {
           style={{ backgroundImage: `url(${NGO})` }}
         />
 
-        {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#05060A]/80 via-[#0B1024]/60 to-[#1A0F2E]/70" />
+        {/* OVERLAY (PINK GRADIENT) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-300/20 via-fuchsia-500/30 to-pink-600/40" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 sm:py-16 lg:py-0 flex justify-start">
 
@@ -49,7 +49,7 @@ const Ngos = () => {
               shadow-2xl
             "
           >
-            <h2 className="flex items-center gap-2 text-amber-300 font-semibold text-sm sm:text-base">
+            <h2 className="flex items-center gap-2 text-pink-300 font-semibold text-sm sm:text-base">
               <HeartHandshake className="w-5 h-5" />
               NGO & Social Impact Project Management
             </h2>
@@ -65,7 +65,7 @@ const Ngos = () => {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
               <Link to="/contact-us" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-amber-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
+                <button className="w-full sm:w-auto bg-pink-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
                   Start a Project
                 </button>
               </Link>
@@ -81,21 +81,31 @@ const Ngos = () => {
         </div>
       </section>
 
-      {/* ================= CORE ================= */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#0A1020] to-[#120A2A]">
+      {/* ================= NGO INSIGHTS ================= */}
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#1A0A1F] to-[#2A0A3D]">
 
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Core Components of NGO Project Management
+            NGO Project Management & Digital Transformation
           </h2>
 
           <p className="text-white/60 mt-6 max-w-3xl mx-auto text-sm sm:text-base md:text-lg">
+            Structured frameworks and digital systems enable NGOs to improve accountability, scale impact,
+            and deliver measurable social outcomes efficiently.
+          </p>
+        </div>
+
+        <div className="mt-14 max-w-6xl mx-auto text-center">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+            Core Components of NGO Project Management
+          </h3>
+
+          <p className="text-white/60 mt-5 max-w-3xl mx-auto text-sm sm:text-base">
             Structured frameworks ensure accountability, sustainability, and measurable impact.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-6xl mx-auto">
-
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-6xl mx-auto">
           {[
             {
               icon: FileText,
@@ -120,17 +130,9 @@ const Ngos = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-5 sm:p-6
-                backdrop-blur-xl
-                hover:bg-white/[0.07]
-                transition
-              "
+              className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-xl hover:bg-white/[0.07] transition"
             >
-              <item.icon className="text-amber-300 w-6 h-6 mb-4" />
+              <item.icon className="text-pink-300 w-6 h-6 mb-4" />
 
               <h3 className="font-semibold text-lg sm:text-xl">
                 {item.title}
@@ -142,23 +144,18 @@ const Ngos = () => {
             </div>
           ))}
         </div>
-      </section>
 
-      {/* ================= DIGITAL TRANSFORMATION ================= */}
-      <section id="digital" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#081427] to-[#0A1C33]">
-
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+        <div id="digital" className="mt-20 max-w-6xl mx-auto text-center">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
             Digital Transformation for Social Good
-          </h2>
+          </h3>
 
-          <p className="text-white/60 mt-6 max-w-3xl mx-auto text-sm sm:text-base md:text-lg">
+          <p className="text-white/60 mt-5 max-w-3xl mx-auto text-sm sm:text-base md:text-lg">
             Technology enables NGOs to scale impact, improve transparency, and optimize resources.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto">
-
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto">
           {[
             {
               icon: Network,
@@ -193,17 +190,9 @@ const Ngos = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="
-                bg-white/5
-                border border-white/10
-                rounded-2xl
-                p-5 sm:p-6
-                backdrop-blur-xl
-                hover:bg-white/[0.07]
-                transition
-              "
+              className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-xl hover:bg-white/[0.07] transition"
             >
-              <item.icon className="text-amber-300 w-6 h-6 mb-3" />
+              <item.icon className="text-pink-300 w-6 h-6 mb-3" />
 
               <h3 className="font-semibold text-lg sm:text-xl">
                 {item.title}
@@ -215,31 +204,46 @@ const Ngos = () => {
             </div>
           ))}
         </div>
+
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#0B1024] to-[#120A2A]">
+      <section className="relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#05060A] overflow-hidden text-center">
 
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-[600px] h-[600px] bg-gradient-to-r from-pink-400/20 via-fuchsia-500/20 to-pink-600/20 blur-[120px] rounded-full" />
+        </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Need Support Building Your NGO Digital Systems?
+        <motion.div
+          className="relative max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-10 sm:p-14 shadow-2xl overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          whileHover={{ scale: 1.01 }}
+        >
+          <div className="absolute inset-0 rounded-3xl border border-pink-400/10 animate-pulse pointer-events-none" />
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            Empower NGO Impact with Structured Digital Systems
           </h2>
 
-          <p className="text-white/60 mt-6 max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
-            Whether you're managing donor programs, field operations, or large-scale humanitarian initiatives,
-            we help NGOs implement structured systems that improve transparency and impact.
+          <p className="text-white/60 mt-6 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
+            Whether you're managing donor programs, field operations, or large-scale
+            humanitarian initiatives, we help NGOs implement structured systems that
+            improve transparency, coordination, and measurable impact delivery.
           </p>
 
-          <div className="mt-10 flex justify-center">
-            <Link to="/contact-us">
-              <button className="bg-amber-400 text-black px-7 py-3 rounded-xl font-semibold hover:scale-105 transition w-full sm:w-auto">
-                Contact Support
-              </button>
-            </Link>
-          </div>
+          <Link to="/contact-us" className="inline-block mt-10">
+            <button className="px-8 py-3 rounded-xl font-semibold text-black bg-gradient-to-r from-pink-400 to-fuchsia-500 shadow-lg hover:scale-105 transition duration-300">
+              Contact NGO Support →
+            </button>
+          </Link>
 
-        </div>
+          <p className="text-white/40 text-xs mt-6">
+            Trusted for nonprofit digital transformation, donor systems & field operations
+          </p>
+        </motion.div>
       </section>
 
     </div>
