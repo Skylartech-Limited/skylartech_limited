@@ -129,25 +129,25 @@ const Home = () => {
             </div>
           </div>
           <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
-          {/* 🔥 CORNER PIN BADGE (RESPONSIVE + ATTACHED TO CARD) */}
-<div
-  className="
+            {/* 🔥 CORNER PIN BADGE (RESPONSIVE + ATTACHED TO CARD) */}
+            <div
+              className="
     absolute top-0 right-0
     translate-x-1/4 -translate-y-1/4
     z-30
   "
->
-  <img
-    src={Badge}
-    alt="badge"
-    className="
+            >
+              <img
+                src={Badge}
+                alt="badge"
+                className="
       h-20 sm:h-28 md:h-40 lg:h-48
       w-auto
       object-contain
       drop-shadow-2xl
     "
-  />
-</div>
+              />
+            </div>
             {/* Accreditation Card */}
             <div
               className="
@@ -376,12 +376,28 @@ const Home = () => {
 
             {/* HEADING */}
             <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight">
-                Training Excellence.
-                <br />
-                Consulting Expertise.
-                <br />
-                Technology Innovation.
+              <h2
+                className="
+    text-3xl
+    sm:text-4xl
+    md:text-5xl
+    lg:text-6xl
+    font-semibold
+    leading-[1.15]
+    tracking-tight
+  "
+              >
+                <span className="block whitespace-nowrap">
+                  Training Excellence.
+                </span>
+
+                <span className="block whitespace-nowrap">
+                  Consulting Expertise.
+                </span>
+
+                <span className="block whitespace-nowrap">
+                  Project Governance.
+                </span>
               </h2>
 
               <p className="mt-6 text-base sm:text-lg text-white/85 leading-8 max-w-2xl">
@@ -408,8 +424,8 @@ const Home = () => {
                   desc: "Consulting solutions focused on governance, agility, and delivery excellence.",
                 },
                 {
-                  title: "Technology Solutions",
-                  desc: "Scalable software engineering and digital transformation support.",
+                  title: "Project Governance",
+                  desc: "Structured frameworks that improve delivery oversight, accountability, and strategic alignment.",
                 },
               ].map((item, i) => (
                 <div
@@ -439,7 +455,7 @@ const Home = () => {
             {/* CTA BUTTONS */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
-                to="/offerings/pmp-training"
+                to="/offerings/professional-training-and-certification"
                 className="
             px-7 py-3
             rounded-2xl
