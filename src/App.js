@@ -22,6 +22,19 @@ import Portfolio from "./components/Offerings/Portfolio.jsx";
 import Risk from "./components/Offerings/Risk.jsx";
 import Analysis from "./components/Offerings/Analysis.jsx";
 
+import CAPM from "./components/Certifications/CAPM.jsx";
+import PMP from "./components/Certifications/PMP.jsx";
+import PgMP from "./components/Certifications/PgMP.jsx";
+import PfMP from "./components/Certifications/PfMP.jsx";
+import PMIACP from "./components/Certifications/PMI-ACP.jsx";
+import PMICP from "./components/Certifications/PMI-CP.jsx";
+import PMIRMP from "./components/Certifications/PMI-RMP.jsx";
+import PMIPBA from "./components/Certifications/PMI-PBA.jsx";
+import PMISP from "./components/Certifications/PMI-SP.jsx";
+import GPMb from "./components/Certifications/GPM-b.jsx";
+import PMIPMOCP from "./components/Certifications/PMI-PMOCP.jsx";
+import PMICPMAI from "./components/Certifications/PMI-CPMAI.jsx";
+
 import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
 function App() {
   return (
@@ -59,6 +72,20 @@ function App() {
           path="/offerings/business-analysis-and-requirements-gathering"
           element={<Analysis />}
         />
+
+        {/* {CERTIFICATIONS} */}
+        <Route path="/certifications/capm" element={<CAPM />} />
+        <Route path="/certifications/pmp" element={<PMP />} />
+        <Route path="/certifications/pgmp" element={<PgMP />} />
+        <Route path="/certifications/pfmp" element={<PfMP />} />
+        <Route path="/certifications/pmi-acp" element={<PMIACP />} />
+        <Route path="/certifications/pmi-rmp" element={<PMIRMP />} />
+        <Route path="/certifications/pmi-pba" element={<PMIPBA />} />
+        <Route path="/certifications/pmi-sp" element={<PMISP />} />
+        <Route path="/certifications/gpm-b" element={<GPMb />} />
+        <Route path="/certifications/pmi-pmocp" element={<PMIPMOCP />} />
+        <Route path="/certifications/pmi-cpmai" element={<PMICPMAI />} />
+        <Route path="/certifications/pmi-cp" element={<PMICP />} />
 
         {/* INDUSTRIES */}
         <Route path="/industries/banking-and-finance" element={<Banking />} />

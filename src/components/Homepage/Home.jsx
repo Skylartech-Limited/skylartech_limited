@@ -585,23 +585,9 @@ const Home = () => {
           </div>
 
           {/* ================= GRID ================= */}
-          <div className="mt-16 sm:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
+          <div className="mt-16 sm:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {/* ================= CORE CERTIFICATIONS ================= */}
-            <div
-              className="
-          bg-white/10
-          backdrop-blur-xl
-          border border-white/15
-          rounded-[2rem]
-          p-6 sm:p-8
-          shadow-2xl
-          hover:bg-white/15
-          hover:-translate-y-2
-          transition-all
-          duration-500
-        "
-            >
-              {/* ICON */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-yellow-200">01</span>
               </div>
@@ -612,57 +598,51 @@ const Home = () => {
 
               <p className="mt-3 text-white/75 leading-7">
                 Foundational and advanced project leadership certifications
-                aligned with globally recognized PMI® standards.
+                aligned with PMI® standards.
               </p>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-8 space-y-4 flex-1">
                 {[
                   {
                     title: "Certified Associate in Project Management (CAPM)®",
-                    desc: "Build foundational project management knowledge and prepare for entry-level project leadership roles.",
+                    desc: "Build foundational project management knowledge and prepare for entry-level roles.",
+                    link: "/certifications/capm",
                   },
                   {
                     title: "Project Management Professional (PMP)®",
-                    desc: "Advance your career with the world’s leading certification for experienced project managers.",
+                    desc: "Advance your career with the world’s leading certification.",
+                    link: "/certifications/pmp",
                   },
                   {
                     title: "Program Management Professional (PgMP)®",
-                    desc: "Develop advanced capability in managing multiple strategic programs.",
+                    desc: "Manage multiple strategic programs.",
+                    link: "/certifications/pgmp",
                   },
                   {
                     title: "Portfolio Management Professional (PfMP)®",
-                    desc: "Lead enterprise-wide portfolio governance and strategic execution.",
+                    desc: "Lead enterprise portfolio governance.",
+                    link: "/certifications/pfmp",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="border-l-2 border-yellow-300/70 pl-4">
-                    <h4 className="font-semibold text-white text-base leading-7">
-                      {item.title}
-                    </h4>
+                  <Link key={i} to={item.link} className="block group">
+                    <div className="border-l-2 border-yellow-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
+                      <h4 className="font-semibold text-white text-base group-hover:text-yellow-200">
+                        {item.title}
+                      </h4>
 
-                    <p className="mt-1 text-sm text-white/70 leading-6">
-                      {item.desc}
-                    </p>
-                  </div>
+                      <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+
+                      <span className="text-xs text-yellow-200/60 opacity-0 group-hover:opacity-100 transition">
+                        View certification →
+                      </span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* ================= SPECIALIZED CERTIFICATIONS ================= */}
-            <div
-              className="
-          bg-white/10
-          backdrop-blur-xl
-          border border-white/15
-          rounded-[2rem]
-          p-6 sm:p-8
-          shadow-2xl
-          hover:bg-white/15
-          hover:-translate-y-2
-          transition-all
-          duration-500
-        "
-            >
-              {/* ICON */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-orange-200">02</span>
               </div>
@@ -672,71 +652,67 @@ const Home = () => {
               </h3>
 
               <p className="mt-3 text-white/75 leading-7">
-                Advanced capability development across agile, risk, business
-                analysis, PMO leadership, scheduling, and AI.
+                Advanced capability across agile, risk, BA, PMO, scheduling, and
+                AI.
               </p>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-8 space-y-4 flex-1">
                 {[
                   {
-                    title: "PMI Agile Certified Practitioner (PMI-ACP)®",
-                    desc: "Master agile principles, Scrum, Kanban, Lean, and adaptive delivery approaches.",
+                    title: "PMI-ACP®",
+                    desc: "Master agile principles and adaptive delivery.",
+                    link: "/certifications/pmi-acp",
                   },
                   {
-                    title: "PMI Risk Management Professional (PMI-RMP)®",
-                    desc: "Strengthen advanced project risk identification, analysis, and response capability.",
+                    title: "PMI-RMP®",
+                    desc: "Advanced project risk management.",
+                    link: "/certifications/pmi-rmp",
                   },
                   {
-                    title: "PMI Professional in Business Analysis (PMI-PBA)®",
-                    desc: "Develop business analysis expertise and stakeholder requirements management skills.",
+                    title: "PMI-PBA®",
+                    desc: "Business analysis expertise.",
+                    link: "/certifications/pmi-pba",
                   },
                   {
-                    title: "PMI Scheduling Professional (PMI-SP)®",
-                    desc: "Enhance scheduling capability for complex project environments.",
+                    title: "PMI-SP®",
+                    desc: "Advanced scheduling capability.",
+                    link: "/certifications/pmi-sp",
                   },
                   {
-                    title: "PMI Construction Professional (PMI-CP)™",
-                    desc: "Build specialized capability for construction project environments.",
+                    title: "PMI-CP™",
+                    desc: "Construction project specialization.",
+                    link: "/certifications/pmi-cp",
                   },
                   {
-                    title: "PMI PMO Certified Professional (PMI-PMOCP)™",
-                    desc: "Develop modern PMO leadership and organizational transformation capability.",
+                    title: "PMI-PMOCP™",
+                    desc: "PMO leadership excellence.",
+                    link: "/certifications/pmi-pmocp",
                   },
                   {
-                    title:
-                      "PMI Certified Professional in Managing AI (PMI-CPMAI)™",
-                    desc: "Learn how to manage AI-enabled project and organizational environments.",
+                    title: "PMI-CPMAI™",
+                    desc: "AI-driven project management.",
+                    link: "/certifications/pmi-cpmai",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="border-l-2 border-orange-300/70 pl-4">
-                    <h4 className="font-semibold text-white text-base leading-7">
-                      {item.title}
-                    </h4>
+                  <Link key={i} to={item.link} className="block group">
+                    <div className="border-l-2 border-orange-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
+                      <h4 className="font-semibold text-white group-hover:text-orange-200">
+                        {item.title}
+                      </h4>
 
-                    <p className="mt-1 text-sm text-white/70 leading-6">
-                      {item.desc}
-                    </p>
-                  </div>
+                      <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+
+                      <span className="text-xs text-orange-200/60 opacity-0 group-hover:opacity-100 transition">
+                        View certification →
+                      </span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* ================= SUSTAINABILITY ================= */}
-            <div
-              className="
-          bg-white/10
-          backdrop-blur-xl
-          border border-white/15
-          rounded-[2rem]
-          p-6 sm:p-8
-          shadow-2xl
-          hover:bg-white/15
-          hover:-translate-y-2
-          transition-all
-          duration-500
-        "
-            >
-              {/* ICON */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-green-200">03</span>
               </div>
@@ -746,33 +722,25 @@ const Home = () => {
               </h3>
 
               <p className="mt-3 text-white/75 leading-7">
-                Sustainability-focused project management pathways designed for
-                modern responsible organizations.
+                Sustainability-focused project management pathways.
               </p>
 
-              <div className="mt-8 space-y-6">
-                <div className="border-l-2 border-green-300/70 pl-4">
-                  <h4 className="font-semibold text-white text-base leading-7">
-                    Green Project Manager–Basic (GPM-b)™
-                  </h4>
+              <div className="mt-8 flex-1">
+                <Link to="/certifications/gpm-b" className="block group">
+                  <div className="border-l-2 border-green-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
+                    <h4 className="font-semibold text-white group-hover:text-green-200">
+                      GPM-b™
+                    </h4>
 
-                  <p className="mt-1 text-sm text-white/70 leading-6">
-                    Integrate sustainability practices into modern project
-                    delivery.
-                  </p>
-                </div>
-              </div>
+                    <p className="mt-1 text-sm text-white/70">
+                      Integrate sustainability into project delivery.
+                    </p>
 
-              {/* FEATURE CARD */}
-              <div className="mt-10 rounded-3xl bg-gradient-to-br from-green-400 to-emerald-600 p-6 shadow-2xl border border-white/10">
-                <h4 className="text-2xl font-semibold text-white">
-                  Future-Ready Leadership
-                </h4>
-
-                <p className="mt-3 text-white/85 leading-7 text-sm">
-                  Prepare professionals and organizations for sustainable,
-                  resilient, and globally aligned project delivery.
-                </p>
+                    <span className="text-xs text-green-200/60 opacity-0 group-hover:opacity-100 transition">
+                      View certification →
+                    </span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

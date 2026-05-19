@@ -7,12 +7,11 @@ import Logo from "../../assets/Logo.png";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const closeMenus = () => {
-  setIsMobileMenuOpen(false);
-};
+  const closeMenus = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   /* ================= PREMIUM PURPLE NAV STYLE ================= */
   const navLink =
@@ -116,37 +115,117 @@ const closeMenus = () => {
                 Offerings <ChevronDown className="w-3 h-3 text-purple-500" />
               </button>
 
-              <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <Link
-                  to="/offerings/professional-training-and-certification"
-                  className={dropdownItem}
-                >
-                  Professional Training & Certification
-                </Link>
+              {/* MAIN DROPDOWN */}
+              <motion.div
+                className="
+      absolute left-0 top-full -mt-1 w-80
+      bg-white rounded-2xl shadow-xl
+      border border-purple-100/40
+      overflow-visible
+      opacity-0 invisible
+      group-hover:opacity-100 group-hover:visible
+      transition-all duration-200
+      z-50
+    "
+              >
+                {/* PROFESSIONAL TRAINING WRAPPER */}
+                <div className="relative group/sub">
+                  {/* MAIN LINK */}
+                  <Link
+                    to="/offerings/professional-training-and-certification"
+                    className="px-6 py-3 flex justify-between items-center hover:bg-purple-50 text-gray-700"
+                  >
+                    Professional Training & Certification
+                    <ChevronDown className="w-4 h-4 text-purple-500 rotate-[-90deg]" />
+                  </Link>
+
+                  {/* SIDE FLYOUT (RESPONSIVE + STABLE HOVER BRIDGE) */}
+                  <div
+                    className="
+          hidden lg:block
+          absolute left-full top-[-4px] ml-1 pt-2
+          w-72
+          bg-white border border-purple-100/40 rounded-2xl shadow-xl
+          opacity-0 invisible
+          group-hover/sub:opacity-100 group-hover/sub:visible
+          transition-all duration-200
+          z-[60]
+        "
+                  >
+                    <Link to="/certifications/capm" className={dropdownItem}>
+                      CAPM®
+                    </Link>
+                    <Link to="/certifications/pmp" className={dropdownItem}>
+                      PMP®
+                    </Link>
+                    <Link to="/certifications/pgmp" className={dropdownItem}>
+                      PgMP®
+                    </Link>
+                    <Link to="/certifications/pfmp" className={dropdownItem}>
+                      PfMP®
+                    </Link>
+                    <Link to="/certifications/pmi-acp" className={dropdownItem}>
+                      PMI-ACP®
+                    </Link>
+                    <Link to="/certifications/pmi-rmp" className={dropdownItem}>
+                      PMI-RMP®
+                    </Link>
+                    <Link to="/certifications/pmi-pba" className={dropdownItem}>
+                      PMI-PBA®
+                    </Link>
+                    <Link to="/certifications/pmi-sp" className={dropdownItem}>
+                      PMI-SP®
+                    </Link>
+                    <Link to="/certifications/gpm-b" className={dropdownItem}>
+                      GPM-b®
+                    </Link>
+                    <Link
+                      to="/certifications/pmi-pmocp"
+                      className={dropdownItem}
+                    >
+                      PMI-PMOCP®
+                    </Link>
+                    <Link
+                      to="/certifications/pmi-cpmai"
+                      className={dropdownItem}
+                    >
+                      PMI-CPMAI®
+                    </Link>
+                    <Link to="/certifications/pmi-cp" className={dropdownItem}>
+                      PMI-CP®
+                    </Link>
+                  </div>
+                </div>
+
+                {/* OTHER OFFERINGS */}
                 <Link
                   to="/offerings/consulting-and-organizational-transformation"
                   className={dropdownItem}
                 >
                   Consulting & Organizational Transformation
                 </Link>
+
                 <Link
                   to="/offerings/portfolio-pmo-and-governance-excellence"
                   className={dropdownItem}
                 >
                   Portfolio, PMO & Governance Excellence
                 </Link>
+
                 <Link
                   to="/offerings/agile-and-adaptive-delivery-excellence"
                   className={dropdownItem}
                 >
                   Agile & Adaptive Delivery Excellence
                 </Link>
+
                 <Link
                   to="/offerings/risk-compliance-and-assurance"
                   className={dropdownItem}
                 >
                   Risk, Compliance & Assurance
                 </Link>
+
                 <Link
                   to="/offerings/business-analysis-and-requirements-gathering"
                   className={dropdownItem}
@@ -203,10 +282,12 @@ const closeMenus = () => {
             className="lg:hidden bg-white border-t border-purple-100/40 px-6 py-6"
           >
             <div className="space-y-3 text-center">
+              {/* HOME */}
               <Link to="/" onClick={closeMenus} className="block py-2">
                 Home
               </Link>
 
+              {/* ABOUT */}
               <MobileDropdown title="About">
                 <a href="/#about-skylartech" onClick={closeMenus}>
                   About Skylartech
@@ -225,38 +306,87 @@ const closeMenus = () => {
                 </a>
               </MobileDropdown>
 
+              {/* OFFERINGS (FULLY RESPONSIVE + NESTED) */}
               <MobileDropdown title="Offerings">
-                <Link
-                  to="/offerings/professional-training-and-certification"
-                  onClick={closeMenus}
-                >
-                  Professional Training & Certification
-                </Link>
+                {/* PROFESSIONAL TRAINING DROPDOWN */}
+                <MobileDropdown title="Professional Training & Certification">
+                  <Link
+                    to="/offerings/professional-training-and-certification"
+                    onClick={closeMenus}
+                    className="font-semibold text-purple-700"
+                  >
+                    Certifications
+                  </Link>
+
+                  <div className="mt-2 flex flex-col gap-2 text-sm">
+                    <Link to="/certifications/capm" onClick={closeMenus}>
+                      CAPM®
+                    </Link>
+                    <Link to="/certifications/pmp" onClick={closeMenus}>
+                      PMP®
+                    </Link>
+                    <Link to="/certifications/pgmp" onClick={closeMenus}>
+                      PgMP®
+                    </Link>
+                    <Link to="/certifications/pfmp" onClick={closeMenus}>
+                      PfMP®
+                    </Link>
+                    <Link to="/certifications/pmi-acp" onClick={closeMenus}>
+                      PMI-ACP®
+                    </Link>
+                    <Link to="/certifications/pmi-rmp" onClick={closeMenus}>
+                      PMI-RMP®
+                    </Link>
+                    <Link to="/certifications/pmi-pba" onClick={closeMenus}>
+                      PMI-PBA®
+                    </Link>
+                    <Link to="/certifications/pmi-sp" onClick={closeMenus}>
+                      PMI-SP®
+                    </Link>
+                    <Link to="/certifications/gpm-b" onClick={closeMenus}>
+                      GPM-b®
+                    </Link>
+                    <Link to="/certifications/pmi-pmocp" onClick={closeMenus}>
+                      PMI-PMOCP®
+                    </Link>
+                    <Link to="/certifications/pmi-cpmai" onClick={closeMenus}>
+                      PMI-CPMAI®
+                    </Link>
+                    <Link to="/certifications/pmi-cp" onClick={closeMenus}>
+                      PMI-CP®
+                    </Link>
+                  </div>
+                </MobileDropdown>
+
+                {/* OTHER OFFERINGS */}
                 <Link
                   to="/offerings/consulting-and-organizational-transformation"
                   onClick={closeMenus}
                 >
                   Consulting & Organizational Transformation
                 </Link>
+
                 <Link
                   to="/offerings/portfolio-pmo-and-governance-excellence"
                   onClick={closeMenus}
                 >
                   Portfolio, PMO & Governance Excellence
                 </Link>
+
                 <Link
                   to="/offerings/agile-and-adaptive-delivery-excellence"
                   onClick={closeMenus}
                 >
-                  {" "}
                   Agile & Adaptive Delivery Excellence
                 </Link>
+
                 <Link
                   to="/offerings/risk-compliance-and-assurance"
                   onClick={closeMenus}
                 >
                   Risk, Compliance & Assurance
                 </Link>
+
                 <Link
                   to="/offerings/business-analysis-and-requirements-gathering"
                   onClick={closeMenus}
@@ -265,6 +395,7 @@ const closeMenus = () => {
                 </Link>
               </MobileDropdown>
 
+              {/* INDUSTRIES */}
               <MobileDropdown title="Industries">
                 {industries.map((item, i) => (
                   <Link key={i} to={item.link} onClick={closeMenus}>
@@ -273,6 +404,7 @@ const closeMenus = () => {
                 ))}
               </MobileDropdown>
 
+              {/* CONTACT */}
               <Link
                 to="/contact-us"
                 onClick={closeMenus}
