@@ -87,9 +87,13 @@ const Navbar = () => {
 
             {/* ABOUT */}
             <div className="relative py-4 group">
-              <button className={navLink + " flex items-center gap-1"}>
+              <Link
+                to="/about"
+                onClick={scrollToTop}
+                className={navLink + " flex items-center gap-1"}
+              >
                 About <ChevronDown className="w-3 h-3 text-purple-500" />
-              </button>
+              </Link>
 
               <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <a href="/#about-skylartech" className={dropdownItem}>
@@ -101,11 +105,15 @@ const Navbar = () => {
                 <a href="/#certification-programs" className={dropdownItem}>
                   Certifications
                 </a>
-                <a href="/#our-expertise" className={dropdownItem}>
+                  <a href="/#our-expertise" className={dropdownItem}>
                   Expertise
                 </a>
-                <a href="/#our-clients" className={dropdownItem}>
-                  Clients & Success Stories
+                <a href="/#clients" className={dropdownItem}>
+                  Clients
+                </a>
+
+                <a href="/#testimonials" className={dropdownItem}>
+                  Success Stories
                 </a>
               </motion.div>
             </div>
@@ -238,7 +246,7 @@ const Navbar = () => {
             {/* INDUSTRIES */}
             <div className="relative py-4 group">
               <button className={navLink + " flex items-center gap-1"}>
-                Industries <ChevronDown className="w-3 h-3 text-purple-500" />
+                Who We Serve <ChevronDown className="w-3 h-3 text-purple-500" />
               </button>
 
               <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -288,6 +296,9 @@ const Navbar = () => {
               </Link>
 
               {/* ABOUT */}
+              <Link to="/about" onClick={closeMenus} className="block py-2">
+                About
+              </Link>
               <MobileDropdown title="About">
                 <a href="/#about-skylartech" onClick={closeMenus}>
                   About Skylartech
@@ -301,8 +312,11 @@ const Navbar = () => {
                 <a href="/#our-expertise" onClick={closeMenus}>
                   Expertise
                 </a>
-                <a href="/#our-clients" onClick={closeMenus}>
-                  Clients & Success Stories
+                <a href="/#clients" onClick={closeMenus}>
+                  Clients
+                </a>
+                <a href="/#testimonials" onClick={closeMenus}>
+                  Success Stories
                 </a>
               </MobileDropdown>
 
@@ -396,7 +410,7 @@ const Navbar = () => {
               </MobileDropdown>
 
               {/* INDUSTRIES */}
-              <MobileDropdown title="Industries">
+              <MobileDropdown title="Who We Serve">
                 {industries.map((item, i) => (
                   <Link key={i} to={item.link} onClick={closeMenus}>
                     {item.name}

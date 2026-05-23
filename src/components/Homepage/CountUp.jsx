@@ -5,42 +5,46 @@ import ScrollTrigger from "react-scroll-trigger";
 const CountupSection = () => {
   const [counterOn, setCounterOn] = useState(false);
 
+  const stats = [
+    {
+      value: 500,
+      suffix: "+",
+      label: "Professionals trained across East Africa",
+    },
+    {
+      value: 5,
+      suffix: "+",
+      label: "Key sectors including banking, telecom, government & NGOs",
+    },
+    {
+      value: 95,
+      suffix: "%",
+      label: "First-attempt certification success rate",
+    },
+  ];
+
   return (
-    <div className="py-16 flex justify-center">
-
-      <div className="w-full max-w-6xl mx-4 rounded-3xl bg-white/5 border border-white/10 shadow-2xl">
-
+    <div className="w-full">
+      <div className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-lg">
         <ScrollTrigger onEnter={() => setCounterOn(true)}>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 text-center py-14">
-
-            {[
-              { value: 500, label: "Professionals Trained" },
-              { value: 99, suffix: "%", label: "Certification Success Rate" },
-              { value: 50, suffix: "+", label: "Industries Served" },
-            ].map((item, i) => (
-              <div key={i} className="px-6">
-
-                <h1 className="text-4xl font-bold text-white">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+            {stats.map((item, i) => (
+              <div key={i} className="px-4 py-6 sm:py-5 text-center space-y-2">
+                {/* NUMBER (SMALLER + CLEANER) */}
+                <h1 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
                   {counterOn && (
-                    <CountUp
-                      start={0}
-                      end={item.value}
-                      duration={2}
-                    />
+                    <CountUp start={0} end={item.value} duration={2} />
                   )}
-                  {item.suffix}
+                  <span className="text-purple-300">{item.suffix}</span>
                 </h1>
 
-                <p className="text-white/60 mt-2 text-sm uppercase tracking-wider">
+                {/* LABEL */}
+                <p className="text-white/60 text-[11px] sm:text-xs leading-5 max-w-[180px] mx-auto">
                   {item.label}
                 </p>
-
               </div>
             ))}
-
           </div>
-
         </ScrollTrigger>
       </div>
     </div>

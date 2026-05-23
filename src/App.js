@@ -6,6 +6,7 @@ import "./App.css";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Homepage/Home.jsx";
+import About from "./components/Homepage/About.jsx"
 
 import Banking from "./components/Industries/Banking.jsx";
 import Telecommunications from "./components/Industries/Telecommunications.jsx";
@@ -46,6 +47,9 @@ function App() {
       <Routes>
         {/* HOME */}
         <Route path="/" element={<Home />} />
+
+        {/* {ABOUT} */}
+        <Route path="/about" element={<About />} />
 
         {/* OFFERINGS */}
         <Route

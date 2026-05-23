@@ -5,48 +5,48 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const ClientReview = () => {
-  const slider = [
-    {
-      review:
-        "It was a great experience training with Skylartech. The instructors were knowledgeable, supportive, and ensured every concept was well understood. The guidance and mentorship throughout the program gave me the confidence I needed to prepare for my certification journey successfully.",
-      name: "Susanne Mwaitsi",
-    },
-    {
-      review:
-        "I passed the CAPM exam successfully thanks to the excellent training and support from Skylartech. The lessons were practical, engaging, and well structured. The team was always available to answer questions and provide encouragement throughout the preparation process.",
-      name: "Brice Seri",
-    },
-    {
-      review:
-        "Thank you Skylartech for the professionalism, support, and mentorship during my training journey. The learning environment was excellent, and the trainers simplified complex project management concepts in a very practical and understandable way.",
-      name: "Rachael Njoki",
-    },
-    {
-      review:
-        "Great support from the trainers and the entire Skylartech team. The sessions were interactive, insightful, and highly practical. I gained valuable knowledge that I have already started applying in my professional work environment.",
-      name: "John Njenga",
-    },
-    {
-      review:
-        "Thank you Skylartech for the outstanding guidance and commitment to student success. The training materials, mentorship, and exam preparation sessions were extremely helpful and played a major role in my professional growth.",
-      name: "Alex Odhiambo",
-    },
-    {
-      review:
-        "Thrilled to announce that I successfully completed my training journey with Skylartech. The instructors were supportive, highly experienced, and passionate about helping students succeed. I truly appreciated the structured learning approach.",
-      name: "Helga Ries",
-    },
-    {
-      review:
-        "Skylartech played a huge part in this success. The support, coaching, and mentorship throughout the program were exceptional. I felt fully prepared and confident during my certification process thanks to the quality of training provided.",
-      name: "Branice M. Mengesa",
-    },
-    {
-      review:
-        "Great mentorship and an incredible learning experience overall. The trainers were patient, professional, and always willing to provide additional guidance whenever needed. I would highly recommend Skylartech to anyone pursuing project management training.",
-      name: "Michael Muthui",
-    },
-  ];
+const slider = [
+  {
+    review:
+      "Before joining Skylartech, I was unsure about structured project management practices. After completing the PMP® training, I successfully transitioned into a regional PMO leadership role overseeing multi-country project delivery and governance.",
+    name: "Susanne Mwaitsi",
+  },
+  {
+    review:
+      "I passed my CAPM® exam on the first attempt after completing the Skylartech program. The mock exams and structured revision plan helped me improve my readiness and confidence significantly.",
+    name: "Brice Seri",
+  },
+  {
+    review:
+      "The training helped me shift from theoretical understanding to practical application. I immediately applied the tools at work and improved project clarity and stakeholder communication across my team.",
+    name: "Rachael Njoki",
+  },
+  {
+    review:
+      "After the training, I started applying structured planning techniques that reduced project delays by improving task visibility and coordination across departments.",
+    name: "John Njenga",
+  },
+  {
+    review:
+      "The PMP® preparation program strengthened my exam readiness through realistic practice tests and mentorship. I was able to pass confidently and progress in my project management career.",
+    name: "Alex Odhiambo",
+  },
+  {
+    review:
+      "I completed my certification journey with Skylartech and gained a much stronger understanding of agile and hybrid project environments, which I now use in my daily work.",
+    name: "Helga Ries",
+  },
+  {
+    review:
+      "The mentorship and structured training approach helped me move from junior project coordination into a more strategic project role within my organization.",
+    name: "Branice M. Mengesa",
+  },
+  {
+    review:
+      "The sessions improved my practical project management skills and gave me frameworks I now use to manage timelines, risks, and stakeholder expectations more effectively.",
+    name: "Michael Muthui",
+  },
+];
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-10 bg-transparent">
@@ -59,7 +59,7 @@ const ClientReview = () => {
 
         <p className="text-white/60 mt-5 text-sm sm:text-base md:text-lg leading-relaxed">
           Hear from professionals and organizations that have worked with
-          Skylartech across project management training, consulting, and PMO
+          Skylartech across project management training, project consulting, and PMO
           transformation initiatives.
         </p>
       </div>
