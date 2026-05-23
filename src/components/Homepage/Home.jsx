@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import {
+  Building2,
+  Globe,
+  Briefcase,
+  Layers,
+  CheckCircle2,
+} from "lucide-react";
 
 import Cert1 from "../../assets/Homepage images/Cert1.jpg";
 import Cert2 from "../../assets/Homepage images/Cert2.jpg";
@@ -14,7 +21,7 @@ import Project from "../../assets/Homepage images/Project.jpg";
 import Planning from "../../assets/Homepage images/Planning.jpg";
 import ClientReview from "./ClientReview";
 import Clientslider from "./ClientSlider";
-import CountUp from "./CountUp";
+import CountupSection from "../Homepage/CountUp";
 
 const Home = () => {
   const location = useLocation();
@@ -77,108 +84,187 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Skylartech Limited | PMI Premier ATP</title>
-      </Helmet>
+        <title>
+          PMP Training Kenya | PMI® Authorized Training Partner Nairobi |
+          Skylartech Limited
+        </title>
 
-      {/* ================= HERO (FIXED SPACING) ================= */}
-      <div className="relative min-h-screen flex items-center overflow-hidden px-6 lg:px-12 pt-28 pb-24 lg:pb-32">
+        <meta
+          name="description"
+          content="Skylartech Limited is a PMI® Authorized Training Partner in Nairobi, Kenya offering PMP training, Agile certification, and PMO consulting. Advance your project management career with expert-led courses."
+        />
+
+        <meta
+          name="keywords"
+          content="
+          PMP training,
+      PMP training Kenya,
+      PMI Authorized Training Partner Kenya,
+      project management courses Nairobi,
+      PMP exam preparation Nairobi,
+      Agile certification Kenya,
+      PMO consulting Kenya,
+      project management training Kenya,
+      Skylartech Limited
+    "
+        />
+
+        {/* Canonical (VERY IMPORTANT for SEO) */}
+        <link rel="canonical" href="https://skylartech.co.ke/" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="PMP Training Kenya | Skylartech Limited"
+        />
+        <meta
+          property="og:description"
+          content="PMI® Authorized Training Partner in Nairobi offering PMP training, Agile certification, and PMO consulting in Kenya."
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="PMP Training Kenya | Skylartech Limited"
+        />
+        <meta
+          name="twitter:description"
+          content="PMI® Authorized Training Partner offering PMP, Agile certification, and PMO consulting in Nairobi, Kenya."
+        />
+      </Helmet>
+      {/* ================= HERO (FINAL FIXED & RESPONSIVE) ================= */}
+      <div
+        className="relative min-h-[100svh] flex items-center overflow-hidden
+pt-28 sm:pt-32 lg:pt-28
+px-4 sm:px-6 lg:px-12
+py-12 sm:py-20 lg:py-28"
+      >
+        {/* BACKGROUND IMAGE */}
         <div
-          className="absolute inset-0 bg-cover bg-center scale-110 blur-sm"
+          className="absolute inset-0 bg-cover bg-center scale-105 sm:scale-110 blur-sm"
           style={{ backgroundImage: `url(${Project})` }}
         />
-        <div className="absolute inset-0 bg-black/50" />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6 max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight">
-              Developing World-Class{" "}
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-300">
-                Project Leaders
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/85" />
+
+        {/* GLOWS */}
+        <div className="absolute top-0 left-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-purple-500/10 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-blue-500/10 blur-3xl rounded-full" />
+
+        {/* MAIN GRID */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* ================= LEFT ================= */}
+          <div className="w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-6 lg:space-y-8">
+            {/* HEADLINE */}
+            <h1
+              className="font-semibold text-white leading-tight tracking-tight
+        text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+            >
+              Empowering Professionals & Organizations
+              <span
+                className="block mt-2 text-white/90 font-normal
+          text-sm sm:text-base md:text-lg lg:text-xl"
+              >
+                to deliver projects with
+              </span>
+              <span
+                className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-300
+          text-base sm:text-lg md:text-xl lg:text-2xl"
+              >
+                Confidence • Agility • Global Standards
               </span>
             </h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-white/90">
-              {[
-                "Official PMI® course content",
-                "Globally trusted training partner",
-                "Certification-ready pathways",
-                "Expert-led practical training",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-white/10 border border-white/10 rounded-xl px-4 py-3"
-                >
-                  ✓ {item}
-                </div>
-              ))}
+            {/* SUBTEXT */}
+            <p
+              className="text-white/70 max-w-lg mx-auto lg:mx-0
+        text-sm sm:text-base md:text-base lg:text-lg leading-6 sm:leading-7"
+            >
+              Bridging certification knowledge with real-world execution through
+              structured, practice-driven project management training.
+            </p>
+
+            {/* COUNTER */}
+            <div>
+              <CountupSection />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/offerings/professional-training-and-certification">
-                <button className="px-8 py-3 rounded-xl bg-white text-black hover:bg-amber-400 transition">
+            {/* CTA BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <Link to="/about" className="w-full sm:w-auto">
+                <button
+                  className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
+            bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold
+            hover:opacity-90 transition shadow-lg shadow-purple-500/20"
+                >
+                  Learn more about us
+                </button>
+              </Link>
+
+              <Link
+                to="/offerings/professional-training-and-certification"
+                className="w-full sm:w-auto"
+              >
+                <button
+                  className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
+            border border-white/30 text-white hover:bg-white/10 transition"
+                >
                   Explore Certifications
                 </button>
               </Link>
-
-              <Link to="/contact-us">
-                <button className="px-8 py-3 rounded-xl border border-white/40 text-white hover:bg-green-500 transition">
-                  Talk to an Expert
-                </button>
-              </Link>
             </div>
+
+            {/* TRUST LINE */}
+            <p className="text-[10px] sm:text-xs text-white/50 tracking-wide">
+              Trusted by PMP®, CAPM®, and PMI® certified professionals globally
+            </p>
           </div>
-          <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 mt-20 sm:mt-24 lg:mt-28">
-            {/* Accreditation Card */}
+
+          {/* ================= RIGHT ================= */}
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div
-              className="
-    relative w-full max-w-2xl lg:max-w-3xl
-    flex flex-col items-center
-    space-y-6 sm:space-y-7 lg:space-y-8
-    bg-gradient-to-b from-[#0f172a] to-[#111827]
-    border border-white/10
-    rounded-2xl
-    p-6 sm:p-8 lg:p-10
-    shadow-[0_20px_60px_rgba(0,0,0,0.6)]
-    overflow-hidden
-  "
+              className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
+        flex flex-col items-center space-y-6 sm:space-y-7 lg:space-y-8
+        bg-gradient-to-b from-[#0f172a] to-[#111827]
+        border border-white/10 rounded-2xl
+        p-6 sm:p-8 md:p-10 lg:p-12
+        shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+        overflow-hidden"
             >
-              {/* Top Pill */}
-              <div className="relative z-10">
-                <span className="text-[10px] sm:text-xs lg:text-sm uppercase tracking-widest text-white/90 bg-green-500/60 border border-white/10 px-4 py-1.5 rounded-full shadow-md">
-                  Accreditation
-                </span>
-              </div>
+              {/* TAG */}
+              <span
+                className="text-[11px] sm:text-xs uppercase tracking-widest text-white/90
+          bg-purple-500/40 border border-white/10 px-4 py-2 rounded-full"
+              >
+                Accreditation
+              </span>
 
-              {/* Glow */}
-              <div className="absolute w-[85%] sm:w-[70%] h-[70%] bg-violet-500/15 blur-2xl rounded-full top-10" />
+              {/* GLOW */}
+              <div className="absolute w-[85%] h-[65%] bg-violet-500/20 blur-3xl rounded-full top-10" />
 
-              {/* PMI Logos */}
+              {/* LOGOS */}
               <div className="relative z-10 flex items-center justify-center">
-                <div className="flex items-center">
-                  <img
-                    src={PMI}
-                    alt="PMI"
-                    className="h-28 sm:h-32 md:h-36 lg:h-44 object-contain drop-shadow-lg"
-                  />
-                  <img
-                    src={PMI2}
-                    alt="PMI2"
-                    className="h-28 sm:h-32 md:h-36 lg:h-44 object-contain -ml-5 sm:-ml-6 md:-ml-8 drop-shadow-lg"
-                  />
-                </div>
+                <img
+                  src={PMI}
+                  alt="PMI"
+                  className="h-16 sm:h-24 md:h-32 lg:h-40 xl:h-44 object-contain drop-shadow-lg"
+                />
+
+                <img
+                  src={PMI2}
+                  alt="PMI2"
+                  className="h-16 sm:h-24 md:h-32 lg:h-40 xl:h-44 object-contain -ml-3 sm:-ml-5 md:-ml-6 drop-shadow-lg"
+                />
               </div>
 
-              {/* Text */}
-              <div className="relative z-10 flex flex-col items-center text-center space-y-5 sm:space-y-6">
+              {/* DESCRIPTION */}
+              <div className="relative z-10 text-center">
                 <span
-                  className="
-        text-[11px] sm:text-sm lg:text-base
-        text-white/85 leading-relaxed
-        max-w-sm sm:max-w-md lg:max-w-lg
-        bg-white/5 border border-white/10
-        px-4 py-3
-        rounded-xl
-      "
+                  className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed
+            block bg-white/5 border border-white/10 px-4 py-4 rounded-xl max-w-sm sm:max-w-md"
                 >
                   Skylartech is a Premier Authorized Training Partner (ATP) of
                   Project Management Institute, USA.
@@ -337,94 +423,80 @@ const Home = () => {
         {/* PREMIUM GRADIENT BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#fbbf24] via-[#f59e0b] to-[#f97316]" />
 
-        {/* SOFT DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/35" />
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/40" />
 
-        {/* LARGE GLOW EFFECTS */}
+        {/* GLOWS */}
         <div className="absolute -top-24 -right-24 w-[420px] h-[420px] bg-yellow-200/30 blur-3xl rounded-full" />
         <div className="absolute bottom-0 left-0 w-[380px] h-[380px] bg-orange-300/20 blur-3xl rounded-full" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* ================= LEFT CONTENT ================= */}
           <div className="space-y-8 text-white">
-            {/* SMALL LABEL */}
-            <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-lg">
+            {/* LABEL */}
+            <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
               <span className="text-xs sm:text-sm tracking-wide text-white/90">
-                Why Organizations Choose Skylartech
+                Strategic Learning & Transformation Partner
               </span>
             </div>
 
             {/* HEADING */}
             <div>
-              <h2
-                className="
-    text-3xl
-    sm:text-4xl
-    md:text-5xl
-    lg:text-6xl
-    font-semibold
-    leading-[1.15]
-    tracking-tight
-  "
-              >
-                <span className="block whitespace-nowrap">
-                  Training Excellence.
-                </span>
-
-                <span className="block whitespace-nowrap">
-                  Consulting Expertise.
-                </span>
-
-                <span className="block whitespace-nowrap">
-                  Project Governance.
-                </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.15] tracking-tight">
+                <span className="block">Why Organizations</span>
+                <span className="block">Choose Skylartech</span>
               </h2>
 
               <p className="mt-6 text-base sm:text-lg text-white/85 leading-8 max-w-2xl">
-                We help professionals and organizations build stronger project
-                leadership, improve execution capability, and accelerate digital
-                transformation through globally recognized training, enterprise
-                consulting, and scalable technology solutions.
+                We don’t just deliver training — we build capability systems
+                that improve how professionals think, execute, and lead across
+                projects, teams, and enterprises.
               </p>
             </div>
 
-            {/* VALUE GRID */}
+            {/* VALUE GRID (REFINED DIFFERENTIATION) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  title: "Globally Recognized Training",
-                  desc: "Professional certification programs aligned with international standards.",
+                  title: "PMI® Premier ATP Status",
+                  desc: "Officially aligned with global PMI standards for certification excellence.",
                 },
                 {
-                  title: "Real-World Expertise",
-                  desc: "Practical learning led by experienced industry professionals.",
+                  title: "Real Project Leadership",
+                  desc: "Training delivered by practitioners with hands-on delivery experience.",
                 },
                 {
-                  title: "Business Transformation",
-                  desc: "Consulting solutions focused on governance, agility, and delivery excellence.",
+                  title: "Africa + Global Perspective",
+                  desc: "Programs shaped by local realities and international execution standards.",
                 },
                 {
-                  title: "Project Governance",
-                  desc: "Structured frameworks that improve delivery oversight, accountability, and strategic alignment.",
+                  title: "AI-Enabled Learning Systems",
+                  desc: "Modern learning approaches enhanced with intelligent tools and insights.",
+                },
+                {
+                  title: "Mentorship Beyond Exams",
+                  desc: "Guidance that extends into career growth and professional development.",
+                },
+                {
+                  title: "Execution-Focused Approach",
+                  desc: "We emphasize real-world application over theoretical memorization.",
+                },
+                {
+                  title: "Enterprise Transformation",
+                  desc: "Helping organizations improve governance, delivery, and capability maturity.",
+                },
+                {
+                  title: "Flexible Delivery Models",
+                  desc: "Online, hybrid, and corporate training tailored to organizational needs.",
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="
-              bg-white/10
-              backdrop-blur-md
-              border border-white/20
-              rounded-2xl
-              p-5
-              hover:bg-white/15
-              transition-all
-              duration-300
-            "
+                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 hover:bg-white/15 transition-all duration-300"
                 >
                   <h3 className="font-semibold text-white text-base">
                     {item.title}
                   </h3>
-
                   <p className="text-white/75 text-sm leading-6 mt-2">
                     {item.desc}
                   </p>
@@ -432,65 +504,33 @@ const Home = () => {
               ))}
             </div>
 
-            {/* CTA BUTTONS */}
+            {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
                 to="/offerings/professional-training-and-certification"
-                className="
-            px-7 py-3
-            rounded-2xl
-            bg-white
-            text-black
-            font-medium
-            hover:bg-gray-200
-            transition
-            text-center
-            shadow-xl
-          "
+                className="px-7 py-3 rounded-2xl bg-white text-black font-medium hover:bg-gray-200 transition text-center shadow-xl"
               >
-                Explore Training
+                Explore Courses
               </Link>
 
               <Link
                 to="/contact-us"
-                className="
-            px-7 py-3
-            rounded-2xl
-            bg-white/10
-            border border-white/20
-            backdrop-blur-md
-            text-white
-            hover:bg-white/20
-            transition
-            text-center
-          "
+                className="px-7 py-3 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md text-white hover:bg-white/20 transition text-center"
               >
-                Contact Us
+                Request a corporate proposal
               </Link>
             </div>
           </div>
 
-          {/* ================= RIGHT PREMIUM CAROUSEL ================= */}
+          {/* ================= RIGHT CAROUSEL (UNCHANGED) ================= */}
           <div
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            className="
-        relative
-        h-[420px]
-        sm:h-[520px]
-        lg:h-[640px]
-        flex
-        items-center
-        justify-center
-      "
+            className="relative h-[420px] sm:h-[520px] lg:h-[640px] flex items-center justify-center"
           >
-            {/* GLOW */}
             <div className="absolute w-[85%] h-[85%] bg-white/15 blur-3xl rounded-full" />
-
-            {/* GLASS BACK PANEL */}
             <div className="absolute w-[92%] h-[92%] rounded-[3rem] bg-white/10 backdrop-blur-sm border border-white/10 shadow-2xl" />
 
-            {/* IMAGE STACK */}
             <div className="relative w-full h-full flex items-center justify-center">
               {images.map((img, i) => {
                 const total = images.length;
@@ -514,27 +554,14 @@ const Home = () => {
                       opacity: Math.abs(offset) > 2 ? 0 : 1,
                       zIndex: isActive ? 20 : 1,
                     }}
-                    transition={{
-                      duration: 0.8,
-                      ease: "easeInOut",
-                    }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
                     <div className="relative w-[88%] h-[280px] sm:h-[380px] lg:h-[460px]">
-                      {/* IMAGE */}
                       <img
                         src={img}
                         alt={`slide-${i}`}
-                        className="
-                    w-full
-                    h-full
-                    object-cover
-                    rounded-[2rem]
-                    shadow-[0_25px_80px_rgba(0,0,0,0.45)]
-                    border border-white/20
-                  "
+                        className="w-full h-full object-cover rounded-[2rem] shadow-[0_25px_80px_rgba(0,0,0,0.45)] border border-white/20"
                       />
-
-                      {/* IMAGE OVERLAY */}
                       <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
                     </div>
                   </motion.div>
@@ -585,23 +612,9 @@ const Home = () => {
           </div>
 
           {/* ================= GRID ================= */}
-          <div className="mt-16 sm:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
+          <div className="mt-16 sm:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {/* ================= CORE CERTIFICATIONS ================= */}
-            <div
-              className="
-          bg-white/10
-          backdrop-blur-xl
-          border border-white/15
-          rounded-[2rem]
-          p-6 sm:p-8
-          shadow-2xl
-          hover:bg-white/15
-          hover:-translate-y-2
-          transition-all
-          duration-500
-        "
-            >
-              {/* ICON */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-yellow-200">01</span>
               </div>
@@ -612,57 +625,51 @@ const Home = () => {
 
               <p className="mt-3 text-white/75 leading-7">
                 Foundational and advanced project leadership certifications
-                aligned with globally recognized PMI® standards.
+                aligned with PMI® standards.
               </p>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-8 space-y-4 flex-1">
                 {[
                   {
                     title: "Certified Associate in Project Management (CAPM)®",
-                    desc: "Build foundational project management knowledge and prepare for entry-level project leadership roles.",
+                    desc: "Build foundational project management knowledge and prepare for entry-level roles.",
+                    link: "/certifications/capm",
                   },
                   {
                     title: "Project Management Professional (PMP)®",
-                    desc: "Advance your career with the world’s leading certification for experienced project managers.",
+                    desc: "Advance your career with the world’s leading certification.",
+                    link: "/certifications/pmp",
                   },
                   {
                     title: "Program Management Professional (PgMP)®",
-                    desc: "Develop advanced capability in managing multiple strategic programs.",
+                    desc: "Manage multiple strategic programs.",
+                    link: "/certifications/pgmp",
                   },
                   {
                     title: "Portfolio Management Professional (PfMP)®",
-                    desc: "Lead enterprise-wide portfolio governance and strategic execution.",
+                    desc: "Lead enterprise portfolio governance.",
+                    link: "/certifications/pfmp",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="border-l-2 border-yellow-300/70 pl-4">
-                    <h4 className="font-semibold text-white text-base leading-7">
-                      {item.title}
-                    </h4>
+                  <Link key={i} to={item.link} className="block group">
+                    <div className="border-l-2 border-yellow-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
+                      <h4 className="font-semibold text-white text-base group-hover:text-yellow-200">
+                        {item.title}
+                      </h4>
 
-                    <p className="mt-1 text-sm text-white/70 leading-6">
-                      {item.desc}
-                    </p>
-                  </div>
+                      <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+
+                      <span className="text-xs text-yellow-200/60 opacity-0 group-hover:opacity-100 transition">
+                        View certification →
+                      </span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* ================= SPECIALIZED CERTIFICATIONS ================= */}
-            <div
-              className="
-          bg-white/10
-          backdrop-blur-xl
-          border border-white/15
-          rounded-[2rem]
-          p-6 sm:p-8
-          shadow-2xl
-          hover:bg-white/15
-          hover:-translate-y-2
-          transition-all
-          duration-500
-        "
-            >
-              {/* ICON */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-orange-200">02</span>
               </div>
@@ -672,71 +679,67 @@ const Home = () => {
               </h3>
 
               <p className="mt-3 text-white/75 leading-7">
-                Advanced capability development across agile, risk, business
-                analysis, PMO leadership, scheduling, and AI.
+                Advanced capability across agile, risk, BA, PMO, scheduling, and
+                AI.
               </p>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-8 space-y-4 flex-1">
                 {[
                   {
-                    title: "PMI Agile Certified Practitioner (PMI-ACP)®",
-                    desc: "Master agile principles, Scrum, Kanban, Lean, and adaptive delivery approaches.",
+                    title: "PMI-ACP®",
+                    desc: "Master agile principles and adaptive delivery.",
+                    link: "/certifications/pmi-acp",
                   },
                   {
-                    title: "PMI Risk Management Professional (PMI-RMP)®",
-                    desc: "Strengthen advanced project risk identification, analysis, and response capability.",
+                    title: "PMI-RMP®",
+                    desc: "Advanced project risk management.",
+                    link: "/certifications/pmi-rmp",
                   },
                   {
-                    title: "PMI Professional in Business Analysis (PMI-PBA)®",
-                    desc: "Develop business analysis expertise and stakeholder requirements management skills.",
+                    title: "PMI-PBA®",
+                    desc: "Business analysis expertise.",
+                    link: "/certifications/pmi-pba",
                   },
                   {
-                    title: "PMI Scheduling Professional (PMI-SP)®",
-                    desc: "Enhance scheduling capability for complex project environments.",
+                    title: "PMI-SP®",
+                    desc: "Advanced scheduling capability.",
+                    link: "/certifications/pmi-sp",
                   },
                   {
-                    title: "PMI Construction Professional (PMI-CP)™",
-                    desc: "Build specialized capability for construction project environments.",
+                    title: "PMI-CP™",
+                    desc: "Construction project specialization.",
+                    link: "/certifications/pmi-cp",
                   },
                   {
-                    title: "PMI PMO Certified Professional (PMI-PMOCP)™",
-                    desc: "Develop modern PMO leadership and organizational transformation capability.",
+                    title: "PMI-PMOCP™",
+                    desc: "PMO leadership excellence.",
+                    link: "/certifications/pmi-pmocp",
                   },
                   {
-                    title:
-                      "PMI Certified Professional in Managing AI (PMI-CPMAI)™",
-                    desc: "Learn how to manage AI-enabled project and organizational environments.",
+                    title: "PMI-CPMAI™",
+                    desc: "AI-driven project management.",
+                    link: "/certifications/pmi-cpmai",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="border-l-2 border-orange-300/70 pl-4">
-                    <h4 className="font-semibold text-white text-base leading-7">
-                      {item.title}
-                    </h4>
+                  <Link key={i} to={item.link} className="block group">
+                    <div className="border-l-2 border-orange-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
+                      <h4 className="font-semibold text-white group-hover:text-orange-200">
+                        {item.title}
+                      </h4>
 
-                    <p className="mt-1 text-sm text-white/70 leading-6">
-                      {item.desc}
-                    </p>
-                  </div>
+                      <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+
+                      <span className="text-xs text-orange-200/60 opacity-0 group-hover:opacity-100 transition">
+                        View certification →
+                      </span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* ================= SUSTAINABILITY ================= */}
-            <div
-              className="
-          bg-white/10
-          backdrop-blur-xl
-          border border-white/15
-          rounded-[2rem]
-          p-6 sm:p-8
-          shadow-2xl
-          hover:bg-white/15
-          hover:-translate-y-2
-          transition-all
-          duration-500
-        "
-            >
-              {/* ICON */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-green-200">03</span>
               </div>
@@ -746,33 +749,25 @@ const Home = () => {
               </h3>
 
               <p className="mt-3 text-white/75 leading-7">
-                Sustainability-focused project management pathways designed for
-                modern responsible organizations.
+                Sustainability-focused project management pathways.
               </p>
 
-              <div className="mt-8 space-y-6">
-                <div className="border-l-2 border-green-300/70 pl-4">
-                  <h4 className="font-semibold text-white text-base leading-7">
-                    Green Project Manager–Basic (GPM-b)™
-                  </h4>
+              <div className="mt-8 flex-1">
+                <Link to="/certifications/gpm-b" className="block group">
+                  <div className="border-l-2 border-green-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
+                    <h4 className="font-semibold text-white group-hover:text-green-200">
+                      GPM-b™
+                    </h4>
 
-                  <p className="mt-1 text-sm text-white/70 leading-6">
-                    Integrate sustainability practices into modern project
-                    delivery.
-                  </p>
-                </div>
-              </div>
+                    <p className="mt-1 text-sm text-white/70">
+                      Integrate sustainability into project delivery.
+                    </p>
 
-              {/* FEATURE CARD */}
-              <div className="mt-10 rounded-3xl bg-gradient-to-br from-green-400 to-emerald-600 p-6 shadow-2xl border border-white/10">
-                <h4 className="text-2xl font-semibold text-white">
-                  Future-Ready Leadership
-                </h4>
-
-                <p className="mt-3 text-white/85 leading-7 text-sm">
-                  Prepare professionals and organizations for sustainable,
-                  resilient, and globally aligned project delivery.
-                </p>
+                    <span className="text-xs text-green-200/60 opacity-0 group-hover:opacity-100 transition">
+                      View certification →
+                    </span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -1201,93 +1196,158 @@ const Home = () => {
         </div>
       </div>
 
-      {/* OUR CLIENTS */}
-      <div id="our-clients" className="relative scroll-mt-28 overflow-hidden">
-        {/* 🌈 BACKGROUND (UNCHANGED) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-900" />
+      {/* ================= OUR CLIENTS ================= */}
+      <div
+        id="clients"
+        className="relative scroll-mt-28 overflow-hidden min-h-screen flex items-center"
+      >
+        {/*  BACKGROUND */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#070A14] via-[#1B1035] to-[#2A1B3D]" />
 
-        {/* ✨ GLOW EFFECTS */}
-        <div className="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] bg-blue-500/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-[-200px] right-[-200px] w-[600px] h-[600px] bg-indigo-500/10 blur-3xl rounded-full" />
+        {/*  AURORA */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.22),transparent_55%)]" />
 
-        {/* 🌓 OVERLAY */}
-        <div className="absolute inset-0 bg-black/20" />
+        {/*  GLOW */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_60%)]" />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/25" />
 
         {/* CONTENT */}
-        <div className="relative z-10 px-6 lg:px-12 py-20 max-w-7xl mx-auto">
-          {/* ================= HEADER (EXPERTISE STYLE) ================= */}
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl sm:text-5xl font-semibold text-white tracking-tight">
-              Enterprise Partnerships & Client Success
-            </h2>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            {/* ================= LEFT (PREMIUM ICON VERSION) ================= */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
+                Enterprise Partnerships & Client Success
+              </h2>
 
-            <h3 className="text-lg sm:text-xl text-white/80 font-medium mt-6 leading-8">
-              We support organizations across banking, telecommunications,
-              government, NGOs, technology, construction, and manufacturing
-              through training, consulting, and digital transformation solutions
-              that strengthen execution capability and deliver measurable
-              impact.
-            </h3>
+              <h3 className="text-base sm:text-lg lg:text-xl text-white/80 font-medium mt-6 leading-7 lg:leading-8">
+                We help organizations across banking, telecom, government, NGOs,
+                and industry improve execution through training, project
+                consulting, and digital transformation.
+              </h3>
 
-            {/* INDUSTRIES / FEATURE TAGS */}
-            <div className="mt-10 flex flex-wrap justify-center gap-3">
-              {[
-                {
-                  name: "Banking & Financial Services",
-                  link: "/industries/banking-and-finance",
-                },
-                {
-                  name: "Telecommunications",
-                  link: "/industries/telecommunications",
-                },
-                {
-                  name: "Government & Public Sector",
-                  link: "/industries/government",
-                },
-                { name: "NGOs & Development", link: "/industries/ngos" },
-                { name: "Healthcare", link: "/industries/healthcare" },
-              ].map((item, i) => (
-                <Link
-                  key={i}
-                  to={item.link}
-                  className="
-        inline-flex
-        items-center
-        justify-center
-        px-4 py-2
-        rounded-full
-        bg-white/10
-        border border-white/20
-        text-white/80 text-sm
-        backdrop-blur-md
-        hover:bg-white/20 hover:text-white
-        transition-all duration-200
-        whitespace-nowrap
-      "
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {/* ================= VALUE POINTS ================= */}
+              <div className="mt-10 space-y-4">
+                <div className="flex items-start gap-3 text-white/80">
+                  <Building2 className="w-5 h-5 text-purple-300 mt-1" />
+                  <p className="text-sm sm:text-base">
+                    Trusted by enterprise institutions across Africa & global
+                    markets
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3 text-white/80">
+                  <Globe className="w-5 h-5 text-purple-300 mt-1" />
+                  <p className="text-sm sm:text-base">
+                    Cross-industry delivery across banking, telecom, government
+                    & NGOs
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3 text-white/80">
+                  <Briefcase className="w-5 h-5 text-purple-300 mt-1" />
+                  <p className="text-sm sm:text-base">
+                    Consulting-led approach focused on execution, not theory
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3 text-white/80">
+                  <Layers className="w-5 h-5 text-purple-300 mt-1" />
+                  <p className="text-sm sm:text-base">
+                    End-to-end capability: training, transformation & advisory
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3 text-white/80">
+                  <CheckCircle2 className="w-5 h-5 text-purple-300 mt-1" />
+                  <p className="text-sm sm:text-base">
+                    Proven impact in project delivery maturity & governance
+                    systems
+                  </p>
+                </div>
+              </div>
+
+              {/* ================= INDUSTRY TAGS ================= */}
+              <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-3">
+                {[
+                  {
+                    name: "Banking & Financial Services",
+                    link: "/industries/banking-and-finance",
+                  },
+                  {
+                    name: "Telecommunications",
+                    link: "/industries/telecommunications",
+                  },
+                  {
+                    name: "Government & Public Sector",
+                    link: "/industries/government",
+                  },
+                  { name: "NGOs & Development", link: "/industries/ngos" },
+                ].map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.link}
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-full
+              bg-white/10 border border-white/20 text-white/80 text-sm
+              backdrop-blur-md hover:bg-white/20 hover:text-white transition-all duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+
+                {/* HEALTHCARE FIXED (separate, outside map) */}
+                <div className="w-full flex justify-center lg:justify-start mt-2">
+                  <Link
+                    to="/industries/healthcare"
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-full
+              bg-white/10 border border-white/20 text-white/80 text-sm
+              backdrop-blur-md hover:bg-white/20 hover:text-white transition-all duration-200"
+                  >
+                    Healthcare
+                  </Link>
+                </div>
+              </div>
+
+              <p className="mt-8 text-white/50 text-sm">
+                Trusted by leading organizations across Africa and global
+                markets
+              </p>
+            </div>
+
+            {/* ================= RIGHT ================= */}
+            <div className="relative">
+              <div className="bg-white/10 border border-white/15 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 shadow-2xl">
+                <div className="text-white/80 text-sm mb-4 text-center lg:text-left">
+                  Featured Client Network
+                </div>
+
+                <div className="min-h-[140px] sm:min-h-[180px] flex items-center justify-center">
+                  <Clientslider />
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* ================= FLOWING COMPONENT STACK ================= */}
-          <div className="flex flex-col">
-            {/* CLIENT LOGOS */}
-            <div className="relative -mt-4">
-              <Clientslider />
-            </div>
+      {/* ================= TESTIMONIALS ================= */}
+      <div id="testimonials" className="relative overflow-hidden">
+        {/* DIFFERENT BACKGROUND */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900" />
 
-            {/* IMPACT STATS */}
-            <div className="relative -mt-12">
-              <CountUp />
-            </div>
+        {/* GLOWS */}
+        <div className="absolute top-[-180px] right-[-180px] w-[550px] h-[550px] bg-purple-500/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-[-180px] left-[-180px] w-[550px] h-[550px] bg-pink-500/10 blur-3xl rounded-full" />
 
-            {/* TESTIMONIALS */}
-            <div className="relative -mt-20">
-              <ClientReview />
-            </div>
-          </div>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 px-6 lg:px-12 py-24 max-w-7xl mx-auto">
+          {/* TESTIMONIALS */}
+          <ClientReview />
         </div>
       </div>
     </>

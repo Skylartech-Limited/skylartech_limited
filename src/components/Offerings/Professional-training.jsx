@@ -18,21 +18,25 @@ const certifications = [
     items: [
       {
         name: "CAPM®",
+        link: "/certifications/capm",
         description:
           "Build foundational project management knowledge and prepare for entry-level project leadership roles.",
       },
       {
         name: "PMP®",
+        link: "/certifications/pmp",
         description:
           "Advance your career with the world’s leading certification for experienced project managers.",
       },
       {
         name: "PgMP®",
+        link: "/certifications/pgmp",
         description:
           "Develop advanced capability in managing multiple strategic programs.",
       },
       {
         name: "PfMP®",
+        link: "/certifications/pfmp",
         description:
           "Lead enterprise-wide portfolio governance and strategic execution.",
       },
@@ -45,36 +49,43 @@ const certifications = [
     items: [
       {
         name: "PMI-ACP®",
+        link: "/certifications/pmi-acp",
         description:
           "Master agile principles, Scrum, Kanban, Lean, and adaptive delivery approaches.",
       },
       {
         name: "PMI-RMP®",
+        link: "/certifications/pmi-rmp",
         description:
           "Strengthen advanced project risk identification, analysis, and response capability.",
       },
       {
         name: "PMI-PBA®",
+        link: "/certifications/pmi-pba",
         description:
           "Develop business analysis expertise and stakeholder requirements management skills.",
       },
       {
         name: "PMI-SP®",
+        link: "/certifications/pmi-sp",
         description:
           "Enhance scheduling capability for complex project environments.",
       },
       {
         name: "PMI-CP™",
+        link: "/certifications/pmi-cp",
         description:
           "Build specialized capability for construction project environments.",
       },
       {
         name: "PMI-PMOCP™",
+        link: "/certifications/pmi-pmocp",
         description:
           "Develop modern PMO leadership and organizational transformation capability.",
       },
       {
         name: "PMI-CPMAI™",
+        link: "/certifications/pmi-cpmai",
         description:
           "Learn how to manage AI-enabled project and organizational environments.",
       },
@@ -87,6 +98,7 @@ const certifications = [
     items: [
       {
         name: "GPM-b™",
+        link: "/certifications/gpm-b",
         description:
           "Integrate sustainability practices into modern project delivery.",
       },
@@ -359,30 +371,54 @@ const ProfessionalTraining = () => {
             </p>
 
             <div className="mt-14 space-y-16">
-              {certifications.map((group, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <h3 className="text-red-300 text-xl sm:text-2xl font-bold mb-8 text-center">
-                    {group.group}
-                  </h3>
+  {certifications.map((group, i) => (
+    <div key={i} className="flex flex-col items-center">
+      <h3 className="text-red-300 text-xl sm:text-2xl font-bold mb-8 text-center">
+        {group.group}
+      </h3>
 
-                  <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-                    {group.items.map((cert, idx) => (
-                      <div
-                        key={idx}
-                        className="w-full bg-[#13090A]/60 border border-red-400/10 rounded-3xl p-6 sm:p-7 text-center backdrop-blur-xl hover:border-red-400/30 transition"
-                      >
-                        <h4 className="text-red-300 font-bold text-lg sm:text-xl">
-                          {cert.name}
-                        </h4>
-                        <p className="text-white/60 mt-3 text-sm sm:text-base">
-                          {cert.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
+        {group.items.map((cert, idx) => (
+          <Link key={idx} to={cert.link || "#"} className="w-full">
+            <div
+              className="
+                h-full flex flex-col justify-between
+                bg-[#13090A]/60
+                border border-red-400/10
+                rounded-3xl p-6 sm:p-7
+                text-center backdrop-blur-xl
+                hover:border-red-400/40
+                hover:scale-[1.02]
+                hover:shadow-lg hover:shadow-red-500/10
+                transition-all duration-300
+                cursor-pointer
+                group
+              "
+            >
+              {/* TOP CONTENT (fixed area) */}
+              <div>
+                <h4 className="text-red-300 font-bold text-lg sm:text-xl group-hover:text-red-200 transition">
+                  {cert.name}
+                </h4>
+
+                <p className="text-white/60 mt-3 text-sm sm:text-base leading-relaxed">
+                  {cert.description}
+                </p>
+              </div>
+
+              {/* BOTTOM CTA (always aligned) */}
+              <div className="mt-6">
+                <p className="text-xs text-red-300/60 opacity-0 group-hover:opacity-100 transition">
+                  View certification →
+                </p>
+              </div>
             </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
           </div>
 
           {/* ================= MAINTENANCE ================= */}
@@ -509,42 +545,40 @@ const ProfessionalTraining = () => {
           </div>
         </div>
       </section>
-    {/* ================= PREMIUM PMI CTA ================= */}
-<section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 text-center overflow-hidden">
+      {/* ================= PREMIUM PMI CTA ================= */}
+      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 text-center overflow-hidden">
+        {/* ambient red glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(239,68,68,0.12),transparent_60%)]" />
+        <div className="absolute inset-0 backdrop-blur-2xl" />
 
-  {/* ambient red glow */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(239,68,68,0.12),transparent_60%)]" />
-  <div className="absolute inset-0 backdrop-blur-2xl" />
+        {/* glass container */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="bg-white/[0.03] border border-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 shadow-2xl">
+            {/* Small label */}
+            <p className="text-red-300/80 text-xs sm:text-sm tracking-[0.3em] uppercase">
+              PMI Certification Journey
+            </p>
 
-  {/* glass container */}
-  <div className="relative max-w-4xl mx-auto">
+            {/* Headline */}
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+              Your future isn’t waiting —
+              <span className="text-red-300"> it’s being built.</span>
+            </h2>
 
-    <div className="bg-white/[0.03] border border-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 shadow-2xl">
+            {/* Subtext */}
+            <p className="text-red-100/60 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+              Become globally certified, unlock leadership opportunities, and
+              position yourself among top-performing professionals worldwide.
+            </p>
 
-      {/* Small label */}
-      <p className="text-red-300/80 text-xs sm:text-sm tracking-[0.3em] uppercase">
-        PMI Certification Journey
-      </p>
+            {/* Divider glow line */}
+            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-red-400/60 to-transparent mx-auto my-8" />
 
-      {/* Headline */}
-      <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
-        Your future isn’t waiting —
-        <span className="text-red-300"> it’s being built.</span>
-      </h2>
-
-      {/* Subtext */}
-      <p className="text-red-100/60 mt-5 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-        Become globally certified, unlock leadership opportunities, and position yourself among top-performing professionals worldwide.
-      </p>
-
-      {/* Divider glow line */}
-      <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-red-400/60 to-transparent mx-auto my-8" />
-
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <Link to="#certifications-pathways">
-          <button
-            className="
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="#certifications-pathways">
+                <button
+                  className="
               px-8 py-4 rounded-2xl font-semibold text-white
               bg-gradient-to-r from-red-500 to-rose-500
               shadow-lg shadow-red-500/25
@@ -552,20 +586,19 @@ const ProfessionalTraining = () => {
               hover:scale-[1.03]
               transition-all duration-300
             "
-          >
-            Get Certified
-          </button>
-        </Link>
-      </div>
+                >
+                  Get Certified
+                </button>
+              </Link>
+            </div>
 
-      {/* Micro trust line */}
-      <p className="mt-8 text-xs text-white/40">
-        Trusted globally across 185+ countries • PMI® Standards Driven
-      </p>
-
-    </div>
-  </div>
-</section>
+            {/* Micro trust line */}
+            <p className="mt-8 text-xs text-white/40">
+              Trusted globally across 185+ countries • PMI® Standards Driven
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
