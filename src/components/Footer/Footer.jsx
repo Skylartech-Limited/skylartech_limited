@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-slate-950 via-indigo-950 via-purple-950 to-slate-900 text-white overflow-hidden">
 
-      {/* subtle glow */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-500/10 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/10 blur-3xl rounded-full" />
+      {/* NEON GLOWS */}
+      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-fuchsia-500/10 blur-3xl rounded-full" />
+      <div className="absolute top-1/2 right-0 w-[450px] h-[450px] bg-cyan-400/10 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 left-1/2 w-[450px] h-[450px] bg-emerald-400/10 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
 
@@ -16,24 +17,21 @@ const Footer = () => {
 
           {/* QUICK LINKS */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
               Quick Links
             </h3>
 
             <ul className="space-y-3 text-white/70">
               {[
                 ["Home", "/"],
-                ["About Us", "/about-us"],
-                ["Certifications", "/offerings/pmp-training"],
-                ["Offerings", "/services"],
-                ["Industries", "/industries"],
-                ["Clients & Success Stories", "/#our-clients"],
+                ["About Us", "/about"],
+                ["Certifications", "/offerings/professional-training-and-certification"],
                 ["Contact Us", "/contact-us"],
               ].map(([label, path], i) => (
                 <li key={i}>
                   <Link
                     to={path}
-                    className="hover:text-white transition"
+                    className="hover:text-cyan-300 transition duration-300"
                   >
                     {label}
                   </Link>
@@ -42,50 +40,65 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CERTIFICATIONS */}
+          {/* CERTIFICATIONS (ALL NOW WORKING LINKS) */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-cyan-300 via-fuchsia-400 to-emerald-300 bg-clip-text text-transparent">
               Certifications
             </h3>
 
             <ul className="space-y-3 text-white/70">
               {[
-                "PMP®",
-                "CAPM®",
-                "PMI-ACP®",
-                "PMI-RMP®",
-                "PMI-PBA®",
-              ].map((item, i) => (
-                <li key={i} className="hover:text-white transition cursor-default">
-                  {item}
+                ["PMP®", "/certifications/pmp"],
+                ["CAPM®", "/certifications/capm"],
+                ["PMI-ACP®", "/certifications/pmi-acp"],
+                ["PMI-RMP®", "/certifications/pmi-rmp"],
+                ["PMI-PBA®", "/certifications/pmi-pba"],
+                ["PMI-SP®", "/certifications/pmi-sp"],
+                ["PMI-CPMAI™", "/certifications/pmi-cpmai"],
+                ["PMI-CP™", "/certifications/pmi-cp"],
+              ].map(([label, path], i) => (
+                <li key={i}>
+                  <Link
+                    to={path}
+                    className="hover:text-fuchsia-300 transition duration-300"
+                  >
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* OFFERINGS */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">
-              Offerings
-            </h3>
+<div>
+  <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-emerald-300 via-cyan-300 to-fuchsia-400 bg-clip-text text-transparent">
+    Offerings
+  </h3>
 
-            <ul className="space-y-3 text-white/70">
-              {[
-                "Corporate Training",
-                "Consulting",
-                "PMO Advisory",
-                "Agile Transformation"
-              ].map((item, i) => (
-                <li key={i} className="hover:text-white transition cursor-default">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+  <ul className="space-y-3 text-white/70">
+    {[
+      ["Professional Training & Certification", "/offerings/professional-training-and-certification"],
+      ["Consulting & Transformation", "/offerings/consulting-and-organizational-transformation"],
+      ["Portfolio & PMO Excellence", "/offerings/portfolio-pmo-and-governance-excellence"],
+      ["Agile Delivery Excellence", "/offerings/agile-and-adaptive-delivery-excellence"],
+      ["Risk & Compliance Assurance", "/offerings/risk-compliance-and-assurance"],
+      ["Business Analysis", "/offerings/business-analysis-and-requirements-gathering"],
+    ].map(([label, path], i) => (
+      <li key={i}>
+        <Link
+          to={path}
+          className="hover:text-cyan-300 transition duration-300"
+        >
+          {label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* MAP */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-6">
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
               Location
             </h3>
 
@@ -117,7 +130,7 @@ const Footer = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition text-xl"
+              className="hover:text-cyan-300 transition text-xl"
             >
               <i className={`fab fa-${icon}`} />
             </a>
@@ -127,12 +140,11 @@ const Footer = () => {
         {/* DIVIDER */}
         <div className="my-10 border-t border-white/10" />
 
-        {/* FOOTER NOTE (PMI COMPLIANT STYLE) */}
+        {/* FOOTER NOTE */}
         <div className="text-center text-xs text-white/60 leading-6 max-w-4xl mx-auto">
           <p>
-            PMI®, PMP®, CAPM®, PMI-ACP®, PgMP®, PfMP®, PMI-RMP®, PMI-PBA®, PMI-SP®,
-            and the PMI Authorized Training Partner logo are registered marks of
-            Project Management Institute, Inc.
+            PMI®, PMP®, CAPM®, PMI-ACP®, PgMP®, PfMP®, PMI-RMP®, PMI-PBA®, PMI-SP®
+            are registered marks of Project Management Institute, Inc.
           </p>
 
           <p className="mt-4">
