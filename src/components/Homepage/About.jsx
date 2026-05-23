@@ -47,7 +47,6 @@ const About = () => {
       <Helmet>
         <title>
           About Skylartech Limited | PMI® Premier Authorized Training Partner
-          Kenya
         </title>
 
         <meta
