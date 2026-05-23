@@ -85,8 +85,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          PMP Training Kenya | PMI® Authorized Training Partner Nairobi |
-          Skylartech Limited
+          PMP Training | PMI® Authorized Training Partner 
         </title>
 
         <meta
