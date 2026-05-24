@@ -1,28 +1,46 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const LiveChat = () => {
   useEffect(() => {
-    // Prevent duplicate script injection
-    if (window.Tawk_API) return;
+    // SSR safety
+    if (typeof window === "undefined") return;
+
+    // Prevent duplicate injection
+    if (document.getElementById("tawk-script")) return;
 
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
-    const s1 = document.createElement('script');
-    const s0 = document.getElementsByTagName('script')[0];
+    const script = document.createElement("script");
+    script.id = "tawk-script";
+    script.async = true;
+    script.src = "https://embed.tawk.to/65b38aae8d261e1b5f58305c/1hl2lbf78";
+    script.charset = "UTF-8";
+    script.setAttribute("crossorigin", "*");
 
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/65b38aae8d261e1b5f58305c/1hl2lbf78';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
+    script.onload = () => {
+      console.log("Tawk.to loaded!");
+    };
 
-    s0.parentNode.insertBefore(s1, s0);
+    script.onerror = () => {
+      console.error("Failed to load Tawk.to");
+    };
 
-    s1.onload = () => console.log('Tawk.to loaded!');
-    s1.onerror = () => console.error('Failed to load Tawk.to');
+    document.body.appendChild(script);
+
+    // Optional cleanup (useful in SPA route changes)
+    return () => {
+      const existingScript = document.getElementById("tawk-script");
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      // Optional: reset API if needed
+      delete window.Tawk_API;
+    };
   }, []);
 
-  return null; // no extra UI needed
+  return null;
 };
 
 export default LiveChat;
