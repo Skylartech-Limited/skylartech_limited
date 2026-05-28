@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -56,25 +56,6 @@ const Navbar = () => {
       </div>
     );
   };
-
-  const [isCertOpen, setIsCertOpen] = useState(false);
-  useEffect(() => {
-    if (!isCertOpen) return;
-
-    // lock scroll
-    document.body.style.overflow = "hidden";
-
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setIsCertOpen(false);
-    };
-
-    window.addEventListener("keydown", handleEsc);
-
-    return () => {
-      document.body.style.overflow = "auto";
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, [isCertOpen]);
   return (
     <>
       <nav
