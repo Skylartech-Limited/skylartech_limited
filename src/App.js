@@ -6,7 +6,7 @@ import "./App.css";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Homepage/Home.jsx";
-import About from "./components/Homepage/About.jsx"
+import About from "./components/Homepage/About.jsx";
 
 import Banking from "./components/Industries/Banking.jsx";
 import Telecommunications from "./components/Industries/Telecommunications.jsx";
@@ -37,11 +37,13 @@ import PMIPMOCP from "./components/Certifications/PMI-PMOCP.jsx";
 import PMICPMAI from "./components/Certifications/PMI-CPMAI.jsx";
 
 import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
+import CookieNotice from "./components/Cookies/Cookies.jsx";
+
 function App() {
   return (
     <div className="App overflow-x-hidden">
       <Navbar />
-
+      <CookieNotice />
       <PageScroll />
 
       <Routes>
