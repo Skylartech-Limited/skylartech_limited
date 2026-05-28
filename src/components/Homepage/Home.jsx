@@ -9,7 +9,13 @@ import {
   Layers,
   CheckCircle2,
 } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
+import Membership from "../../assets/Membership.jpg";
 import Cert1 from "../../assets/Homepage images/Cert1.jpg";
 import Cert2 from "../../assets/Homepage images/Cert2.jpg";
 import Cert3 from "../../assets/Homepage images/Cert3.jpg";
@@ -84,9 +90,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>
-          PMP Training | PMI® Authorized Training Partner 
-        </title>
+        <title>PMP Training | PMI® Authorized Training Partner</title>
 
         <meta
           name="description"
@@ -221,58 +225,92 @@ py-12 sm:py-20 lg:py-28"
               Trusted by PMP®, CAPM®, and PMI® certified professionals globally
             </p>
           </div>
-
-          {/* ================= RIGHT ================= */}
-          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
-            <div
-              className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl
-        flex flex-col items-center space-y-6 sm:space-y-7 lg:space-y-8
-        bg-gradient-to-b from-[#0f172a] to-[#111827]
-        border border-white/10 rounded-2xl
-        p-6 sm:p-8 md:p-10 lg:p-12
-        shadow-[0_20px_60px_rgba(0,0,0,0.6)]
-        overflow-hidden"
-            >
-              {/* TAG */}
-              <span
-                className="text-[11px] sm:text-xs uppercase tracking-widest text-white/90
-          bg-purple-500/40 border border-white/10 px-4 py-2 rounded-full"
-              >
-                Accreditation
-              </span>
-
-              {/* GLOW */}
-              <div className="absolute w-[85%] h-[65%] bg-violet-500/20 blur-3xl rounded-full top-10" />
-
-              {/* LOGOS */}
-              <div className="relative z-10 flex items-center justify-center">
-                <img
-                  src={PMI}
-                  alt="PMI"
-                  className="h-16 sm:h-24 md:h-32 lg:h-40 xl:h-44 object-contain drop-shadow-lg"
-                />
-
-                <img
-                  src={PMI2}
-                  alt="PMI2"
-                  className="h-16 sm:h-24 md:h-32 lg:h-40 xl:h-44 object-contain -ml-3 sm:-ml-5 md:-ml-6 drop-shadow-lg"
-                />
-              </div>
-
-              {/* DESCRIPTION */}
-              <div className="relative z-10 text-center">
-                <span
-                  className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed
-            block bg-white/5 border border-white/10 px-4 py-4 rounded-xl max-w-sm sm:max-w-md"
+          {/* ================= RIGHT (SLIDER - FULLY RESPONSIVE SAFE) ================= */}
+          <div className="flex justify-center lg:justify-end mt-10 lg:mt-0 w-full px-2 sm:px-0">
+            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
+              {/* SWIPER WRAPPER */}
+              <div className="rounded-2xl overflow-hidden pb-2">
+                <Swiper
+                  modules={[Pagination, Autoplay]}
+                  spaceBetween={24}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{
+                    delay: 4200,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                  }}
+                  className="h-full [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:h-auto"
                 >
-                  Skylartech is a Premier Authorized Training Partner (ATP) of
-                  Project Management Institute, USA.
-                </span>
+                  {/* ================= SLIDE 1 ================= */}
+                  <SwiperSlide className="h-auto">
+                    <div
+                      className="
+              h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
+              flex flex-col items-center justify-center text-center
+              bg-gradient-to-b from-[#0f172a] to-[#111827]
+              border border-white/10 rounded-2xl
+              px-5 sm:px-6 md:px-8
+              shadow-[0_25px_80px_rgba(0,0,0,0.6)]
+            "
+                    >
+                      <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-white/90 bg-purple-500/40 border border-white/10 px-3 sm:px-4 py-2 rounded-full">
+                        Accreditation
+                      </span>
+
+                      {/* LOGOS */}
+                      <div className="flex items-center justify-center mt-5">
+                        <img
+                          src={PMI}
+                          alt="PMI"
+                          className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain"
+                        />
+                        <img
+                          src={PMI2}
+                          alt="PMI2"
+                          className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain -ml-4 sm:-ml-6 md:-ml-8"
+                        />
+                      </div>
+
+                      <p className="text-white/80 text-xs sm:text-sm md:text-base mt-4 max-w-md">
+                        Skylartech is a Premier Authorized Training Partner of
+                        PMI® USA.
+                      </p>
+                    </div>
+                  </SwiperSlide>
+
+                  {/* ================= SLIDE 2 ================= */}
+                  <SwiperSlide className="h-auto">
+                    <div
+                      className="
+              h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
+              flex items-stretch justify-center
+              bg-gradient-to-b from-[#0f172a] to-[#111827]
+              border border-white/10 rounded-2xl
+              overflow-hidden
+              shadow-[0_25px_80px_rgba(0,0,0,0.6)]
+            "
+                    >
+                      <img
+                        src={Membership}
+                        alt="Membership"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+
+                {/* ================= CLEAN DOTS ================= */}
+                <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       {/* ================= ABOUT US ================= */}
       <div
         id="about-skylartech"
