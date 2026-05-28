@@ -56,25 +56,6 @@ const Navbar = () => {
       </div>
     );
   };
-
-  const [isCertOpen, setIsCertOpen] = useState(false);
-  useEffect(() => {
-    if (!isCertOpen) return;
-
-    // lock scroll
-    document.body.style.overflow = "hidden";
-
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setIsCertOpen(false);
-    };
-
-    window.addEventListener("keydown", handleEsc);
-
-    return () => {
-      document.body.style.overflow = "auto";
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, [isCertOpen]);
   return (
     <>
       <nav
