@@ -37,3 +37,34 @@ html {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+/* ================= SWIPER PAGINATION (SLATE THEME) ================= */
+
+.custom-pagination .swiper-pagination-bullet {
+  background: rgba(148, 163, 184, 0.5) !important; /* slate-400 */
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  margin: 0 4px;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+/* active dot */
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #e2e8f0 !important; /* slate-200 */
+  transform: scale(1.25);
+}
+
+/* remove any swiper default styling that causes bar/shadow */
+.swiper-pagination {
+  position: static !important;
+  margin-top: 16px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* prevent unwanted spacing issues */
+.swiper {
+  padding-bottom: 0 !important;
+}

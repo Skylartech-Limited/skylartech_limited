@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, BadgeCheck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Logo from "../../assets/Logo.png";
-import Membership from "../../assets/Membership.jpg";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -327,30 +325,6 @@ const Navbar = () => {
               >
                 Contact
               </Link>
-
-              {/* {CERTIFICATE OF MEMBERSHIP - DESKTOP ONLY} */}
-              <button
-                onClick={() => setIsCertOpen(true)}
-                className="
-    flex items-center gap-1
-    text-purple-800
-    font-medium
-    tracking-wide
-    transition-all duration-300 ease-out
-    hover:-translate-y-1
-    hover:text-purple-500
-    hover:drop-shadow-[0_0_10px_rgba(168,85,247,0.7)]
-  "
-              >
-                <BadgeCheck
-                  className="
-      w-4 h-4 text-purple-800
-      transition-all duration-300 ease-out
-      group-hover:text-purple-500
-    "
-                />
-                Certificate
-              </button>
             </div>
 
             {/* MOBILE BUTTON */}
@@ -517,106 +491,11 @@ const Navbar = () => {
                 >
                   Contact
                 </Link>
-
-                {/* {CERTIFICATE OF MEMBERSHIP} */}
-                <button
-                  onClick={() => {
-                    setIsCertOpen(true);
-                    closeMenus();
-                  }}
-                  className="flex items-center justify-center gap-2 py-2 text-purple-700 font-medium w-full"
-                >
-                  <BadgeCheck className="w-4 h-4" />
-                  Certificate
-                </button>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-      {/* CERTIFICATE MODAL (OUTSIDE NAV - IMPORTANT) */}
-      {isCertOpen &&
-        createPortal(
-          <AnimatePresence>
-            <div className="fixed inset-0 z-[999999] flex items-center justify-center px-3 sm:px-6">
-              {/* Backdrop */}
-              <motion.div
-                className="fixed inset-0 bg-black/70 backdrop-blur-sm"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setIsCertOpen(false)}
-              />
-
-              {/* Modal */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.92, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                transition={{ duration: 0.25 }}
-                className="
-            relative z-[1000000]
-            bg-white
-            rounded-2xl
-            shadow-2xl
-            w-full max-w-5xl
-            max-h-[92vh]
-            overflow-hidden
-            flex flex-col
-          "
-              >
-                {/* Header */}
-                <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-gray-100">
-                  <div className="flex items-center gap-2">
-                    <BadgeCheck className="w-5 h-5 text-purple-600" />
-                    <h2 className="text-sm sm:text-base font-semibold text-gray-800">
-                      Membership Certificate
-                    </h2>
-                  </div>
-
-                  <button
-                    onClick={() => setIsCertOpen(false)}
-                    className="text-gray-500 hover:text-black text-2xl"
-                  >
-                    ✕
-                  </button>
-                </div>
-
-                {/* Body */}
-                <div className="relative flex-1 flex items-center justify-center bg-gray-50 p-3 sm:p-6 overflow-auto">
-                  {/* Certificate */}
-                  <img
-                    src={Membership}
-                    alt="Membership Certificate"
-                    className="
-                w-full
-                max-h-[75vh]
-                object-contain
-                rounded-lg
-                shadow-md
-                select-none
-                pointer-events-none
-              "
-                    draggable="false"
-                  />
-
-                  {/* WATERMARK OVERLAY */}
-                  <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                    <span className="text-gray-400/20 text-3xl sm:text-5xl font-bold rotate-[-20deg] select-none">
-                      SKYLARTECH • CONFIDENTIAL
-                    </span>
-                  </div>
-
-                  {/* PRINT HINT */}
-                  <div className="absolute bottom-2 right-3 text-[10px] sm:text-xs text-gray-400">
-                    Viewing only — printing disabled
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </AnimatePresence>,
-          document.body,
-        )}
     </>
   );
 };
