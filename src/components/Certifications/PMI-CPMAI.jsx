@@ -51,7 +51,7 @@ const PMICPMAI = () => {
             </div>
 
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05]">
-              PMI-CPMAI™
+              PMI-CPMAI®
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-yellow-300">
                 Certification
               </span>

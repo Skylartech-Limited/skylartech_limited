@@ -55,7 +55,7 @@ const GPMb = () => {
             </div>
 
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05]">
-              GPM-b™
+              GPM-b®
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-sky-300">
                 Certification
               </span>
