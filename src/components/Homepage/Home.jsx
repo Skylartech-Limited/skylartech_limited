@@ -139,10 +139,10 @@ const Home = () => {
       </Helmet>
      {/* ================= HERO (FINAL FIXED & RESPONSIVE) ================= */}
 <div
-  className="relative min-h-[100svh] flex items-center overflow-hidden
-pt-28 sm:pt-32 lg:pt-28
+className="relative min-h-[100svh] flex items-center overflow-hidden
+pt-40 sm:pt-44 md:pt-48 lg:pt-36 xl:pt-40
 px-4 sm:px-6 lg:px-12
-py-12 sm:py-20 lg:py-28"
+pb-14 sm:pb-20 lg:pb-28"
 >
   {/* BACKGROUND IMAGE */}
   <div
@@ -277,8 +277,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 </div>
 
                 <p className="text-white/80 text-xs sm:text-sm md:text-base mt-4 max-w-md">
-                  Skylartech is a Premier Authorized Training Partner of
-                  PMI® USA.
+                  Skylartech is a Premier Authorized Training Partner of PMI
                 </p>
               </div>
             </SwiperSlide>
