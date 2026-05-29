@@ -54,8 +54,8 @@ const Footer = () => {
                 ["PMI-RMP®", "/certifications/pmi-rmp"],
                 ["PMI-PBA®", "/certifications/pmi-pba"],
                 ["PMI-SP®", "/certifications/pmi-sp"],
-                ["PMI-CPMAI™", "/certifications/pmi-cpmai"],
-                ["PMI-CP™", "/certifications/pmi-cp"],
+                ["PMI-CPMAI®", "/certifications/pmi-cpmai"],
+                ["PMI-CP®", "/certifications/pmi-cp"],
               ].map(([label, path], i) => (
                 <li key={i}>
                   <Link

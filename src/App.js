@@ -103,8 +103,8 @@ function App() {
         <Route path="/industries/government" element={<Government />} />
         <Route path="/industries/healthcare" element={<Healthcare />} />
 
-        {/* CONTACT */}
-        <Route path="/contact-us" element={<Contact />} />
+        {/* BOOK TRAINING */}
+        <Route path="/book-training" element={<Contact />} />
       </Routes>
 
       <Footer />
