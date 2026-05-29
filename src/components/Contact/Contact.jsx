@@ -85,7 +85,7 @@ const Contact = () => {
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-5 sm:mb-6">
             <Globe className="w-4 h-4 text-sky-300" />
             <span className="text-[11px] sm:text-sm text-white/80">
-              PMI® Training • Consulting • PMO Advisory
+              PMI® Training • Project Consulting • PMO Advisory
             </span>
           </div>
 
@@ -113,9 +113,11 @@ const Contact = () => {
           </div>
 
           <p className="mt-5 sm:mt-6 text-white/70 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed px-2">
-            Empower your leadership and execution teams with world-class PMI®
-            certifications designed for first-time success and operational
-            excellence.
+            Empower your leadership and execution teams with world-class,
+            globally recognized PMI® certifications. Led by master Authorized
+            Instructors, we deploy high-velocity corporate training and
+            intensive exam prep bootcamps designed to guarantee first-time
+            passing success.
           </p>
 
           <p className="mt-5 sm:mt-6 text-white/70 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed px-2">
