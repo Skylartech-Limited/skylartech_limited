@@ -297,14 +297,14 @@ const Navbar = () => {
               </div>
               {/* CONTACT */}
               <Link
-                to="/contact-us"
+                to="/book-training"
                 onClick={scrollToTop}
                 className={
                   navLink +
                   " transition-all duration-300 ease-out hover:-translate-y-1 hover:text-purple-600"
                 }
               >
-                Contact
+                Book Training
               </Link>
             </div>
 
@@ -464,13 +464,13 @@ const Navbar = () => {
                   ))}
                 </MobileDropdown>
 
-                {/* {CONTACT} */}
+                {/* {BOOK TRAINING} */}
                 <Link
-                  to="/contact-us"
+                  to="/book-training"
                   onClick={closeMenus}
                   className="block py-2 mt-2"
                 >
-                  Contact
+                  Book Training
                 </Link>
               </div>
             </motion.div>

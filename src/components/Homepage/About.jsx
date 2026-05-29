@@ -34,12 +34,12 @@ const About = () => {
     { name: "PMI-RMP®", link: "/certifications/pmi-rmp" },
     { name: "PMI-PBA®", link: "/certifications/pmi-pba" },
     { name: "PMI-SP®", link: "/certifications/pmi-sp" },
-    { name: "PMI-CP™", link: "/certifications/pmi-cp" },
-    { name: "PMI-PMOCP™", link: "/certifications/pmi-pmocp" },
-    { name: "PMI-CPMAI™", link: "/certifications/pmi-cpmai" },
+    { name: "PMI-CP®", link: "/certifications/pmi-cp" },
+    { name: "PMI-PMOCP®", link: "/certifications/pmi-pmocp" },
+    { name: "PMI-CPMAI®", link: "/certifications/pmi-cpmai" },
 
     // Sustainability
-    { name: "GPM-b™", link: "/certifications/gpm-b" },
+    { name: "GPM-b®", link: "/certifications/gpm-b" },
   ];
 
   return (
