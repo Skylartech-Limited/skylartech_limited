@@ -21,6 +21,8 @@ const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [offeringOpen, setOfferingOpen] = useState(false);
+  const [selectedOffering, setSelectedOffering] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -295,40 +297,105 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* REQUESTED OFFERING (OPTIONAL) */}
-              <div className="mt-5">
+              {/* REQUESTED OFFERING (CUSTOM DROPDOWN) */}
+              <div className="mt-5 relative">
                 <label className="block text-xs text-white/60 mb-2">
                   Requested Offering (Optional)
                 </label>
 
-                <select
-                  name="requested_offering"
-                  defaultValue=""
-                  className="w-full h-12 sm:h-14 px-4 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-sky-400/40 transition"
+                {/* Trigger */}
+                <button
+                  type="button"
+                  onClick={() => setOfferingOpen((prev) => !prev)}
+                  className="
+      w-full h-12 sm:h-14 px-4 rounded-xl
+      bg-[#0B1220]
+      border border-white/10
+      text-white text-left
+      flex items-center justify-between
+      focus:outline-none focus:border-sky-400/40
+      transition
+    "
                 >
-                  <option value="">Select Offering</option>
+                  <span
+                    className={
+                      selectedOffering ? "text-white" : "text-white/50"
+                    }
+                  >
+                    {selectedOffering || "Select Offering"}
+                  </span>
 
-                  <optgroup label="Professional Training & Certification">
-                    <option>CAPM®</option>
-                    <option>PMP®</option>
-                    <option>PgMP®</option>
-                    <option>PfMP®</option>
-                    <option>PMI-ACP®</option>
-                    <option>PMI-RMP®</option>
-                    <option>PMI-PBA®</option>
-                    <option>PMI-SP®</option>
-                    <option>PMI-CP®</option>
-                    <option>PMI-PMOCP®</option>
-                    <option>PMI-CPMAI®</option>
-                    <option>GPM-b®</option>
-                  </optgroup>
+                  <span className="text-white/60">▾</span>
+                </button>
 
-                  <option>Consulting & Transformation</option>
-                  <option>Portfolio & PMO Excellence</option>
-                  <option>Agile Delivery Excellence</option>
-                  <option>Risk & Compliance Assurance</option>
-                  <option>Business Analysis</option>
-                </select>
+                {/* Dropdown */}
+                {offeringOpen && (
+                  <div className="absolute z-50 mt-2 w-full rounded-xl border border-white/10 bg-[#0B1220] backdrop-blur-xl shadow-lg max-h-72 overflow-y-auto">
+                    <div className="px-3 py-2 text-xs text-white/50">
+                      Professional Training & Certification
+                    </div>
+
+                    {[
+                      "CAPM®",
+                      "PMP®",
+                      "PgMP®",
+                      "PfMP®",
+                      "PMI-ACP®",
+                      "PMI-RMP®",
+                      "PMI-PBA®",
+                      "PMI-SP®",
+                      "PMI-CP®",
+                      "PMI-PMOCP®",
+                      "PMI-CPMAI®",
+                      "GPM-b®",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        onClick={() => {
+                          setSelectedOffering(item);
+                          setOfferingOpen(false);
+                        }}
+                        className="
+            px-4 py-2 cursor-pointer text-white
+            hover:bg-white/10 transition
+          "
+                      >
+                        {item}
+                      </div>
+                    ))}
+
+                    <div className="border-t border-white/10 my-2" />
+
+                    {[
+                      "Consulting & Transformation",
+                      "Portfolio & PMO Excellence",
+                      "Agile Delivery Excellence",
+                      "Risk & Compliance Assurance",
+                      "Business Analysis",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        onClick={() => {
+                          setSelectedOffering(item);
+                          setOfferingOpen(false);
+                        }}
+                        className="
+            px-4 py-2 cursor-pointer text-white
+            hover:bg-white/10 transition
+          "
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Hidden input so EmailJS still receives value */}
+                <input
+                  type="hidden"
+                  name="requested_offering"
+                  value={selectedOffering}
+                />
               </div>
 
               {/* MESSAGE */}
