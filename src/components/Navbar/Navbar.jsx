@@ -304,7 +304,7 @@ const Navbar = () => {
                   " transition-all duration-300 ease-out hover:-translate-y-1 hover:text-purple-600"
                 }
               >
-                Book Training
+                Book Your Training
               </Link>
             </div>
 
@@ -470,7 +470,7 @@ const Navbar = () => {
                   onClick={closeMenus}
                   className="block py-2 mt-2"
                 >
-                  Book Training
+                  Book Your Training
                 </Link>
               </div>
             </motion.div>
