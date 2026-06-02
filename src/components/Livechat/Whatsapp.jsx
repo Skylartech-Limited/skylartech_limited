@@ -204,40 +204,44 @@ const WhatsAppWidget = () => {
         </div>
       )}
 
-      {/* ================= FLOATING BUTTON ================= */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="
-          flex items-center gap-3 px-4 py-3
-          rounded-full
-          bg-white/10 backdrop-blur-xl
-          border border-white/20
-          shadow-lg
+     {/* ================= FLOATING BUTTON ================= */}
+<button
+  onClick={() => setOpen(!open)}
+  className="
+    flex items-center gap-3 px-4 py-3
+    rounded-full
+    bg-white/10 backdrop-blur-xl
+    border border-white/20
+    shadow-lg
 
-          transition-all duration-300
-          hover:scale-[1.05] hover:-translate-y-1
+    transition-all duration-300
+    hover:scale-[1.05] hover:-translate-y-1
 
-          relative overflow-hidden
-          group
-        "
-      >
-        <span className="absolute inset-0 bg-gradient-to-r from-[#25D366]/30 to-[#0B8F5A]/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></span>
+    relative overflow-hidden
+    group
+  "
+>
+  {/* glow */}
+  <span className="absolute inset-0 bg-gradient-to-r from-[#25D366]/30 to-[#0B8F5A]/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></span>
 
-        <span className="absolute w-16 h-16 rounded-full bg-[#25D366]/40 animate-ping"></span>
+  {/* pulse */}
+  <span className="absolute w-16 h-16 rounded-full bg-[#25D366]/40 animate-ping"></span>
 
-        <div className="relative z-10 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
-          <i className="fa-brands fa-whatsapp text-white text-xl" />
-        </div>
+  {/* icon (always visible) */}
+  <div className="relative z-10 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
+    <i className="fa-brands fa-whatsapp text-white text-xl" />
+  </div>
 
-        <div className="relative z-10 flex flex-col text-left">
-          <span className="text-white text-sm font-semibold leading-tight">
-            Chat with us
-          </span>
-          <span className="text-white/60 text-[11px]">
-            Powered by WhatsApp
-          </span>
-        </div>
-      </button>
+  {/* TEXT → HIDDEN ON MOBILE */}
+  <div className="relative z-10 hidden sm:flex flex-col text-left">
+    <span className="text-white text-sm font-semibold leading-tight">
+      Chat with us
+    </span>
+    <span className="text-white/60 text-[11px]">
+      Powered by WhatsApp
+    </span>
+  </div>
+</button>
     </div>
   );
 };
