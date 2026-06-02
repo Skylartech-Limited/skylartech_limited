@@ -4,6 +4,10 @@ import Logo from "../../assets/Homepage images/PMI.png";
 const WhatsAppWidget = () => {
   const [open, setOpen] = useState(false);
 
+  const openWhatsAppMobile = () => {
+    window.location.href = "https://wa.me/254718257293";
+  };
+
   const [messages, setMessages] = useState([
     {
       from: "bot",
@@ -38,39 +42,34 @@ const WhatsAppWidget = () => {
       userMessage
     )}`;
 
-    // 📱 MOBILE → direct WhatsApp
     if (window.innerWidth < 768) {
       window.location.href = url;
       return;
     }
 
-    // 💻 DESKTOP → new tab
     setTimeout(() => {
       window.open(url, "_blank");
     }, 200);
   };
 
- return (
-  <div
-    className="
-      fixed z-[999]
-      bottom-6 right-4 sm:right-6
-
-      flex flex-col items-end gap-3
-      max-w-[95vw]
-    "
-  >
+  return (
+    <div
+      className="
+        fixed z-[999]
+        bottom-6 right-4 sm:right-6
+        flex flex-col items-end gap-3
+        max-w-[95vw]
+      "
+    >
       {/* ================= CHAT WINDOW ================= */}
       {open && (
         <div
           className="
             w-[94vw] sm:w-96 md:w-[420px] lg:w-[460px]
             h-[75vh] sm:h-[500px] md:h-[540px]
-
             rounded-2xl overflow-hidden
             shadow-2xl border border-white/20
             backdrop-blur-xl bg-[#0f1115]/90
-
             flex flex-col
           "
         >
@@ -87,7 +86,7 @@ const WhatsAppWidget = () => {
               </div>
 
               <div className="flex flex-col leading-tight text-left items-start">
-                <p className="font-semibold text-[15px] tracking-wide text-white">
+                <p className="font-semibold text-[15px] text-white">
                   Skylartech Support
                 </p>
 
@@ -102,24 +101,16 @@ const WhatsAppWidget = () => {
               </div>
             </div>
 
-            {/* CLOSE */}
             <button
               onClick={() => setOpen(false)}
               className="
-                w-10 h-10
-                flex items-center justify-center
-
-                rounded-full
-                bg-white/90
-                shadow-md border border-white/30
-
+                w-10 h-10 flex items-center justify-center
+                rounded-full bg-white/90 shadow-md
                 text-[#0f1115]
-
-                hover:bg-white hover:scale-105
-                transition-all duration-200
+                hover:scale-105 transition
               "
             >
-              <i className="fa-solid fa-xmark text-[14px]"></i>
+              <i className="fa-solid fa-xmark text-[14px]" />
             </button>
           </div>
 
@@ -134,30 +125,17 @@ const WhatsAppWidget = () => {
                 >
                   <div
                     className={`
-                      max-w-[85%]
-                      px-4 py-3
-                      text-[15px]
-                      leading-relaxed
-                      rounded-2xl
-                      shadow-sm
-                      break-words
-
+                      max-w-[85%] px-4 py-3 text-[15px]
+                      rounded-2xl break-words
                       ${
                         msg.from === "user"
-                          ? "bg-[#25D366] text-black rounded-tr-sm"
-                          : "bg-[#1a1f27] text-gray-100 rounded-tl-sm border border-white/5"
+                          ? "bg-[#25D366] text-black"
+                          : "bg-[#1a1f27] text-gray-100 border border-white/5"
                       }
                     `}
                   >
                     <p>{msg.text}</p>
-
-                    <p
-                      className={`text-[10px] mt-1 text-right ${
-                        msg.from === "user"
-                          ? "text-black/70"
-                          : "text-white/40"
-                      }`}
-                    >
+                    <p className="text-[10px] mt-1 text-white/40 text-right">
                       {msg.time}
                     </p>
                   </div>
@@ -167,7 +145,7 @@ const WhatsAppWidget = () => {
           </div>
 
           {/* INPUT */}
-          <div className="p-3 sm:p-4 bg-[#0f1115] border-t border-white/10 flex items-center gap-2">
+          <div className="p-3 bg-[#0f1115] border-t border-white/10 flex items-center gap-2">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -178,25 +156,12 @@ const WhatsAppWidget = () => {
                 }
               }}
               placeholder="Message Skylartech..."
-              className="
-                flex-1 px-3 py-3 text-[15px]
-                rounded-full
-                bg-[#151a22] border border-white/10
-                text-white placeholder:text-gray-400
-                focus:outline-none focus:ring-2 focus:ring-green-400/30
-              "
+              className="flex-1 px-3 py-3 rounded-full bg-[#151a22] text-white"
             />
 
             <button
               onClick={sendMessage}
-              className="
-                bg-[#25D366] hover:bg-[#1ebe5d]
-                text-black font-medium
-                px-5 py-3 text-[14px]
-                rounded-full
-                transition
-                whitespace-nowrap
-              "
+              className="bg-[#25D366] text-black px-5 py-3 rounded-full"
             >
               Send
             </button>
@@ -204,44 +169,50 @@ const WhatsAppWidget = () => {
         </div>
       )}
 
-     {/* ================= FLOATING BUTTON ================= */}
-<button
-  onClick={() => setOpen(!open)}
-  className="
-    flex items-center gap-3 px-4 py-3
-    rounded-full
-    bg-white/10 backdrop-blur-xl
-    border border-white/20
-    shadow-lg
+      {/* ================= FLOATING BUTTON (RESPONSIVE FIXED) ================= */}
+      <button
+        onClick={() => {
+          if (window.innerWidth < 768) {
+            openWhatsAppMobile();
+          } else {
+            setOpen(!open);
+          }
+        }}
+        className="
+          flex items-center gap-3 px-4 py-3
+          rounded-full
+          bg-white/10 backdrop-blur-xl
+          border border-white/20
+          shadow-lg
 
-    transition-all duration-300
-    hover:scale-[1.05] hover:-translate-y-1
+          transition-all duration-300
+          hover:scale-[1.05] hover:-translate-y-1
 
-    relative overflow-hidden
-    group
-  "
->
-  {/* glow */}
-  <span className="absolute inset-0 bg-gradient-to-r from-[#25D366]/30 to-[#0B8F5A]/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></span>
+          relative overflow-hidden
+          group
+        "
+      >
+        {/* glow */}
+        <span className="absolute inset-0 bg-gradient-to-r from-[#25D366]/30 to-[#0B8F5A]/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></span>
 
-  {/* pulse */}
-  <span className="absolute w-16 h-16 rounded-full bg-[#25D366]/40 animate-ping"></span>
+        {/* pulse */}
+        <span className="absolute w-16 h-16 rounded-full bg-[#25D366]/40 animate-ping"></span>
 
-  {/* icon (always visible) */}
-  <div className="relative z-10 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
-    <i className="fa-brands fa-whatsapp text-white text-xl" />
-  </div>
+        {/* icon only (always visible) */}
+        <div className="relative z-10 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
+          <i className="fa-brands fa-whatsapp text-white text-xl" />
+        </div>
 
-  {/* TEXT → HIDDEN ON MOBILE */}
-  <div className="relative z-10 hidden sm:flex flex-col text-left">
-    <span className="text-white text-sm font-semibold leading-tight">
-      Chat with us
-    </span>
-    <span className="text-white/60 text-[11px]">
-      Powered by WhatsApp
-    </span>
-  </div>
-</button>
+        {/* TEXT hidden on mobile */}
+        <div className="relative z-10 hidden sm:flex flex-col text-left">
+          <span className="text-white text-sm font-semibold">
+            Chat with us
+          </span>
+          <span className="text-white/60 text-[11px]">
+            Powered by WhatsApp
+          </span>
+        </div>
+      </button>
     </div>
   );
 };
