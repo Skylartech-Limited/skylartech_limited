@@ -551,7 +551,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
               </Link>
 
               <Link
-                to="/contact-us"
+                to="/book-training"
                 className="px-7 py-3 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md text-white hover:bg-white/20 transition text-center"
               >
                 Request a corporate proposal
@@ -1256,7 +1256,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
             {/* ================= LEFT (PREMIUM ICON VERSION) ================= */}
             <div className="text-center lg:text-left">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
-                Enterprise Partnerships & Client Success
+                Enterprise Partnerships
               </h2>
 
               <h3 className="text-base sm:text-lg lg:text-xl text-white/80 font-medium mt-6 leading-7 lg:leading-8">

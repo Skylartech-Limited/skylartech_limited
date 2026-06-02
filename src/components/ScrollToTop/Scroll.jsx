@@ -6,47 +6,40 @@ const Scroll = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const middleOfPage = window.innerHeight / 2;
-      const shouldShow = window.scrollY > middleOfPage;
-      setShowScrollButton(shouldShow);
+      setShowScrollButton(window.scrollY > window.innerHeight / 2);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  if (!showScrollButton) return null;
 
   return (
-    // Conditionally render the button based on the showScrollButton state
-    showScrollButton && (
-      <motion.div
-        initial={{ x: "-100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "-100%", opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="fixed bottom-5 left-10 z-50"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35 }}
+      className="
+        fixed z-[999]
+        bottom-6 left-4 sm:left-6
+      "
+    >
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="
+          relative w-12 h-12 rounded-full
+          bg-white/10 backdrop-blur-xl
+          border border-white/15
+          shadow-lg shadow-black/20
+          text-white
+          hover:scale-110 transition
+        "
       >
-        <button
-          onClick={scrollToTop}
-          className="bg-slate-700 text-white p-4 rounded-full shadow-md hover:bg-amber-500 focus:outline-none"
-        >
-          <i
-            className="fa-solid fa-chevron-up fa-lg"
-            style={{ color: "#FFFFFF" }}
-          ></i>
-        </button>
-      </motion.div>
-    )
+        <span className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5" />
+        <i className="fa-solid fa-chevron-up relative z-10 text-sm" />
+      </button>
+    </motion.div>
   );
 };
 

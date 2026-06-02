@@ -1,0 +1,245 @@
+import { useState } from "react";
+import Logo from "../../assets/Homepage images/PMI.png";
+
+const WhatsAppWidget = () => {
+  const [open, setOpen] = useState(false);
+
+  const [messages, setMessages] = useState([
+    {
+      from: "bot",
+      text: "Welcome to Skylartech. Our support team is ready to assist you. How can we help?",
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    },
+  ]);
+
+  const [input, setInput] = useState("");
+
+  const sendMessage = () => {
+    if (!input.trim()) return;
+
+    const userMessage = input;
+
+    const now = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    setMessages((prev) => [
+      ...prev,
+      { from: "user", text: userMessage, time: now },
+    ]);
+
+    setInput("");
+
+    const url = `https://wa.me/254718257293?text=${encodeURIComponent(
+      userMessage
+    )}`;
+
+    // 📱 MOBILE → direct WhatsApp
+    if (window.innerWidth < 768) {
+      window.location.href = url;
+      return;
+    }
+
+    // 💻 DESKTOP → new tab
+    setTimeout(() => {
+      window.open(url, "_blank");
+    }, 200);
+  };
+
+ return (
+  <div
+    className="
+      fixed z-[999]
+      bottom-6 right-4 sm:right-6
+
+      flex flex-col items-end gap-3
+      max-w-[95vw]
+    "
+  >
+      {/* ================= CHAT WINDOW ================= */}
+      {open && (
+        <div
+          className="
+            w-[94vw] sm:w-96 md:w-[420px] lg:w-[460px]
+            h-[75vh] sm:h-[500px] md:h-[540px]
+
+            rounded-2xl overflow-hidden
+            shadow-2xl border border-white/20
+            backdrop-blur-xl bg-[#0f1115]/90
+
+            flex flex-col
+          "
+        >
+          {/* HEADER */}
+          <div className="bg-gradient-to-r from-[#0B8F5A] to-[#25D366] text-white p-5 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <img
+                  src={Logo}
+                  alt="Skylartech"
+                  className="w-11 h-11 rounded-full object-cover border border-white/30 shadow-md"
+                />
+                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-400 border-2 border-[#0B8F5A] shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+              </div>
+
+              <div className="flex flex-col leading-tight text-left items-start">
+                <p className="font-semibold text-[15px] tracking-wide text-white">
+                  Skylartech Support
+                </p>
+
+                <div className="flex items-center gap-2 mt-1">
+                  <p className="text-[12px] text-white/70 font-medium">
+                    Response time{" "}
+                    <span className="text-white/90 font-semibold">
+                      under 2 minutes
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CLOSE */}
+            <button
+              onClick={() => setOpen(false)}
+              className="
+                w-10 h-10
+                flex items-center justify-center
+
+                rounded-full
+                bg-white/90
+                shadow-md border border-white/30
+
+                text-[#0f1115]
+
+                hover:bg-white hover:scale-105
+                transition-all duration-200
+              "
+            >
+              <i className="fa-solid fa-xmark text-[14px]"></i>
+            </button>
+          </div>
+
+          {/* CHAT AREA */}
+          <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-[#0b0d10]">
+            {messages.map((msg, i) => (
+              <div key={i} className="flex w-full">
+                <div
+                  className={`flex w-full ${
+                    msg.from === "user" ? "justify-end" : "justify-start"
+                  }`}
+                >
+                  <div
+                    className={`
+                      max-w-[85%]
+                      px-4 py-3
+                      text-[15px]
+                      leading-relaxed
+                      rounded-2xl
+                      shadow-sm
+                      break-words
+
+                      ${
+                        msg.from === "user"
+                          ? "bg-[#25D366] text-black rounded-tr-sm"
+                          : "bg-[#1a1f27] text-gray-100 rounded-tl-sm border border-white/5"
+                      }
+                    `}
+                  >
+                    <p>{msg.text}</p>
+
+                    <p
+                      className={`text-[10px] mt-1 text-right ${
+                        msg.from === "user"
+                          ? "text-black/70"
+                          : "text-white/40"
+                      }`}
+                    >
+                      {msg.time}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* INPUT */}
+          <div className="p-3 sm:p-4 bg-[#0f1115] border-t border-white/10 flex items-center gap-2">
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+              placeholder="Message Skylartech..."
+              className="
+                flex-1 px-3 py-3 text-[15px]
+                rounded-full
+                bg-[#151a22] border border-white/10
+                text-white placeholder:text-gray-400
+                focus:outline-none focus:ring-2 focus:ring-green-400/30
+              "
+            />
+
+            <button
+              onClick={sendMessage}
+              className="
+                bg-[#25D366] hover:bg-[#1ebe5d]
+                text-black font-medium
+                px-5 py-3 text-[14px]
+                rounded-full
+                transition
+                whitespace-nowrap
+              "
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ================= FLOATING BUTTON ================= */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="
+          flex items-center gap-3 px-4 py-3
+          rounded-full
+          bg-white/10 backdrop-blur-xl
+          border border-white/20
+          shadow-lg
+
+          transition-all duration-300
+          hover:scale-[1.05] hover:-translate-y-1
+
+          relative overflow-hidden
+          group
+        "
+      >
+        <span className="absolute inset-0 bg-gradient-to-r from-[#25D366]/30 to-[#0B8F5A]/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></span>
+
+        <span className="absolute w-16 h-16 rounded-full bg-[#25D366]/40 animate-ping"></span>
+
+        <div className="relative z-10 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
+          <i className="fa-brands fa-whatsapp text-white text-xl" />
+        </div>
+
+        <div className="relative z-10 flex flex-col text-left">
+          <span className="text-white text-sm font-semibold leading-tight">
+            Chat with us
+          </span>
+          <span className="text-white/60 text-[11px]">
+            Powered by WhatsApp
+          </span>
+        </div>
+      </button>
+    </div>
+  );
+};
+
+export default WhatsAppWidget;

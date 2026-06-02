@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import LiveChat from "./components/Livechat/Livechat.jsx";
 import Scroll from "./components/ScrollToTop/Scroll.jsx";
 import "./App.css";
 
@@ -7,6 +6,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Homepage/Home.jsx";
 import About from "./components/Homepage/About.jsx";
+import WhatsAppWidget from "./components/Livechat/Whatsapp.jsx";
 
 import Banking from "./components/Industries/Banking.jsx";
 import Telecommunications from "./components/Industries/Telecommunications.jsx";
@@ -108,8 +108,8 @@ function App() {
       </Routes>
 
       <Footer />
-      <LiveChat />
       <Scroll />
+      <WhatsAppWidget />
     </div>
   );
 }

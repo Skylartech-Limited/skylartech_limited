@@ -1,30 +1,36 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const Pagescroll = () => {
-  const { hash } = useLocation();
+const PageScroll = () => {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const element = document.querySelector(hash);
+    const timeout = setTimeout(() => {
+      // If hash exists → scroll to section
+      if (hash) {
+        const el = document.querySelector(hash);
 
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({
+        if (el) {
+          el.scrollIntoView({
             behavior: "smooth",
             block: "start",
           });
-        }, 100);
+          return;
+        }
       }
-    } else {
+
+      // Default route change → smooth top scroll
       window.scrollTo({
         top: 0,
+        left: 0,
         behavior: "smooth",
       });
-    }
-  }, [hash]);
+    }, 120); // small delay improves route paint stability
+
+    return () => clearTimeout(timeout);
+  }, [pathname, hash]);
 
   return null;
 };
 
-export default Pagescroll;
+export default PageScroll;
