@@ -77,7 +77,13 @@ const Contact = () => {
 
       {/* ================= HERO ================= */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center pt-24 sm:pt-28 lg:pt-36 pb-12 sm:pb-16 lg:pb-20"
+        className="
+    relative min-h-screen
+    flex items-center justify-center
+    overflow-hidden bg-cover bg-center
+    pt-40 sm:pt-44 lg:pt-36
+    pb-12 sm:pb-16 lg:pb-20
+  "
         style={{ backgroundImage: `url(${City})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#071019]/85 to-[#102033]/75" />
