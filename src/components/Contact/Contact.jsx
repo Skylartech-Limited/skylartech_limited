@@ -3,6 +3,7 @@ import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import emailjs from "@emailjs/browser";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 import {
   User,
@@ -21,6 +22,7 @@ const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [captchaToken, setCaptchaToken] = useState("");
   const [offeringOpen, setOfferingOpen] = useState(false);
   const [selectedOffering, setSelectedOffering] = useState("");
 
@@ -42,6 +44,12 @@ const Contact = () => {
     if (!message && !requested_offering) {
       setLoading(false);
       setStatus("missing_input");
+      return;
+    }
+
+    if (!captchaToken) {
+      setLoading(false);
+      setStatus("captcha_required");
       return;
     }
 
@@ -412,6 +420,18 @@ const Contact = () => {
                 className="mt-5 w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-sky-400/40 transition"
               />
 
+              {/* CAPTCHA */}
+              <div className="mt-6 flex justify-center">
+                <Turnstile
+                  siteKey="0x4AAAAAADeD_XUZrBMIVKHQ"
+                  onSuccess={(token) => setCaptchaToken(token)}
+                  onExpire={() => setCaptchaToken("")}
+                  options={{
+                    theme: "dark",
+                    size: "normal", 
+                  }}
+                />
+              </div>
               {/* SUBMIT */}
               <button
                 type="submit"
