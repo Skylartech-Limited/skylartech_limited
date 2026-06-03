@@ -39,7 +39,7 @@ const WhatsAppWidget = () => {
     setInput("");
 
     const url = `https://wa.me/254718257293?text=${encodeURIComponent(
-      userMessage
+      userMessage,
     )}`;
 
     if (window.innerWidth < 768) {
@@ -65,87 +65,70 @@ const WhatsAppWidget = () => {
       {open && (
         <div
           className="
-            w-[94vw] sm:w-96 md:w-[420px] lg:w-[460px]
-            h-[75vh] sm:h-[500px] md:h-[540px]
-            rounded-2xl overflow-hidden
-            shadow-2xl border border-white/20
-            backdrop-blur-xl bg-[#0f1115]/90
-            flex flex-col
-          "
+      w-[90vw] sm:w-80 md:w-[340px]
+      h-[60vh] sm:h-[420px]
+      rounded-2xl overflow-hidden
+      shadow-2xl border border-white/20
+      backdrop-blur-xl bg-[#0f1115]/90
+      flex flex-col
+    "
         >
           {/* HEADER */}
-          <div className="bg-gradient-to-r from-[#0B8F5A] to-[#25D366] text-white p-5 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <img
-                  src={Logo}
-                  alt="Skylartech"
-                  className="w-11 h-11 rounded-full object-cover border border-white/30 shadow-md"
-                />
-                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-400 border-2 border-[#0B8F5A] shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
-              </div>
+          <div className="bg-gradient-to-r from-[#0B8F5A] to-[#25D366] text-white p-3 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img
+                src={Logo}
+                alt="Skylartech"
+                className="w-9 h-9 rounded-full object-cover border border-white/30"
+              />
 
-              <div className="flex flex-col leading-tight text-left items-start">
-                <p className="font-semibold text-[15px] text-white">
-                  Skylartech Support
+              <div className="leading-tight">
+                <p className="font-semibold text-sm">Skylartech Support</p>
+                <p className="text-[11px] text-white/70">
+                  Replies in under 2 minutes
                 </p>
-
-                <div className="flex items-center gap-2 mt-1">
-                  <p className="text-[12px] text-white/70 font-medium">
-                    Response time{" "}
-                    <span className="text-white/90 font-semibold">
-                      under 2 minutes
-                    </span>
-                  </p>
-                </div>
               </div>
             </div>
 
             <button
               onClick={() => setOpen(false)}
-              className="
-                w-10 h-10 flex items-center justify-center
-                rounded-full bg-white/90 shadow-md
-                text-[#0f1115]
-                hover:scale-105 transition
-              "
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-white/90 text-[#0f1115]"
             >
-              <i className="fa-solid fa-xmark text-[14px]" />
+              ✕
             </button>
           </div>
 
           {/* CHAT AREA */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-[#0b0d10]">
+          <div className="flex-1 p-3 overflow-y-auto space-y-3 bg-[#0b0d10]">
             {messages.map((msg, i) => (
-              <div key={i} className="flex w-full">
+              <div
+                key={i}
+                className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
+              >
                 <div
-                  className={`flex w-full ${
-                    msg.from === "user" ? "justify-end" : "justify-start"
-                  }`}
+                  className={`
+              max-w-[80%] px-3 py-2 text-sm
+              rounded-xl break-words
+              ${
+                msg.from === "user"
+                  ? "bg-[#25D366] text-black"
+                  : "bg-[#1a1f27] text-gray-100 border border-white/5"
+              }
+            `}
                 >
-                  <div
-                    className={`
-                      max-w-[85%] px-4 py-3 text-[15px]
-                      rounded-2xl break-words
-                      ${
-                        msg.from === "user"
-                          ? "bg-[#25D366] text-black"
-                          : "bg-[#1a1f27] text-gray-100 border border-white/5"
-                      }
-                    `}
-                  >
-                    <p>{msg.text}</p>
-                    <p className="text-[10px] mt-1 text-white/40 text-right">
-                      {msg.time}
-                    </p>
-                  </div>
+                <p className="text-left w-full leading-">
+  {msg.text}
+</p>
+                  <p className="text-[9px] mt-1 text-white text-right">
+                    {msg.time}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* INPUT */}
-          <div className="p-3 bg-[#0f1115] border-t border-white/10 flex items-center gap-2">
+          <div className="p-2 bg-[#0f1115] border-t border-white/10 flex items-center gap-2">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -155,13 +138,13 @@ const WhatsAppWidget = () => {
                   sendMessage();
                 }
               }}
-              placeholder="Message Skylartech..."
-              className="flex-1 px-3 py-3 rounded-full bg-[#151a22] text-white"
+              placeholder="Message..."
+              className="flex-1 px-3 py-2 rounded-full bg-[#151a22] text-white text-sm outline-none"
             />
 
             <button
               onClick={sendMessage}
-              className="bg-[#25D366] text-black px-5 py-3 rounded-full"
+              className="bg-[#25D366] text-black px-4 py-2 rounded-full text-sm"
             >
               Send
             </button>
@@ -205,12 +188,8 @@ const WhatsAppWidget = () => {
 
         {/* TEXT hidden on mobile */}
         <div className="relative z-10 hidden sm:flex flex-col text-left">
-          <span className="text-white text-sm font-semibold">
-            Chat with us
-          </span>
-          <span className="text-white/60 text-[11px]">
-            Powered by WhatsApp
-          </span>
+          <span className="text-white text-sm font-semibold">Chat with us</span>
+          <span className="text-white/60 text-[11px]">Powered by WhatsApp</span>
         </div>
       </button>
     </div>
