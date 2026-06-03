@@ -44,50 +44,75 @@ const About = () => {
 
   return (
     <div className="relative overflow-hidden bg-[#f8fafc] text-gray-800">
-      <Helmet>
-        <title>
-          About Skylartech Limited | PMI® Premier Authorized Training Partner
-        </title>
+  <Helmet>
+  <title>
+    About Skylartech Limited | PMI® Premier Authorized Training Partner in Kenya
+  </title>
 
-        <meta
-          name="description"
-          content="Skylartech Limited is a PMI® Premier Authorized Training Partner in Kenya offering PMP training Kenya, Agile certification Kenya, PMO consulting Kenya, and project management courses in Nairobi."
-        />
+  <meta
+    name="description"
+    content="Skylartech Limited is a PMI® Premier Authorized Training Partner based in Nairobi, Kenya. We specialize in PMP training, Agile certification, PMO consulting, and project management courses."
+  />
 
-        <meta
-          name="keywords"
-          content="
+  <meta
+    name="keywords"
+    content="
+      Skylartech Limited,
       PMP training Kenya,
       PMI Authorized Training Partner Kenya,
       project management courses Nairobi,
       Agile certification Kenya,
-      PMO consulting Kenya,
-      PMP exam preparation Nairobi
+      PMO consulting Kenya
     "
-        />
+  />
 
-        <link rel="canonical" href="https://skylartech.co.ke/about" />
+  <link rel="canonical" href="https://skylartech.co.ke/about" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="About Skylartech Limited" />
-        <meta
-          property="og:description"
-          content="PMI® Premier Authorized Training Partner in Kenya delivering PMP, Agile, and PMO consulting."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://skylartech.co.ke/about" />
+  {/* ENTITY SIGNAL */}
+  <meta name="author" content="Skylartech Limited" />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="About Skylartech Limited | PMP Training Kenya"
-        />
-        <meta
-          name="twitter:description"
-          content="PMI® Authorized Training Partner offering PMP training, Agile certification, and PMO consulting in Nairobi Kenya."
-        />
-      </Helmet>
+  {/* Open Graph */}
+  <meta property="og:title" content="About Skylartech Limited" />
+  <meta
+    property="og:description"
+    content="PMI® Premier Authorized Training Partner in Kenya delivering PMP training, Agile certification, and PMO consulting."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://skylartech.co.ke/about" />
+  <meta property="og:site_name" content="Skylartech Limited" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="About Skylartech Limited | PMP Training Kenya"
+  />
+  <meta
+    name="twitter:description"
+    content="PMI® Authorized Training Partner offering PMP training, Agile certification, and PMO consulting in Nairobi, Kenya."
+  />
+
+  {/* STEP 3: STRUCTURED DATA (IMPORTANT FOR GOOGLE ENTITY RECOGNITION) */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Skylartech Limited",
+      url: "https://skylartech.co.ke",
+      logo: "https://skylartech.co.ke/logo.png",
+      description:
+        "Skylartech Limited is a PMI® Premier Authorized Training Partner delivering PMP training, Agile certification, and PMO consulting in Kenya.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Nairobi",
+        addressCountry: "Kenya",
+      },
+      sameAs: [
+        "https://skylartech.co.ke"
+      ]
+    })}
+  </script>
+</Helmet>
       {/* HERO */}
       <section className="relative pt-36 md:pt-44 pb-24 px-5 sm:px-8 lg:px-12 text-slate-100 overflow-hidden">
         {/* BACKGROUND IMAGE */}

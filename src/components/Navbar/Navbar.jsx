@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -104,7 +104,7 @@ const Navbar = () => {
                   Company <ChevronDown className="w-3 h-3 text-purple-500" />
                 </Link>
 
-                <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-gray-100 border-gray-100 rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <a href="/#about-skylartech" className={dropdownItem}>
                     About Skylartech
                   </a>
@@ -141,7 +141,7 @@ const Navbar = () => {
                 <motion.div
                   className="
       absolute left-0 top-full -mt-1 w-80
-      bg-white rounded-2xl shadow-xl
+       bg-gray-100 border-gray-100 rounded-2xl shadow-xl
       border border-purple-100/40
       overflow-visible
       opacity-0 invisible
@@ -167,7 +167,7 @@ const Navbar = () => {
           hidden lg:block
           absolute left-full top-[-4px] ml-1 pt-2
           w-72
-          bg-white border border-purple-100/40 rounded-2xl shadow-xl
+          bg-gray-100 border-gray-100 border border-purple-100/40 rounded-2xl shadow-xl
           opacity-0 invisible
           group-hover/sub:opacity-100 group-hover/sub:visible
           transition-all duration-200
@@ -282,7 +282,7 @@ const Navbar = () => {
                   <ChevronDown className="w-3 h-3 text-purple-500 transition-transform duration-300 group-hover:rotate-180" />
                 </button>
 
-                <motion.div className="absolute left-0 top-full -mt-1 w-80 bg-white rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <motion.div className="absolute left-0 top-full -mt-1 w-80  bg-gray-100 border-gray-100 rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {industries.map((item, i) => (
                     <Link
                       key={i}
@@ -327,7 +327,7 @@ const Navbar = () => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden bg-white border-t border-purple-100/40 px-6 py-6"
+              className="lg:hidden  bg-gray-100 border-gray-100 border-t border-purple-100/40 px-6 py-6"
             >
               <div className="space-y-3 text-center">
                 {/* HOME */}

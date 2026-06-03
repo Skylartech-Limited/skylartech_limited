@@ -24,9 +24,9 @@ const Footer = () => {
             <ul className="space-y-3 text-white/70">
               {[
                 ["Home", "/"],
-                ["About Us", "/about"],
-                ["Certifications", "/offerings/professional-training-and-certification"],
-                ["Contact Us", "/contact-us"],
+                ["About Skylartech", "/about"],
+                ["Offered Certifications", "/offerings/professional-training-and-certification"],
+                ["Book Your Training", "/book-training"],
               ].map(([label, path], i) => (
                 <li key={i}>
                   <Link
