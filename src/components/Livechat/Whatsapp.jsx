@@ -107,18 +107,16 @@ const WhatsAppWidget = () => {
               >
                 <div
                   className={`
-              max-w-[80%] px-3 py-2 text-sm
-              rounded-xl break-words
-              ${
-                msg.from === "user"
-                  ? "bg-[#25D366] text-black"
-                  : "bg-[#1a1f27] text-gray-100 border border-white/5"
-              }
-            `}
+  max-w-[85%] px-4 py-3 text-[15px] text-left
+  rounded-2xl break-words
+  ${
+    msg.from === "user"
+      ? "bg-[#25D366] text-black"
+      : "bg-[#1a1f27] text-gray-100 border border-white/5"
+  }
+`}
                 >
-                <p className="text-left w-full leading-">
-  {msg.text}
-</p>
+                  <p className="text-left w-full leading-">{msg.text}</p>
                   <p className="text-[9px] mt-1 text-white text-right">
                     {msg.time}
                   </p>
