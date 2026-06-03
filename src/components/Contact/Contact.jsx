@@ -88,7 +88,80 @@ const Contact = () => {
   return (
     <div className="bg-[#05060A] overflow-x-hidden text-white">
       <Helmet>
-        <title>Contact Skylartech | PMI Training & Consulting</title>
+        <title>
+          Contact Skylartech Limited | PMI® Training, PMO Consulting & Support
+        </title>
+
+        <meta
+          name="description"
+          content="Contact Skylartech Limited, a PMI® Premier Authorized Training Partner in Nairobi, Kenya. Get in touch for PMP training, Agile certification, PMO consulting, and project management advisory services."
+        />
+
+        <meta
+          name="keywords"
+          content="
+    Skylartech Limited contact,
+    PMI training Kenya,
+    PMP training Nairobi,
+    Agile certification Kenya,
+    PMO consulting Kenya,
+    project management training Kenya,
+    PMI Authorized Training Partner Kenya
+  "
+        />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://skylartech.co.ke/contact" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Contact Skylartech Limited | PMI® Training & ProjectConsulting"
+        />
+        <meta
+          property="og:description"
+          content="Reach Skylartech Limited in Nairobi for PMI® Certified Training, PMP preparation, Agile coaching, and PMO consulting services."
+        />
+        <meta property="og:url" content="https://skylartech.co.ke/contact" />
+        <meta property="og:site_name" content="Skylartech Limited" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact Skylartech | PMI® Training Kenya"
+        />
+        <meta
+          name="twitter:description"
+          content="Get in touch with Skylartech Limited for PMP training, Agile certification, and PMO consulting in Nairobi, Kenya."
+        />
+
+        {/* Structured Data (IMPORTANT for Google knowledge panel style results) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Skylartech Limited",
+            url: "https://skylartech.co.ke",
+            logo: "https://skylartech.co.ke/logo.png",
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+254 718 257 293",
+                contactType: "customer support",
+                areaServed: "KE",
+                availableLanguage: ["English"],
+              },
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Nairobi",
+              addressCountry: "KE",
+            },
+            sameAs: [],
+          })}
+        </script>
       </Helmet>
 
       {/* ================= HERO ================= */}

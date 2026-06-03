@@ -90,7 +90,9 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>PMP Training | PMI® Authorized Training Partner</title>
+        <title>
+          Skylartech Limited | PMI® Premier Authorized Training Partner
+        </title>
 
         <meta
           name="description"
@@ -122,10 +124,12 @@ const Home = () => {
         />
         <meta
           property="og:description"
-          content="PMI® Authorized Training Partner in Nairobi offering PMP training, Agile certification, and PMO consulting in Kenya."
+          content="Skylartech Limited is a PMI® Premier Authorized Training Partner based in Nairobi, Kenya. We provide PMP certification training, Agile courses, and PMO consulting services to help professionals advance their project management careers."
         />
         <meta property="og:type" content="website" />
 
+        <meta name="author" content="Skylartech Limited" />
+        <meta name="robots" content="index, follow" />
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -136,120 +140,136 @@ const Home = () => {
           name="twitter:description"
           content="PMI® Authorized Training Partner offering PMP, Agile certification, and PMO consulting in Nairobi, Kenya."
         />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Skylartech Limited",
+            url: "https://skylartech.co.ke",
+            logo: "https://skylartech.co.ke/logo.png",
+            description:
+              "Skylartech Limited is a PMI® Premier Authorized Training Partner delivering PMP training, Agile certification, and PMO consulting in Kenya.",
+            sameAs: [
+              "https://www.linkedin.com/company/skylartech",
+              "https://twitter.com/skylartech",
+            ],
+          })}
+        </script>
       </Helmet>
-     {/* ================= HERO (FINAL FIXED & RESPONSIVE) ================= */}
-<div
-className="relative min-h-[100svh] flex items-center overflow-hidden
+      {/* ================= HERO (FINAL FIXED & RESPONSIVE) ================= */}
+      <div
+        className="relative min-h-[100svh] flex items-center overflow-hidden
 pt-40 sm:pt-44 md:pt-48 lg:pt-36 xl:pt-40
 px-4 sm:px-6 lg:px-12
 pb-14 sm:pb-20 lg:pb-28"
->
-  {/* BACKGROUND IMAGE */}
-  <div
-    className="absolute inset-0 bg-cover bg-center scale-105 sm:scale-110 blur-sm"
-    style={{ backgroundImage: `url(${Project})` }}
-  />
+      >
+        {/* BACKGROUND IMAGE */}
+        <div
+          className="absolute inset-0 bg-cover bg-center scale-105 sm:scale-110 blur-sm"
+          style={{ backgroundImage: `url(${Project})` }}
+        />
 
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/85" />
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/85" />
 
-  {/* GLOWS */}
-  <div className="absolute top-0 left-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-purple-500/10 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
-  <div className="absolute bottom-0 right-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-blue-500/10 blur-3xl rounded-full" />
+        {/* GLOWS */}
+        <div className="absolute top-0 left-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-purple-500/10 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-blue-500/10 blur-3xl rounded-full" />
 
-  {/* MAIN GRID */}
-  <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-    {/* ================= LEFT ================= */}
-    <div className="w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-6 lg:space-y-8">
-      {/* HEADLINE */}
-      <h1
-        className="font-semibold text-white leading-tight tracking-tight
+        {/* MAIN GRID */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* ================= LEFT ================= */}
+          <div className="w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-6 lg:space-y-8">
+            {/* HEADLINE */}
+            <h1
+              className="font-semibold text-white leading-tight tracking-tight
 text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-      >
-        Empowering Professionals & Organizations
-        <span
-          className="block mt-2 text-white/90 font-normal
+            >
+              Empowering Professionals & Organizations
+              <span
+                className="block mt-2 text-white/90 font-normal
 text-sm sm:text-base md:text-lg lg:text-xl"
-        >
-          to deliver projects with
-        </span>
-        <span
-          className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-300
+              >
+                to deliver projects with
+              </span>
+              <span
+                className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-300
 text-base sm:text-lg md:text-xl lg:text-2xl"
-        >
-          Confidence • Agility • Global Standards
-        </span>
-      </h1>
+              >
+                Confidence • Agility • Global Standards
+              </span>
+            </h1>
 
-      {/* SUBTEXT */}
-      <p
-        className="text-white/70 max-w-lg mx-auto lg:mx-0
+            {/* SUBTEXT */}
+            <p
+              className="text-white/70 max-w-lg mx-auto lg:mx-0
 text-sm sm:text-base md:text-base lg:text-lg leading-6 sm:leading-7"
-      >
-        Bridging certification knowledge with real-world execution through
-        structured, practice-driven project management training.
-      </p>
+            >
+              Bridging certification knowledge with real-world execution through
+              structured, practice-driven project management training.
+            </p>
 
-      {/* COUNTER */}
-      <div>
-        <CountupSection />
-      </div>
+            {/* COUNTER */}
+            <div>
+              <CountupSection />
+            </div>
 
-      {/* CTA BUTTONS */}
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-        <Link to="/about" className="w-full sm:w-auto">
-          <button
-            className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
+            {/* CTA BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <Link to="/about" className="w-full sm:w-auto">
+                <button
+                  className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold
 hover:opacity-90 transition shadow-lg shadow-purple-500/20"
-          >
-            Learn more about us
-          </button>
-        </Link>
+                >
+                  Learn more about us
+                </button>
+              </Link>
 
-        <Link
-          to="/offerings/professional-training-and-certification"
-          className="w-full sm:w-auto"
-        >
-          <button
-            className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
+              <Link
+                to="/offerings/professional-training-and-certification"
+                className="w-full sm:w-auto"
+              >
+                <button
+                  className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
 border border-white/30 text-white hover:bg-white/10 transition"
-          >
-            Explore Certifications
-          </button>
-        </Link>
-      </div>
+                >
+                  Explore Certifications
+                </button>
+              </Link>
+            </div>
 
-      {/* TRUST LINE */}
-      <p className="text-[10px] sm:text-xs text-white/50 tracking-wide">
-        Trusted by PMP®, CAPM®, and PMI® certified professionals globally
-      </p>
-    </div>
+            {/* TRUST LINE */}
+            <p className="text-[10px] sm:text-xs text-white/50 tracking-wide">
+              Trusted by PMP®, CAPM®, and PMI® certified professionals globally
+            </p>
+          </div>
 
-    {/* ================= RIGHT (SLIDER - TOP ALIGNED) ================= */}
-    <div className="flex justify-center lg:justify-end w-full px-2 sm:px-0">
-      <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
-        {/* SWIPER WRAPPER */}
-        <div className="rounded-2xl overflow-hidden pb-2">
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{
-              delay: 4200,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              el: ".custom-pagination",
-              clickable: true,
-            }}
-            className="h-full [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:h-auto"
-          >
-            {/* ================= SLIDE 1 ================= */}
-            <SwiperSlide className="h-auto">
-              <div
-                className="
+          {/* ================= RIGHT (SLIDER - TOP ALIGNED) ================= */}
+          <div className="flex justify-center lg:justify-end w-full px-2 sm:px-0">
+            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
+              {/* SWIPER WRAPPER */}
+              <div className="rounded-2xl overflow-hidden pb-2">
+                <Swiper
+                  modules={[Pagination, Autoplay]}
+                  spaceBetween={24}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{
+                    delay: 4200,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    el: ".custom-pagination",
+                    clickable: true,
+                  }}
+                  className="h-full [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:h-auto"
+                >
+                  {/* ================= SLIDE 1 ================= */}
+                  <SwiperSlide className="h-auto">
+                    <div
+                      className="
         h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
         flex flex-col items-center justify-center text-center
         bg-gradient-to-b from-[#0f172a] to-[#111827]
@@ -257,35 +277,36 @@ border border-white/30 text-white hover:bg-white/10 transition"
         px-5 sm:px-6 md:px-8
         shadow-[0_25px_80px_rgba(0,0,0,0.6)]
       "
-              >
-                <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-white/90 bg-purple-500/40 border border-white/10 px-3 sm:px-4 py-2 rounded-full">
-                  Accreditation
-                </span>
+                    >
+                      <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-white/90 bg-purple-500/40 border border-white/10 px-3 sm:px-4 py-2 rounded-full">
+                        Accreditation
+                      </span>
 
-                {/* LOGOS */}
-                <div className="flex items-center justify-center mt-5">
-                  <img
-                    src={PMI}
-                    alt="PMI"
-                    className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain"
-                  />
-                  <img
-                    src={PMI2}
-                    alt="PMI2"
-                    className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain -ml-4 sm:-ml-6 md:-ml-8"
-                  />
-                </div>
+                      {/* LOGOS */}
+                      <div className="flex items-center justify-center mt-5">
+                        <img
+                          src={PMI}
+                          alt="PMI"
+                          className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain"
+                        />
+                        <img
+                          src={PMI2}
+                          alt="PMI2"
+                          className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain -ml-4 sm:-ml-6 md:-ml-8"
+                        />
+                      </div>
 
-                <p className="text-white/80 text-xs sm:text-sm md:text-base mt-4 max-w-md">
-                  Skylartech is a Premier Authorized Training Partner of PMI
-                </p>
-              </div>
-            </SwiperSlide>
+                      <p className="text-white/80 text-xs sm:text-sm md:text-base mt-4 max-w-md">
+                        Skylartech is a Premier Authorized Training Partner of
+                        PMI
+                      </p>
+                    </div>
+                  </SwiperSlide>
 
-            {/* ================= SLIDE 2 ================= */}
-            <SwiperSlide className="h-auto">
-              <div
-                className="
+                  {/* ================= SLIDE 2 ================= */}
+                  <SwiperSlide className="h-auto">
+                    <div
+                      className="
         h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
         flex items-stretch justify-center
         bg-gradient-to-b from-[#0f172a] to-[#111827]
@@ -293,23 +314,23 @@ border border-white/30 text-white hover:bg-white/10 transition"
         overflow-hidden
         shadow-[0_25px_80px_rgba(0,0,0,0.6)]
       "
-              >
-                <img
-                  src={Membership}
-                  alt="Membership"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
+                    >
+                      <img
+                        src={Membership}
+                        alt="Membership"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
 
-          {/* ================= CLEAN DOTS ================= */}
-          <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
+                {/* ================= CLEAN DOTS ================= */}
+                <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
       {/* ================= ABOUT US ================= */}
       <div
