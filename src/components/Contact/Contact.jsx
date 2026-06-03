@@ -3,7 +3,10 @@ import { Cursor, Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import emailjs from "@emailjs/browser";
+import PhoneInput from "react-phone-number-input";
 import { Turnstile } from "@marsidev/react-turnstile";
+
+import "react-phone-number-input/style.css";
 
 import {
   User,
@@ -25,6 +28,7 @@ const Contact = () => {
   const [captchaToken, setCaptchaToken] = useState("");
   const [offeringOpen, setOfferingOpen] = useState(false);
   const [selectedOffering, setSelectedOffering] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -33,34 +37,36 @@ const Contact = () => {
 
     const formData = new FormData(formRef.current);
 
-    const full_name = formData.get("full_name");
-    const company = formData.get("company") || "";
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const message = formData.get("message")?.trim();
-    const requested_offering = formData.get("requested_offering") || "";
+    const payload = {
+      full_name: formData.get("full_name"),
+      company: formData.get("company") || "",
+      email: formData.get("email"),
+      phone: phoneValue, // ✅ controlled state ONLY
+      message: formData.get("message")?.trim() || "Not provided",
+      requested_offering: selectedOffering || "Not specified",
+    };
 
-    // ❗ CUSTOM RULE: either message OR offering must be provided
-    if (!message && !requested_offering) {
+    // validation
+    if (
+      !payload.message ||
+      (!selectedOffering && payload.message === "Not provided")
+    ) {
       setLoading(false);
       setStatus("missing_input");
       return;
     }
 
-    if (!captchaToken) {
+    if (!captchaToken || captchaToken.length < 20) {
       setLoading(false);
       setStatus("captcha_required");
       return;
     }
 
-    const payload = {
-      full_name,
-      company,
-      email,
-      phone,
-      message: message || "Not provided",
-      requested_offering: requested_offering || "Not specified",
-    };
+    if (!phoneValue || phoneValue.length < 8) {
+      setStatus("missing_input");
+      setLoading(false);
+      return;
+    }
 
     emailjs
       .send("service_io0r674", "template_zasi06u", payload, "-_TWrocdzHf5_ObxW")
@@ -68,6 +74,8 @@ const Contact = () => {
         setStatus("success");
         setLoading(false);
         formRef.current.reset();
+        setPhoneValue("");
+        setSelectedOffering("");
         setTimeout(() => setStatus(null), 4000);
       })
       .catch(() => {
@@ -290,25 +298,73 @@ const Contact = () => {
                     required: true,
                     type: "email",
                   },
-                  {
-                    icon: Phone,
-                    name: "phone",
-                    placeholder: "Phone *",
-                    required: true,
-                    type: "tel",
-                  },
                 ].map((f, i) => (
                   <div key={i} className="relative">
-                    <f.icon className="absolute left-4 top-4 w-4 sm:w-5 h-4 sm:h-5 text-white/40" />
+                    <f.icon className="absolute left-4 top-1/2 -translate-y-1/2 w-4 sm:w-5 h-4 sm:h-5 text-white/40" />
+
                     <input
                       type={f.type}
                       name={f.name}
                       required={f.required}
                       placeholder={f.placeholder}
-                      className="w-full h-12 sm:h-14 pl-10 sm:pl-12 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-sky-400/40 transition"
+                      className="w-full h-12 sm:h-14 pl-10 sm:pl-12 pr-4 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-sky-400/40 transition"
                     />
                   </div>
                 ))}
+
+                {/* ================= PHONE (FULL FIX) ================= */}
+                <div className="relative">
+                  {/* ICON (SAFE POINTER EVENTS OFF) */}
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 sm:w-5 h-4 sm:h-5 text-white/40 z-10 pointer-events-none" />
+
+                  {/* INPUT WRAPPER */}
+                  <div
+                    className="
+      w-full h-12 sm:h-14
+      pl-10 sm:pl-12 pr-4
+      rounded-xl
+      bg-white/5
+      border border-white/10
+      flex items-center
+      focus-within:border-sky-400/40
+      transition
+    "
+                  >
+                    <PhoneInput
+                      international
+                      defaultCountry="KE"
+                      value={phoneValue}
+                      onChange={setPhoneValue}
+                      placeholder="Phone *"
+                      className="w-full h-full bg-transparent text-white outline-none"
+                      inputStyle={{
+                        width: "100%",
+                        height: "100%",
+                        background: "transparent",
+                        border: "none",
+                        color: "white",
+                        outline: "none",
+                        fontSize: "14px",
+                      }}
+                      countrySelectProps={{
+                        style: {
+                          background: "transparent",
+                          border: "none",
+                          color: "white",
+                        },
+                      }}
+                      numberInputProps={{
+                        style: {
+                          background: "transparent",
+                          border: "none",
+                          color: "white",
+                          outline: "none",
+                          width: "100%",
+                        },
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
 
               {/* REQUESTED OFFERING (CUSTOM DROPDOWN) */}
@@ -428,7 +484,7 @@ const Contact = () => {
                   onExpire={() => setCaptchaToken("")}
                   options={{
                     theme: "dark",
-                    size: "normal", 
+                    size: "normal",
                   }}
                 />
               </div>
