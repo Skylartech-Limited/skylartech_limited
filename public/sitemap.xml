@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <url>
+    <loc>https://www.skylartech.co.ke/</loc>
+  </url>
 
-<url>
-  <loc>https://www.skylartech.co.ke/</loc>
-  <lastmod>2025-11-19T10:37:04+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://www.skylartech.co.ke/about</loc>
+  </url>
 
+  <url>
+    <loc>https://www.skylartech.co.ke/book-training</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/offerings/professional-training-and-certification</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/offerings/consulting-and-organizational-transformation</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/offerings/portfolio-pmo-and-governance-excellence</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/offerings/agile-and-adaptive-delivery-excellence</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/offerings/risk-compliance-and-assurance</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/offerings/business-analysis-and-requirements-gathering</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/certifications/pmp</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/certifications/capm</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/certifications/pgmp</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/certifications/pfmp</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/industries/banking-and-finance</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/industries/telecommunications</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/industries/ngos</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/industries/government</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/industries/healthcare</loc>
+  </url>
 
 </urlset>
