@@ -403,6 +403,54 @@ const Contact = () => {
       transition
     "
                   >
+                    <style>{`
+  /* === COUNTRY SELECT BASE === */
+  .PhoneInputCountrySelect {
+    background-color: #0b1220 !important;
+    color: #ffffff !important;
+    color-scheme: dark;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0.5rem;
+  }
+
+  /* === COUNTRY OPTIONS === */
+  .PhoneInputCountrySelect option,
+  .PhoneInputCountrySelect optgroup {
+    background-color: #0b1220 !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  .PhoneInputCountrySelect option {
+    background-color: #0b1220 !important;
+    color: #ffffff !important;
+  }
+
+  /* === FORCE READABILITY (fix Linux/GTK + weird Chrome themes) === */
+  .PhoneInputCountrySelect,
+  .PhoneInputCountrySelect * {
+    background-color: #0b1220 !important;
+    color: #ffffff !important;
+  }
+
+  /* === HOVER (optional but consistent with your UI) === */
+  .PhoneInputCountrySelect option:hover {
+    background-color: #1e293b !important; /* slate-800 */
+    color: #ffffff !important;
+  }
+
+  /* === SELECTED ITEM === */
+  .PhoneInputCountrySelect option:checked {
+    background-color: #0ea5e9 !important; /* sky-500 */
+    color: #ffffff !important;
+  }
+
+  /* === SAFETY FOR OS THEMES OVERRIDE === */
+  select.PhoneInputCountrySelect {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+`}</style>
                     <PhoneInput
                       international
                       defaultCountry="KE"
