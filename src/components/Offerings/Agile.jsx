@@ -103,20 +103,7 @@ const Agile = () => {
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link to="/contact-us" className="w-full sm:w-auto">
-                  <button className="w-full bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-2xl font-semibold">
-                    Book Consultation
-                  </button>
-                </Link>
-
-                <Link to="/services" className="w-full sm:w-auto">
-                  <button className="w-full bg-white/10 hover:bg-white/15 border border-white/10 px-6 py-3 rounded-2xl font-semibold">
-                    Explore Services
-                  </button>
-                </Link>
-              </div>
+    
             </motion.div>
           </div>
         </div>
@@ -290,7 +277,7 @@ const Agile = () => {
 
       {/* buttons */}
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 sm:px-0">
-        <Link to="/contact-us" className="w-full sm:w-auto">
+        <Link to="/book-training" className="w-full sm:w-auto">
           <button className="
             w-full sm:w-auto
             px-6 sm:px-8 py-3 sm:py-4

@@ -41,7 +41,7 @@ const Contact = () => {
       full_name: formData.get("full_name"),
       company: formData.get("company") || "",
       email: formData.get("email"),
-      phone: phoneValue, // ✅ controlled state ONLY
+      phone: phoneValue,
       message: formData.get("message")?.trim() || "Not provided",
       requested_offering: selectedOffering || "Not specified",
     };
@@ -326,7 +326,7 @@ const Contact = () => {
                 }`}
               >
                 {status === "success"
-                  ? "Message sent successfully."
+                  ? "Form Submission Successful."
                   : status === "missing_input"
                     ? "Please either write a message or select an offering."
                     : "Unable to send message."}

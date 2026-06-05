@@ -145,20 +145,7 @@ const PortfolioGovernance = () => {
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="mt-7 sm:mt-8 md:mt-10 flex flex-col sm:flex-row gap-4">
-                <Link to="/contact-us">
-                  <button className="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-xl w-full sm:w-auto">
-                    Book a Consultation
-                  </button>
-                </Link>
-
-                <Link to="/services">
-                  <button className="bg-white/10 hover:bg-white/15 text-white px-6 py-3 rounded-2xl font-semibold border border-white/15 w-full sm:w-auto">
-                    Explore Services
-                  </button>
-                </Link>
-              </div>
+            
             </motion.div>
           </div>
         </div>
@@ -300,7 +287,7 @@ const PortfolioGovernance = () => {
 
         {/* BUTTON */}
         <div className="flex justify-center">
-          <Link to="/contact-us">
+          <Link to="/book-training">
             <button className="
               bg-indigo-500 hover:bg-indigo-600
               text-white

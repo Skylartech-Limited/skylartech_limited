@@ -64,7 +64,7 @@ const Healthcare = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-              <Link to="/contact-us" className="w-full sm:w-auto">
+              <Link to="/book-training" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-emerald-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition duration-300">
                   Discuss a Healthcare Project
                 </button>
@@ -81,10 +81,10 @@ const Healthcare = () => {
       </section>
 
   {/* ================= HEALTHCARE INSIGHTS (MERGED SECTION) ================= */}
-<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#061a17] to-[#0b1220]">
+<section id="overview" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#05060A] via-[#061a17] to-[#0b1220]">
 
   {/* ================= HEADER ================= */}
-  <div className="max-w-6xl mx-auto text-center">
+  <div  className="max-w-6xl mx-auto text-center">
     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
       Healthcare Project Management & Delivery Excellence
     </h2>
@@ -241,7 +241,7 @@ const Healthcare = () => {
     </p>
 
     {/* CTA Button (FIXED like Government pattern) */}
-    <Link to="/contact-us" className="inline-block mt-10">
+    <Link to="/book-training" className="inline-block mt-10">
       <button className="px-8 py-3 rounded-xl font-semibold text-black bg-gradient-to-r from-emerald-400 to-emerald-500 shadow-lg hover:scale-105 transition duration-300">
         Get Healthcare Support →
       </button>

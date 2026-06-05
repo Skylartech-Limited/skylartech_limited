@@ -145,27 +145,6 @@ const Consulting = () => {
                   </div>
                 ))}
               </div>
-
-              {/* CTA */}
-              <div className="mt-7 sm:mt-8 md:mt-10">
-                <Link to="/contact-us">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="
-                      bg-amber-500 hover:bg-amber-600
-                      text-black font-semibold
-                      px-5 sm:px-6 md:px-8
-                      py-3 sm:py-4
-                      rounded-2xl
-                      shadow-xl
-                      w-full sm:w-auto
-                    "
-                  >
-                    Engage Experts →
-                  </motion.button>
-                </Link>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -317,7 +296,7 @@ const Consulting = () => {
 
               {/* BUTTON */}
               <div className="flex justify-center">
-                <Link to="/contact-us">
+                <Link to="/book-training">
                   <button
                     className="
               bg-amber-500 hover:bg-amber-600

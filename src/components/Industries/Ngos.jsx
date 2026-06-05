@@ -64,7 +64,7 @@ const Ngos = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-              <Link to="/contact-us" className="w-full sm:w-auto">
+              <Link to="/book-training" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-pink-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
                   Start a Project
                 </button>
@@ -234,7 +234,7 @@ const Ngos = () => {
             improve transparency, coordination, and measurable impact delivery.
           </p>
 
-          <Link to="/contact-us" className="inline-block mt-10">
+          <Link to="/book-training" className="inline-block mt-10">
             <button className="px-8 py-3 rounded-xl font-semibold text-black bg-gradient-to-r from-pink-400 to-fuchsia-500 shadow-lg hover:scale-105 transition duration-300">
               Contact NGO Support →
             </button>
