@@ -63,7 +63,7 @@ const Government = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-              <Link to="/contact-us" className="w-full sm:w-auto">
+              <Link to="/book-training" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto bg-blue-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition duration-300">
                   Discuss a Project
                 </button>
@@ -266,7 +266,7 @@ const Government = () => {
     </p>
 
     {/* CTA Button (BANKING-STYLE SAFE LINK) */}
-    <Link to="/contact-us">
+    <Link to="/book-training">
       <motion.button
         whileHover={{
           scale: 1.05,

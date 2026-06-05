@@ -121,21 +121,6 @@ const Risk = () => {
                   </div>
                 ))}
               </div>
-
-              {/* CTA */}
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link to="/contact-us" className="w-full sm:w-auto">
-                  <button className="w-full bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold">
-                    Book Consultation
-                  </button>
-                </Link>
-
-                <Link to="/services" className="w-full sm:w-auto">
-                  <button className="w-full bg-white/10 hover:bg-white/15 border border-white/10 px-6 py-3 rounded-2xl font-semibold">
-                    Explore Services
-                  </button>
-                </Link>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -280,7 +265,7 @@ const Risk = () => {
 
     {/* Buttons */}
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <Link to="/contact-us">
+      <Link to="/book-training">
         <button className="
           relative px-8 py-4 rounded-2xl font-semibold text-black
           bg-gradient-to-r from-cyan-400 to-cyan-500

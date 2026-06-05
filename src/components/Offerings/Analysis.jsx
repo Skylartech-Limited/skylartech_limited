@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import AnalysisImg from "../../assets/Services image/Analysis.jpg";
+import { Link } from "react-router-dom";
 
 const Analysis = () => {
   const features = [
@@ -260,6 +261,7 @@ const Analysis = () => {
 
           {/* Buttons */}
           <div className="flex justify-center">
+            <Link to="/book-training">
             <button
               className="
         relative px-8 py-4 rounded-2xl font-semibold text-black
@@ -272,6 +274,7 @@ const Analysis = () => {
             >
               Get Started
             </button>
+            </Link>
           </div>
 
           {/* Micro trust line */}

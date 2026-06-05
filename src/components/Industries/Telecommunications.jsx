@@ -52,7 +52,7 @@ const Telecommunications = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Link to="/contact-us">
+              <Link to="/book-training">
                 <button className="bg-amber-500 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition w-full sm:w-auto">
                   Start a Project
                 </button>
@@ -225,7 +225,7 @@ const Telecommunications = () => {
     </p>
 
     {/* CTA Button (BANKING-STYLE RELIABLE LINKING) */}
-    <Link to="/contact-us">
+    <Link to="/book-training">
       <motion.button
         whileHover={{
           scale: 1.05,

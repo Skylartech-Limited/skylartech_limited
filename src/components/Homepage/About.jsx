@@ -547,7 +547,7 @@ const About = () => {
 
           {/* CTA SECTION */}
           <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact-us">
+            <Link to="/book-training">
               <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:opacity-90 transition">
                 Request Corporate Training
               </button>
