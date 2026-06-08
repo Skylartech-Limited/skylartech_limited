@@ -235,7 +235,7 @@ const PMIMPOC = () => {
               </p>
 
               <Link
-                to="/contact-us"
+                to="/book-training"
                 className="mt-8 inline-flex w-full sm:w-auto items-center justify-center rounded-2xl bg-gradient-to-r from-red-400 via-rose-500 to-pink-500 px-8 py-4 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]"
               >
                 Enroll for PMOCP Training

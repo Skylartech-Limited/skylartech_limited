@@ -233,7 +233,7 @@ const PMICPMAI = () => {
               </p>
 
               <Link
-                to="/contact-us"
+                to="/book-training"
                 className="mt-8 inline-flex w-full sm:w-auto items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-400 px-8 py-4 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.35)]"
               >
                 Enroll for CPMAI Training
