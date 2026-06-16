@@ -13,6 +13,7 @@ import Telecommunications from "./components/Industries/Telecommunications.jsx";
 import Ngos from "./components/Industries/Ngos.jsx";
 import Government from "./components/Industries/Government.jsx";
 import Healthcare from "./components/Industries/Healthcare.jsx";
+import WhoWeServe from "./components/Industries/Whoweserve.jsx";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
 
@@ -22,6 +23,7 @@ import Consulting from "./components/Offerings/Consulting.jsx";
 import Portfolio from "./components/Offerings/Portfolio.jsx";
 import Risk from "./components/Offerings/Risk.jsx";
 import Analysis from "./components/Offerings/Analysis.jsx";
+import Offerings from "./components/Offerings/Offerings";
 
 import CAPM from "./components/Certifications/CAPM.jsx";
 import PMP from "./components/Certifications/PMP.jsx";
@@ -54,6 +56,7 @@ function App() {
         <Route path="/about" element={<About />} />
 
         {/* OFFERINGS */}
+        <Route path="/offerings" element={<Offerings />} />
         <Route
           path="/offerings/professional-training-and-certification"
           element={<Professionaltraining />}
@@ -94,14 +97,15 @@ function App() {
         <Route path="/certifications/pmi-cp" element={<PMICP />} />
 
         {/* INDUSTRIES */}
-        <Route path="/industries/banking-and-finance" element={<Banking />} />
+        <Route path="/who-we-serve" element={<WhoWeServe />} />
+        <Route path="/who-we-serve/banking-and-finance" element={<Banking />} />
         <Route
-          path="/industries/telecommunications"
+          path="/who-we-serve/telecommunications"
           element={<Telecommunications />}
         />
-        <Route path="/industries/ngos" element={<Ngos />} />
-        <Route path="/industries/government" element={<Government />} />
-        <Route path="/industries/healthcare" element={<Healthcare />} />
+        <Route path="/who-we-serve/ngos" element={<Ngos />} />
+        <Route path="/who-we-serve/government" element={<Government />} />
+        <Route path="/who-we-serve/healthcare" element={<Healthcare />} />
 
         {/* BOOK TRAINING */}
         <Route path="/book-training" element={<Contact />} />
