@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-slate-950 via-indigo-950 via-purple-950 to-slate-900 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-black via-slate-950 to-[#05070f] text-white overflow-hidden">
 
-      {/* NEON GLOWS */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-fuchsia-500/10 blur-3xl rounded-full" />
-      <div className="absolute top-1/2 right-0 w-[450px] h-[450px] bg-cyan-400/10 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 left-1/2 w-[450px] h-[450px] bg-emerald-400/10 blur-3xl rounded-full" />
+      {/* SOFT BACKGROUND GLOWS (DARK PREMIUM) */}
+      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-indigo-500/5 blur-3xl rounded-full" />
+      <div className="absolute top-1/2 right-0 w-[450px] h-[450px] bg-slate-400/5 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 left-1/2 w-[450px] h-[450px] bg-emerald-500/5 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
 
@@ -17,11 +17,11 @@ const Footer = () => {
 
           {/* QUICK LINKS */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-slate-300 via-indigo-300 to-emerald-300 bg-clip-text text-transparent">
               Quick Links
             </h3>
 
-            <ul className="space-y-3 text-white/70">
+            <ul className="space-y-3 text-white/60">
               {[
                 ["Home", "/"],
                 ["About Skylartech", "/about"],
@@ -31,7 +31,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     to={path}
-                    className="hover:text-cyan-300 transition duration-300"
+                    className="hover:text-emerald-300 transition duration-300"
                   >
                     {label}
                   </Link>
@@ -40,13 +40,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CERTIFICATIONS (ALL NOW WORKING LINKS) */}
+          {/* CERTIFICATIONS */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-cyan-300 via-fuchsia-400 to-emerald-300 bg-clip-text text-transparent">
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-indigo-300 via-slate-300 to-emerald-300 bg-clip-text text-transparent">
               Certifications
             </h3>
 
-            <ul className="space-y-3 text-white/70">
+            <ul className="space-y-3 text-white/60">
               {[
                 ["PMP®", "/certifications/pmp"],
                 ["CAPM®", "/certifications/capm"],
@@ -60,7 +60,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     to={path}
-                    className="hover:text-fuchsia-300 transition duration-300"
+                    className="hover:text-indigo-300 transition duration-300"
                   >
                     {label}
                   </Link>
@@ -70,35 +70,35 @@ const Footer = () => {
           </div>
 
           {/* OFFERINGS */}
-<div>
-  <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-emerald-300 via-cyan-300 to-fuchsia-400 bg-clip-text text-transparent">
-    Offerings
-  </h3>
+          <div>
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-emerald-300 via-slate-300 to-indigo-300 bg-clip-text text-transparent">
+              Offerings
+            </h3>
 
-  <ul className="space-y-3 text-white/70">
-    {[
-      ["Professional Training & Certification", "/offerings/professional-training-and-certification"],
-      ["Consulting & Transformation", "/offerings/consulting-and-organizational-transformation"],
-      ["Portfolio & PMO Excellence", "/offerings/portfolio-pmo-and-governance-excellence"],
-      ["Agile Delivery Excellence", "/offerings/agile-and-adaptive-delivery-excellence"],
-      ["Risk & Compliance Assurance", "/offerings/risk-compliance-and-assurance"],
-      ["Business Analysis", "/offerings/business-analysis-and-requirements-gathering"],
-    ].map(([label, path], i) => (
-      <li key={i}>
-        <Link
-          to={path}
-          className="hover:text-cyan-300 transition duration-300"
-        >
-          {label}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+            <ul className="space-y-3 text-white/60">
+              {[
+                ["Professional Training & Certification", "/offerings/professional-training-and-certification"],
+                ["Consulting & Transformation", "/offerings/consulting-and-organizational-transformation"],
+                ["Portfolio & PMO Excellence", "/offerings/portfolio-pmo-and-governance-excellence"],
+                ["Agile Delivery Excellence", "/offerings/agile-and-adaptive-delivery-excellence"],
+                ["Risk & Compliance Assurance", "/offerings/risk-compliance-and-assurance"],
+                ["Business Analysis", "/offerings/business-analysis-and-requirements-gathering"],
+              ].map(([label, path], i) => (
+                <li key={i}>
+                  <Link
+                    to={path}
+                    className="hover:text-emerald-300 transition duration-300"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* MAP */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+            <h3 className="text-lg font-semibold mb-6 bg-gradient-to-r from-slate-300 via-indigo-300 to-emerald-300 bg-clip-text text-transparent">
               Location
             </h3>
 
@@ -111,14 +111,14 @@ const Footer = () => {
               />
             </div>
 
-            <p className="text-white/60 text-sm">
+            <p className="text-white/50 text-sm">
               The Waterfront, Karen, Nairobi
             </p>
           </div>
         </div>
 
         {/* SOCIALS */}
-        <div className="mt-14 flex justify-center gap-6 text-white/70">
+        <div className="mt-14 flex justify-center gap-6 text-white/60">
           {[
             ["twitter", "https://twitter.com/skylartechke"],
             ["linkedin", "https://www.linkedin.com/company/skylartechlimited/?viewAsMember=true"],
@@ -130,7 +130,7 @@ const Footer = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyan-300 transition text-xl"
+              className="hover:text-emerald-300 transition text-xl"
             >
               <i className={`fab fa-${icon}`} />
             </a>
@@ -141,7 +141,7 @@ const Footer = () => {
         <div className="my-10 border-t border-white/10" />
 
         {/* FOOTER NOTE */}
-        <div className="text-center text-xs text-white/60 leading-6 max-w-4xl mx-auto">
+        <div className="text-center text-xs text-white/50 leading-6 max-w-4xl mx-auto">
           <p>
             PMI®, PMP®, CAPM®, PMI-ACP®, PgMP®, PfMP®, PMI-RMP®, PMI-PBA®, PMI-SP®
             are registered marks of Project Management Institute, Inc.

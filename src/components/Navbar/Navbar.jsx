@@ -21,11 +21,11 @@ const Navbar = () => {
     "block px-6 py-3 text-[15px] text-gray-700 hover:bg-purple-50 hover:text-purple-800 transition-all duration-200";
 
   const industries = [
-    { name: "Banking & Finance", link: "/industries/banking-and-finance" },
-    { name: "Telecommunications", link: "/industries/telecommunications" },
-    { name: "Government & Public Sector", link: "/industries/government" },
-    { name: "NGOs & Development", link: "/industries/ngos" },
-    { name: "Healthcare", link: "/industries/healthcare" },
+    { name: "Banking & Finance", link: "/who-we-serve/banking-and-finance" },
+    { name: "Telecommunications", link: "/who-we-serve/telecommunications" },
+    { name: "Government & Public Sector", link: "/who-we-serve/government" },
+    { name: "NGOs & Development", link: "/who-we-serve/ngos" },
+    { name: "Healthcare", link: "/who-we-serve/healthcare" },
   ];
 
   const MobileDropdown = ({ title, children }) => {
@@ -128,14 +128,16 @@ const Navbar = () => {
               </div>
               {/* OFFERINGS */}
               <div className="relative py-4 group">
-                <button
+                <Link
+                  to="/offerings"
                   className={
                     navLink +
                     " flex items-center gap-1 transition-all duration-300 ease-out hover:-translate-y-1 hover:text-purple-600"
                   }
                 >
-                  Offerings <ChevronDown className="w-3 h-3 text-purple-500" />
-                </button>
+                  Offerings
+                  <ChevronDown className="w-3 h-3 text-purple-500" />
+                </Link>
 
                 {/* MAIN DROPDOWN */}
                 <motion.div
@@ -274,13 +276,16 @@ const Navbar = () => {
 
               {/* INDUSTRIES */}
               <div className="relative py-4 group">
-                <button className={navLink + " flex items-center gap-1 group"}>
+                <Link
+                  to="/who-we-serve"
+                  className={navLink + " flex items-center gap-1 group"}
+                >
                   <span className="transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:text-purple-600">
                     Who We Serve
                   </span>
 
                   <ChevronDown className="w-3 h-3 text-purple-500 transition-transform duration-300 group-hover:rotate-180" />
-                </button>
+                </Link>
 
                 <motion.div className="absolute left-0 top-full -mt-1 w-80  bg-gray-100 border-gray-100 rounded-2xl shadow-xl shadow-purple-100/20 border border-purple-100/40 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {industries.map((item, i) => (
@@ -368,6 +373,13 @@ const Navbar = () => {
 
                 {/* OFFERINGS (FULLY RESPONSIVE + NESTED) */}
                 <MobileDropdown title="Offerings">
+                  <Link
+                    to="/offerings"
+                    onClick={closeMenus}
+                    className="font-semibold text-purple-700"
+                  >
+                    All Offerings
+                  </Link>
                   {/* PROFESSIONAL TRAINING DROPDOWN */}
                   <MobileDropdown title="Professional Training & Certification">
                     <Link
@@ -457,6 +469,13 @@ const Navbar = () => {
 
                 {/* INDUSTRIES */}
                 <MobileDropdown title="Who We Serve">
+                  <Link
+                    to="/who-we-serve"
+                    onClick={closeMenus}
+                    className="font-semibold text-purple-700"
+                  >
+                    All Industries
+                  </Link>
                   {industries.map((item, i) => (
                     <Link key={i} to={item.link} onClick={closeMenus}>
                       {item.name}

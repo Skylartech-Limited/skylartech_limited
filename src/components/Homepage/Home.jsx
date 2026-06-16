@@ -764,17 +764,17 @@ border border-white/30 text-white hover:bg-white/10 transition"
                     link: "/certifications/pmi-sp",
                   },
                   {
-                    title: "PMI-CP™",
+                    title: "PMI-CP®",
                     desc: "Construction project specialization.",
                     link: "/certifications/pmi-cp",
                   },
                   {
-                    title: "PMI-PMOCP™",
+                    title: "PMI-PMOCP®",
                     desc: "PMO leadership excellence.",
                     link: "/certifications/pmi-pmocp",
                   },
                   {
-                    title: "PMI-CPMAI™",
+                    title: "PMI-CPMAI®",
                     desc: "AI-driven project management.",
                     link: "/certifications/pmi-cpmai",
                   },
@@ -814,7 +814,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <Link to="/certifications/gpm-b" className="block group">
                   <div className="border-l-2 border-green-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
                     <h4 className="font-semibold text-white group-hover:text-green-200">
-                      GPM-b™
+                      GPM-b®
                     </h4>
 
                     <p className="mt-1 text-sm text-white/70">
