@@ -8,6 +8,8 @@ import {
   Briefcase,
   Layers,
   CheckCircle2,
+  ArrowRight,
+  Award,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -28,6 +30,22 @@ import Planning from "../../assets/Homepage images/Planning.jpg";
 import ClientReview from "./ClientReview";
 import Clientslider from "./ClientSlider";
 import CountupSection from "../Homepage/CountUp";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const SectionLabel = ({ children }) => (
+  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.18em] uppercase text-white/80">
+    {children}
+  </div>
+);
 
 const Home = () => {
   const location = useLocation();
@@ -157,100 +175,87 @@ const Home = () => {
           })}
         </script>
       </Helmet>
-      {/* ================= HERO (FINAL FIXED & RESPONSIVE) ================= */}
+      {/* ================= HERO ================= */}
       <div
         className="relative min-h-[100svh] flex items-center overflow-hidden
 pt-40 sm:pt-44 md:pt-48 lg:pt-36 xl:pt-40
 px-4 sm:px-6 lg:px-12
 pb-14 sm:pb-20 lg:pb-28"
       >
-        {/* BACKGROUND IMAGE */}
         <div
-          className="absolute inset-0 bg-cover bg-center scale-105 sm:scale-110 blur-sm"
+          className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: `url(${Project})` }}
         />
 
-        {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-[#060607]/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/50" />
 
-        {/* GLOWS */}
-        <div className="absolute top-0 left-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-purple-500/10 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-blue-500/10 blur-3xl rounded-full" />
+        <div className="absolute top-0 left-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-violet-500/12 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[200px] sm:w-[350px] lg:w-[550px] h-[200px] sm:h-[350px] lg:h-[550px] bg-cyan-500/10 blur-[140px] rounded-full" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
-        {/* MAIN GRID */}
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* ================= LEFT ================= */}
-          <div className="w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-6 lg:space-y-8">
-            {/* HEADLINE */}
-            <h1
-              className="font-semibold text-white leading-tight tracking-tight
-text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-            >
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-6 lg:space-y-8"
+          >
+            <SectionLabel>
+              <Award className="w-3.5 h-3.5 text-violet-300" />
+              PMI® Premier Authorized Training Partner
+            </SectionLabel>
+
+            <h1 className="font-bold text-white leading-[1.1] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               Empowering Professionals & Organizations
-              <span
-                className="block mt-2 text-white/90 font-normal
-text-sm sm:text-base md:text-lg lg:text-xl"
-              >
+              <span className="block mt-3 text-white/75 font-normal text-sm sm:text-base md:text-lg lg:text-xl">
                 to deliver projects with
               </span>
-              <span
-                className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-300
-text-base sm:text-lg md:text-xl lg:text-2xl"
-              >
-                Confidence • Agility • Global Standards
+              <span className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-emerald-300 text-base sm:text-lg md:text-xl lg:text-2xl">
+                Confidence · Agility · Global Standards
               </span>
             </h1>
 
-            {/* SUBTEXT */}
-            <p
-              className="text-white/70 max-w-lg mx-auto lg:mx-0
-text-sm sm:text-base md:text-base lg:text-lg leading-6 sm:leading-7"
-            >
+            <p className="text-white/65 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-base lg:text-lg leading-relaxed">
               Bridging certification knowledge with real-world execution through
               structured, practice-driven project management training.
             </p>
 
-            {/* COUNTER */}
             <div>
               <CountupSection />
             </div>
 
-            {/* CTA BUTTONS */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <Link to="/about" className="w-full sm:w-auto">
-                <button
-                  className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
-bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold
-hover:opacity-90 transition shadow-lg shadow-purple-500/20"
-                >
-                  Learn more about us
-                </button>
+              <Link
+                to="/about"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:shadow-lg hover:shadow-violet-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              >
+                Learn more about us
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 to="/offerings/professional-training-and-certification"
-                className="w-full sm:w-auto"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300"
               >
-                <button
-                  className="w-full px-5 sm:px-6 py-3 text-sm rounded-xl
-border border-white/30 text-white hover:bg-white/10 transition"
-                >
-                  Explore Certifications
-                </button>
+                Explore Certifications
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
-            {/* TRUST LINE */}
-            <p className="text-[10px] sm:text-xs text-white/50 tracking-wide">
+            <p className="text-[10px] sm:text-xs text-white/40 tracking-wide">
               Trusted by PMP®, CAPM®, and PMI® certified professionals globally
             </p>
-          </div>
+          </motion.div>
 
-          {/* ================= RIGHT (SLIDER - TOP ALIGNED) ================= */}
-          <div className="flex justify-center lg:justify-end w-full px-2 sm:px-0">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+            className="flex justify-center lg:justify-end w-full px-2 sm:px-0"
+          >
             <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
-              {/* SWIPER WRAPPER */}
-              <div className="rounded-2xl overflow-hidden pb-2">
+              <div className="rounded-3xl overflow-hidden pb-2">
                 <Swiper
                   modules={[Pagination, Autoplay]}
                   spaceBetween={24}
@@ -272,13 +277,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
                       className="
         h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
         flex flex-col items-center justify-center text-center
-        bg-gradient-to-b from-[#0f172a] to-[#111827]
-        border border-white/10 rounded-2xl
+        bg-[#0f172a]/80 backdrop-blur-2xl
+        border border-white/10 rounded-3xl
         px-5 sm:px-6 md:px-8
-        shadow-[0_25px_80px_rgba(0,0,0,0.6)]
+        shadow-[0_25px_80px_rgba(0,0,0,0.65)]
+        relative overflow-hidden
       "
                     >
-                      <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-white/90 bg-purple-500/40 border border-white/10 px-3 sm:px-4 py-2 rounded-full">
+                      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent" />
+                      <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.2em] text-violet-200/90 bg-violet-500/15 border border-violet-300/20 px-3 sm:px-4 py-2 rounded-full">
                         Accreditation
                       </span>
 
@@ -309,12 +316,14 @@ border border-white/30 text-white hover:bg-white/10 transition"
                       className="
         h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
         flex items-stretch justify-center
-        bg-gradient-to-b from-[#0f172a] to-[#111827]
-        border border-white/10 rounded-2xl
+        bg-[#0f172a]/80 backdrop-blur-2xl
+        border border-white/10 rounded-3xl
         overflow-hidden
-        shadow-[0_25px_80px_rgba(0,0,0,0.6)]
+        shadow-[0_25px_80px_rgba(0,0,0,0.65)]
+        relative
       "
                     >
+                      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent z-10" />
                       <img
                         src={Membership}
                         alt="Membership"
@@ -328,39 +337,39 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* ================= ABOUT US ================= */}
       <div
         id="about-skylartech"
-        className="relative py-28 overflow-hidden scroll-mt-28"
+        className="relative py-28 overflow-hidden scroll-mt-28 border-t border-white/5"
       >
-        {/* BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-
-        {/* LIGHT EFFECT */}
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-500/20 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-400/20 blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-500/15 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-400/12 blur-[120px] rounded-full" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT CONTENT */}
-          <div className="space-y-8 text-white">
-            {/* SMALL LABEL */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-md">
-              <span className="text-sm text-white/80 tracking-wide">
-                About Skylartech
-              </span>
-            </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="space-y-8 text-white"
+          >
+            <SectionLabel>About Skylartech</SectionLabel>
 
-            {/* HEADING */}
             <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">
-                Building Globally Competitive Project Leaders
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+                Building Globally Competitive{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-emerald-300">
+                  Project Leaders
+                </span>
               </h2>
 
-              <p className="mt-6 text-white/75 text-lg leading-8 max-w-2xl">
+              <p className="mt-6 text-white/70 text-lg leading-relaxed max-w-2xl">
                 Skylartech Limited is a PMI® Premier Authorized Training Partner
                 delivering globally recognized project management certification
                 training, leadership development, consulting, and scalable
@@ -384,7 +393,6 @@ border border-white/30 text-white hover:bg-white/10 transition"
               </p>
             </div>
 
-            {/* STATS */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
               {[
                 { number: "PMI®", label: "Premier ATP" },
@@ -394,48 +402,45 @@ border border-white/30 text-white hover:bg-white/10 transition"
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white/10 border border-white/10 rounded-2xl p-4 backdrop-blur-md"
+                  className="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <h3 className="text-lg font-semibold text-white">
                     {item.number}
                   </h3>
-
-                  <p className="text-white/60 text-sm mt-1">{item.label}</p>
+                  <p className="text-white/50 text-sm mt-1">{item.label}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* RIGHT IMAGE */}
-          {/* RIGHT IMAGE */}
-          <div className="relative flex justify-center items-center">
-            {/* BACKGROUND GLOW */}
-            <div className="absolute w-[90%] h-[90%] bg-violet-500/25 blur-3xl rounded-full" />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="relative flex justify-center items-center"
+          >
+            <div className="absolute w-[90%] h-[90%] bg-violet-500/20 blur-[100px] rounded-full" />
+            <div className="absolute w-[105%] h-[105%] rounded-[2.5rem] bg-gradient-to-br from-violet-400/20 via-fuchsia-400/15 to-cyan-400/20 blur-xl" />
 
-            {/* DECORATIVE GRADIENT RING */}
-            <div className="absolute w-[105%] h-[105%] rounded-[2.5rem] bg-gradient-to-br from-violet-400 via-fuchsia-400 to-cyan-400 opacity-30 blur-xl" />
-
-            {/* FLOATING CARD - TOP LEFT */}
-            <div className="absolute -top-6 -left-4 sm:-left-8 z-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-4 py-3 shadow-xl">
+            <div className="absolute -top-6 -left-4 sm:-left-8 z-20 bg-white/[0.06] backdrop-blur-2xl border border-white/15 rounded-2xl px-4 py-3 shadow-xl">
               <p className="text-white text-xs sm:text-sm font-semibold">
                 PMI® Premier ATP
               </p>
-              <p className="text-white/70 text-[11px] sm:text-xs">
+              <p className="text-white/60 text-[11px] sm:text-xs">
                 Globally trusted training partner
               </p>
             </div>
 
-            {/* FLOATING CARD - BOTTOM RIGHT */}
-            <div className="absolute -bottom-6 -right-4 sm:-right-8 z-20 bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl px-5 py-4 shadow-2xl">
+            <div className="absolute -bottom-6 -right-4 sm:-right-8 z-20 bg-black/40 backdrop-blur-2xl border border-white/10 rounded-2xl px-5 py-4 shadow-2xl">
               <h4 className="text-white text-lg font-bold">10+</h4>
-              <p className="text-white/70 text-xs sm:text-sm">
+              <p className="text-white/60 text-xs sm:text-sm">
                 Certification pathways
               </p>
             </div>
 
-            {/* IMAGE WRAPPER */}
-            <div className="relative z-10 overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
-              {/* IMAGE */}
+            <div className="relative z-10 overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.55)]">
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent z-10" />
               <img
                 src={Planning}
                 alt="Planning"
@@ -454,14 +459,12 @@ border border-white/30 text-white hover:bg-white/10 transition"
               {/* IMAGE OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
-              {/* BOTTOM CONTENT */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-5">
+                <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-5">
                   <h3 className="text-white text-xl sm:text-2xl font-semibold">
                     Driving Project Excellence
                   </h3>
-
-                  <p className="text-white/75 text-sm sm:text-base mt-2 leading-7">
+                  <p className="text-white/70 text-sm sm:text-base mt-2 leading-relaxed">
                     Empowering professionals and organizations through globally
                     recognized project management training, consulting, and
                     digital transformation solutions.
@@ -469,51 +472,49 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* ================= WHY CHOOSE US ================= */}
       <div
         id="why-choose-us"
-        className="relative py-20 sm:py-24 lg:py-32 overflow-hidden scroll-mt-28"
+        className="relative py-20 sm:py-24 lg:py-32 overflow-hidden scroll-mt-28 border-t border-white/5"
       >
-        {/* PREMIUM GRADIENT BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#fbbf24] via-[#f59e0b] to-[#f97316]" />
-
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/40" />
-
-        {/* GLOWS */}
-        <div className="absolute -top-24 -right-24 w-[420px] h-[420px] bg-yellow-200/30 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 left-0 w-[380px] h-[380px] bg-orange-300/20 blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#141008] to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.12),transparent_55%)]" />
+        <div className="absolute -top-24 -right-24 w-[420px] h-[420px] bg-amber-500/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[380px] h-[380px] bg-orange-500/8 blur-[120px] rounded-full" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* ================= LEFT CONTENT ================= */}
-          <div className="space-y-8 text-white">
-            {/* LABEL */}
-            <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-              <span className="text-xs sm:text-sm tracking-wide text-white/90">
-                Strategic Learning & Transformation Partner
-              </span>
-            </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="space-y-8 text-white"
+          >
+            <motion.div variants={fadeUp}>
+              <SectionLabel>Strategic Learning & Transformation Partner</SectionLabel>
+            </motion.div>
 
-            {/* HEADING */}
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.15] tracking-tight">
+            <motion.div variants={fadeUp}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                 <span className="block">Why Organizations</span>
-                <span className="block">Choose Skylartech</span>
+                <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-200">
+                  Choose Skylartech
+                </span>
               </h2>
 
-              <p className="mt-6 text-base sm:text-lg text-white/85 leading-8 max-w-2xl">
-                We don’t just deliver training — we build capability systems
+              <p className="mt-6 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
+                We don't just deliver training — we build capability systems
                 that improve how professionals think, execute, and lead across
                 projects, teams, and enterprises.
               </p>
-            </div>
+            </motion.div>
 
-            {/* VALUE GRID (REFINED DIFFERENTIATION) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
                   title: "PMI® Premier ATP Status",
@@ -550,35 +551,41 @@ border border-white/30 text-white hover:bg-white/10 transition"
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 hover:bg-white/15 transition-all duration-300"
+                  className="group bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:bg-white/[0.08] hover:border-amber-300/20 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-white text-base">
-                    {item.title}
-                  </h3>
-                  <p className="text-white/75 text-sm leading-6 mt-2">
-                    {item.desc}
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-amber-300 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-white text-base">
+                        {item.title}
+                      </h3>
+                      <p className="text-white/60 text-sm leading-relaxed mt-2">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
-            </div>
+            </motion.div>
 
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
                 to="/offerings/professional-training-and-certification"
-                className="px-7 py-3 rounded-2xl bg-white text-black font-medium hover:bg-gray-200 transition text-center shadow-xl"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-semibold hover:shadow-lg hover:shadow-amber-500/20 hover:scale-[1.02] transition-all duration-300 text-center"
               >
                 Explore Courses
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 to="/book-training"
-                className="px-7 py-3 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md text-white hover:bg-white/20 transition text-center"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-white/5 border border-white/15 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300 text-center"
               >
                 Request a corporate proposal
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* ================= RIGHT CAROUSEL (UNCHANGED) ================= */}
           <div
@@ -633,46 +640,44 @@ border border-white/30 text-white hover:bg-white/10 transition"
       {/* ================= CERTIFICATION PROGRAMS ================= */}
       <div
         id="certification-programs"
-        className="relative py-20 sm:py-24 lg:py-32 overflow-hidden scroll-mt-28"
+        className="relative py-20 sm:py-24 lg:py-32 overflow-hidden scroll-mt-28 border-t border-white/5"
       >
-        {/* PREMIUM GRADIENT BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#312e81] via-[#6d28d9] to-[#f97316]" />
-
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/35" />
-
-        {/* GLOW EFFECTS */}
-        <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-violet-400/30 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-orange-300/20 blur-3xl rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-fuchsia-400/10 blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-violet-950/80 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.15),transparent_50%)]" />
+        <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-violet-500/12 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-orange-500/8 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-fuchsia-500/8 blur-[140px] rounded-full" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* ================= HEADER ================= */}
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-5 py-2 mb-8 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-lg">
-              <span className="text-sm text-white/90 tracking-wide">
-                Professional Certification Programs
-              </span>
-            </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <SectionLabel>Professional Certification Programs</SectionLabel>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.25] pb-2 overflow-visible tracking-tight">
+            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight">
               Build World-Class
-              <span className="block bg-gradient-to-r from-yellow-200 via-orange-200 to-pink-200 bg-clip-text text-transparent leading-[1.2]">
+              <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-fuchsia-200 to-orange-200">
                 Project Leadership Capability
               </span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-white/80 leading-8 max-w-3xl mx-auto">
+            <p className="mt-6 text-base sm:text-lg text-white/65 leading-relaxed max-w-3xl mx-auto">
               PMI® certification pathways designed to build globally competitive
               project leaders, agile professionals, and high-performing
               organizations.
             </p>
-          </div>
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent mx-auto mt-8" />
+          </motion.div>
 
           {/* ================= GRID ================= */}
           <div className="mt-16 sm:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {/* ================= CORE CERTIFICATIONS ================= */}
-            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
+            <div className="group relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/30 hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full overflow-hidden">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-yellow-200">01</span>
               </div>
@@ -717,8 +722,9 @@ border border-white/30 text-white hover:bg-white/10 transition"
 
                       <p className="mt-1 text-sm text-white/70">{item.desc}</p>
 
-                      <span className="text-xs text-yellow-200/60 opacity-0 group-hover:opacity-100 transition">
-                        View certification →
+                      <span className="inline-flex items-center gap-1 text-xs text-yellow-200/70 opacity-0 group-hover:opacity-100 transition">
+                        View certification
+                        <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
                   </Link>
@@ -727,7 +733,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
             </div>
 
             {/* ================= SPECIALIZED CERTIFICATIONS ================= */}
-            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
+            <div className="group relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/30 hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full overflow-hidden">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-orange-200">02</span>
               </div>
@@ -787,8 +793,9 @@ border border-white/30 text-white hover:bg-white/10 transition"
 
                       <p className="mt-1 text-sm text-white/70">{item.desc}</p>
 
-                      <span className="text-xs text-orange-200/60 opacity-0 group-hover:opacity-100 transition">
-                        View certification →
+                      <span className="inline-flex items-center gap-1 text-xs text-orange-200/70 opacity-0 group-hover:opacity-100 transition">
+                        View certification
+                        <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
                   </Link>
@@ -797,7 +804,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
             </div>
 
             {/* ================= SUSTAINABILITY ================= */}
-            <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-[2rem] p-6 sm:p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 flex flex-col h-full">
+            <div className="group relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/30 hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full overflow-hidden">
               <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
                 <span className="text-2xl font-bold text-green-200">03</span>
               </div>
@@ -821,8 +828,9 @@ border border-white/30 text-white hover:bg-white/10 transition"
                       Integrate sustainability into project delivery.
                     </p>
 
-                    <span className="text-xs text-green-200/60 opacity-0 group-hover:opacity-100 transition">
-                      View certification →
+                    <span className="inline-flex items-center gap-1 text-xs text-green-200/70 opacity-0 group-hover:opacity-100 transition">
+                      View certification
+                      <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </Link>
@@ -834,7 +842,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
       {/* ================= OUR EXPERTISE ================= */}
       <div
         id="our-expertise"
-        className="relative py-24 lg:py-32 overflow-hidden scroll-mt-32"
+        className="relative py-24 lg:py-32 overflow-hidden scroll-mt-32 border-t border-white/5"
       >
         {/* PREMIUM BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-violet-950 to-indigo-950" />
@@ -848,29 +856,31 @@ border border-white/30 text-white hover:bg-white/10 transition"
         <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:70px_70px]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* HEADER */}
-          <div className="text-center max-w-4xl mx-auto">
-            {/* LABEL */}
-            <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-md mb-6">
-              <span className="text-sm tracking-wide text-white/90">
-                Enterprise Capability & Professional Excellence
-              </span>
-            </div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <SectionLabel>Enterprise Capability & Professional Excellence</SectionLabel>
 
-            {/* TITLE */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight">
-              Our Expertise
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+              Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-fuchsia-300">
+                Expertise
+              </span>
             </h2>
 
-            {/* DESCRIPTION */}
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/75 leading-8">
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/65 leading-relaxed">
               We support organizations across project delivery, agile
               transformation, PMO capability, risk management, scheduling,
               business analysis, AI-enabled project environments, and digital
               transformation through training, consulting, and scalable
               technology solutions.
             </p>
-          </div>
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent mx-auto mt-8" />
+          </motion.div>
 
           {/* EXPERTISE GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-16">
@@ -881,13 +891,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
           relative
           overflow-hidden
           rounded-3xl
-          bg-white/10
+          bg-white/[0.04]
           border border-white/10
-          backdrop-blur-xl
+          backdrop-blur-2xl
           p-8 sm:p-10
           hover:-translate-y-2
-          hover:bg-white/15
+          hover:bg-white/[0.07]
+          hover:border-white/20
           transition-all duration-500
+          shadow-lg shadow-black/20
         "
             >
               {/* CARD GLOW */}
@@ -924,7 +936,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   ].map((item, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                      className="px-3 py-2 rounded-full bg-white/[0.05] text-white/70 text-sm border border-white/10"
                     >
                       {item}
                     </span>
@@ -933,9 +945,10 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <div className="mt-8">
                   <Link
                     to="/offerings/professional-training-and-certification"
-                    className="text-white font-medium hover:underline"
+                    className="group/link inline-flex items-center gap-2 text-white/80 font-medium hover:text-white transition-colors"
                   >
-                    Learn More →
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -948,13 +961,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
           relative
           overflow-hidden
           rounded-3xl
-          bg-white/10
+          bg-white/[0.04]
           border border-white/10
-          backdrop-blur-xl
+          backdrop-blur-2xl
           p-8 sm:p-10
           hover:-translate-y-2
-          hover:bg-white/15
+          hover:bg-white/[0.07]
+          hover:border-white/20
           transition-all duration-500
+          shadow-lg shadow-black/20
         "
             >
               {/* CARD GLOW */}
@@ -989,7 +1004,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   ].map((item, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                      className="px-3 py-2 rounded-full bg-white/[0.05] text-white/70 text-sm border border-white/10"
                     >
                       {item}
                     </span>
@@ -998,9 +1013,10 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <div className="mt-8">
                   <Link
                     to="/offerings/consulting-and-organizational-transformation"
-                    className="text-white font-medium hover:underline"
+                    className="group/link inline-flex items-center gap-2 text-white/80 font-medium hover:text-white transition-colors"
                   >
-                    Learn More →
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1013,13 +1029,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
     relative
     overflow-hidden
     rounded-3xl
-    bg-white/10
+    bg-white/[0.04]
     border border-white/10
-    backdrop-blur-xl
+    backdrop-blur-2xl
     p-8 sm:p-10
     hover:-translate-y-2
-    hover:bg-white/15
+    hover:bg-white/[0.07]
+    hover:border-white/20
     transition-all duration-500
+    shadow-lg shadow-black/20
   "
             >
               {/* CARD GLOW */}
@@ -1054,7 +1072,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   ].map((item, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                      className="px-3 py-2 rounded-full bg-white/[0.05] text-white/70 text-sm border border-white/10"
                     >
                       {item}
                     </span>
@@ -1063,9 +1081,10 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <div className="mt-8">
                   <Link
                     to="/offerings/portfolio-pmo-and-governance-excellence"
-                    className="text-white font-medium hover:underline"
+                    className="group/link inline-flex items-center gap-2 text-white/80 font-medium hover:text-white transition-colors"
                   >
-                    Learn More →
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1078,13 +1097,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
     relative
     overflow-hidden
     rounded-3xl
-    bg-white/10
+    bg-white/[0.04]
     border border-white/10
-    backdrop-blur-xl
+    backdrop-blur-2xl
     p-8 sm:p-10
     hover:-translate-y-2
-    hover:bg-white/15
+    hover:bg-white/[0.07]
+    hover:border-white/20
     transition-all duration-500
+    shadow-lg shadow-black/20
   "
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 blur-3xl rounded-full" />
@@ -1114,7 +1135,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   ].map((item, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                      className="px-3 py-2 rounded-full bg-white/[0.05] text-white/70 text-sm border border-white/10"
                     >
                       {item}
                     </span>
@@ -1122,10 +1143,11 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 </div>
                 <div className="mt-8">
                   <Link
-                    to="offerings/agile-and-adaptive-delivery-excellence"
-                    className="text-white font-medium hover:underline"
+                    to="/offerings/agile-and-adaptive-delivery-excellence"
+                    className="group/link inline-flex items-center gap-2 text-white/80 font-medium hover:text-white transition-colors"
                   >
-                    Learn More →
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1138,13 +1160,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
     relative
     overflow-hidden
     rounded-3xl
-    bg-white/10
+    bg-white/[0.04]
     border border-white/10
-    backdrop-blur-xl
+    backdrop-blur-2xl
     p-8 sm:p-10
     hover:-translate-y-2
-    hover:bg-white/15
+    hover:bg-white/[0.07]
+    hover:border-white/20
     transition-all duration-500
+    shadow-lg shadow-black/20
   "
             >
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full" />
@@ -1174,7 +1198,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   ].map((item, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                      className="px-3 py-2 rounded-full bg-white/[0.05] text-white/70 text-sm border border-white/10"
                     >
                       {item}
                     </span>
@@ -1183,9 +1207,10 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <div className="mt-8">
                   <Link
                     to="/offerings/risk-compliance-and-assurance"
-                    className="text-white font-medium hover:underline"
+                    className="group/link inline-flex items-center gap-2 text-white/80 font-medium hover:text-white transition-colors"
                   >
-                    Learn More →
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1198,13 +1223,15 @@ border border-white/30 text-white hover:bg-white/10 transition"
     relative
     overflow-hidden
     rounded-3xl
-    bg-white/10
+    bg-white/[0.04]
     border border-white/10
-    backdrop-blur-xl
+    backdrop-blur-2xl
     p-8 sm:p-10
     hover:-translate-y-2
-    hover:bg-white/15
+    hover:bg-white/[0.07]
+    hover:border-white/20
     transition-all duration-500
+    shadow-lg shadow-black/20
   "
             >
               <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-400/10 blur-3xl rounded-full" />
@@ -1234,7 +1261,7 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   ].map((item, i) => (
                     <span
                       key={i}
-                      className="px-3 py-2 rounded-full bg-white/10 text-white/80 text-sm border border-white/10"
+                      className="px-3 py-2 rounded-full bg-white/[0.05] text-white/70 text-sm border border-white/10"
                     >
                       {item}
                     </span>
@@ -1243,9 +1270,10 @@ border border-white/30 text-white hover:bg-white/10 transition"
                 <div className="mt-8">
                   <Link
                     to="/offerings/business-analysis-and-requirements-gathering"
-                    className="text-white font-medium hover:underline"
+                    className="group/link inline-flex items-center gap-2 text-white/80 font-medium hover:text-white transition-colors"
                   >
-                    Learn More →
+                    Learn More
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -1257,74 +1285,68 @@ border border-white/30 text-white hover:bg-white/10 transition"
       {/* ================= OUR CLIENTS ================= */}
       <div
         id="clients"
-        className="relative scroll-mt-28 overflow-hidden min-h-screen flex items-center"
+        className="relative scroll-mt-28 overflow-hidden min-h-screen flex items-center border-t border-white/5"
       >
-        {/*  BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#070A14] via-[#1B1035] to-[#2A1B3D]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.18),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_60%)]" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
-        {/*  AURORA */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.22),transparent_55%)]" />
-
-        {/*  GLOW */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_60%)]" />
-
-        {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/25" />
-
-        {/* CONTENT */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            {/* ================= LEFT (PREMIUM ICON VERSION) ================= */}
-            <div className="text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
-                Enterprise Partnerships
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="text-center lg:text-left"
+            >
+              <SectionLabel>Enterprise Partnerships</SectionLabel>
+
+              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.1]">
+                Trusted Across{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-fuchsia-300">
+                  Industries
+                </span>
               </h2>
 
-              <h3 className="text-base sm:text-lg lg:text-xl text-white/80 font-medium mt-6 leading-7 lg:leading-8">
+              <h3 className="text-base sm:text-lg lg:text-xl text-white/65 font-normal mt-6 leading-relaxed">
                 We help organizations across banking, telecom, government, NGOs,
                 and industry improve execution through training, project
                 consulting, and digital transformation.
               </h3>
 
-              {/* ================= VALUE POINTS ================= */}
-              <div className="mt-10 space-y-4">
-                <div className="flex items-start gap-3 text-white/80">
-                  <Building2 className="w-5 h-5 text-purple-300 mt-1" />
-                  <p className="text-sm sm:text-base">
-                    Trusted by enterprise institutions across Africa & global
-                    markets
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-3 text-white/80">
-                  <Globe className="w-5 h-5 text-purple-300 mt-1" />
-                  <p className="text-sm sm:text-base">
-                    Cross-industry delivery across banking, telecom, government
-                    & NGOs
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-3 text-white/80">
-                  <Briefcase className="w-5 h-5 text-purple-300 mt-1" />
-                  <p className="text-sm sm:text-base">
-                    Consulting-led approach focused on execution, not theory
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-3 text-white/80">
-                  <Layers className="w-5 h-5 text-purple-300 mt-1" />
-                  <p className="text-sm sm:text-base">
-                    End-to-end capability: training, transformation & advisory
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-3 text-white/80">
-                  <CheckCircle2 className="w-5 h-5 text-purple-300 mt-1" />
-                  <p className="text-sm sm:text-base">
-                    Proven impact in project delivery maturity & governance
-                    systems
-                  </p>
-                </div>
+              <div className="mt-10 space-y-3">
+                {[
+                  {
+                    icon: Building2,
+                    text: "Trusted by enterprise institutions across Africa & global markets",
+                  },
+                  {
+                    icon: Globe,
+                    text: "Cross-industry delivery across banking, telecom, government & NGOs",
+                  },
+                  {
+                    icon: Briefcase,
+                    text: "Consulting-led approach focused on execution, not theory",
+                  },
+                  {
+                    icon: Layers,
+                    text: "End-to-end capability: training, transformation & advisory",
+                  },
+                  {
+                    icon: CheckCircle2,
+                    text: "Proven impact in project delivery maturity & governance systems",
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 text-white/75 bg-white/[0.03] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.06] hover:border-violet-300/15 transition-all duration-300"
+                  >
+                    <item.icon className="w-5 h-5 text-violet-300 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm sm:text-base text-left">{item.text}</p>
+                  </div>
+                ))}
               </div>
 
               {/* ================= INDUSTRY TAGS ================= */}
@@ -1348,8 +1370,8 @@ border border-white/30 text-white hover:bg-white/10 transition"
                     key={i}
                     to={item.link}
                     className="inline-flex items-center justify-center px-4 py-2 rounded-full
-              bg-white/10 border border-white/20 text-white/80 text-sm
-              backdrop-blur-md hover:bg-white/20 hover:text-white transition-all duration-200"
+              bg-white/[0.04] border border-white/10 text-white/75 text-sm
+              backdrop-blur-xl hover:bg-white/[0.08] hover:border-violet-300/20 hover:text-white transition-all duration-300"
                   >
                     {item.name}
                   </Link>
@@ -1360,23 +1382,29 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   <Link
                     to="/industries/healthcare"
                     className="inline-flex items-center justify-center px-4 py-2 rounded-full
-              bg-white/10 border border-white/20 text-white/80 text-sm
-              backdrop-blur-md hover:bg-white/20 hover:text-white transition-all duration-200"
+              bg-white/[0.04] border border-white/10 text-white/75 text-sm
+              backdrop-blur-xl hover:bg-white/[0.08] hover:border-violet-300/20 hover:text-white transition-all duration-300"
                   >
                     Healthcare
                   </Link>
                 </div>
               </div>
 
-              <p className="mt-8 text-white/50 text-sm">
+              <p className="mt-8 text-white/40 text-sm tracking-wide">
                 Trusted by leading organizations across Africa and global
                 markets
               </p>
-            </div>
+            </motion.div>
 
-            {/* ================= RIGHT ================= */}
-            <div className="relative">
-              <div className="bg-white/10 border border-white/15 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="relative"
+            >
+              <div className="relative bg-white/[0.04] border border-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 shadow-[0_25px_80px_rgba(0,0,0,0.45)] overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent" />
                 <div className="text-white/80 text-sm mb-4 text-center lg:text-left">
                   Featured Client Network
                 </div>
@@ -1385,24 +1413,18 @@ border border-white/30 text-white hover:bg-white/10 transition"
                   <Clientslider />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* ================= TESTIMONIALS ================= */}
-      <div id="testimonials" className="relative overflow-hidden">
-        {/* DIFFERENT BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900" />
+      <div id="testimonials" className="relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/90 to-slate-950" />
+        <div className="absolute top-[-180px] right-[-180px] w-[550px] h-[550px] bg-purple-500/10 blur-[140px] rounded-full" />
+        <div className="absolute bottom-[-180px] left-[-180px] w-[550px] h-[550px] bg-fuchsia-500/8 blur-[140px] rounded-full" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
-        {/* GLOWS */}
-        <div className="absolute top-[-180px] right-[-180px] w-[550px] h-[550px] bg-purple-500/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-[-180px] left-[-180px] w-[550px] h-[550px] bg-pink-500/10 blur-3xl rounded-full" />
-
-        {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/30" />
-
-        {/* CONTENT */}
         <div className="relative z-10 px-6 lg:px-12 py-24 max-w-7xl mx-auto">
           {/* TESTIMONIALS */}
           <ClientReview />
