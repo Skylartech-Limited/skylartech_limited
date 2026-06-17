@@ -105,7 +105,7 @@ const WhoWeServe = () => {
             Industries We Empower
           </p>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.15] sm:leading-[1.1] md:leading-[1.05]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.2] sm:leading-[1.25] md:leading-[1.3]">
             We Help Organizations Deliver
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400">
               Project Excellence at Scale

@@ -65,7 +65,7 @@ const Offerings = () => {
       {/* SEO */}
       <Helmet>
         <title>
-          Professional Project Management Training & Project Consulting |
+         Our Offerings |
           Skylartech
         </title>
         <meta
