@@ -13,10 +13,10 @@ const dropdownItem =
 const dropdownItemLabel = "flex-1 min-w-0";
 
 const dropdownPanel =
-  "absolute left-0 top-full mt-2 rounded-2xl border border-violet-100/60 bg-white/95 backdrop-blur-2xl shadow-[0_20px_60px_rgba(91,44,255,0.14)] overflow-hidden opacity-0 invisible translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50";
+  "absolute left-0 top-full mt-0.5 rounded-2xl border border-violet-100 bg-white shadow-[0_20px_60px_rgba(91,44,255,0.14)] overflow-hidden opacity-0 invisible translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50";
 
 const flyoutPanel =
-  "absolute left-full top-0 ml-1 w-56 rounded-2xl border border-violet-100/60 bg-white/95 backdrop-blur-2xl shadow-[0_20px_60px_rgba(91,44,255,0.14)] overflow-hidden opacity-0 invisible pointer-events-none group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:pointer-events-auto transition-all duration-300 z-[60]";
+  "absolute left-full top-0 ml-0.5 w-56 rounded-2xl border border-violet-100 bg-white shadow-[0_20px_60px_rgba(91,44,255,0.14)] overflow-hidden opacity-0 invisible pointer-events-none group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:pointer-events-auto transition-all duration-200 z-[60]";
 
 const companyLinks = [
   { label: "About Skylartech", href: "/#about-skylartech" },
@@ -162,7 +162,7 @@ const Navbar = () => {
             </Link>
 
             {/* COMPANY */}
-            <div className="relative py-4 group">
+            <div className="relative py-3 group">
               <Link
                 to="/about"
                 onClick={scrollToTop}
@@ -183,7 +183,7 @@ const Navbar = () => {
             </div>
 
             {/* OFFERINGS */}
-            <div className="relative py-4 group">
+            <div className="relative py-3 group">
               <Link to="/offerings" className={`${navLink} flex items-center gap-1.5`}>
                 Offerings
                 <ChevronDown className="w-3.5 h-3.5 text-violet-500 transition-transform duration-300 group-hover:rotate-180" />
@@ -226,7 +226,7 @@ const Navbar = () => {
             </div>
 
             {/* WHO WE SERVE */}
-            <div className="relative py-4 group">
+            <div className="relative py-3 group">
               <Link to="/who-we-serve" className={`${navLink} flex items-center gap-1.5`}>
                 Who We Serve
                 <ChevronDown className="w-3.5 h-3.5 text-violet-500 transition-transform duration-300 group-hover:rotate-180" />
