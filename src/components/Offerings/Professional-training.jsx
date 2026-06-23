@@ -206,152 +206,156 @@ const ProfessionalTraining = () => {
       </div>
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[100svh] flex items-start lg:items-center overflow-hidden pt-[110px] sm:pt-[120px] lg:pt-[110px]">
-        <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{ backgroundImage: `url(${Certified})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#0D0708]/75 to-[#060607]/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/60" />
+<section className="relative min-h-[100svh] flex items-start lg:items-center overflow-hidden pt-[110px] sm:pt-[120px] lg:pt-[110px]">
+  <div
+    className="absolute inset-0 bg-cover bg-center scale-105"
+    style={{ backgroundImage: `url(${Certified})` }}
+  />
 
-        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-500/12 blur-[160px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-rose-600/10 blur-[180px] rounded-full" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#0D0708]/75 to-[#060607]/95" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/60" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 sm:py-14 lg:py-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-start lg:items-center">
-            {/* LEFT CARD */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <div className="relative bg-[#1A0B0C]/75 border border-red-300/15 backdrop-blur-2xl rounded-3xl p-5 sm:p-7 md:p-9 lg:p-10 shadow-[0_25px_80px_rgba(0,0,0,0.65)] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/6 via-transparent to-black/30 pointer-events-none" />
-                <div className="absolute -top-24 -left-24 w-72 h-72 bg-red-400/12 blur-[140px] rounded-full" />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-300/40 to-transparent" />
+  {/* Reduced glow (only one kept) */}
+  <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-rose-600/10 blur-[180px] rounded-full" />
 
-                <div className="relative z-10">
-                  <SectionLabel>
-                    <GraduationCap className="w-3.5 h-3.5 text-red-300" />
-                    PMI® Certification Excellence
-                  </SectionLabel>
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 sm:py-14 lg:py-0">
+    <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
 
-                  <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-white">
-                    You.{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 via-rose-300 to-red-400">
-                      Certified.
-                    </span>
-                  </h1>
+      {/* ================= LEFT CARD ================= */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <div className="relative bg-[#1A0B0C]/70 border border-red-300/10 backdrop-blur-xl rounded-3xl p-6 sm:p-7 lg:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.55)] overflow-hidden">
 
-                  <h2 className="mt-4 text-lg sm:text-xl md:text-2xl font-semibold text-red-100 min-h-[40px]">
-                    <Typewriter
-                      words={[
-                        "Globally Recognized Credentials",
-                        "Advance Your Career",
-                        "Lead with Confidence",
-                        "Master Project Excellence",
-                      ]}
-                      loop={0}
-                      typeSpeed={70}
-                      deleteSpeed={40}
-                      delaySpeed={1500}
-                    />
-                    <span className="text-red-300">
-                      <Cursor cursorStyle="|" />
-                    </span>
-                  </h2>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/6 via-transparent to-black/30 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-300/40 to-transparent" />
 
-                  <p className="text-red-50/90 mt-5 sm:mt-6 text-sm sm:text-lg md:text-xl leading-relaxed">
-                    Demonstrate your expertise. Strengthen your credibility.
-                    Advance your career with globally recognized PMI®
-                    certifications.
-                  </p>
+          <div className="relative z-10">
 
-                  <p className="text-red-100/70 mt-4 sm:mt-5 text-xs sm:text-base md:text-lg italic">
-                    It's your future. It's your standard. It's you. Certified.
-                  </p>
+            <SectionLabel>
+              <GraduationCap className="w-3.5 h-3.5 text-red-300" />
+              PMI® Certification Excellence
+            </SectionLabel>
 
-                  <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                    <Link
-                      to="#certifications-pathways"
-                      className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-semibold bg-white/5 border border-white/10 text-white backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                    >
-                      Certification Pathways
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+            <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-white">
+              You.{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 via-rose-300 to-red-400">
+                Certified.
+              </span>
+            </h1>
 
-                    <Link
-                      to="#maintenance"
-                      className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-semibold bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                    >
-                      Maintenance Requirements
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            <h2 className="mt-4 text-lg sm:text-xl md:text-2xl font-semibold text-red-100 min-h-[40px]">
+              <Typewriter
+                words={[
+                  "Globally Recognized Credentials",
+                  "Advance Your Career",
+                  "Lead with Confidence",
+                  "Master Project Excellence",
+                ]}
+                loop={0}
+                typeSpeed={70}
+                deleteSpeed={40}
+                delaySpeed={1500}
+              />
+              <span className="text-red-300">
+                <Cursor cursorStyle="|" />
+              </span>
+            </h2>
 
-            {/* RIGHT CARD */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-              className="flex justify-center order-1 lg:order-2 mt-14 sm:mt-20 lg:mt-0"
-            >
-              <div className="w-full max-w-md sm:max-w-lg bg-[#0B1220]/70 border border-white/10 backdrop-blur-2xl rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-[0_25px_80px_rgba(0,0,0,0.55)] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/20 pointer-events-none" />
-                <div className="absolute -top-20 -right-20 w-60 h-60 bg-rose-500/12 blur-[120px] rounded-full" />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            <p className="text-red-50/85 mt-5 sm:mt-6 text-sm sm:text-lg md:text-xl leading-relaxed max-w-xl">
+              Demonstrate your expertise, strengthen your credibility, and
+              accelerate your career with globally recognized PMI® certifications.
+            </p>
 
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <SectionLabel>Why It Matters</SectionLabel>
+            {/* CTA */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link
+                to="#certifications-pathways"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-medium bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              >
+                Certification Pathways
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-                  <h2 className="mt-5 text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-snug">
-                    Why PMI Certification{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-rose-400">
-                      Matters
-                    </span>
-                  </h2>
+              <Link
+                to="#maintenance"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-semibold bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              >
+                Maintenance Requirements
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
 
-                  <p className="text-red-50/75 mt-3 sm:mt-4 text-xs sm:text-sm md:text-base leading-relaxed">
-                    Globally recognized credentials that validate your skills
-                    and accelerate your professional growth.
-                  </p>
-
-                  <motion.div
-                    variants={stagger}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="mt-5 sm:mt-6 space-y-3 w-full"
-                  >
-                    {whyPmiFeatures.map((item, i) => (
-                      <motion.div
-                        key={i}
-                        variants={fadeUp}
-                        className="group flex items-start gap-3 text-left bg-white/[0.03] border border-white/8 rounded-2xl p-3 sm:p-4 hover:bg-white/[0.06] hover:border-red-300/20 hover:-translate-y-0.5 transition-all duration-300"
-                      >
-                        <div className="bg-gradient-to-br from-red-500/15 to-rose-500/10 p-2.5 rounded-xl border border-red-300/15 flex-shrink-0 group-hover:border-red-300/30 transition-colors">
-                          <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-red-300" />
-                        </div>
-                        <div>
-                          <h4 className="text-white font-semibold text-sm sm:text-base">
-                            {item.title}
-                          </h4>
-                          <p className="text-red-100/55 text-xs sm:text-sm mt-1 leading-relaxed">
-                            {item.text}
-                          </p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* ================= RIGHT CARD ================= */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+        className="flex justify-center order-1 lg:order-2 mt-10 sm:mt-12 lg:mt-0"
+      >
+        <div className="w-full max-w-md sm:max-w-lg bg-[#0B1220]/65 border border-white/8 backdrop-blur-xl rounded-3xl p-5 sm:p-6 lg:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.5)] relative overflow-hidden">
+
+          <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/20 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+          <div className="relative z-10 flex flex-col items-center text-center">
+
+            <SectionLabel>Why It Matters</SectionLabel>
+
+            <h2 className="mt-5 text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-snug">
+              Why PMI Certification{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-rose-400">
+                Matters
+              </span>
+            </h2>
+
+            <p className="text-red-50/75 mt-3 text-sm sm:text-base leading-relaxed max-w-sm">
+              Globally recognized credentials that validate your skills and accelerate your growth.
+            </p>
+
+            {/* FEATURES (reduced to 3) */}
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="mt-5 space-y-2.5 w-full"
+            >
+              {whyPmiFeatures.slice(0, 3).map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  className="group flex items-start gap-3 text-left bg-white/[0.03] border border-white/6 rounded-2xl p-3 hover:bg-white/[0.05] hover:border-red-300/20 transition-all duration-300"
+                >
+                  <div className="bg-gradient-to-br from-red-500/15 to-rose-500/10 p-2.5 rounded-xl border border-red-300/15 flex-shrink-0">
+                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-red-300" />
+                  </div>
+
+                  <div>
+                    <h4 className="text-white font-semibold text-sm sm:text-base">
+                      {item.title}
+                    </h4>
+                    <p className="text-red-100/55 text-xs sm:text-sm mt-1 leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+          </div>
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* ================= PMI CERTIFICATION ECOSYSTEM ================= */}
       <section className="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-6 border-t border-white/5">
@@ -563,6 +567,232 @@ const ProfessionalTraining = () => {
                 </motion.div>
               ))}
             </div>
+
+{/* PMP RENEWAL BUNDLE */}
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeUp}
+  className="mt-20"
+>
+  <div className="relative overflow-hidden rounded-3xl border border-red-400/10 bg-[#13090A]/50 backdrop-blur-xl shadow-xl shadow-black/30 p-6 sm:p-8 lg:p-10">
+    {/* Background Glow */}
+    <div className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-red-500/10 blur-3xl" />
+    <div className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-rose-500/10 blur-3xl" />
+
+    <div className="relative z-10">
+      <SectionLabel>Renew & Maintain</SectionLabel>
+
+      <h3 className="mt-6 text-3xl sm:text-4xl font-bold text-white leading-tight">
+        Maintain Your{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-rose-400">
+          PMP® Certification
+        </span>
+      </h3>
+
+      <p className="mt-6 max-w-4xl mx-auto text-center text-white/70 text-base sm:text-lg leading-relaxed">
+  Complete your PMP® renewal quickly and confidently with our
+  <span className="text-red-200 font-semibold">
+    {" "}PMP Renewal Bundle (60 PDUs)
+  </span>.
+  Earn all required PDUs in one package—no guesswork, no tracking,
+  just continuous professional growth.
+</p>
+
+      {/* Feature Cards */}
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          "Earn all 60 PDUs in one bundle",
+          "PMI-approved credits for easy renewal",
+          "100% money-back guarantee",
+          "180-day online access, start instantly",
+          "Renew your PMP® with confidence",
+          "Save more with the full bundle",
+        ].map((feature, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-red-400/10 bg-white/[0.03] p-5 hover:border-red-400/25 hover:bg-white/[0.05] transition-all duration-300"
+          >
+            <p className="text-white/80 text-sm sm:text-base">
+              {feature}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* ATP Badge */}
+      <div className="mt-10 rounded-2xl border border-red-400/15 bg-gradient-to-r from-red-500/10 via-rose-500/5 to-transparent p-6">
+        <h4 className="text-xl font-semibold text-red-200">
+          Premier Authorized Training Partner (ATP)
+        </h4>
+        <p className="mt-3 text-white/70 leading-relaxed">
+          All courses included in this bundle are approved by the
+          Project Management Institute® and qualify for certification
+          renewal requirements.
+        </p>
+      </div>
+
+      {/* Courses Table - Desktop */}
+      <div className="mt-12 hidden lg:block">
+        <div className="overflow-hidden rounded-3xl border border-red-400/10">
+          <div className="grid grid-cols-5 bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent p-5 text-red-200 font-semibold">
+            <div>Course</div>
+            <div>Ways of Working</div>
+            <div>Power Skills</div>
+            <div>Business Acumen</div>
+            <div>Total Hours</div>
+          </div>
+
+          {[
+            {
+              course: "How to Measure Project Performance",
+              wow: "3.0 hrs",
+              power: "3.0 hrs",
+              business: "1.0 hrs",
+              total: "7.0 hrs",
+            },
+            {
+              course: "Scrum Immersion for Agile PMs",
+              wow: "5.0 hrs",
+              power: "5.0 hrs",
+              business: "5.0 hrs",
+              total: "14.0 hrs",
+            },
+            {
+              course: "Modern Leadership Techniques",
+              wow: "5.0 hrs",
+              power: "5.0 hrs",
+              business: "4.0 hrs",
+              total: "14.0 hrs",
+            },
+            {
+              course: "Project Management Foundations",
+              wow: "9.0 hrs",
+              power: "9.0 hrs",
+              business: "7.0 hrs",
+              total: "25.0 hrs",
+            },
+          ].map((course, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-5 p-5 text-white/70 border-t border-white/5 ${
+                i % 2 === 0 ? "bg-white/[0.02]" : ""
+              }`}
+            >
+              <div className="text-red-200 font-medium">
+                {course.course}
+              </div>
+              <div>{course.wow}</div>
+              <div>{course.power}</div>
+              <div>{course.business}</div>
+              <div>{course.total}</div>
+            </div>
+          ))}
+
+          {/* Grand Total */}
+          <div className="grid grid-cols-5 p-5 bg-red-500/10 border-t border-red-400/20">
+            <div className="font-bold text-red-200">
+              Grand Total
+            </div>
+            <div className="font-semibold text-white">
+              22.0 hrs
+            </div>
+            <div className="font-semibold text-white">
+              22.0 hrs
+            </div>
+            <div className="font-semibold text-white">
+              17.0 hrs
+            </div>
+            <div className="font-bold text-white">
+              61.0 hrs*
+            </div>
+          </div>
+        </div>
+
+        <p className="mt-4 text-sm text-white/50 italic">
+          *Based on the hours listed above.
+        </p>
+      </div>
+
+      {/* Mobile Cards */}
+      <div className="mt-10 lg:hidden space-y-4">
+        {[
+          {
+            course: "How to Measure Project Performance",
+            wow: "3.0",
+            power: "3.0",
+            business: "1.0",
+            total: "7.0",
+          },
+          {
+            course: "Scrum Immersion for Agile PMs",
+            wow: "5.0",
+            power: "5.0",
+            business: "5.0",
+            total: "14.0",
+          },
+          {
+            course: "Modern Leadership Techniques",
+            wow: "5.0",
+            power: "5.0",
+            business: "4.0",
+            total: "14.0",
+          },
+          {
+            course: "Project Management Foundations",
+            wow: "9.0",
+            power: "9.0",
+            business: "7.0",
+            total: "25.0",
+          },
+        ].map((course, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-red-400/10 bg-white/[0.03] p-5"
+          >
+            <h4 className="text-red-200 font-semibold text-lg">
+              {course.course}
+            </h4>
+
+            <div className="mt-4 space-y-2 text-sm text-white/70">
+              <div className="flex justify-between">
+                <span>Ways of Working</span>
+                <span>{course.wow} hrs</span>
+              </div>
+
+              <div className="flex justify-between">
+                <span>Power Skills</span>
+                <span>{course.power} hrs</span>
+              </div>
+
+              <div className="flex justify-between">
+                <span>Business Acumen</span>
+                <span>{course.business} hrs</span>
+              </div>
+
+              <div className="flex justify-between border-t border-white/10 pt-2 font-semibold text-red-200">
+                <span>Total</span>
+                <span>{course.total} hrs</span>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <div className="rounded-2xl border border-red-400/20 bg-red-500/10 p-5">
+          <h4 className="font-bold text-red-200">
+            Grand Total: 61.0 PDUs*
+          </h4>
+          <p className="mt-2 text-sm text-white/60">
+            Ways of Working: 22 hrs • Power Skills: 22 hrs •
+            Business Acumen: 17 hrs
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.div>
+            
           </div>
         </div>
       </section>
