@@ -9,7 +9,7 @@ import {
   Layers,
   CheckCircle2,
   ArrowRight,
-  Award,
+  Award
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -496,7 +496,9 @@ pb-14 sm:pb-20 lg:pb-28"
             className="space-y-8 text-white"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>Strategic Learning & Transformation Partner</SectionLabel>
+              <SectionLabel>
+                Strategic Learning & Transformation Partner
+              </SectionLabel>
             </motion.div>
 
             <motion.div variants={fadeUp}>
@@ -514,7 +516,10 @@ pb-14 sm:pb-20 lg:pb-28"
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div
+              variants={fadeUp}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
               {[
                 {
                   title: "PMI® Premier ATP Status",
@@ -568,7 +573,10 @@ pb-14 sm:pb-20 lg:pb-28"
               ))}
             </motion.div>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row gap-4 pt-2"
+            >
               <Link
                 to="/offerings/professional-training-and-certification"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-semibold hover:shadow-lg hover:shadow-amber-500/20 hover:scale-[1.02] transition-all duration-300 text-center"
@@ -863,7 +871,9 @@ pb-14 sm:pb-20 lg:pb-28"
             variants={fadeUp}
             className="text-center max-w-4xl mx-auto"
           >
-            <SectionLabel>Enterprise Capability & Professional Excellence</SectionLabel>
+            <SectionLabel>
+              Enterprise Capability & Professional Excellence
+            </SectionLabel>
 
             <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
               Our{" "}
@@ -1344,7 +1354,9 @@ pb-14 sm:pb-20 lg:pb-28"
                     className="flex items-start gap-3 text-white/75 bg-white/[0.03] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.06] hover:border-violet-300/15 transition-all duration-300"
                   >
                     <item.icon className="w-5 h-5 text-violet-300 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm sm:text-base text-left">{item.text}</p>
+                    <p className="text-sm sm:text-base text-left">
+                      {item.text}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -1419,7 +1431,10 @@ pb-14 sm:pb-20 lg:pb-28"
       </div>
 
       {/* ================= TESTIMONIALS ================= */}
-      <div id="testimonials" className="relative overflow-hidden border-t border-white/5">
+      <div
+        id="testimonials"
+        className="relative overflow-hidden border-t border-white/5"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/90 to-slate-950" />
         <div className="absolute top-[-180px] right-[-180px] w-[550px] h-[550px] bg-purple-500/10 blur-[140px] rounded-full" />
         <div className="absolute bottom-[-180px] left-[-180px] w-[550px] h-[550px] bg-fuchsia-500/8 blur-[140px] rounded-full" />
