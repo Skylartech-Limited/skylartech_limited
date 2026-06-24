@@ -38,11 +38,20 @@ const GridOverlay = () => (
 );
 
 const GlowOrb = ({ className = "" }) => (
-  <div className={`absolute rounded-full blur-[120px] pointer-events-none ${className}`} />
+  <div
+    className={`absolute rounded-full blur-[120px] pointer-events-none ${className}`}
+  />
 );
 
-const GlassCard = ({ children, className = "", hover = true, as: Tag = "div" }) => (
+const GlassCard = ({
+  children,
+  className = "",
+  hover = true,
+  as: Tag = "div",
+  ...props
+}) => (
   <Tag
+    {...props}
     className={`relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] ${
       hover
         ? "transition-all duration-500 hover:-translate-y-1 hover:border-emerald-400/25 hover:bg-white/[0.07] hover:shadow-[0_30px_90px_rgba(16,185,129,0.12)]"
@@ -135,7 +144,10 @@ const Offerings = () => {
           content="project management training, PMO consulting, agile transformation, governance frameworks, enterprise consulting, Skylartech"
         />
         <link rel="canonical" href="https://skylartech.co.ke/offerings" />
-        <meta property="og:title" content="Our Offerings | Skylartech Limited" />
+        <meta
+          property="og:title"
+          content="Our Offerings | Skylartech Limited"
+        />
         <meta
           property="og:description"
           content="Training, consulting, governance frameworks, and transformation services for enterprise project excellence."
@@ -228,7 +240,9 @@ const Offerings = () => {
                   key={stat.label}
                   className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-4 py-3 hover:bg-white/[0.08] hover:border-emerald-400/20 transition-all duration-300"
                 >
-                  <p className="text-lg font-semibold text-white">{stat.value}</p>
+                  <p className="text-lg font-semibold text-white">
+                    {stat.value}
+                  </p>
                   <p className="text-white/50 text-xs mt-0.5">{stat.label}</p>
                 </div>
               ))}
@@ -396,7 +410,10 @@ const Offerings = () => {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <GlassCard hover={false} className="p-8 sm:p-12 md:p-16 lg:p-20 text-center">
+            <GlassCard
+              hover={false}
+              className="p-8 sm:p-12 md:p-16 lg:p-20 text-center"
+            >
               <SectionLabel>
                 <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
                 Get Started
