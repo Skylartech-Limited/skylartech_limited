@@ -37,16 +37,30 @@ const GridOverlay = () => (
 );
 
 const GlowOrb = ({ className = "" }) => (
-  <div className={`absolute rounded-full blur-[120px] pointer-events-none ${className}`} />
+  <div
+    className={`absolute rounded-full blur-[120px] pointer-events-none ${className}`}
+  />
 );
 
-const GlassCard = ({ children, className = "", hover = true, as: Tag = "div" }) => (
+const GlassCard = ({
+  children,
+  className = "",
+  hover = true,
+  as: Tag = "div",
+  ...props
+}) => (
   <Tag
-    className={`relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] ${
-      hover
-        ? "transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/25 hover:bg-white/[0.07] hover:shadow-[0_30px_90px_rgba(56,189,248,0.12)]"
-        : ""
-    } ${className}`}
+    {...props}
+    className={`relative overflow-hidden rounded-[28px]
+      border border-white/10
+      bg-white/[0.04]
+      backdrop-blur-2xl
+      shadow-[0_25px_80px_rgba(0,0,0,0.45)]
+      ${
+        hover
+          ? "transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/25 hover:bg-white/[0.07] hover:shadow-[0_30px_90px_rgba(56,189,248,0.12)]"
+          : ""
+      } ${className}`}
   >
     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/40 to-transparent" />
     {children}
@@ -115,7 +129,8 @@ const WhoWeServe = () => {
     <div className="relative overflow-hidden text-white bg-gradient-to-b from-[#050b1e] via-[#07142b] to-[#050b1e]">
       <Helmet>
         <title>
-          Industries We Serve | Skylartech Project Management & Project Consulting
+          Industries We Serve | Skylartech Project Management & Project
+          Consulting
         </title>
         <meta
           name="description"
@@ -131,7 +146,10 @@ const WhoWeServe = () => {
           content="We help organizations across key industries achieve project excellence, governance maturity, and successful transformation delivery."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://skylartech.co.ke/who-we-serve" />
+        <meta
+          property="og:url"
+          content="https://skylartech.co.ke/who-we-serve"
+        />
         <link rel="canonical" href="https://skylartech.co.ke/who-we-serve" />
       </Helmet>
 
@@ -219,7 +237,9 @@ const WhoWeServe = () => {
                   key={stat.label}
                   className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-4 py-3 hover:bg-white/[0.08] hover:border-sky-400/20 transition-all duration-300"
                 >
-                  <p className="text-lg font-semibold text-white">{stat.value}</p>
+                  <p className="text-lg font-semibold text-white">
+                    {stat.value}
+                  </p>
                   <p className="text-white/50 text-xs mt-0.5">{stat.label}</p>
                 </div>
               ))}
@@ -276,7 +296,11 @@ const WhoWeServe = () => {
                 <motion.div
                   key={item.title}
                   variants={fadeUp}
-                  className={item.title === "Healthcare" ? "sm:col-span-2 lg:col-span-1" : ""}
+                  className={
+                    item.title === "Healthcare"
+                      ? "sm:col-span-2 lg:col-span-1"
+                      : ""
+                  }
                 >
                   <GlassCard
                     as={Link}
@@ -350,7 +374,9 @@ const WhoWeServe = () => {
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-sky-500/15 flex items-center justify-center">
                     <CheckCircle2 className="text-sky-300 w-5 h-5" />
                   </div>
-                  <p className="text-white/70 leading-relaxed pt-1.5">{point}</p>
+                  <p className="text-white/70 leading-relaxed pt-1.5">
+                    {point}
+                  </p>
                 </GlassCard>
               </motion.div>
             ))}
@@ -371,7 +397,10 @@ const WhoWeServe = () => {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <GlassCard hover={false} className="p-8 sm:p-12 md:p-16 text-center">
+            <GlassCard
+              hover={false}
+              className="p-8 sm:p-12 md:p-16 text-center"
+            >
               <SectionLabel>
                 <Sparkles className="w-3.5 h-3.5 text-sky-300" />
                 Get Started
@@ -385,8 +414,8 @@ const WhoWeServe = () => {
               </h2>
 
               <p className="mt-6 text-white/65 leading-relaxed max-w-2xl mx-auto">
-                Let's build stronger governance, better delivery, and sustainable
-                transformation outcomes.
+                Let's build stronger governance, better delivery, and
+                sustainable transformation outcomes.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
