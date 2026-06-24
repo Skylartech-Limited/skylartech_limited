@@ -162,7 +162,7 @@ const Navbar = () => {
             </Link>
 
             {/* COMPANY */}
-            <div className="relative py-3 group">
+            <div className="relative py-2 group">
               <Link
                 to="/about"
                 onClick={scrollToTop}
@@ -183,8 +183,8 @@ const Navbar = () => {
             </div>
 
             {/* OFFERINGS */}
-            <div className="relative py-3 group">
-              <Link to="/offerings" className={`${navLink} flex items-center gap-1.5`}>
+            <div className="relative py-2 group">
+              <Link to="/offerings" className={`${navLink} flex items-center gap-1`}>
                 Offerings
                 <ChevronDown className="w-3.5 h-3.5 text-violet-500 transition-transform duration-300 group-hover:rotate-180" />
               </Link>
@@ -205,7 +205,7 @@ const Navbar = () => {
 
                   <div className="absolute left-full top-0 h-full w-2 pointer-events-none" aria-hidden="true" />
 
-                  <div className={`${flyoutPanel} py-1.5`}>
+                  <div className={`${flyoutPanel} py-1`}>
                     <DropdownAccent />
                     {certifications.map((cert) => (
                       <Link key={cert.link} to={cert.link} className={dropdownItem}>
@@ -226,7 +226,7 @@ const Navbar = () => {
             </div>
 
             {/* WHO WE SERVE */}
-            <div className="relative py-3 group">
+            <div className="relative py-2 group">
               <Link to="/who-we-serve" className={`${navLink} flex items-center gap-1.5`}>
                 Who We Serve
                 <ChevronDown className="w-3.5 h-3.5 text-violet-500 transition-transform duration-300 group-hover:rotate-180" />
