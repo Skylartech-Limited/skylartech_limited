@@ -65,9 +65,9 @@ const heroCards = [
   { icon: MapPin, title: "Location", value: "Nairobi, Kenya" },
   { icon: Clock3, title: "Availability", value: "Mon - Sun" },
   { icon: Globe, title: "Support", value: "24/7 Response" },
-  { icon: Mail, title: "Email", value: "training@skylartech.co.ke" },
+  { icon: Mail, title: "Email", value: "info@skylartech.co.ke" },
   { icon: Phone, title: "Phone", value: "+254 718-257-293" },
-  { icon: MapPin, title: "Office", value: "The Waterfront, Karen, Nairobi" },
+  { icon: MapPin, title: "Office", value: "Gateway Mall, 4th Floor, Mombasa Road" },
 ];
 
 const certificationOfferings = [
