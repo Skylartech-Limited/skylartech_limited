@@ -9,7 +9,7 @@ import {
   Layers,
   CheckCircle2,
   ArrowRight,
-  Award
+  Award,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -30,6 +30,7 @@ import Planning from "../../assets/Homepage images/Planning.jpg";
 import ClientReview from "./ClientReview";
 import Clientslider from "./ClientSlider";
 import CountupSection from "../Homepage/CountUp";
+import PromoImage from "../../assets/Homepage images/Promo.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -255,7 +256,8 @@ pb-14 sm:pb-20 lg:pb-28"
             className="flex justify-center lg:justify-end w-full px-2 sm:px-0"
           >
             <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
-              <div className="rounded-3xl overflow-hidden pb-2">
+              {/* ================= SLIDER ================= */}
+              <div className="rounded-3xl overflow-hidden">
                 <Swiper
                   modules={[Pagination, Autoplay]}
                   spaceBetween={24}
@@ -275,16 +277,17 @@ pb-14 sm:pb-20 lg:pb-28"
                   <SwiperSlide className="h-auto">
                     <div
                       className="
-        h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
-        flex flex-col items-center justify-center text-center
-        bg-[#0f172a]/80 backdrop-blur-2xl
-        border border-white/10 rounded-3xl
-        px-5 sm:px-6 md:px-8
-        shadow-[0_25px_80px_rgba(0,0,0,0.65)]
-        relative overflow-hidden
-      "
+              h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
+              flex flex-col items-center justify-center text-center
+              bg-[#0f172a]/80 backdrop-blur-2xl
+              border border-white/10 rounded-3xl
+              px-5 sm:px-6 md:px-8
+              shadow-[0_25px_80px_rgba(0,0,0,0.65)]
+              relative overflow-hidden
+            "
                     >
                       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent" />
+
                       <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.2em] text-violet-200/90 bg-violet-500/15 border border-violet-300/20 px-3 sm:px-4 py-2 rounded-full">
                         Accreditation
                       </span>
@@ -296,6 +299,7 @@ pb-14 sm:pb-20 lg:pb-28"
                           alt="PMI"
                           className="h-16 sm:h-20 md:h-28 lg:h-36 object-contain"
                         />
+
                         <img
                           src={PMI2}
                           alt="PMI2"
@@ -314,16 +318,17 @@ pb-14 sm:pb-20 lg:pb-28"
                   <SwiperSlide className="h-auto">
                     <div
                       className="
-        h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
-        flex items-stretch justify-center
-        bg-[#0f172a]/80 backdrop-blur-2xl
-        border border-white/10 rounded-3xl
-        overflow-hidden
-        shadow-[0_25px_80px_rgba(0,0,0,0.65)]
-        relative
-      "
+              h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px]
+              flex items-stretch justify-center
+              bg-[#0f172a]/80 backdrop-blur-2xl
+              border border-white/10 rounded-3xl
+              overflow-hidden
+              shadow-[0_25px_80px_rgba(0,0,0,0.65)]
+              relative
+            "
                     >
                       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent z-10" />
+
                       <img
                         src={Membership}
                         alt="Membership"
@@ -332,10 +337,57 @@ pb-14 sm:pb-20 lg:pb-28"
                     </div>
                   </SwiperSlide>
                 </Swiper>
-
-                {/* ================= CLEAN DOTS ================= */}
-                <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
               </div>
+
+              {/* ================= PAGINATION ================= */}
+              <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
+
+            {/* ================= PREMIUM PROMOTIONAL CARD ================= */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.6 }}
+  whileHover={{ y: -6 }}
+  className="group mt-6 relative overflow-hidden rounded-[24px] sm:rounded-[28px]
+             border border-white/10
+             bg-white/[0.03]
+             shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
+>
+  {/* Glow Effects */}
+  <div className="absolute -top-20 -left-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-violet-500/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
+
+  <div className="absolute -bottom-20 -right-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-cyan-500/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
+
+  {/* Image */}
+  <img
+    src={PromoImage}
+    alt="Promotional Banner"
+    className="w-full h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[260px]
+               object-contain transition-transform duration-700
+               group-hover:scale-[1.03]"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-transparent to-transparent" />
+
+  {/* CTA */}
+  <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
+    <Link
+      to="/book-training"
+      className="group/btn inline-flex items-center gap-2
+                 rounded-xl sm:rounded-2xl
+                 bg-gradient-to-r from-violet-600 to-indigo-600
+                 px-4 py-2.5 sm:px-5 sm:py-3
+                 text-xs sm:text-sm font-semibold text-white
+                 shadow-lg shadow-violet-500/20
+                 transition-all duration-300
+                 hover:scale-105 hover:shadow-violet-500/40"
+    >
+      Enroll Today
+      <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+    </Link>
+  </div>
+</motion.div>
             </div>
           </motion.div>
         </div>
