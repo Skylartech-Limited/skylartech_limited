@@ -190,12 +190,17 @@ const Footer = () => {
             </h3>
 
             <div className="w-full max-w-md rounded-xl sm:rounded-2xl overflow-hidden border border-white/20 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:scale-105">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7419717032712!2d36.71209707461479!3d-1.3309057986564705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b40e8700ce9%3A0xf4eb6d3689e5364b!2sThe%20Waterfront%20Karen!5e0!3m2!1sen!2ske!4v1688904954033!5m2!1sen!2ske"
-                className="w-full h-56"
-                loading="lazy"
-                title="map"
-              />
+            <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.687315766158!2d36.90754313880569!3d-1.3642799955893665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f0d07e950699d%3A0xdd6f2a4334473290!2sGateway%20Mall%2C%204th%20Floor%20Airport%20Road%2C%20North!5e0!3m2!1sen!2ske!4v1782310091062!5m2!1sen!2ske"
+    width="100%"
+    height="350"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    className="w-full h-[350px]"
+    title="SkylarTech Location"
+  ></iframe>
             </div>
           </div>
         </div>
