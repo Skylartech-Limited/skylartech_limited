@@ -132,7 +132,7 @@ const PDU = () => {
         initial="hidden"
         animate="visible"
         variants={fadeUp}
-        className="relative flex min-h-[90vh] items-center pt-28 pb-16 lg:min-h-screen lg:pt-32 lg:pb-20"
+        className="relative flex min-h-[90vh] items-center pb-16 lg:min-h-screen lg:pb-20"
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           {/* LEFT */}
@@ -357,175 +357,194 @@ const PDU = () => {
           ))}
         </div>
 
-        {/* Renewal Bundle */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={fadeUp}
-          className="mt-16 sm:mt-20 mb-0 pb-0"
-        >
-          <div
+      {/* Renewal Bundle */}
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.25 }}
+  variants={fadeUp}
+  className="mt-16 sm:mt-20 mb-0 pb-0"
+>
+  <div
+    className="
+      relative overflow-hidden
+      rounded-[28px] sm:rounded-[32px]
+      border border-white/10
+      bg-white/[0.04]
+      backdrop-blur-2xl
+      p-5 sm:p-8 lg:p-12
+      w-full
+    "
+  >
+    {/* Background Glows */}
+    <div className="pointer-events-none absolute -top-16 -right-12 h-72 w-72 rounded-full bg-cyan-500/10 blur-[110px]" />
+    <div className="pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-violet-500/10 blur-[110px]" />
+
+    <div className="relative z-10 flex flex-col items-center text-center">
+      <SectionLabel>Renew & Maintain</SectionLabel>
+
+      <h3 className="mt-6 max-w-4xl text-balance font-bold leading-tight text-white [font-size:clamp(1.75rem,3.2vw,3rem)]">
+        Maintain Your{" "}
+        <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text text-transparent">
+          PMP® Certification
+        </span>
+      </h3>
+
+      <p className="mt-4 max-w-4xl text-pretty text-base sm:text-lg leading-relaxed text-slate-300">
+        Complete your PMP® renewal quickly and confidently with our
+        <span className="text-cyan-200 font-semibold">
+          {" "}
+          PMP Renewal Bundle (60 PDUs)
+        </span>
+        . Earn all required PDUs in one package with no guesswork—just
+        continuous professional growth.
+      </p>
+
+      {/* Features */}
+      <div className="mt-10 grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {features.map((feature) => (
+          <motion.div
+            key={feature}
+            whileHover={hoverLift(reduce)}
             className="
-    relative overflow-hidden
-    rounded-[28px] sm:rounded-[32px]
-    border border-white/10
-    bg-white/[0.04]
-    backdrop-blur-2xl
-    p-5 sm:p-8 lg:p-12
-    w-full
-  "
+              group flex h-full flex-col items-center justify-center
+              rounded-3xl
+              border border-white/10
+              bg-white/[0.03]
+              p-5
+              text-center
+              hover:border-cyan-400/30
+              hover:bg-white/[0.05]
+              transition-all duration-300
+            "
           >
-            <div className="pointer-events-none absolute -top-16 -right-12 h-72 w-72 rounded-full bg-cyan-500/10 blur-[110px]" />
-            <div className="pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-violet-500/10 blur-[110px]" />
+            <CheckCircle2
+              className="mb-3 h-7 w-7 text-cyan-300"
+              aria-hidden="true"
+            />
+            <p className="text-slate-300">{feature}</p>
+          </motion.div>
+        ))}
+      </div>
 
-            <div className="relative z-10">
-              <SectionLabel>Renew & Maintain</SectionLabel>
+      {/* ATP Badge */}
+      <div className="mt-10 w-full rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-violet-500/10 p-5 sm:p-6 lg:p-8">
+        <div className="flex flex-col items-center justify-center gap-6 text-center">
+          <ShieldCheck
+            className="h-10 w-10 shrink-0 text-cyan-300"
+            aria-hidden="true"
+          />
 
-              <h3 className="mt-6 text-balance font-bold leading-tight text-white [font-size:clamp(1.75rem,3.2vw,3rem)]">
-                Maintain Your{" "}
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text text-transparent">
-                  PMP® Certification
-                </span>
-              </h3>
+          <div className="max-w-3xl">
+            <h4 className="text-2xl font-semibold text-cyan-200">
+              Premier Authorized Training Partner (ATP)
+            </h4>
 
-              <p className="mt-4 max-w-4xl text-pretty text-base sm:text-lg leading-relaxed text-slate-300 lg:text-left">
-                Complete your PMP® renewal quickly and confidently with our
-                <span className="text-cyan-200 font-semibold">
-                  {" "}
-                  PMP Renewal Bundle (60 PDUs)
-                </span>
-                . Earn all required PDUs in one package with no guesswork—just
-                continuous professional growth.
-              </p>
+            <p className="mt-3 text-slate-300 leading-relaxed">
+              All courses included in this bundle are approved by the
+              Project Management Institute® and qualify for certification
+              renewal requirements.
+            </p>
+          </div>
+        </div>
+      </div>
 
-              {/* Features */}
-              <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {features.map((feature) => (
-                  <motion.div
-                    key={feature}
-                    whileHover={hoverLift(reduce)}
-                    className="
-group h-full rounded-3xl
-border border-white/10
-bg-white/[0.03]
-p-5
-hover:border-cyan-400/30
-transition-all duration-300
-"
-                  >
-                    <CheckCircle2
-                      className="mb-3 h-7 w-7 text-cyan-300"
-                      aria-hidden="true"
-                    />
-                    <p className="text-slate-300">{feature}</p>
-                  </motion.div>
-                ))}
-              </div>
+      {/* Desktop Course Table */}
+      <div className="mt-12 hidden w-full xl:block">
+        <div className="mx-auto max-w-6xl overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.03]">
+          <div className="min-w-[1000px]">
+            {/* Header */}
+            <div className="grid grid-cols-5 p-5 sm:p-6 text-center bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-violet-500/10 text-cyan-200 font-semibold">
+              <div>Course</div>
+              <div>Ways of Working</div>
+              <div>Power Skills</div>
+              <div>Business Acumen</div>
+              <div>Total Hours</div>
+            </div>
 
-              {/* ATP Badge */}
-              <div className="mt-10 rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-violet-500/10 p-5 sm:p-6 lg:p-8">
-                <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
-                  <ShieldCheck
-                    className="mx-auto h-10 w-10 shrink-0 text-cyan-300 sm:mx-0"
-                    aria-hidden="true"
-                  />
-                  <div className="text-center sm:text-left">
-                    <h4 className="text-2xl font-semibold text-cyan-200">
-                      Premier Authorized Training Partner (ATP)
-                    </h4>
-                    <p className="mt-3 text-slate-300 leading-relaxed">
-                      All courses included in this bundle are approved by the
-                      Project Management Institute® and qualify for
-                      certification renewal requirements.
-                    </p>
-                  </div>
+            {/* Rows */}
+            {courses.map((course, i) => (
+              <div
+                key={course.course}
+                className={`grid grid-cols-5 p-5 sm:p-6 text-center border-t border-white/5 transition-colors duration-300 hover:bg-white/[0.04] ${
+                  i % 2 === 0 ? "bg-white/[0.02]" : ""
+                }`}
+              >
+                <div className="font-medium text-cyan-200">
+                  {course.course}
+                </div>
+                <div className="text-slate-300">{course.wow}</div>
+                <div className="text-slate-300">{course.power}</div>
+                <div className="text-slate-300">{course.business}</div>
+                <div className="font-medium text-slate-200">
+                  {course.total}
                 </div>
               </div>
+            ))}
 
-              {/* Desktop Course Table */}
-              <div className="mt-12 hidden xl:block">
-                <div className="overflow-x-auto rounded-3xl border border-white/10">
-                  <div className="min-w-[1000px]">
-                    <div className="grid grid-cols-5 p-5 sm:p-6 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-violet-500/10 text-cyan-200 font-semibold">
-                      <div>Course</div>
-                      <div>Ways of Working</div>
-                      <div>Power Skills</div>
-                      <div>Business Acumen</div>
-                      <div>Total Hours</div>
-                    </div>
-
-                    {courses.map((course, i) => (
-                      <div
-                        key={course.course}
-                        className={`grid grid-cols-5 p-5 sm:p-6 border-t border-white/5 ${
-                          i % 2 === 0 ? "bg-white/[0.02]" : ""
-                        }`}
-                      >
-                        <div className="text-cyan-200">{course.course}</div>
-                        <div className="text-slate-300">{course.wow}</div>
-                        <div className="text-slate-300">{course.power}</div>
-                        <div className="text-slate-300">{course.business}</div>
-                        <div className="text-slate-300">{course.total}</div>
-                      </div>
-                    ))}
-
-                    <div className="grid grid-cols-5 p-5 sm:p-6 bg-cyan-500/10 border-t border-cyan-400/20">
-                      <div className="font-bold text-cyan-200">Grand Total</div>
-                      <div className="font-semibold text-white">22 hrs</div>
-                      <div className="font-semibold text-white">22 hrs</div>
-                      <div className="font-semibold text-white">17 hrs</div>
-                      <div className="font-bold text-white">61 hrs*</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Course Cards */}
-              <div className="mt-8 space-y-4 xl:hidden">
-                {courses.map((course) => (
-                  <div
-                    key={course.course}
-                    className="rounded-3xl border border-white/10 bg-white/[0.03] p-5"
-                  >
-                    <h4 className="text-cyan-200 font-semibold text-lg">
-                      {course.course}
-                    </h4>
-
-                    <div className="mt-4 space-y-3 text-slate-300">
-                      <div className="flex justify-between gap-4">
-                        <span>Ways of Working</span>
-                        <span>{course.wow}</span>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <span>Power Skills</span>
-                        <span>{course.power}</span>
-                      </div>
-                      <div className="flex justify-between gap-4">
-                        <span>Business Acumen</span>
-                        <span>{course.business}</span>
-                      </div>
-                      <div className="flex justify-between gap-4 border-t border-white/10 pt-3 text-cyan-200 font-semibold">
-                        <span>Total</span>
-                        <span>{course.total}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-
-                <div className="rounded-3xl border border-cyan-400/20 bg-cyan-500/10 p-5">
-                  <h4 className="text-cyan-200 text-xl font-bold">
-                    Grand Total: 61 PDUs*
-                  </h4>
-                  <p className="mt-2 text-slate-300">
-                    Ways of Working: 22 hrs • Power Skills: 22 hrs • Business
-                    Acumen: 17 hrs
-                  </p>
-                </div>
-              </div>
+            {/* Totals */}
+            <div className="grid grid-cols-5 p-5 sm:p-6 text-center bg-cyan-500/10 border-t border-cyan-400/20">
+              <div className="font-bold text-cyan-200">Grand Total</div>
+              <div className="font-semibold text-white">22 hrs</div>
+              <div className="font-semibold text-white">22 hrs</div>
+              <div className="font-semibold text-white">17 hrs</div>
+              <div className="font-bold text-white">61 hrs*</div>
             </div>
           </div>
-        </motion.div>
+        </div>
+      </div>
+
+      {/* Mobile Course Cards */}
+      <div className="mt-8 w-full max-w-3xl space-y-4 xl:hidden">
+        {courses.map((course) => (
+          <motion.div
+            key={course.course}
+            whileHover={hoverLift(reduce)}
+            className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 text-center backdrop-blur-xl"
+          >
+            <h4 className="text-lg font-semibold text-cyan-200">
+              {course.course}
+            </h4>
+
+            <div className="mt-4 space-y-3 text-slate-300">
+              <div className="flex justify-between gap-4">
+                <span>Ways of Working</span>
+                <span>{course.wow}</span>
+              </div>
+
+              <div className="flex justify-between gap-4">
+                <span>Power Skills</span>
+                <span>{course.power}</span>
+              </div>
+
+              <div className="flex justify-between gap-4">
+                <span>Business Acumen</span>
+                <span>{course.business}</span>
+              </div>
+
+              <div className="flex justify-between gap-4 border-t border-white/10 pt-3 font-semibold text-cyan-200">
+                <span>Total</span>
+                <span>{course.total}</span>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+
+        {/* Mobile Total Card */}
+        <div className="rounded-3xl border border-cyan-400/20 bg-cyan-500/10 p-5 text-center">
+          <h4 className="text-xl font-bold text-cyan-200">
+            Grand Total: 61 PDUs*
+          </h4>
+
+          <p className="mt-2 text-slate-300">
+            Ways of Working: 22 hrs • Power Skills: 22 hrs •
+            Business Acumen: 17 hrs
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.div>
       </div>
     </section>
   );

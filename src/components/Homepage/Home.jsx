@@ -373,7 +373,7 @@ pb-14 sm:pb-20 lg:pb-28"
                 {/* CTA */}
                 <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
                   <Link
-                    to="/book-training"
+                    to="/pdu"
                     className="group/btn inline-flex items-center gap-2
                  rounded-xl sm:rounded-2xl
                  bg-gradient-to-r from-violet-600 to-indigo-600
@@ -383,7 +383,7 @@ pb-14 sm:pb-20 lg:pb-28"
                  transition-all duration-300
                  hover:scale-105 hover:shadow-violet-500/40"
                   >
-                    Enroll Today
+                   Learn More
                     <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                   </Link>
                 </div>
