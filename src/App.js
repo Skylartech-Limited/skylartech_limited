@@ -24,6 +24,7 @@ import Portfolio from "./components/Offerings/Portfolio.jsx";
 import Risk from "./components/Offerings/Risk.jsx";
 import Analysis from "./components/Offerings/Analysis.jsx";
 import Offerings from "./components/Offerings/Offerings";
+import Pdu from "./components/PDU/Pdu.jsx";
 
 import CAPM from "./components/Certifications/CAPM.jsx";
 import PMP from "./components/Certifications/PMP.jsx";
@@ -96,6 +97,8 @@ function App() {
         <Route path="/certifications/pmi-cpmai" element={<PMICPMAI />} />
         <Route path="/certifications/pmi-cp" element={<PMICP />} />
 
+        {/* {PDU'S} */}
+        <Route path="/pdu" element={<Pdu />} />
         {/* INDUSTRIES */}
         <Route path="/who-we-serve" element={<WhoWeServe />} />
         <Route path="/who-we-serve/banking-and-finance" element={<Banking />} />

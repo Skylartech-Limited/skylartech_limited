@@ -81,7 +81,9 @@ const MobileDropdown = ({ title, children, nested = false }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`${nested ? "w-full" : "border-b border-violet-100/50"} py-1`}>
+    <div
+      className={`${nested ? "w-full" : "border-b border-violet-100/50"} py-1`}
+    >
       <button
         onClick={() => setOpen(!open)}
         className={`w-full flex justify-center items-center gap-2 py-3 font-medium transition-colors duration-200 ${
@@ -145,7 +147,11 @@ const Navbar = () => {
             scrolled ? "h-20" : "h-24 lg:h-28"
           }`}
         >
-          <Link to="/" onClick={scrollToTop} className="flex items-center shrink-0 group">
+          <Link
+            to="/"
+            onClick={scrollToTop}
+            className="flex items-center shrink-0 group"
+          >
             <img
               src={Logo}
               alt="SkylarTech"
@@ -184,7 +190,10 @@ const Navbar = () => {
 
             {/* OFFERINGS */}
             <div className="relative py-2 group">
-              <Link to="/offerings" className={`${navLink} flex items-center gap-1`}>
+              <Link
+                to="/offerings"
+                className={`${navLink} flex items-center gap-1`}
+              >
                 Offerings
                 <ChevronDown className="w-3.5 h-3.5 text-violet-500 transition-transform duration-300 group-hover:rotate-180" />
               </Link>
@@ -203,12 +212,19 @@ const Navbar = () => {
                     <ChevronDown className="w-4 h-4 text-violet-500 -rotate-90 shrink-0" />
                   </Link>
 
-                  <div className="absolute left-full top-0 h-full w-2 pointer-events-none" aria-hidden="true" />
+                  <div
+                    className="absolute left-full top-0 h-full w-2 pointer-events-none"
+                    aria-hidden="true"
+                  />
 
                   <div className={`${flyoutPanel} py-1`}>
                     <DropdownAccent />
                     {certifications.map((cert) => (
-                      <Link key={cert.link} to={cert.link} className={dropdownItem}>
+                      <Link
+                        key={cert.link}
+                        to={cert.link}
+                        className={dropdownItem}
+                      >
                         <span className={dropdownItemLabel}>{cert.name}</span>
                       </Link>
                     ))}
@@ -225,9 +241,19 @@ const Navbar = () => {
               </div>
             </div>
 
+            {/* { PDU'S} */}
+            <div className="relative py-2 group">
+              <Link to="/pdu" className={`${navLink} flex items-center gap-1`}>
+                PDU
+              </Link>
+            </div>
+
             {/* WHO WE SERVE */}
             <div className="relative py-2 group">
-              <Link to="/who-we-serve" className={`${navLink} flex items-center gap-1.5`}>
+              <Link
+                to="/who-we-serve"
+                className={`${navLink} flex items-center gap-1.5`}
+              >
                 Who We Serve
                 <ChevronDown className="w-3.5 h-3.5 text-violet-500 transition-transform duration-300 group-hover:rotate-180" />
               </Link>
@@ -264,7 +290,11 @@ const Navbar = () => {
               className="lg:hidden p-2.5 rounded-xl border border-violet-100/60 bg-white/60 text-slate-700 hover:bg-violet-50 hover:border-violet-200 transition-all duration-300"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -290,7 +320,11 @@ const Navbar = () => {
               </Link>
 
               <MobileDropdown title="Company">
-                <Link to="/about" onClick={closeMenus} className="hover:text-violet-700 transition-colors">
+                <Link
+                  to="/about"
+                  onClick={closeMenus}
+                  className="hover:text-violet-700 transition-colors"
+                >
                   Overview
                 </Link>
                 {companyLinks.map((item) => (
@@ -314,7 +348,10 @@ const Navbar = () => {
                   All Offerings
                 </Link>
 
-                <MobileDropdown title="Professional Training & Certification" nested>
+                <MobileDropdown
+                  title="Professional Training & Certification"
+                  nested
+                >
                   <Link
                     to="/offerings/professional-training-and-certification"
                     onClick={closeMenus}
@@ -348,6 +385,14 @@ const Navbar = () => {
                 ))}
               </MobileDropdown>
 
+              {/* {PDU} */}
+              <Link
+                to="/pdu"
+                onClick={closeMenus}
+                className="block py-3 font-medium text-slate-800 hover:text-violet-700 transition-colors"
+              >
+                PDU
+              </Link>
               <MobileDropdown title="Who We Serve">
                 <Link
                   to="/who-we-serve"
