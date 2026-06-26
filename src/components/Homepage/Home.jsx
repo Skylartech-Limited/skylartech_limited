@@ -31,6 +31,7 @@ import ClientReview from "./ClientReview";
 import Clientslider from "./ClientSlider";
 import CountupSection from "../Homepage/CountUp";
 import PromoImage from "../../assets/Homepage images/Promo.jpeg";
+import PromoImage2 from "../../assets/Homepage images/Promo2.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -349,45 +350,73 @@ pb-14 sm:pb-20 lg:pb-28"
                 transition={{ delay: 0.4, duration: 0.6 }}
                 whileHover={{ y: -6 }}
                 className="group mt-6 relative overflow-hidden rounded-[24px] sm:rounded-[28px]
-             border border-white/10
-             bg-white/[0.03]
-             shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
+  border border-white/10
+  bg-white/[0.03]
+  shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
               >
                 {/* Glow Effects */}
                 <div className="absolute -top-20 -left-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-violet-500/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
                 <div className="absolute -bottom-20 -right-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-cyan-500/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
-                {/* Image */}
-                <img
-                  src={PromoImage}
-                  alt="Promotional Banner"
-                  className="w-full h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[260px]
-               object-contain transition-transform duration-700
-               group-hover:scale-[1.03]"
-                />
+                {/* ================= PROMO SLIDER ================= */}
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  slidesPerView={1}
+                  loop={true}
+                  autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    el: ".promo-pagination",
+                    clickable: true,
+                  }}
+                  className="relative z-10"
+                >
+                  {/* Slide 1 */}
+                  <SwiperSlide>
+                    <img
+                      src={PromoImage}
+                      alt="Promotional Banner 1"
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  </SwiperSlide>
+
+                  {/* Slide 2 */}
+                  <SwiperSlide>
+                    <img
+                      src={PromoImage2}
+                      alt="Promotional Banner 2"
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  </SwiperSlide>
+                </Swiper>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-transparent to-transparent z-10" />
 
                 {/* CTA */}
-                <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
+                <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-20">
                   <Link
                     to="/pdu"
                     className="group/btn inline-flex items-center gap-2
-                 rounded-xl sm:rounded-2xl
-                 bg-gradient-to-r from-violet-600 to-indigo-600
-                 px-4 py-2.5 sm:px-5 sm:py-3
-                 text-xs sm:text-sm font-semibold text-white
-                 shadow-lg shadow-violet-500/20
-                 transition-all duration-300
-                 hover:scale-105 hover:shadow-violet-500/40"
+      rounded-xl sm:rounded-2xl
+      bg-gradient-to-r from-violet-600 to-indigo-600
+      px-4 py-2.5 sm:px-5 sm:py-3
+      text-xs sm:text-sm font-semibold text-white
+      shadow-lg shadow-violet-500/20
+      transition-all duration-300
+      hover:scale-105 hover:shadow-violet-500/40"
                   >
-                   Learn More
+                    Learn More
                     <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                   </Link>
                 </div>
               </motion.div>
+
+              {/* ================= PROMO PAGINATION ================= */}
+              <div className="custom-pagination flex justify-center mt-4 gap-2"></div>
             </div>
           </motion.div>
         </div>
