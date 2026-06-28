@@ -20,7 +20,6 @@ import {
   GitBranch,
   BookOpen,
   Star,
-  LineChart,
   PieChart,
   Rocket,
 } from "lucide-react";
