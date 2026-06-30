@@ -177,8 +177,34 @@ const whyPmiFeatures = [
   },
 ];
 
-const SectionLabel = ({ children }) => (
-  <div className="inline-flex items-center gap-2 rounded-full border border-red-300/20 bg-red-500/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.2em] uppercase text-red-200/90">
+const GridOverlay = () => (
+  <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
+);
+
+const GlassCard = ({
+  children,
+  className = "",
+  hover = true,
+  as: Tag = "div",
+  ...props
+}) => (
+  <Tag
+    {...props}
+    className={`relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] ${
+      hover
+        ? "transition-all duration-500 hover:-translate-y-1 hover:border-red-400/25 hover:bg-white/[0.07] hover:shadow-[0_30px_90px_rgba(239,68,68,0.12)]"
+        : ""
+    } ${className}`}
+  >
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-400/40 to-transparent" />
+    {children}
+  </Tag>
+);
+
+const SectionLabel = ({ children, className = "" }) => (
+  <div
+    className={`inline-flex items-center gap-2 rounded-full border border-red-300/20 bg-red-500/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.2em] uppercase text-red-200/90 ${className}`}
+  >
     {children}
   </div>
 );
@@ -191,7 +217,7 @@ const ProfessionalTraining = () => {
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-red-500/8 blur-[180px] rounded-full" />
         <div className="absolute top-1/3 -right-40 w-[700px] h-[700px] bg-rose-600/6 blur-[200px] rounded-full" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-900/10 blur-[160px] rounded-full" />
-        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <GridOverlay />
       </div>
 
       {/* ================= HERO ================= */}
@@ -256,14 +282,20 @@ const ProfessionalTraining = () => {
                     certifications.
                   </p>
 
-                  {/* CTA */}
+                  {/* CTAs */}
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
                     <Link
                       to="#certifications-pathways"
-                      className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-medium bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                      className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white bg-gradient-to-r from-red-500 to-rose-500 shadow-lg shadow-red-500/25 hover:shadow-red-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                     >
-                      Certification Pathways
+                      Get Certified
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link
+                      to="/offerings"
+                      className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-medium border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                    >
+                      Explore All Offerings
                     </Link>
                   </div>
                 </div>
@@ -277,10 +309,7 @@ const ProfessionalTraining = () => {
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
               className="flex justify-center order-1 lg:order-2 mt-10 sm:mt-12 lg:mt-0"
             >
-              <div className="w-full max-w-md sm:max-w-lg bg-[#0B1220]/65 border border-white/8 backdrop-blur-xl rounded-3xl p-5 sm:p-6 lg:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.5)] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/20 pointer-events-none" />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
+              <GlassCard hover={false} className="w-full max-w-md sm:max-w-lg p-6 sm:p-8">
                 <div className="relative z-10 flex flex-col items-center text-center">
                   <SectionLabel>Why It Matters</SectionLabel>
 
@@ -296,7 +325,6 @@ const ProfessionalTraining = () => {
                     and accelerate your growth.
                   </p>
 
-                  {/* FEATURES (reduced to 3) */}
                   <motion.div
                     variants={stagger}
                     initial="hidden"
@@ -313,7 +341,6 @@ const ProfessionalTraining = () => {
                         <div className="bg-gradient-to-br from-red-500/15 to-rose-500/10 p-2.5 rounded-xl border border-red-300/15 flex-shrink-0">
                           <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-red-300" />
                         </div>
-
                         <div>
                           <h4 className="text-white font-semibold text-sm sm:text-base">
                             {item.title}
@@ -326,7 +353,7 @@ const ProfessionalTraining = () => {
                     ))}
                   </motion.div>
                 </div>
-              </div>
+              </GlassCard>
             </motion.div>
           </div>
         </div>
@@ -374,8 +401,7 @@ const ProfessionalTraining = () => {
                   variants={fadeUp}
                   className={`${pillar.span} group relative bg-[#13090A]/60 border border-red-400/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl text-center overflow-hidden hover:border-red-400/30 hover:-translate-y-1 transition-all duration-500 shadow-lg shadow-black/20`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative z-10">
+                  <GlassCard className="p-6 sm:p-8 h-full text-center">
                     <div className="w-12 h-12 mx-auto rounded-2xl bg-red-500/10 border border-red-300/15 flex items-center justify-center mb-4 group-hover:bg-red-500/15 transition-colors">
                       <Icon className="w-5 h-5 text-red-300" />
                     </div>
@@ -385,7 +411,7 @@ const ProfessionalTraining = () => {
                     <p className="text-red-50/70 mt-3 leading-relaxed text-sm sm:text-base max-w-md mx-auto">
                       {pillar.text}
                     </p>
-                  </div>
+                  </GlassCard>
                 </motion.div>
               );
             })}
@@ -482,10 +508,8 @@ const ProfessionalTraining = () => {
           variants={fadeUp}
           className="relative max-w-5xl mx-auto"
         >
-          <div className="relative bg-white/[0.04] border border-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 lg:p-14 shadow-[0_25px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+          <GlassCard hover={false} className="p-8 sm:p-12 lg:p-14">
             <div className="absolute inset-0 bg-gradient-to-b from-red-500/8 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-400/40 to-transparent" />
-
             <div className="relative z-10">
               <SectionLabel>PMI Certification Journey</SectionLabel>
 
@@ -511,13 +535,19 @@ const ProfessionalTraining = () => {
                   Get Certified
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+                <Link
+                  to="/offerings"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-medium border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                >
+                  Explore All Offerings
+                </Link>
               </div>
 
               <p className="mt-8 text-xs sm:text-sm text-white/35 tracking-wide">
                 Trusted globally across 185+ countries · PMI® Standards Driven
               </p>
             </div>
-          </div>
+          </GlassCard>
         </motion.div>
       </section>
     </div>
