@@ -27,8 +27,10 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const SectionLabel = ({ children }) => (
-  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.18em] uppercase text-white/80">
+const SectionLabel = ({ children, className = "" }) => (
+  <div
+    className={`inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-500/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.2em] uppercase text-emerald-200/90 ${className}`}
+  >
     {children}
   </div>
 );
@@ -39,7 +41,7 @@ const GridOverlay = () => (
 
 const GlowOrb = ({ className = "" }) => (
   <div
-    className={`absolute rounded-full blur-[120px] pointer-events-none ${className}`}
+    className={`absolute rounded-full blur-[180px] pointer-events-none ${className}`}
   />
 );
 

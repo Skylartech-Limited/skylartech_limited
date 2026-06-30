@@ -183,104 +183,102 @@ const benefits = [
 const PortfolioGovernance = () => {
   return (
     <div className="min-h-screen text-white bg-gradient-to-br from-slate-950 via-indigo-950 to-black">
-      <section
-        className="relative min-h-screen flex items-center overflow-hidden pt-24 sm:pt-28 lg:pt-32"
-        style={{
-          backgroundImage: `url(${Portfolio})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-indigo-950/70 to-transparent" />
-        <GlowOrb className="-top-40 -left-40 w-[500px] h-[500px] bg-indigo-500/15" />
-        <GlowOrb className="-bottom-20 right-0 w-[400px] h-[400px] bg-purple-500/10" />
-        <GridOverlay />
+      <section className="relative min-h-[100svh] flex items-start lg:items-center overflow-hidden pt-[110px] sm:pt-[120px] lg:pt-[110px]">
+        <div
+          className="absolute inset-0 bg-cover bg-center scale-105"
+          style={{
+            backgroundImage: `url(${Portfolio})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060607]/95 via-[#060607]/80 to-[#060607]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060607] via-transparent to-transparent" />
+
+        <GlowOrb className="top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/10" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-          <div className="flex justify-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[calc(100svh-140px)]">
+            {/* LEFT */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="
-                w-full max-w-2xl
-                bg-white/[0.04] backdrop-blur-2xl
-                border border-white/10
-                text-white
-                p-6 sm:p-8 md:p-10 lg:p-12
-                rounded-[28px]
-                shadow-[0_25px_80px_rgba(0,0,0,0.7)]
-                min-h-[440px]
-                flex flex-col justify-center
-                relative overflow-hidden
-              "
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="order-2 lg:order-1 mt-8 lg:mt-0"
             >
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent" />
-              <div className="w-full flex justify-center mb-5 sm:mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-indigo-300/20 bg-indigo-500/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.2em] uppercase text-indigo-200/90">
-                  <Briefcase className="w-3.5 h-3.5 text-indigo-300" />
-                  Portfolio, PMO & Governance Excellence
-                </div>
-              </div>
+              <SectionLabel>
+                <Briefcase size={14} />
+                Portfolio, PMO & Governance Excellence
+              </SectionLabel>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight min-h-[120px] sm:min-h-[140px]">
+              <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                 Elevate Execution with{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-blue-300 to-indigo-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-blue-300 to-indigo-400 inline-flex whitespace-nowrap min-w-[240px] sm:min-w-[300px] md:min-w-[360px]">
                   <Typewriter
-                    words={[
-                      "PMO Excellence",
-                      "Portfolio Governance",
-                      "Strategy Execution",
-                      "Enterprise Alignment",
-                    ]}
+                    words={["PMO Excellence","Portfolio Governance","Strategy Execution","Enterprise Alignment"]}
                     loop={0}
                     typeSpeed={80}
                     deleteSpeed={40}
                     delaySpeed={1500}
                   />
-                </span>
-                <span className="text-indigo-300">
-                  <Cursor cursorStyle="|" />
+                  <span className="ml-1"><Cursor cursorStyle="|" /></span>
                 </span>
               </h1>
 
-              <p className="mt-4 sm:mt-5 md:mt-6 text-gray-200 text-sm sm:text-base md:text-lg leading-relaxed">
-                Bridging the gap between strategy and execution. We build PMOs,
-                optimize project portfolios, and establish governance
-                frameworks that drive sustainable growth.
-              </p>
-
-              <div className="mt-5 sm:mt-6 md:mt-8 grid gap-3">
-                {[
-                  "Portfolio Management & Optimization",
-                  "PMO Design & Implementation",
-                  "Governance Framework Development",
-                  "Strategy Execution Alignment",
-                  "Maturity Model Assessments",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start sm:items-center gap-3">
-                    <CheckCircle size={18} className="text-indigo-300 shrink-0" />
-                    <span className="text-gray-200 text-sm sm:text-base leading-snug">
-                      {item}
-                    </span>
+              {/* Features */}
+              <div className="mt-8 grid gap-3">
+                {["Portfolio Management & Optimization","PMO Design & Implementation","Governance Framework Development","Strategy Execution Alignment","Maturity Model Assessments"].map((item, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <div className="bg-indigo-500/15 p-1 rounded-full flex-shrink-0 mt-0.5">
+                      <CheckCircle size={14} className="text-indigo-300" />
+                    </div>
+                    <span className="text-gray-300 text-sm sm:text-base">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/book-training"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-black bg-gradient-to-r from-indigo-400 to-blue-500 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                >
+              {/* CTAs */}
+              <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link to="/book-training" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-black bg-gradient-to-r from-indigo-400 to-blue-500 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
                   Start Transformation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link
-                  to="/offerings/professional-training-and-certification"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-medium border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                >
-                  <BookOpen className="w-4 h-4" /> View Certifications
+                <Link to="/offerings" className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-medium border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                  Explore All Offerings
                 </Link>
               </div>
+            </motion.div>
+
+            {/* RIGHT */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+              className="order-1 lg:order-2 flex justify-center"
+            >
+              <GlassCard className="w-full max-w-md sm:max-w-lg p-6 sm:p-8">
+                <div className="relative z-10">
+                  <SectionLabel className="mb-4">Why Portfolio Governance</SectionLabel>
+                  <h3 className="text-2xl sm:text-3xl font-bold leading-tight">
+                    Strategy Without Execution{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-blue-400">Is Just Vision</span>
+                  </h3>
+                  <p className="mt-3 text-gray-400 text-sm sm:text-base leading-relaxed">
+                    Bridge the gap between strategy and execution with structured PMOs, optimized portfolios, and governance frameworks that drive sustainable growth.
+                  </p>
+                  <div className="mt-6 space-y-3">
+                    {["Strategic Portfolio Alignment","PMO Design & Maturity","Governance & Risk Control","Data-Driven Decision Making","Enterprise Execution Excellence"].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3 bg-white/[0.03] rounded-xl p-3 border border-white/5 hover:bg-white/[0.05] hover:border-indigo-400/15 transition-all duration-300">
+                        <div className="bg-indigo-500/15 p-1.5 rounded-lg flex-shrink-0">
+                          <CheckCircle size={14} className="text-indigo-300" />
+                        </div>
+                        <span className="text-sm sm:text-base text-gray-300">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </GlassCard>
             </motion.div>
           </div>
         </div>
