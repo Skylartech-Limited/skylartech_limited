@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Cookie, X } from "lucide-react";
 
 export default function CookieNotice() {
   const [visible, setVisible] = useState(false);
@@ -18,78 +20,72 @@ export default function CookieNotice() {
     setVisible(false);
   };
 
-  if (!visible) return null;
-
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4 animate-fadeIn">
-      
-      {/* PREMIUM BACKDROP WITH BLUR */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
+    <AnimatePresence>
+      {visible && (
+        // No full-screen backdrop, no inset-0, and z-40 — sits well below
+        // the newsletter's z-[9999] modal, so it can never block or fight
+        // with it for the center of the screen or for click focus.
+        <motion.div
+          className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-4 pointer-events-none"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 40 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <div className="relative mx-auto max-w-4xl bg-gradient-to-r from-[#0a0f1e] via-[#0f1a2e] to-[#0a0f1e] rounded-2xl shadow-2xl shadow-purple-500/15 border border-white/10 px-5 sm:px-6 py-4 overflow-hidden pointer-events-auto">
+            {/* Glow accents, consistent with Newsletter's language */}
+            <div className="absolute -top-10 right-0 w-32 h-32 bg-purple-500/15 blur-3xl rounded-full pointer-events-none" />
+            <div className="absolute -bottom-10 left-0 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
 
-      {/* PREMIUM CARD */}
-      <div className="relative w-full max-w-md bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl shadow-purple-500/20 px-6 py-6 border border-white/10 overflow-hidden group">
-        
-        {/* PREMIUM ANIMATED GLOWS */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 blur-3xl rounded-full animate-pulse pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/15 blur-3xl rounded-full animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
-        
-        {/* PREMIUM SHIMMER EFFECT */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500" />
-        
-        {/* PREMIUM PATTERN OVERLAY */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-        
-        {/* PREMIUM ICON */}
-        <div className="relative z-10 flex justify-center mb-4">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-purple-400/30 flex items-center justify-center">
-            <span className="text-2xl">🍪</span>
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center gap-4">
+              {/* Icon + text */}
+              <div className="flex items-start sm:items-center gap-3 flex-1">
+                <div className="shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-purple-400/25 flex items-center justify-center">
+                  <Cookie className="w-4 h-4 text-purple-300" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">
+                    Cookie Usage
+                  </p>
+                  <p className="text-xs text-white/60 leading-relaxed mt-0.5">
+                    We use cookies to ensure the website works properly and to improve your experience.{" "}
+                    <span className="text-white/35">You can change this anytime in your browser settings.</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-2 shrink-0 self-end sm:self-auto">
+                <button
+                  onClick={reject}
+                  className="px-4 py-2 rounded-lg text-sm font-semibold text-white/80
+                             bg-white/5 hover:bg-white/10 border border-white/10
+                             transition-all duration-300"
+                >
+                  Reject
+                </button>
+                <button
+                  onClick={accept}
+                  className="px-4 py-2 rounded-lg text-sm font-bold text-white
+                             bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500
+                             transition-all duration-300 shadow-lg shadow-purple-500/25"
+                >
+                  Accept
+                </button>
+                <button
+                  onClick={reject}
+                  aria-label="Dismiss"
+                  className="hidden sm:flex w-9 h-9 rounded-lg items-center justify-center text-white/30 hover:text-white/60 hover:bg-white/5 transition-all duration-300"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        {/* Title */}
-        <h2 className="relative z-10 text-lg font-bold text-center bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-          Cookie Usage
-        </h2>
-
-        {/* Text */}
-        <p className="relative z-10 text-sm text-white/70 mt-3 leading-relaxed text-center">
-          We use cookies to ensure the website works properly and to improve your experience.
-        </p>
-
-        {/* PREMIUM DIVIDER */}
-        <div className="relative z-10 flex items-center justify-center gap-2 my-5">
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-purple-400/50" />
-          <div className="w-1 h-1 rounded-full bg-purple-400 animate-pulse" />
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-purple-400/50" />
-        </div>
-
-        {/* PREMIUM BUTTONS */}
-        <div className="relative z-10 flex gap-3">
-          
-          <button
-            onClick={reject}
-            className="flex-1 py-2.5 rounded-lg text-sm font-semibold text-white/80
-                       bg-white/10 hover:bg-white/15 border border-white/20
-                       transition-all duration-300 hover:scale-105 hover:shadow-lg"
-          >
-            Reject
-          </button>
-
-          <button
-            onClick={accept}
-            className="flex-1 py-2.5 rounded-lg text-sm font-bold text-white
-                       bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500
-                       transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
-          >
-            Accept
-          </button>
-        </div>
-
-        {/* Subtext */}
-        <p className="relative z-10 text-[11px] text-white/40 mt-4 text-center">
-          You can change this anytime in your browser settings.
-        </p>
-      </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

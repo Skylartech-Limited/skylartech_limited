@@ -41,12 +41,14 @@ import PMICPMAI from "./components/Certifications/PMI-CPMAI.jsx";
 
 import PageScroll from "./components/ScrollToTop/Pagescroll.jsx";
 import CookieNotice from "./components/Cookies/Cookies.jsx";
+import Newsletter from "./components/Newsletter/Newsletter.jsx";
 
 function App() {
   return (
     <div className="App overflow-x-hidden">
       <Navbar />
       <CookieNotice />
+      <Newsletter />
       <PageScroll />
 
       <Routes>
