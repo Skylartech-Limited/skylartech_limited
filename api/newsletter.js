@@ -12,7 +12,9 @@ export default async function handler(req, res) {
         error: "Email is required",
       });
     }
-
+    console.log("SERVER:", process.env.MAILCHIMP_SERVER);
+    console.log("AUDIENCE:", process.env.MAILCHIMP_AUDIENCE_ID);
+    console.log("API KEY EXISTS:", !!process.env.MAILCHIMP_API_KEY);
     const response = await fetch(
       `https://${process.env.MAILCHIMP_SERVER}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}/members`,
       {
@@ -21,7 +23,7 @@ export default async function handler(req, res) {
           Authorization:
             "Basic " +
             Buffer.from(`anystring:${process.env.MAILCHIMP_API_KEY}`).toString(
-              "base64"
+              "base64",
             ),
           "Content-Type": "application/json",
         },
@@ -29,12 +31,14 @@ export default async function handler(req, res) {
           email_address: email,
           status: "subscribed",
         }),
-      }
+      },
     );
 
     const data = await response.json();
 
     if (!response.ok) {
+      console.log("Mailchimp Error:", data);
+
       return res.status(response.status).json(data);
     }
 
