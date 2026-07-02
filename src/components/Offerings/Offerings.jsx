@@ -134,7 +134,8 @@ const heroStats = [
 
 const Offerings = () => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-[#040b08] via-[#071a12] to-black text-white">
+    <>
+      {" "}
       <Helmet>
         <title>Our Offerings | Skylartech Limited</title>
         <meta
@@ -157,303 +158,306 @@ const Offerings = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://skylartech.co.ke/offerings" />
       </Helmet>
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#040b08] via-[#071a12] to-black text-white">
+        {/* HERO */}
+        <section className="relative min-h-[100svh] overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center scale-105"
+            style={{ backgroundImage: `url(${HeroImage})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#04130e]/80 to-black/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/50" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
 
-      {/* HERO */}
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{ backgroundImage: `url(${HeroImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-[#04130e]/80 to-black/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+          <GlowOrb className="top-0 left-0 w-[550px] h-[550px] bg-emerald-500/12 -translate-x-1/2 -translate-y-1/2" />
+          <GlowOrb className="top-1/3 right-0 w-[480px] h-[480px] bg-green-500/10 translate-x-1/3" />
+          <GlowOrb className="bottom-0 left-1/2 w-[650px] h-[650px] bg-lime-500/8 -translate-x-1/2 translate-y-1/3" />
+          <GridOverlay />
 
-        <GlowOrb className="top-0 left-0 w-[550px] h-[550px] bg-emerald-500/12 -translate-x-1/2 -translate-y-1/2" />
-        <GlowOrb className="top-1/3 right-0 w-[480px] h-[480px] bg-green-500/10 translate-x-1/3" />
-        <GlowOrb className="bottom-0 left-1/2 w-[650px] h-[650px] bg-lime-500/8 -translate-x-1/2 translate-y-1/3" />
-        <GridOverlay />
-
-        <div className="relative z-10 min-h-[100svh] flex items-center pt-32 pb-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8 text-center w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <SectionLabel>
-                <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
-                Enterprise Project Management Solutions
-              </SectionLabel>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-              className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight"
-            >
-              Building World-Class
-              <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400">
-                Project Excellence
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-              className="mt-8 max-w-3xl mx-auto text-white/65 text-base md:text-lg leading-relaxed"
-            >
-              We empower organizations with training, consulting, governance
-              frameworks, and transformation expertise to deliver successful
-              projects at scale.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-              className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
-            >
-              <Link
-                to="/book-training"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+          <div className="relative z-10 min-h-[100svh] flex items-center pt-32 pb-20">
+            <div className="max-w-6xl mx-auto px-5 sm:px-8 text-center w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
               >
-                Book Training
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/about"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/25 transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45 }}
-              className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto"
-            >
-              {heroStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-4 py-3 hover:bg-white/[0.08] hover:border-emerald-400/20 transition-all duration-300"
-                >
-                  <p className="text-lg font-semibold text-white">
-                    {stat.value}
-                  </p>
-                  <p className="text-white/50 text-xs mt-0.5">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO + OFFERINGS */}
-      <section className="py-24 md:py-28 relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#040b08] via-[#071a12] to-[#030806]" />
-        <GlowOrb className="-top-40 left-1/2 w-[550px] h-[550px] bg-emerald-500/10 -translate-x-1/2" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.08),transparent_55%)]" />
-        <GridOverlay />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="text-center max-w-3xl mx-auto mb-14 md:mb-20"
-          >
-            <SectionLabel>
-              <Building2 className="w-3.5 h-3.5 text-emerald-300" />
-              Built For Modern Organizations
-            </SectionLabel>
-
-            <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
-              Strategic Solutions For{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400">
-                Lasting Impact
-              </span>
-            </h2>
-
-            <p className="mt-6 text-white/65 leading-relaxed text-base md:text-lg">
-              Modern organizations require strategic leadership, governance
-              maturity, and adaptive delivery capabilities. Our solutions are
-              designed to build long-term project management excellence.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="text-center mb-10 md:mb-14"
-          >
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-              Our Core{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-lime-400">
-                Offerings
-              </span>
-            </h3>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={stagger}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-          >
-            {offerings.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <motion.div key={item.title} variants={fadeUp}>
-                  <GlassCard
-                    as={Link}
-                    to={item.link}
-                    className="group flex flex-col justify-between min-h-[260px] p-6 sm:p-7 md:p-8 h-full"
-                  >
-                    <div>
-                      <div
-                        className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg transition-transform duration-500 group-hover:scale-110`}
-                      >
-                        <Icon className="w-6 h-6 text-black" />
-                      </div>
-
-                      <h4 className="text-lg sm:text-xl font-semibold leading-snug text-white">
-                        {item.title}
-                      </h4>
-
-                      <p className="mt-3 text-white/55 leading-relaxed text-sm sm:text-base">
-                        {item.description}
-                      </p>
-                    </div>
-
-                    <div className="mt-6 text-emerald-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
-                      Explore Offering
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </GlassCard>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="py-24 md:py-28 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#030806] via-[#051510] to-black" />
-        <GlowOrb className="bottom-0 right-0 w-[450px] h-[450px] bg-emerald-500/8 translate-x-1/3 translate-y-1/3" />
-        <GridOverlay />
-
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="text-center"
-          >
-            <SectionLabel>
-              <Award className="w-3.5 h-3.5 text-emerald-300" />
-              Why Skylartech
-            </SectionLabel>
-
-            <h2 className="mt-6 text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
-              Why Organizations Choose{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-lime-400">
-                Skylartech
-              </span>
-            </h2>
-
-            <p className="mt-6 text-white/55 max-w-2xl mx-auto leading-relaxed">
-              We combine global best practices with deep industry expertise.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={stagger}
-            className="mt-14 grid md:grid-cols-2 gap-5 text-left"
-          >
-            {whyChooseItems.map((item) => (
-              <motion.div key={item} variants={fadeUp}>
-                <GlassCard className="flex items-start gap-4 p-6">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">
-                    <CheckCircle2 className="text-emerald-300 w-5 h-5" />
-                  </div>
-                  <p className="text-white/70 leading-relaxed pt-1.5">{item}</p>
-                </GlassCard>
+                <SectionLabel>
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
+                  Enterprise Project Management Solutions
+                </SectionLabel>
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-20 sm:py-24 md:py-28 relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#040b08] via-[#071a12] to-black" />
-        <GlowOrb className="top-1/2 left-1/2 w-[550px] h-[550px] bg-emerald-500/10 -translate-x-1/2 -translate-y-1/2" />
-        <GridOverlay />
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight"
+              >
+                Building World-Class
+                <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400">
+                  Project Excellence
+                </span>
+              </motion.h1>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <GlassCard
-              hover={false}
-              className="p-8 sm:p-12 md:p-16 lg:p-20 text-center"
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                className="mt-8 max-w-3xl mx-auto text-white/65 text-base md:text-lg leading-relaxed"
+              >
+                We empower organizations with training, consulting, governance
+                frameworks, and transformation expertise to deliver successful
+                projects at scale.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+                className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+              >
+                <Link
+                  to="/book-training"
+                  className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                >
+                  Book Training
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/about"
+                  className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/25 transition-all duration-300"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.45 }}
+                className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto"
+              >
+                {heroStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-4 py-3 hover:bg-white/[0.08] hover:border-emerald-400/20 transition-all duration-300"
+                  >
+                    <p className="text-lg font-semibold text-white">
+                      {stat.value}
+                    </p>
+                    <p className="text-white/50 text-xs mt-0.5">{stat.label}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* INTRO + OFFERINGS */}
+        <section className="py-24 md:py-28 relative overflow-hidden border-t border-white/5">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#040b08] via-[#071a12] to-[#030806]" />
+          <GlowOrb className="-top-40 left-1/2 w-[550px] h-[550px] bg-emerald-500/10 -translate-x-1/2" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.08),transparent_55%)]" />
+          <GridOverlay />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="text-center max-w-3xl mx-auto mb-14 md:mb-20"
             >
               <SectionLabel>
-                <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
-                Get Started
+                <Building2 className="w-3.5 h-3.5 text-emerald-300" />
+                Built For Modern Organizations
               </SectionLabel>
 
-              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-                Ready To Elevate{" "}
-                <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400">
-                  Your Organization?
+              <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
+                Strategic Solutions For{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400">
+                  Lasting Impact
                 </span>
               </h2>
 
-              <p className="mt-6 text-base md:text-lg text-white/65 max-w-2xl mx-auto leading-relaxed">
-                Partner with Skylartech to accelerate transformation and build
-                long-term capability.
+              <p className="mt-6 text-white/65 leading-relaxed text-base md:text-lg">
+                Modern organizations require strategic leadership, governance
+                maturity, and adaptive delivery capabilities. Our solutions are
+                designed to build long-term project management excellence.
               </p>
+            </motion.div>
 
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to="/book-training"
-                  className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                >
-                  Get Started Today
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/offerings/professional-training-and-certification"
-                  className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/25 transition-all duration-300"
-                >
-                  View Certifications
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </GlassCard>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="text-center mb-10 md:mb-14"
+            >
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+                Our Core{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-lime-400">
+                  Offerings
+                </span>
+              </h3>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={stagger}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            >
+              {offerings.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <motion.div key={item.title} variants={fadeUp}>
+                    <GlassCard
+                      as={Link}
+                      to={item.link}
+                      className="group flex flex-col justify-between min-h-[260px] p-6 sm:p-7 md:p-8 h-full"
+                    >
+                      <div>
+                        <div
+                          className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg transition-transform duration-500 group-hover:scale-110`}
+                        >
+                          <Icon className="w-6 h-6 text-black" />
+                        </div>
+
+                        <h4 className="text-lg sm:text-xl font-semibold leading-snug text-white">
+                          {item.title}
+                        </h4>
+
+                        <p className="mt-3 text-white/55 leading-relaxed text-sm sm:text-base">
+                          {item.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-6 text-emerald-300 flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
+                        Explore Offering
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </GlassCard>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US */}
+        <section className="py-24 md:py-28 border-t border-white/5 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#030806] via-[#051510] to-black" />
+          <GlowOrb className="bottom-0 right-0 w-[450px] h-[450px] bg-emerald-500/8 translate-x-1/3 translate-y-1/3" />
+          <GridOverlay />
+
+          <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="text-center"
+            >
+              <SectionLabel>
+                <Award className="w-3.5 h-3.5 text-emerald-300" />
+                Why Skylartech
+              </SectionLabel>
+
+              <h2 className="mt-6 text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
+                Why Organizations Choose{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-lime-400">
+                  Skylartech
+                </span>
+              </h2>
+
+              <p className="mt-6 text-white/55 max-w-2xl mx-auto leading-relaxed">
+                We combine global best practices with deep industry expertise.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={stagger}
+              className="mt-14 grid md:grid-cols-2 gap-5 text-left"
+            >
+              {whyChooseItems.map((item) => (
+                <motion.div key={item} variants={fadeUp}>
+                  <GlassCard className="flex items-start gap-4 p-6">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+                      <CheckCircle2 className="text-emerald-300 w-5 h-5" />
+                    </div>
+                    <p className="text-white/70 leading-relaxed pt-1.5">
+                      {item}
+                    </p>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 sm:py-24 md:py-28 relative overflow-hidden border-t border-white/5">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#040b08] via-[#071a12] to-black" />
+          <GlowOrb className="top-1/2 left-1/2 w-[550px] h-[550px] bg-emerald-500/10 -translate-x-1/2 -translate-y-1/2" />
+          <GridOverlay />
+
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <GlassCard
+                hover={false}
+                className="p-8 sm:p-12 md:p-16 lg:p-20 text-center"
+              >
+                <SectionLabel>
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
+                  Get Started
+                </SectionLabel>
+
+                <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+                  Ready To Elevate{" "}
+                  <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400">
+                    Your Organization?
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-base md:text-lg text-white/65 max-w-2xl mx-auto leading-relaxed">
+                  Partner with Skylartech to accelerate transformation and build
+                  long-term capability.
+                </p>
+
+                <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link
+                    to="/book-training"
+                    className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                  >
+                    Get Started Today
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    to="/offerings/professional-training-and-certification"
+                    className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/25 transition-all duration-300"
+                  >
+                    View Certifications
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </GlassCard>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

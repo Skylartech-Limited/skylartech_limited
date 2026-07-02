@@ -14,6 +14,10 @@
   </url>
 
   <url>
+    <loc>https://www.skylartech.co.ke/offerings/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.skylartech.co.ke/offerings/professional-training-and-certification</loc>
   </url>
 
@@ -54,23 +58,31 @@
   </url>
 
   <url>
-    <loc>https://www.skylartech.co.ke/industries/banking-and-finance</loc>
+    <loc>https://www.skylartech.co.ke/pdu</loc>
   </url>
 
   <url>
-    <loc>https://www.skylartech.co.ke/industries/telecommunications</loc>
+    <loc>https://www.skylartech.co.ke/who-we-serve</loc>
   </url>
 
   <url>
-    <loc>https://www.skylartech.co.ke/industries/ngos</loc>
+    <loc>https://www.skylartech.co.ke/who-we-serve/banking-and-finance</loc>
   </url>
 
   <url>
-    <loc>https://www.skylartech.co.ke/industries/government</loc>
+    <loc>https://www.skylartech.co.ke/who-we-serve/telecommunications</loc>
   </url>
 
   <url>
-    <loc>https://www.skylartech.co.ke/industries/healthcare</loc>
+    <loc>https://www.skylartech.co.ke/who-we-serve/ngos</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/who-we-serve/government</loc>
+  </url>
+
+  <url>
+    <loc>https://www.skylartech.co.ke/who-we-serve/healthcare</loc>
   </url>
 
 </urlset>
