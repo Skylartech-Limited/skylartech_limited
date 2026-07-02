@@ -232,7 +232,7 @@ pb-14 sm:pb-20 lg:pb-28"
                 to="/about"
                 className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:shadow-lg hover:shadow-violet-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
-                Learn more about us
+                Learn More About Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 

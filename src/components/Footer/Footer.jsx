@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useNewsletter } from "../Newsletter/Newslettercontext";
 
 const Footer = () => {
-
   const { openNewsletter } = useNewsletter();
   return (
     <footer className="relative bg-gradient-to-br from-black via-slate-950 to-[#05070f] text-white overflow-hidden">
@@ -83,38 +82,37 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-indigo-400 to-emerald-400"></span>
             </h3>
 
-           <ul className="space-y-2 sm:space-y-3 text-white/60 text-sm sm:text-base flex flex-col items-center">
-      {[
-        ["Home", "/"],
-        ["About Skylartech", "/about"],
-        [
-          "Offered Certifications",
-          "/offerings/professional-training-and-certification",
-        ],
-        ["Book Your Training", "/book-training"],
-        ["Newsletter", "newsletter"], // special item
-      ].map(([label, path], i) => (
-        <li key={i} className="group w-full flex justify-center">
-          {path === "newsletter" ? (
-            <button
-              onClick={openNewsletter}
-              className="flex items-center gap-2 hover:text-emerald-300 transition-all duration-300"
-            >
-              <i className="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span>{label}</span>
-            </button>
-          ) : (
-            <Link
-              to={path}
-              className="flex items-center gap-2 hover:text-emerald-300 transition-all duration-300"
-            >
-              <i className="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span>{label}</span>
-            </Link>
-          )}
-        </li>
-      ))}
-    </ul>
+            <ul className="space-y-2 sm:space-y-3 text-white/60 text-sm sm:text-base flex flex-col items-center">
+              {[
+                ["Home", "/"],
+                ["About Skylartech", "/about"],
+                ["Offerings", "/offerings"],
+                ["PDU", "/pdu"],
+                ["Who We Serve", "/who-we-serve"],
+                ["Book Your Training", "/book-training"],
+                ["Newsletter", "newsletter"],
+              ].map(([label, path], i) => (
+                <li key={i} className="group w-full flex justify-center">
+                  {path === "newsletter" ? (
+                    <button
+                      onClick={openNewsletter}
+                      className="flex items-center gap-2 hover:text-emerald-300 transition-all duration-300"
+                    >
+                      <i className="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>{label}</span>
+                    </button>
+                  ) : (
+                    <Link
+                      to={path}
+                      className="flex items-center gap-2 hover:text-emerald-300 transition-all duration-300"
+                    >
+                      <i className="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>{label}</span>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* CERTIFICATIONS */}
