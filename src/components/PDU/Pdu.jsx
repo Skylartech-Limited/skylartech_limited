@@ -115,7 +115,7 @@ const courses = [
     wow: "5.0 hrs",
     power: "5.0 hrs",
     business: "5.0 hrs",
-    total: "14.0 hrs",
+    total: "15.0 hrs",
   },
   {
     course: "Modern Leadership Techniques",
