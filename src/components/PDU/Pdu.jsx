@@ -129,7 +129,7 @@ const courses = [
     wow: "9.0 hrs",
     power: "9.0 hrs",
     business: "7.0 hrs",
-    total: "25.0 hrs",
+    total: "24.0 hrs",
   },
 ];
 
