@@ -1,35 +1,135 @@
-# Skylartech Limited
+# Skylartech Limited Website
 
-Welcome to the Skylartech Limited GitHub repository! This repository hosts the source code and documentation for SkylarTech, a distinguished company specializing in mobile and web app development.
+This repository contains the source code for the **SkylarTech Limited** website.
 
-## Table of Contents
-- [About Skylartech](#about-skylartech)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [License](https://github.com/Skylartech-Limited/skylartech_limited/blob/master/LICENSE)
+SkylarTech Limited specializes in **PMI® certification training**, **Professional Development Units (PDUs)**, corporate project management training, and continuing professional education. The website serves as the primary platform for showcasing training programs, certification bundles, course information, newsletters, and other company resources.
 
-## About Skylartech
+## Repository Purpose
 
-[Skylartech](https://www.skylartech.co.ke) is a distinguished company specializing in mobile and web app development, prioritizes intelligent technologies and ensuring utmost customer contentment. Established in 2014, our firm has consistently provided top-notch solutions to businesses worldwide, achieving a remarkable 100% success rate. Benefit from our skilled team's services at budget-friendly rates and equip your company with the perfect technological solutions it needs. This GitHub repository serves as the central hub for SkylarTech's digital presence, housing the codebase and documentation.
+This project is used to:
 
-## Features
+* Maintain the official SkylarTech website
+* Develop new website features
+* Update training and certification offerings
+* Manage promotional content and landing pages
+* Maintain the newsletter integration
+* Improve performance, accessibility, and SEO
 
-- [List key features and functionalities of Skylartech]
+---
+
+## Tech Stack
+
+* React
+* JavaScript (ES6+)
+* React Router
+* Tailwind CSS
+* Framer Motion
+* Lucide React
+* Node.js
+* NPM
+
+---
 
 ## Getting Started
 
-To get started with Skylartech, follow these steps:
+### Clone the repository
+
 ```bash
-1.Clone the repository locally
-git clone https://github.com/your-username/skylartech_limited.git](https://github.com/Skylartech-Limited/skylartech_limited.git)https://github.com/Skylartech-Limited/skylartech_limited.git
+git clone https://github.com/Skylartech-Limited/skylartech_limited.git
+```
 
-2. Navigate to the repository locally and open it using visual studio code
+### Navigate into the project
+
+```bash
 cd skylartech_limited
+```
 
-3.Install all NPM dependencies
+### Install dependencies
+
+```bash
 npm install
+```
 
-4. Run the server locally
+### Start the development server
+
+```bash
 npm start
+```
+
+### Create a production build
+
+```bash
+npm run build
+```
+
+---
+
+## Project Structure
+
+```
+skylartech_limited/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── pages/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── README.md
+```
+
+---
+
+## Development Guidelines
+
+* Follow the existing project structure.
+* Write clean, reusable React components.
+* Keep styling consistent using Tailwind CSS.
+* Test all changes before committing.
+* Use descriptive commit messages.
+
+---
+
+## Branching Strategy
+
+* `main` – Production-ready code
+* `develop` – Active development
+* `feature/<feature-name>` – New features
+* `fix/<issue-name>` – Bug fixes
+
+---
+
+## Contributing
+
+1. Create a new branch from `develop`.
+2. Make your changes.
+3. Test locally.
+4. Commit using a descriptive message.
+5. Submit a Pull Request for review.
+
+---
+
+## Environment Variables
+
+If required, create a `.env` file in the project root and configure the necessary environment variables before running the application.
+
+---
+
+## Deployment
+
+Production deployments are managed by the SkylarTech development team.
+
+---
+
+## Maintainers
+
+Skylartech Limited Development Team
+
+---
+
+## Notes
+
+This repository is intended for **internal development** and should only be accessed by authorized contributors.
