@@ -1,82 +1,95 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, X, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
+import { useNewsletter } from "../Newsletter/Newslettercontext";
 
 export default function Newsletter() {
-  const [visible, setVisible] = useState(false);
+  const { visible, openNewsletter, closeNewsletter } = useNewsletter();
+
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(
+    localStorage.getItem("newsletter_dismissed") === "true",
+  );
+  useEffect(() => {
+  const signedUp = localStorage.getItem("newsletter_signed_up");
+  const dismissedBefore = localStorage.getItem("newsletter_dismissed");
+
+  if (!signedUp && !dismissedBefore) {
+    const timer = setTimeout(() => {
+      openNewsletter();
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }
+}, [openNewsletter]);
 
   useEffect(() => {
-    const signedUp = localStorage.getItem("newsletter_signed_up");
-    const dismissedBefore = localStorage.getItem("newsletter_dismissed");
-    if (!signedUp && !dismissedBefore) {
-      const timer = setTimeout(() => setVisible(true), 1500);
-      return () => clearTimeout(timer);
+    if (visible) {
+      setDismissed(false);
     }
-  }, []);
+  }, [visible]);
 
   const validateEmail = (value) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(value);
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  setError("");
+    setError("");
 
-  if (!email.trim()) {
-    setError("Please enter your email address");
-    return;
-  }
-
-  if (!validateEmail(email)) {
-    setError("Please enter a valid email address");
-    return;
-  }
-
-  try {
-    const response = await fetch("/api/newsletter", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      if (
-        data.title === "Member Exists" ||
-        data.detail?.includes("already")
-      ) {
-        setError("You're already subscribed!");
-        return;
-      }
-
-      throw new Error(data.detail || "Subscription failed");
+    if (!email.trim()) {
+      setError("Please enter your email address");
+      return;
     }
 
-    localStorage.setItem("newsletter_signed_up", "true");
-    setSubmitted(true);
-  } catch (err) {
-    console.error(err);
-    setError("Unable to subscribe. Please try again.");
-  }
-};
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (
+          data.title === "Member Exists" ||
+          data.detail?.includes("already")
+        ) {
+          setError("You're already subscribed!");
+          return;
+        }
+
+        throw new Error(data.detail || "Subscription failed");
+      }
+
+      localStorage.setItem("newsletter_signed_up", "true");
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      setError("Unable to subscribe. Please try again.");
+    }
+  };
 
   const handleDismiss = () => {
     localStorage.setItem("newsletter_dismissed", "true");
     setDismissed(true);
-    setVisible(false);
+    closeNewsletter();
   };
 
   const handleClose = () => {
-    setVisible(false);
+    closeNewsletter();
   };
 
   return (
@@ -108,12 +121,19 @@ export default function Newsletter() {
           >
             {/* Glow Orbs */}
             <div className="absolute -top-20 -right-20 w-48 h-48 bg-cyan-500/20 blur-3xl rounded-full animate-pulse pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-sky-500/15 blur-3xl rounded-full animate-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
+            <div
+              className="absolute -bottom-20 -left-20 w-48 h-48 bg-sky-500/15 blur-3xl rounded-full animate-pulse pointer-events-none"
+              style={{ animationDelay: "1s" }}
+            />
             <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
 
             {/* Close Button */}
-            <button onClick={handleClose} className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white/50 hover:text-white/80 transition-all duration-300 hover:scale-105" aria-label="Close">
+            <button
+              onClick={handleClose}
+              className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white/50 hover:text-white/80 transition-all duration-300 hover:scale-105"
+              aria-label="Close"
+            >
               <X className="w-4 h-4" />
             </button>
 
@@ -138,7 +158,9 @@ export default function Newsletter() {
 
                   {/* Description */}
                   <p className="text-white/60 text-sm sm:text-base mt-4 leading-relaxed text-center max-w-sm mx-auto">
-                    Get the latest on project management best practices, industry trends, and exclusive resources delivered to your inbox.
+                    Get the latest on project management best practices,
+                    industry trends, and exclusive resources delivered to your
+                    inbox.
                   </p>
 
                   {/* Divider */}
@@ -152,16 +174,25 @@ export default function Newsletter() {
                   <form onSubmit={handleSubmit} className="space-y-3">
                     <div className="relative">
                       <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40 pointer-events-none" />
+
                       <input
                         type="email"
                         value={email}
-                        onChange={(e) => { setEmail(e.target.value); if (error) setError(""); }}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+
+                          if (error) setError("");
+                        }}
                         placeholder="Enter your email address"
                         className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-all duration-300"
                       />
                     </div>
 
-                    {error && <p className="text-red-400 text-xs text-left pl-1">{error}</p>}
+                    {error && (
+                      <p className="text-red-400 text-xs text-left pl-1">
+                        {error}
+                      </p>
+                    )}
 
                     <button
                       type="submit"
@@ -196,7 +227,8 @@ export default function Newsletter() {
                   </h2>
 
                   <p className="text-white/60 text-sm sm:text-base mt-4 leading-relaxed max-w-xs mx-auto">
-                    Thanks for subscribing! We'll send you the latest insights, tips, and resources to help you excel in project management.
+                    Thanks for subscribing! We'll send you the latest insights,
+                    tips, and resources to help you excel in project management.
                   </p>
 
                   <button
