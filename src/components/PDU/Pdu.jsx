@@ -365,22 +365,6 @@ const PDU = () => {
             }}
             className="relative"
           >
-            {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="absolute -top-4 -right-2 sm:-top-5 sm:-right-4 z-20 flex items-center gap-2 rounded-2xl border border-cyan-400/30 bg-slate-900/80 px-4 py-2 backdrop-blur-xl shadow-xl"
-            >
-              <ShieldCheck
-                className="h-4 w-4 text-cyan-400"
-                aria-hidden="true"
-              />
-              <span className="text-xs font-semibold text-cyan-200">
-                PMI® Premier ATP
-              </span>
-            </motion.div>
-
             <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.05] p-6 sm:p-8 backdrop-blur-2xl shadow-[0_32px_100px_rgba(0,0,0,0.5)]">
               {/* Glow */}
               <div className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-cyan-500/20 blur-[90px]" />
