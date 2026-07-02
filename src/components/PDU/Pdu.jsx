@@ -661,44 +661,54 @@ const PDU = () => {
               className="mt-10 hidden md:block"
             >
               <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-2xl shadow-cyan-950/20">
-                <div className="grid grid-cols-[1.1fr_0.8fr_1.2fr] gap-4 p-5 sm:p-6 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-violet-500/10 text-cyan-200 font-semibold text-sm">
-                  <div>Certification</div>
-                  <div>Cycle</div>
-                  <div>PDUs Required</div>
-                </div>
+                <table className="w-full table-fixed border-collapse">
+                  <thead className="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-violet-500/10 text-cyan-200 font-semibold text-sm">
+                    <tr>
+                      <th scope="col" className="w-[35%] p-5 sm:p-6 text-left">
+                        Certification
+                      </th>
+                      <th scope="col" className="w-[25%] p-5 sm:p-6 text-left">
+                        Cycle
+                      </th>
+                      <th scope="col" className="w-[40%] p-5 sm:p-6 text-left">
+                        PDUs Required
+                      </th>
+                    </tr>
+                  </thead>
 
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeTab}
-                    initial={{ opacity: 0, y: reduce ? 0 : 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {filteredRows.map((row, i) => (
-                      <motion.div
-                        key={row.cert}
-                        initial={{ opacity: 0, y: reduce ? 0 : 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: reduce ? 0 : i * 0.05 }}
-                        className={`grid grid-cols-[1.1fr_0.8fr_1.2fr] gap-4 p-5 sm:p-6 border-t border-white/5 transition-all duration-300 ${
-                          i % 2 === 0 ? "bg-white/[0.02]" : "bg-transparent"
-                        } hover:bg-white/[0.05]`}
-                      >
-                        <div className="font-medium text-cyan-200 break-words">
-                          {row.cert}
-                        </div>
-                        <div className="text-slate-300 break-words">
-                          {row.cycle}
-                        </div>
-                        <div className="text-slate-300 break-words">
-                          {row.pdu}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </AnimatePresence>
+                  <AnimatePresence mode="wait">
+                    <motion.tbody
+                      key={activeTab}
+                      initial={{ opacity: 0, y: reduce ? 0 : 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {filteredRows.map((row, i) => (
+                        <motion.tr
+                          key={row.cert}
+                          initial={{ opacity: 0, y: reduce ? 0 : 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: reduce ? 0 : i * 0.05 }}
+                          className={`border-t border-white/5 transition-all duration-300 ${
+                            i % 2 === 0 ? "bg-white/[0.02]" : "bg-transparent"
+                          } hover:bg-white/[0.05]`}
+                        >
+                          <td className="w-[35%] p-5 sm:p-6 font-medium text-cyan-200 break-words">
+                            {row.cert}
+                          </td>
+                          <td className="w-[25%] p-5 sm:p-6 text-slate-300 break-words">
+                            {row.cycle}
+                          </td>
+                          <td className="w-[40%] p-5 sm:p-6 text-slate-300 break-words">
+                            {row.pdu}
+                          </td>
+                        </motion.tr>
+                      ))}
+                    </motion.tbody>
+                  </AnimatePresence>
+                </table>
               </div>
             </motion.div>
 
