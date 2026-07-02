@@ -1,88 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://www.skylartech.co.ke/</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/about</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/book-training</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/professional-training-and-certification</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/consulting-and-organizational-transformation</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/portfolio-pmo-and-governance-excellence</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/agile-and-adaptive-delivery-excellence</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/risk-compliance-and-assurance</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/offerings/business-analysis-and-requirements-gathering</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/certifications/pmp</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/certifications/capm</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/certifications/pgmp</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/certifications/pfmp</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/pdu</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/who-we-serve</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/who-we-serve/banking-and-finance</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/who-we-serve/telecommunications</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/who-we-serve/ngos</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/who-we-serve/government</loc>
-  </url>
-
-  <url>
-    <loc>https://www.skylartech.co.ke/who-we-serve/healthcare</loc>
-  </url>
-
+<url>
+<loc>https://skylartech.co.ke/</loc>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/about</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/book-training</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/professional-training-and-certification</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/consulting-and-organizational-transformation</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/portfolio-pmo-and-governance-excellence</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/agile-and-adaptive-delivery-excellence</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/risk-compliance-and-assurance</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/offerings/business-analysis-and-requirements-gathering</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/certifications/pmp</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/certifications/capm</loc>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/certifications/pgmp</loc>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/certifications/pfmp</loc>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/pdu</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/who-we-serve</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/who-we-serve/banking-and-finance</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/who-we-serve/telecommunications</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/who-we-serve/ngos</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/who-we-serve/government</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://skylartech.co.ke/who-we-serve/healthcare</loc>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
 </urlset>

@@ -254,24 +254,24 @@ const PDU = () => {
       <Helmet>
         <title>
           PMP Renewal Bundle | Earn 60 PDUs Online | PMI Certification Renewal |
-          SkylarTech
+          Skylartech
         </title>
 
         <meta
           name="description"
-          content="Renew your PMP® certification with SkylarTech's PMI-approved 60 PDU bundle. Earn all required Professional Development Units (PDUs) online and maintain your PMI certification with confidence."
+          content="Renew your PMP® certification with Skylartech's PMI-approved 60 PDU bundle. Earn all required Professional Development Units (PDUs) online and maintain your PMI certification with confidence."
         />
 
         <meta
           name="keywords"
-          content="PMP renewal, PMP renewal bundle, PMP certification renewal, PMI certification renewal, PMI PDU courses, Earn 60 PDUs, Online PDU courses, PMI ATP, PMI Approved Training Partner, PMP continuing education, Professional Development Units, CAPM renewal, PMI ACP renewal, PMI RMP renewal, PMI SP renewal, PMI PBA renewal, PgMP renewal, PfMP renewal, Project Management Institute, SkylarTech"
+          content="PMP renewal, PMP renewal bundle, PMP certification renewal, PMI certification renewal, PMI PDU courses, Earn 60 PDUs, Online PDU courses, PMI ATP, PMI Approved Training Partner, PMP continuing education, Professional Development Units, CAPM renewal, PMI ACP renewal, PMI RMP renewal, PMI SP renewal, PMI PBA renewal, PgMP renewal, PfMP renewal, Project Management Institute, Skylartech"
         />
 
         <meta name="robots" content="index, follow" />
 
         <meta
           property="og:title"
-          content="PMP Renewal Bundle | Earn 60 PDUs Online | SkylarTech"
+          content="PMP Renewal Bundle | Earn 60 PDUs Online | Skylartech"
         />
 
         <meta
@@ -281,15 +281,14 @@ const PDU = () => {
 
         <meta property="og:type" content="website" />
 
-        <meta
-          property="og:url"
-          content="https://www.skylartech.net/pdu-renewal"
-        />
+        <meta property="og:url" content="https://skylartech.co.ke/pdu" />
 
         <meta
           property="og:image"
-          content="https://www.skylartech.net/images/pmp-renewal-banner.jpg"
+          content="https://skylartech.co.ke/images/pmp-renewal-banner.jpg"
         />
+
+        <meta property="og:locale" content="en_KE" />
 
         <meta name="twitter:card" content="summary_large_image" />
 
@@ -300,10 +299,15 @@ const PDU = () => {
 
         <meta
           name="twitter:description"
-          content="Renew your PMP® certification online with PMI-approved PDU courses from SkylarTech."
+          content="Renew your PMP® certification online with PMI-approved PDU courses from Skylartech."
         />
 
-        <link rel="canonical" href="https://www.skylartech.net/pdu-renewal" />
+        <meta
+          name="twitter:image"
+          content="https://skylartech.co.ke/images/pmp-renewal-banner.jpg"
+        />
+
+        <link rel="canonical" href="https://skylartech.co.ke/pdu" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -314,8 +318,8 @@ const PDU = () => {
               "PMI-approved online training to help professionals earn the required 60 PDUs for PMP certification renewal.",
             provider: {
               "@type": "Organization",
-              name: "SkylarTech",
-              url: "https://www.skylartech.net",
+              name: "Skylartech",
+              url: "https://skylartech.co.ke",
             },
             courseMode: "Online",
             educationalCredentialAwarded:
