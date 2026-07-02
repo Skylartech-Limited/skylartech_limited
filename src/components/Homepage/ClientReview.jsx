@@ -59,14 +59,14 @@ const ClientReview = () => {
 
       {/* HEADING */}
       <div className="relative z-10 max-w-4xl mx-auto text-center mb-14">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight break-words">
           Client{" "}
-          <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+          <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] break-words">
             Success Stories
           </span>
         </h2>
 
-        <p className="text-white/70 mt-5 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+        <p className="text-white/70 mt-5 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto break-words">
           Hear from professionals and organizations that have worked with
           Skylartech across project management training, project consulting, and
           PMO transformation initiatives.
@@ -130,7 +130,7 @@ const ClientReview = () => {
       duration-500
       hover:bg-gradient-to-br hover:from-white/[0.12] hover:via-white/[0.08] hover:to-white/5
       hover:border-amber-400/30
-      hover:shadow-2xl hover:shadow-amber-500/20
+      hover:shadow-2xl hover:shadow-amber-500/25
       hover:scale-[1.02]
       hover:-translate-y-2
       group
@@ -163,7 +163,7 @@ const ClientReview = () => {
               </div>
 
               {/* REVIEW (CLAMPED FOR CONSISTENCY) */}
-              <p className="text-white/90 leading-7 text-sm sm:text-base relative z-10 line-clamp-6 group-hover:text-white transition-colors duration-300">
+              <p className="text-white/90 leading-7 text-sm sm:text-base relative z-10 line-clamp-6 group-hover:text-white transition-colors duration-300 break-words">
                 "{item.review}"
               </p>
 

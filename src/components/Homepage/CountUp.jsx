@@ -52,7 +52,7 @@ const CountupSection = () => {
                 </h1>
 
                 {/* PREMIUM LABEL */}
-                <p className="text-white/70 text-[11px] sm:text-xs leading-5 max-w-[180px] mx-auto group-hover/item:text-white/90 transition-colors duration-300">
+                <p className="text-white/70 text-[11px] sm:text-xs leading-5 max-w-[200px] sm:max-w-[220px] mx-auto group-hover/item:text-white/90 transition-colors duration-300">
                   {item.label}
                 </p>
               </div>

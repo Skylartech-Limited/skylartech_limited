@@ -44,7 +44,7 @@ const stagger = {
 };
 
 const SectionLabel = ({ children }) => (
-  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.18em] uppercase text-white/80">
+  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 text-xs sm:text-sm tracking-[0.18em] uppercase text-white/80 whitespace-normal break-words max-w-full text-center">
     {children}
   </div>
 );
@@ -179,10 +179,10 @@ const Home = () => {
       </Helmet>
       {/* ================= HERO ================= */}
       <div
-        className="relative min-h-[100svh] flex items-center overflow-hidden
-pt-40 sm:pt-44 md:pt-48 lg:pt-36 xl:pt-40
+        className="relative min-h-[100dvh] flex items-center overflow-hidden
+pt-36 sm:pt-40 md:pt-44 lg:pt-36 xl:pt-40
 px-4 sm:px-6 lg:px-12
-pb-14 sm:pb-20 lg:pb-28"
+pb-20 sm:pb-24 lg:pb-32"
       >
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
@@ -208,17 +208,17 @@ pb-14 sm:pb-20 lg:pb-28"
               PMI® Premier Authorized Training Partner
             </SectionLabel>
 
-            <h1 className="font-bold text-white leading-[1.1] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="font-bold text-white leading-[1.1] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl break-words">
               Empowering Professionals & Organizations
-              <span className="block mt-3 text-white/75 font-normal text-sm sm:text-base md:text-lg lg:text-xl">
+              <span className="block mt-3 text-white/75 font-normal text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                 to deliver projects with
               </span>
-              <span className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-emerald-300 text-base sm:text-lg md:text-xl lg:text-2xl">
+              <span className="block mt-3 font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-emerald-300 text-base sm:text-lg md:text-xl lg:text-2xl leading-snug">
                 Confidence · Agility · Global Standards
               </span>
             </h1>
 
-            <p className="text-white/65 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-base lg:text-lg leading-relaxed">
+            <p className="text-white/65 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-base lg:text-lg leading-relaxed break-words">
               Bridging certification knowledge with real-world execution through
               structured, practice-driven project management training.
             </p>
@@ -230,15 +230,15 @@ pb-14 sm:pb-20 lg:pb-28"
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Link
                 to="/about"
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:shadow-lg hover:shadow-violet-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:shadow-lg hover:shadow-violet-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 whitespace-nowrap"
               >
-                Learn More About Us
+                Learn more about us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 to="/offerings/professional-training-and-certification"
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300 whitespace-nowrap"
               >
                 Explore Certifications
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -350,14 +350,16 @@ pb-14 sm:pb-20 lg:pb-28"
                 transition={{ delay: 0.4, duration: 0.6 }}
                 whileHover={{ y: -6 }}
                 className="group mt-6 relative overflow-hidden rounded-[24px] sm:rounded-[28px]
-  border border-white/10
-  bg-white/[0.03]
-  shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
+  border border-white/20
+  bg-white/[0.06]
+  shadow-[0_25px_80px_rgba(0,0,0,0.7)]
+  ring-1 ring-white/10
+  hover:border-white/30 hover:ring-white/20"
               >
                 {/* Glow Effects */}
-                <div className="absolute -top-20 -left-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-violet-500/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
+                <div className="absolute -top-20 -left-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-violet-500/30 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
-                <div className="absolute -bottom-20 -right-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-cyan-500/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
+                <div className="absolute -bottom-20 -right-20 h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-cyan-500/30 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
                 {/* ================= PROMO SLIDER ================= */}
                 <Swiper
@@ -394,7 +396,7 @@ pb-14 sm:pb-20 lg:pb-28"
                 </Swiper>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-transparent to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/70 via-[#020617]/10 to-transparent z-10" />
 
                 {/* CTA */}
                 <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-20">
@@ -405,9 +407,10 @@ pb-14 sm:pb-20 lg:pb-28"
       bg-gradient-to-r from-violet-600 to-indigo-600
       px-4 py-2.5 sm:px-5 sm:py-3
       text-xs sm:text-sm font-semibold text-white
-      shadow-lg shadow-violet-500/20
+      shadow-xl shadow-violet-500/30
+      ring-1 ring-white/20
       transition-all duration-300
-      hover:scale-105 hover:shadow-violet-500/40"
+      hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/50 hover:ring-white/30"
                   >
                     Learn More
                     <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -443,9 +446,9 @@ pb-14 sm:pb-20 lg:pb-28"
             <SectionLabel>About Skylartech</SectionLabel>
 
             <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight break-words">
                 Building Globally Competitive{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-emerald-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-emerald-300 break-words">
                   Project Leaders
                 </span>
               </h2>
@@ -483,9 +486,9 @@ pb-14 sm:pb-20 lg:pb-28"
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300"
+                  className="group bg-white/[0.04] border border-white/10 rounded-2xl p-4 backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/20 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-violet-200 transition-colors">
                     {item.number}
                   </h3>
                   <p className="text-white/50 text-sm mt-1">{item.label}</p>
@@ -528,7 +531,7 @@ pb-14 sm:pb-20 lg:pb-28"
                 className="
         w-full
         max-w-2xl
-        h-[420px] sm:h-[500px] lg:h-[580px]
+        min-h-[280px] sm:min-h-[350px] md:min-h-[420px] lg:min-h-[500px] xl:min-h-[580px] h-auto
         object-cover
         scale-105
         hover:scale-110
@@ -540,12 +543,12 @@ pb-14 sm:pb-20 lg:pb-28"
               {/* IMAGE OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-5">
-                  <h3 className="text-white text-xl sm:text-2xl font-semibold">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8">
+                <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-5">
+                  <h3 className="text-white text-base sm:text-xl lg:text-2xl font-semibold">
                     Driving Project Excellence
                   </h3>
-                  <p className="text-white/70 text-sm sm:text-base mt-2 leading-relaxed">
+                  <p className="text-white/70 text-xs sm:text-sm lg:text-base mt-2 leading-relaxed break-words">
                     Empowering professionals and organizations through globally
                     recognized project management training, consulting, and
                     digital transformation solutions.
@@ -583,14 +586,14 @@ pb-14 sm:pb-20 lg:pb-28"
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight break-words">
                 <span className="block">Why Organizations</span>
-                <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-200">
+                <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-200 break-words">
                   Choose Skylartech
                 </span>
               </h2>
 
-              <p className="mt-6 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
+              <p className="mt-6 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl break-words">
                 We don't just deliver training — we build capability systems
                 that improve how professionals think, execute, and lead across
                 projects, teams, and enterprises.
@@ -637,15 +640,15 @@ pb-14 sm:pb-20 lg:pb-28"
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="group bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:bg-white/[0.08] hover:border-amber-300/20 hover:-translate-y-0.5 transition-all duration-300"
+                  className="group bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:bg-white/[0.08] hover:border-amber-300/20 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300"
                 >
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-amber-300 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-white text-base">
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-white text-base break-words">
                         {item.title}
                       </h3>
-                      <p className="text-white/60 text-sm leading-relaxed mt-2">
+                      <p className="text-white/60 text-sm leading-relaxed mt-2 break-words">
                         {item.desc}
                       </p>
                     </div>
@@ -660,7 +663,7 @@ pb-14 sm:pb-20 lg:pb-28"
             >
               <Link
                 to="/offerings/professional-training-and-certification"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-semibold hover:shadow-lg hover:shadow-amber-500/20 hover:scale-[1.02] transition-all duration-300 text-center"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-semibold hover:shadow-lg hover:shadow-amber-500/20 hover:scale-[1.02] transition-all duration-300 text-center whitespace-nowrap"
               >
                 Explore Courses
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -668,7 +671,7 @@ pb-14 sm:pb-20 lg:pb-28"
 
               <Link
                 to="/book-training"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-white/5 border border-white/15 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300 text-center"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-white/5 border border-white/15 backdrop-blur-xl text-white hover:bg-white/10 hover:border-white/25 transition-all duration-300 text-center whitespace-nowrap"
               >
                 Request a corporate proposal
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -680,7 +683,7 @@ pb-14 sm:pb-20 lg:pb-28"
           <div
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            className="relative h-[420px] sm:h-[520px] lg:h-[640px] flex items-center justify-center"
+            className="relative min-h-[320px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[580px] xl:min-h-[640px] h-auto flex items-center justify-center"
           >
             <div className="absolute w-[85%] h-[85%] bg-white/15 blur-3xl rounded-full" />
             <div className="absolute w-[92%] h-[92%] rounded-[3rem] bg-white/10 backdrop-blur-sm border border-white/10 shadow-2xl" />
@@ -710,7 +713,7 @@ pb-14 sm:pb-20 lg:pb-28"
                     }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
-                    <div className="relative w-[88%] h-[280px] sm:h-[380px] lg:h-[460px]">
+                    <div className="relative w-[88%] min-h-[200px] sm:min-h-[280px] md:min-h-[340px] lg:min-h-[420px] xl:min-h-[460px] h-auto">
                       <img
                         src={img}
                         alt={`slide-${i}`}
@@ -748,9 +751,9 @@ pb-14 sm:pb-20 lg:pb-28"
           >
             <SectionLabel>Professional Certification Programs</SectionLabel>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight">
+            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight break-words">
               Build World-Class
-              <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-fuchsia-200 to-orange-200">
+              <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-fuchsia-200 to-orange-200 break-words">
                 Project Leadership Capability
               </span>
             </h1>
@@ -767,7 +770,7 @@ pb-14 sm:pb-20 lg:pb-28"
           <div className="mt-16 sm:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {/* ================= CORE CERTIFICATIONS ================= */}
             <div className="group relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/30 hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full overflow-hidden">
-              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-yellow-500/20 transition-all duration-500">
                 <span className="text-2xl font-bold text-yellow-200">01</span>
               </div>
 
@@ -805,11 +808,13 @@ pb-14 sm:pb-20 lg:pb-28"
                 ].map((item, i) => (
                   <Link key={i} to={item.link} className="block group">
                     <div className="border-l-2 border-yellow-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
-                      <h4 className="font-semibold text-white text-base group-hover:text-yellow-200">
+                      <h4 className="font-semibold text-white text-sm sm:text-base group-hover:text-yellow-200 break-words">
                         {item.title}
                       </h4>
 
-                      <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+                      <p className="mt-1 text-sm text-white/70 break-words">
+                        {item.desc}
+                      </p>
 
                       <span className="inline-flex items-center gap-1 text-xs text-yellow-200/70 opacity-0 group-hover:opacity-100 transition">
                         View certification
@@ -823,7 +828,7 @@ pb-14 sm:pb-20 lg:pb-28"
 
             {/* ================= SPECIALIZED CERTIFICATIONS ================= */}
             <div className="group relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/30 hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full overflow-hidden">
-              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-orange-500/20 transition-all duration-500">
                 <span className="text-2xl font-bold text-orange-200">02</span>
               </div>
 
@@ -876,11 +881,13 @@ pb-14 sm:pb-20 lg:pb-28"
                 ].map((item, i) => (
                   <Link key={i} to={item.link} className="block group">
                     <div className="border-l-2 border-orange-300/70 pl-4 py-2 hover:pl-6 transition-all duration-300">
-                      <h4 className="font-semibold text-white group-hover:text-orange-200">
+                      <h4 className="font-semibold text-white text-sm sm:text-base group-hover:text-orange-200 break-words">
                         {item.title}
                       </h4>
 
-                      <p className="mt-1 text-sm text-white/70">{item.desc}</p>
+                      <p className="mt-1 text-sm text-white/70 break-words">
+                        {item.desc}
+                      </p>
 
                       <span className="inline-flex items-center gap-1 text-xs text-orange-200/70 opacity-0 group-hover:opacity-100 transition">
                         View certification
@@ -894,7 +901,7 @@ pb-14 sm:pb-20 lg:pb-28"
 
             {/* ================= SUSTAINABILITY ================= */}
             <div className="group relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/30 hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full overflow-hidden">
-              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-green-500/20 transition-all duration-500">
                 <span className="text-2xl font-bold text-green-200">03</span>
               </div>
 
@@ -956,14 +963,14 @@ pb-14 sm:pb-20 lg:pb-28"
               Enterprise Capability & Professional Excellence
             </SectionLabel>
 
-            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] break-words">
               Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-fuchsia-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-300 to-fuchsia-300 break-words">
                 Expertise
               </span>
             </h2>
 
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/65 leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/65 leading-relaxed break-words">
               We support organizations across project delivery, agile
               transformation, PMO capability, risk management, scheduling,
               business analysis, AI-enabled project environments, and digital
@@ -994,10 +1001,10 @@ pb-14 sm:pb-20 lg:pb-28"
         "
             >
               {/* CARD GLOW */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-red-400/10 blur-3xl rounded-full" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-red-400/10 blur-3xl rounded-full group-hover:bg-red-400/20 transition-all duration-700" />
 
               {/* NUMBER */}
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-red-400 to-orange-500 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-red-400 to-orange-500 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-red-500/30 transition-all duration-500">
                 <span className="text-2xl font-bold text-white">01</span>
               </div>
 
@@ -1007,7 +1014,7 @@ pb-14 sm:pb-20 lg:pb-28"
                   Professional Training & Certification
                 </h3>
 
-                <p className="mt-5 text-white/75 leading-8 text-base">
+                <p className="mt-5 text-white/75 leading-7 text-base break-words">
                   We deliver globally aligned project management and
                   certification preparation programs across project, program,
                   portfolio, agile, PMO, scheduling, risk, business analysis,
@@ -1064,10 +1071,10 @@ pb-14 sm:pb-20 lg:pb-28"
         "
             >
               {/* CARD GLOW */}
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-cyan-400/10 blur-3xl rounded-full" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-cyan-400/10 blur-3xl rounded-full group-hover:bg-cyan-400/20 transition-all duration-700" />
 
               {/* NUMBER */}
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-cyan-500/30 transition-all duration-500">
                 <span className="text-2xl font-bold text-white">02</span>
               </div>
 
@@ -1077,7 +1084,7 @@ pb-14 sm:pb-20 lg:pb-28"
                   Consulting & Organizational Transformation
                 </h3>
 
-                <p className="mt-5 text-white/75 leading-8 text-base">
+                <p className="mt-5 text-white/75 leading-7 text-base break-words">
                   We help organizations improve governance structures, PMO
                   maturity, agile capability, operational efficiency, leadership
                   performance, and strategic project execution through tailored
@@ -1132,10 +1139,10 @@ pb-14 sm:pb-20 lg:pb-28"
   "
             >
               {/* CARD GLOW */}
-              <div className="absolute top-0 left-0 w-40 h-40 bg-emerald-400/10 blur-3xl rounded-full" />
+              <div className="absolute top-0 left-0 w-40 h-40 bg-emerald-400/10 blur-3xl rounded-full group-hover:bg-emerald-400/20 transition-all duration-700" />
 
               {/* NUMBER */}
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-emerald-500/30 transition-all duration-500">
                 <span className="text-2xl font-bold text-white">03</span>
               </div>
 
@@ -1145,7 +1152,7 @@ pb-14 sm:pb-20 lg:pb-28"
                   Portfolio, PMO & Governance Excellence
                 </h3>
 
-                <p className="mt-5 text-white/75 leading-8 text-base">
+                <p className="mt-5 text-white/75 leading-7 text-base break-words">
                   We help organizations establish high-performing PMOs, improve
                   portfolio governance, and align strategic initiatives with
                   business outcomes using globally recognized PMI® frameworks
@@ -1199,9 +1206,9 @@ pb-14 sm:pb-20 lg:pb-28"
     shadow-lg shadow-black/20
   "
             >
-              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 blur-3xl rounded-full" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 blur-3xl rounded-full group-hover:bg-blue-400/20 transition-all duration-700" />
 
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-500">
                 <span className="text-2xl font-bold text-white">04</span>
               </div>
 
@@ -1210,7 +1217,7 @@ pb-14 sm:pb-20 lg:pb-28"
                   Agile & Adaptive Delivery Excellence
                 </h3>
 
-                <p className="mt-5 text-white/75 leading-8 text-base">
+                <p className="mt-5 text-white/75 leading-7 text-base break-words">
                   We enable organizations to adopt Agile frameworks such as
                   Scrum, Kanban, and SAFe to improve delivery speed,
                   flexibility, and customer value.
@@ -1262,9 +1269,9 @@ pb-14 sm:pb-20 lg:pb-28"
     shadow-lg shadow-black/20
   "
             >
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-yellow-400/10 blur-3xl rounded-full group-hover:bg-yellow-400/20 transition-all duration-700" />
 
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-yellow-500/30 transition-all duration-500">
                 <span className="text-2xl font-bold text-white">05</span>
               </div>
 
@@ -1273,7 +1280,7 @@ pb-14 sm:pb-20 lg:pb-28"
                   Risk, Compliance & Assurance
                 </h3>
 
-                <p className="mt-5 text-white/75 leading-8 text-base">
+                <p className="mt-5 text-white/75 leading-7 text-base break-words">
                   We strengthen organizational resilience through structured
                   risk management, compliance frameworks, and governance
                   assurance models aligned with PMI® standards.
@@ -1325,9 +1332,9 @@ pb-14 sm:pb-20 lg:pb-28"
     shadow-lg shadow-black/20
   "
             >
-              <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-400/10 blur-3xl rounded-full" />
+              <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-400/10 blur-3xl rounded-full group-hover:bg-indigo-400/20 transition-all duration-700" />
 
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-violet-600 flex items-center justify-center shadow-lg">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-violet-600 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-indigo-500/30 transition-all duration-500">
                 <span className="text-2xl font-bold text-white">06</span>
               </div>
 
@@ -1336,7 +1343,7 @@ pb-14 sm:pb-20 lg:pb-28"
                   Business Analysis & Requirements Engineering
                 </h3>
 
-                <p className="mt-5 text-white/75 leading-8 text-base">
+                <p className="mt-5 text-white/75 leading-7 text-base break-words">
                   We help organizations define clear business requirements,
                   improve stakeholder alignment, and ensure project success
                   through structured analysis and documentation practices.
@@ -1394,14 +1401,14 @@ pb-14 sm:pb-20 lg:pb-28"
             >
               <SectionLabel>Enterprise Partnerships</SectionLabel>
 
-              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.1]">
+              <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.1] break-words">
                 Trusted Across{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-fuchsia-300">
                   Industries
                 </span>
               </h2>
 
-              <h3 className="text-base sm:text-lg lg:text-xl text-white/65 font-normal mt-6 leading-relaxed">
+              <h3 className="text-base sm:text-lg lg:text-xl text-white/65 font-normal mt-6 leading-relaxed break-words">
                 We help organizations across banking, telecom, government, NGOs,
                 and industry improve execution through training, project
                 consulting, and digital transformation.
@@ -1432,10 +1439,10 @@ pb-14 sm:pb-20 lg:pb-28"
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-3 text-white/75 bg-white/[0.03] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.06] hover:border-violet-300/15 transition-all duration-300"
+                    className="flex items-start gap-3 text-white/75 bg-white/[0.03] border border-white/8 rounded-2xl p-4 hover:bg-white/[0.06] hover:border-violet-300/15 hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300"
                   >
                     <item.icon className="w-5 h-5 text-violet-300 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm sm:text-base text-left">
+                    <p className="text-sm sm:text-base text-left break-words">
                       {item.text}
                     </p>
                   </div>
@@ -1463,8 +1470,8 @@ pb-14 sm:pb-20 lg:pb-28"
                     key={i}
                     to={item.link}
                     className="inline-flex items-center justify-center px-4 py-2 rounded-full
-              bg-white/[0.04] border border-white/10 text-white/75 text-sm
-              backdrop-blur-xl hover:bg-white/[0.08] hover:border-violet-300/20 hover:text-white transition-all duration-300"
+              bg-white/[0.04] border border-white/10 text-white/75 text-sm whitespace-nowrap
+              backdrop-blur-xl hover:bg-white/[0.08] hover:border-violet-300/20 hover:text-white hover:shadow-lg hover:shadow-violet-500/10 transition-all duration-300"
                   >
                     {item.name}
                   </Link>
@@ -1475,8 +1482,8 @@ pb-14 sm:pb-20 lg:pb-28"
                   <Link
                     to="/industries/healthcare"
                     className="inline-flex items-center justify-center px-4 py-2 rounded-full
-              bg-white/[0.04] border border-white/10 text-white/75 text-sm
-              backdrop-blur-xl hover:bg-white/[0.08] hover:border-violet-300/20 hover:text-white transition-all duration-300"
+              bg-white/[0.04] border border-white/10 text-white/75 text-sm whitespace-nowrap
+              backdrop-blur-xl hover:bg-white/[0.08] hover:border-violet-300/20 hover:text-white hover:shadow-lg hover:shadow-violet-500/10 transition-all duration-300"
                   >
                     Healthcare
                   </Link>
